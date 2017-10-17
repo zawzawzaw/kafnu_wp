@@ -8,27 +8,38 @@
  */
 function wds_add_field_default_image_and_note( $fields ) {
   $new_fields = array(
-    /*
     array(
-      'name'    => 'Title',
-      'id'      => PREFIX . 'default_centered_text_title',
+      'name'    => 'Note Title',
+      'id'      => PREFIX . 'default_image_and_note_title',
       'type'    => 'text',
       'description' => '',
       'sanitization_cb' => false,
     ),
     array(
-      'name'    => 'Copy',
-      'id'      => PREFIX . 'default_centered_text_copy',
+      'name'    => 'Note Copy',
+      'id'      => PREFIX . 'default_image_and_note_copy',
       'type'    => 'textarea',
       'description' => '',
     ),
+    
     array(
-      'name'    => 'Is White BG',
-      'id'      => PREFIX . 'default_centered_text_is_white_bg',
-      'type'    => 'checkbox',
-      'description' => '',
+      'name'    => 'Note Image',
+      'id'      => PREFIX . 'default_image_and_note_image',
+      'type'    => 'file',
+      'description' => 'jpg',
     ),
-    */
+    array(
+      'name'    => 'Note Image Tablet',
+      'id'      => PREFIX . 'default_image_and_note_image_tablet',
+      'type'    => 'file',
+      'description' => 'jpg; will resize desktop image if not found',
+    ),
+    array(
+      'name'    => 'Note Image Mobile',
+      'id'      => PREFIX . 'default_image_and_note_image_mobile',
+      'type'    => 'file',
+      'description' => 'jpg; will resize desktop image if not found',
+    ),
   );
   return array_merge( $fields, $new_fields );
 }
