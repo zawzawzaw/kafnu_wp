@@ -1,6 +1,4 @@
-<?php 
-
-
+<?php
 // Default Social Media Grid Large Item Group
 //   Type:
 //     Video Image
@@ -83,4 +81,3 @@
   }
   add_action( 'cmb2_admin_init', 'cmb2_register_social_media_item_metabox' , 2);
 ?>
-

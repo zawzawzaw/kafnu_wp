@@ -414,6 +414,7 @@ function cmb2_sanitize_title_hover_callback( $override_value, $value ) {
 
 
 require_once( 'custom_fields/_field-social-media-item.php' );
+require_once( 'custom_fields/_field-kafnu-event.php' );
 
 
 
@@ -428,14 +429,14 @@ require_once( 'custom_fields/field-home-banner.php' );
 require_once( 'custom_fields/field-home-image-links.php' );
 require_once( 'custom_fields/field-home-locations.php' );
 
-// require_once( 'custom_fields/field-location-banner.php' );
-// require_once( 'custom_fields/field-location-booking.php' );
-// require_once( 'custom_fields/field-location-live.php' );
-// require_once( 'custom_fields/field-location-work.php' );
-// require_once( 'custom_fields/field-location-play.php' );
-// require_once( 'custom_fields/field-location-learn.php' );
-// require_once( 'custom_fields/field-location-rest.php' );
-// require_once( 'custom_fields/field-location-contacts.php' );
+require_once( 'custom_fields/field-location-banner.php' );
+require_once( 'custom_fields/field-location-booking.php' );
+require_once( 'custom_fields/field-location-live.php' );
+require_once( 'custom_fields/field-location-work.php' );
+require_once( 'custom_fields/field-location-play.php' );
+require_once( 'custom_fields/field-location-learn.php' );
+require_once( 'custom_fields/field-location-rest.php' );
+require_once( 'custom_fields/field-location-contacts.php' );
 // require_once( 'custom_fields/field-contact-banner.php' );
 // require_once( 'custom_fields/field-contact-map-and-postit.php' );
 

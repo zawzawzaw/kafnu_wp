@@ -48,6 +48,44 @@
     register_taxonomy_for_object_type('post_tag', 'social-media-item');
     register_taxonomy_for_object_type( 'category', 'social-media-item' );
 
+    register_post_type( 'kafnu-event', 
+      
+      array( 'labels' => array(
+        'name' => 'Kafnu Event',
+        'singular_name' => 'Kafnu Event',
+        'all_items' => 'All Kafnu Events',
+        'add_new' => 'Add New',
+        'add_new_item' => 'Add New Kafnu Event',
+        'edit' => 'Edit',
+        'edit_item' => 'Edit Kafnu Event',
+        'new_item' => 'New Kafnu Event',
+        'view_item' => 'View Kafnu Event',
+        'search_items' => 'Search Kafnu Events',
+        'not_found' =>  'Nothing found in the Database.',
+        'not_found_in_trash' => 'Nothing found in Trash',
+        'parent_item_colon' => ''
+        ), /* end of arrays */
+        'description' => 'An entry in the social media grids.',
+        'public' => true,
+        'publicly_queryable' => true,
+        'exclude_from_search' => false,
+        'show_ui' => true,
+        'query_var' => true,
+        'menu_position' => 100,
+        'menu_icon' => 'dashicons-clipboard',
+        'rewrite' => array( 'slug' => 'kafnu-event', 'with_front' => false ),
+        'has_archive' => 'kafnu-event',
+        'capability_type' => 'post',
+        'hierarchical' => false,
+        'taxonomies' => array('post_tag'),
+        // 'supports' => array( 'title', 'editor', 'revisions')
+        'supports' => array( 'title', 'revisions', 'thumbnail')
+      ) /* end of options */
+    ); /* end of register post type */
+    
+    register_taxonomy_for_object_type('post_tag', 'kafnu-event');
+    register_taxonomy_for_object_type( 'category', 'kafnu-event' );
+
 
   } // manic_post_type_register
   add_action('init', 'manic_post_type_register');
