@@ -1,0 +1,390 @@
+body.page-country {
+  #header-desktop {
+    .color-version;
+  }
+}
+
+
+#header-desktop{
+  position: absolute;
+  z-index: 200000;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  .white-bg{
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: @header-desktop-height;
+    .box-shadow (0, 30px, 250px, @black);
+
+    .transition-in(0.7s, cubic-bezier(0.645, 0.045, 0.355, 1), 0.0s);
+  }
+
+  &.bg {
+    position: fixed;
+    .color-version;
+  }
+}
+
+.header-desktop-spacer{
+  background: @white;
+  height: @header-desktop-height;
+  .transition-in(0.7s, cubic-bezier(0.645, 0.045, 0.355, 1), 0.0s);
+
+  @media all and (max-width: 1024px) {
+    height: @header-tablet-height;
+  }
+
+}
+
+.header-mobile-spacer{
+  background: @white;
+  height: @header-mobile-height;
+  .transition-in(0.7s, cubic-bezier(0.645, 0.045, 0.355, 1), 0.0s);
+}
+
+body.actual-mobile-version{
+  #header-desktop{
+    display: none !important;
+  }
+}
+
+
+
+#header-desktop-content-container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: @header-desktop-height;  
+
+  .transition-in(0.7s, cubic-bezier(0.645, 0.045, 0.355, 1), 0.0s);  
+
+  // @media only screen and (min-width: 1440px) {
+  //   max-width: 1480px;
+  //   left: 50%;
+  //   margin-left: -740px;
+  // }
+}
+body.home-expand-header-version{
+  #header-desktop-content-container{
+    top: 81px;
+    .transition-in(0.5s, cubic-bezier(0.645, 0.045, 0.355, 1), 0.2s);
+  }
+}
+
+
+
+
+
+
+
+
+//    _____ ___  _   _ _____
+//   |  ___/ _ \| \ | |_   _|
+//   | |_ | | | |  \| | | |
+//   |  _|| |_| | |\  | | |
+//   |_|   \___/|_| \_| |_|
+//
+
+.header-desktop-font{
+  // .calibri-regular;
+  .fira-sans-medium;
+  font-size: 16px;
+  // line-height: 30px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+
+.header-desktop-font-02{
+  .fira-sans-regular;
+  // .calibri-regular;
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: 0.04em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    _     ___   ____  ___
+//   | |   / _ \ / ___|/ _ \
+//   | |  | | | | |  _| | | |
+//   | |__| |_| | |_| | |_| |
+//   |_____\___/ \____|\___/
+//
+
+#header-desktop-logo-container{
+  position: absolute;
+  top: 36px;
+  left: 30px;
+}
+
+#header-desktop-logo{
+  // position: absolute;
+  // top: 15px;
+  // left: 171px;
+
+  display: block;
+  .logo-kafnu-header;
+
+  // .transition-in(0.4s, cubic-bezier(0.645, 0.045, 0.355, 1), 0.3s);
+
+}
+
+
+
+//    __  __ _____ _   _ _   _
+//   |  \/  | ____| \ | | | | |
+//   | |\/| |  _| |  \| | | | |
+//   | |  | | |___| |\  | |_| |
+//   |_|  |_|_____|_| \_|\___/
+//
+
+#header-desktop-menu{
+  position: absolute;
+  top: 34px;
+  left: 250px;
+  right: 350px;
+  height: 26px;
+
+  nav{
+    ul{
+      font-size: 0;
+      // .justify-inline-blocks;
+      text-align: center;
+
+      li{
+        .display-inline-block;
+        // padding-right: 35px;
+        // padding-left: 35px;
+          padding-right: 30px;
+          padding-left: 30px;
+
+
+        a{
+          display: block;
+          position: relative;
+          overflow: hidden;
+
+          .header-desktop-font;
+          padding: 5px 20px;
+
+          color: @white;
+          // .transition-in-single (color, 0.3s, cubic-bezier(0.645, 0.045, 0.355, 1), 0.1s);
+
+          &:before {
+            box-sizing: border-box;         
+            transform: translateX(100%);
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 99.5%;
+            height: 2px;
+            border-color: none;
+            border-bottom: 0px solid transparent;
+            border-left: 0px solid transparent;
+          }
+        
+          &:after {
+             box-sizing: border-box;
+             transform: translateX(-100%);
+             content: '';
+             position: absolute;
+             top: 0;
+             left: 0;
+             width: 99.5%;
+             height: 2px;
+             border-color: none;
+             border-top: 0px solid transparent;
+             border-right: 0px solid transparent;
+          }
+
+          &:hover {
+            color: @white;
+            text-decoration: none;
+            
+              &:before {
+                transition: .1s transform linear, .1s height linear .1s;
+                transform: translateX(0);
+                height: 100%;
+                border-color: @white;
+                border-bottom: 2px solid @white;
+                border-left: 2px solid @white;
+              }
+              &:after {
+                transition: .1s transform linear .2s, .1s height linear .3s;
+                transform: translateX(0);
+                height: 100%;
+                // border-color: @white;
+                border-top: 2px solid @white;
+                border-right: 2px solid @white;
+              }
+          }
+          &.selected{
+            
+          }
+
+        }
+      }
+    }
+  }
+
+  @media all and (max-width: 1366px) {
+    nav {
+      ul {
+        li {
+          padding-right: 20px;
+          padding-left: 20px;
+        }
+      }
+    }
+  }
+
+  @media all and (max-width: 1280px) {
+    nav {
+      ul {
+        li {
+          padding-right: 20px;
+          padding-left: 20px;
+        }
+      }
+    }
+  }
+}
+
+
+//     __    ____  ___________   __
+//    / /   / __ \/ ____/  _/ | / /
+//   / /   / / / / / __ / //  |/ /
+//  / /___/ /_/ / /_/ // // /|  /
+// /_____/\____/\____/___/_/ |_/
+
+#header-desktop-contact-login-container {
+  position: absolute;
+  top: 36px;
+  left: auto;
+  right: 160px;
+  height: 26px;
+
+  ul {
+    font-size: 0;
+    // .justify-inline-blocks;
+    text-align: center;
+    li {
+      display: inline-block;
+      padding-left: 15px;
+      padding-right: 15px;
+      a {
+        color: @white;  
+        .header-desktop-font-02;
+
+        &:hover{
+          color: @gold;
+          .transition-in-single (color, 0.2s, cubic-bezier(0.645, 0.045, 0.355, 1), 0.0s);
+        }
+        &.selected{
+          color: @gold;
+          .transition-in-single (color, 0.2s, cubic-bezier(0.645, 0.045, 0.355, 1), 0.0s);
+        }
+      }
+      
+    }
+  }
+}
+
+#header-desktop-language-container {
+  position: absolute;
+  top: 36px;
+  left: auto;
+  right: 30px;
+  height: 26px;
+
+  ul {
+    font-size: 0;
+    // .justify-inline-blocks;
+    li {
+      display: inline-block;
+      // margin-right: 10px;
+      a {
+        color: @white;  
+        .header-desktop-font-02;
+        border: 1px solid rgba(255, 255, 255, 0.4);        
+        padding: 10px;
+        &:hover {
+          background: rgba(255, 255, 255, 0.4);
+        }
+        &.selected {
+          background: rgba(255, 255, 255, 0.4);
+        }
+      }
+      
+    }
+  }
+}
+
+.color-version {
+
+  .white-bg {
+    box-shadow: none;
+  }
+  
+  #header-desktop-content-container {
+    background: @white;  
+  }
+
+  #header-desktop-logo {
+    .logo-kafnu-header-color;     
+  }
+
+  #header-desktop-menu, #header-desktop-contact-login-container {
+    ul {
+      li {
+        a {
+          color: @grey;
+          &:hover {
+            color: @grey-2;
+          }
+          &:after {
+            color: @grey-2;
+          }
+          &:before, &:after {
+            border-color: @grey-2;
+          }
+        }
+      }
+    }
+  }
+
+  #header-desktop-language-container  {
+    ul {
+      li {
+        a {
+          color: @grey;
+          border: 1px solid rgba(94, 99, 102, 0.4);
+          &:hover {
+            background: rgba(94, 99, 102, 0.4);
+          }
+          &.selected {
+            background: rgba(94, 99, 102, 0.4);
+          }
+        }
+      }
+    }
+  }
+
+}

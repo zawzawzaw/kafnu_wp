@@ -1,0 +1,438 @@
+body.page-community {
+  .header-mobile-spacer {
+    display: none;
+  }
+}
+
+#page-community-slider-section {  
+  padding-top: 100px;
+}
+
+#page-community-slider-title {  
+  padding-bottom: 150px;
+  text-align: center;
+  width: 64%;
+  margin: 0 auto;
+
+   img {
+    width: 130px;
+    height: 80px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+
+  h3 {
+    font-size: 25px;
+    line-height: 35px;
+    letter-spacing: 0;
+    text-align: center;
+    &:nth-of-type(1) {
+      margin-bottom: 15px;
+    }
+  }
+
+  @media all and (max-width: 1024px) {
+    width: 100%;
+  }
+
+  @media all and (max-width: 991px) {
+    width: 100%;
+  }
+}
+
+#page-community-slider-title-2 {
+  text-align: center;
+  padding-bottom: 50px;
+  h2 {
+    text-transform: capitalize;
+  }
+}
+
+.page-community-slider-item {
+  position: relative;
+  .manic-image-container {
+    height: 500px;
+  }
+  .page-community-slider-item-caption {
+    position: absolute;    
+    top: 30%;
+    width: 30%;
+    right: 10%;
+    color: @white;
+    h5 {
+      text-transform: uppercase;
+      font-size: 15px;
+      line-height: 20px;
+      letter-spacing: 0.1em;
+      padding-bottom: 5px;
+    }
+    h4 {
+      padding-bottom: 15px;
+    }
+  }
+}
+
+.page-community-thumbnail-slider-item {
+  outline: 0!important;
+  img {
+    width: 100%;
+  }
+}
+
+.page-community-managers-item-mobile {
+  .manic-image-container {
+    height: 250px;
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+  .text-container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    h5 {
+      text-transform: uppercase;
+      font-size: 15px;
+      line-height: 20px;
+      letter-spacing: 0.1em;
+      padding-bottom: 5px;
+      color: #b2b2b2;
+    }
+    h4 {
+      padding-bottom: 15px;
+    }
+  }
+}
+
+.page-community-managers-see-more-box {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  position: relative;
+  background: @off-white;
+  
+  margin-left: -20px;
+  margin-right: -20px;
+  padding-left: 20px;
+  height: 98px;
+  cursor: pointer;
+
+  .text-container {
+    width: 85%;
+
+    h4 {
+      // margin-bottom: 25px;      
+      font-size: 15px;
+      line-height: 22px;
+      .fira-sans-medium;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: @grey;
+    }
+  }
+
+}
+
+#page-community-managers-thumbnails-mobile {
+  .manic-image-container {
+    width: 33.33%;
+    height: 130px;
+    float: left;
+    cursor: pointer;
+  }
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+.community-page-2 {
+  display: none;
+}
+
+//     __  ___________  _______  __________
+//    /  |/  / ____/  |/  / __ )/ ____/ __ \
+//   / /|_/ / __/ / /|_/ / __  / __/ / /_/ /
+//  / /  / / /___/ /  / / /_/ / /___/ _, _/
+// /_/  /_/_____/_/  /_/_____/_____/_/ |_|
+
+
+#page-community-memeber-section {
+  padding-top: 150px;  
+  display: none;
+
+  @media all and (max-width: 991px) {
+    padding-top: 75px;
+    padding-bottom: 0px;  
+  }
+
+}
+
+#page-community-member-title {
+  h2 {
+    .fira-sans-medium;
+    text-align: center;
+    padding-bottom: 50px;
+  }
+
+  @media all and (max-width: 991px) {
+    h2 {
+      text-align: left;
+      padding-bottom: 20px;
+    }
+  }
+}
+
+#page-community-member-slider {
+  .slick-list {
+    // overflow-y: visible;
+    height: 550px;
+  }
+  .slick-next, .slick-prev {
+    &:before, &:after {
+      border-color: @grey;
+      left: 0px;
+    }    
+  }
+  .slick-next {
+    // right: 0px!important;    
+  }
+}
+
+.page-community-member-slider-item {
+  .page-community-member-slider-item-image-container {
+    margin-left: 4.15%;
+  }
+
+  .manic-image-container {
+    width: 33.3%;
+    height: 250px;
+    float: left;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+  }
+
+  .text-box-container {
+    background: @blue-4;
+    padding: 60px 90px;
+    z-index: 99999;
+
+    span {
+      margin-top: 30px;
+      display: block;
+      font-size: 16px;
+      line-height: 20px;
+      .fira-sans-medium;
+    }
+  }
+  .row {
+    position: relative;
+  }
+  .text-col {
+    position: absolute;
+    bottom: -50px;
+    right: 4.15%;
+  }
+}
+
+#page-community-member-slider-mobile {  
+  margin-left: -10px;
+  margin-right: -10px;
+
+  .slick-next, .slick-prev {
+    top: 70%;
+    &:before, &:after {
+      border-color: @grey;
+      // left: 0px;
+    }    
+  }
+  // .slick-prev {
+  //   left: 10px!important;
+  // }
+  // .slick-next {
+  //   right: -10px!important;
+  // }
+
+  .slick-prev, .slick-next {
+    &:before, &:after {
+      border-color: @grey;  
+    }    
+  }
+  .slick-prev {
+    left: 0px!important;
+  }
+  .slick-next {
+    right: 0px!important;
+  }
+
+  .slick-dots {
+    text-align: center;
+    position: absolute;
+    bottom: 50px;
+    li {
+      margin: 0 10px;
+      &.slick-active {
+        button {
+          &:before {
+            background: @grey;
+          }
+        }
+      }
+      button {
+        &:before {
+          background: none;
+          border: 2px solid @grey;
+          width: 6px;
+          height: 6px;
+        }
+      }
+    }
+  }
+}
+
+.page-community-member-slider-item-mobile {
+
+  .manic-image-container {
+    width: 100%;
+    height: 250px;
+  }
+  .text-box-container {
+    background: rgba(184, 209, 217, 0.5);
+    padding: 40px 50px 140px 60px;
+    z-index: 99999;
+
+    span {
+      margin-top: 30px;
+      display: block;
+      font-size: 16px;
+      line-height: 20px;
+      .fira-sans-medium;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
+}
+
+#page-default-booking-section {
+  &.community-version {
+    padding-top: 200px;
+    padding-bottom: 0px;
+
+    .page-default-booking-item-image {
+      position: relative;
+      .page-default-booking-item-image-caption {
+        position: absolute;
+        top: 40px;
+        left: 20px;
+        color: @white;
+
+        h6 {
+          .fira-sans-medium;
+          font-size: 15px;
+          line-height: 20px;
+        }
+      }
+    }
+
+    .page-default-booking-item-text {
+      padding: 30px 20px 0 20px;
+    }
+
+    .manic-image-container {
+      height: 372px;
+    }
+    ul {
+      margin-bottom: 10px;
+      li {
+        padding-left: 30px;
+        position: relative;
+        &.icon {
+          &:after {
+            .fa;
+            font-size: 13px;
+            line-height: 15px; 
+            letter-spacing: 0.05em;
+            position: absolute;
+            left: 0px;
+            top: 4px; 
+          }          
+        }
+        &.calendar {
+          &:after {
+            content: "\f133";            
+          }        
+        }
+        &.map-pin {
+          &:after {
+            content: "\f041";
+            font-size: 18px;            
+          }        
+        }
+      }
+    }    
+
+    @media all and (max-width: 1024px) {
+      .page-default-booking-item-image {
+        .page-default-booking-item-image-caption {
+          left: 10px;
+          top: 20px;
+        }
+      } 
+
+      .manic-image-container {
+        height: 252px;
+      }
+      .page-default-booking-item-text {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+
+    @media all and (max-width: 991px) {
+      // #page-default-booking-item-mobile {
+        padding-top: 80px;
+      // }
+      .page-default-booking-item {
+        border: none;
+      }
+
+      .page-default-booking-item-text {
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+      .page-default-booking-item-cta-container {
+        padding-top: 25px;
+      }
+      h6 {
+        .fira-sans-bold;
+        font-size: 15px;
+        line-height: 28px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        padding-bottom: 5px;
+      }
+      h5 {
+        text-align: left;
+      }
+      ul {
+        li {
+          text-align: left;
+        }
+      }
+      p {
+        text-align: left;
+      }
+      
+      .slick-dots {
+        bottom: 0px!important;
+        li {
+          padding-left: 0px;
+        }
+      }
+      .slick-dots-mobile;
+    }
+  }
+}
