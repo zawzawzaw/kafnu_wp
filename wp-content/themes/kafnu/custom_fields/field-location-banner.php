@@ -7,7 +7,7 @@
  * @return array
  */
 function wds_add_field_location_banner( $fields ) { 
-  
+
   $new_fields = array(
     array(
       'name'    => 'Location Banner Title',
@@ -21,7 +21,25 @@ function wds_add_field_location_banner( $fields ) {
       'id'      => PREFIX . 'location_banner_subtitle',
       'type'    => 'text',
       'description' => '',
-    )
+    ),
+    array(
+      'name'    => 'Location Banner Image',
+      'id'      => PREFIX . 'location_banner_image',
+      'type'    => 'file',
+      'description' => 'jpg',
+    ),
+    array(
+      'name'    => 'Location Banner Image Tablet',
+      'id'      => PREFIX . 'location_banner_image_tablet',
+      'type'    => 'file',
+      'description' => 'jpg; will resize desktop image if not found',
+    ),
+    array(
+      'name'    => 'Location Banner Image Mobile',
+      'id'      => PREFIX . 'location_banner_image_mobile',
+      'type'    => 'file',
+      'description' => 'jpg; will resize desktop image if not found',
+    ),
   );
 
   return array_merge( $fields, $new_fields );

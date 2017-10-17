@@ -415,6 +415,7 @@ function cmb2_sanitize_title_hover_callback( $override_value, $value ) {
 
 require_once( 'custom_fields/_field-social-media-item.php' );
 require_once( 'custom_fields/_field-kafnu-event.php' );
+require_once( 'custom_fields/_field-booking-item.php' );
 
 
 

@@ -86,6 +86,44 @@
     register_taxonomy_for_object_type('post_tag', 'kafnu-event');
     register_taxonomy_for_object_type( 'category', 'kafnu-event' );
 
+    register_post_type( 'booking-item', 
+      
+      array( 'labels' => array(
+        'name' => 'Booking Item',
+        'singular_name' => 'Booking Item',
+        'all_items' => 'All Booking Items',
+        'add_new' => 'Add New',
+        'add_new_item' => 'Add New Booking Item',
+        'edit' => 'Edit',
+        'edit_item' => 'Edit Booking Item',
+        'new_item' => 'New Booking Item',
+        'view_item' => 'View Booking Item',
+        'search_items' => 'Search Booking Items',
+        'not_found' =>  'Nothing found in the Database.',
+        'not_found_in_trash' => 'Nothing found in Trash',
+        'parent_item_colon' => ''
+        ), /* end of arrays */
+        'description' => 'An entry in the social media grids.',
+        'public' => true,
+        'publicly_queryable' => true,
+        'exclude_from_search' => false,
+        'show_ui' => true,
+        'query_var' => true,
+        'menu_position' => 100,
+        'menu_icon' => 'dashicons-clipboard',
+        'rewrite' => array( 'slug' => 'booking-item', 'with_front' => false ),
+        'has_archive' => 'booking-item',
+        'capability_type' => 'post',
+        'hierarchical' => false,
+        'taxonomies' => array('post_tag'),
+        // 'supports' => array( 'title', 'editor', 'revisions')
+        'supports' => array( 'title', 'revisions', 'thumbnail')
+      ) /* end of options */
+    ); /* end of register post type */
+    
+    register_taxonomy_for_object_type('post_tag', 'booking-item');
+    register_taxonomy_for_object_type( 'category', 'booking-item' );
+
 
   } // manic_post_type_register
   add_action('init', 'manic_post_type_register');
