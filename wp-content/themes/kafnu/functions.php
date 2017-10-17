@@ -418,10 +418,11 @@ require_once( 'custom_fields/_field-kafnu-event.php' );
 
 
 
-// require_once( 'custom_fields/field-default-banner.php' );
-// require_once( 'custom_fields/field-default-featured-copy-and-image.php' );
-// require_once( 'custom_fields/field-default-image-and-note.php' );
-// require_once( 'custom_fields/field-default-copy-and-image.php' );
+require_once( 'custom_fields/field-default-banner.php' );
+require_once( 'custom_fields/field-default-featured-copy-and-image.php' );
+require_once( 'custom_fields/field-default-image-and-note.php' );
+require_once( 'custom_fields/field-default-copy-and-image.php' );
+
 require_once( 'custom_fields/field-default-centered-text.php' );
 require_once( 'custom_fields/field-default-social-media-grid-large.php' );
 require_once( 'custom_fields/field-default-social-media-grid.php' );

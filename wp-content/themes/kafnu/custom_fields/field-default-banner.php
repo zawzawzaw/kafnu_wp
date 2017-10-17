@@ -1,5 +1,13 @@
 <?php 
 
+// Default Banner Title
+// Default Banner Subtitle
+// Default Banner Image
+// Default Banner Image Tablet
+// Default Banner Image Mobile
+
+
+
 /**
  * Add custom fields to Page Builder Part
  *
@@ -8,27 +16,39 @@
  */
 function wds_add_field_default_banner( $fields ) {
   $new_fields = array(
-    /*
     array(
-      'name'    => 'Title',
-      'id'      => PREFIX . 'default_centered_text_title',
+      'name'    => 'Default Banner Title',
+      'id'      => PREFIX . 'default_banner_title',
       'type'    => 'text',
       'description' => '',
       'sanitization_cb' => false,
     ),
     array(
-      'name'    => 'Copy',
-      'id'      => PREFIX . 'default_centered_text_copy',
-      'type'    => 'textarea',
+      'name'    => 'Default Banner Subtitle',
+      'id'      => PREFIX . 'default_banner_subtitle',
+      'type'    => 'text',
       'description' => '',
+    ),
+    
+    array(
+      'name'    => 'Default Banner Image',
+      'id'      => PREFIX . 'default_banner_image',
+      'type'    => 'file',
+      'description' => 'jpg',
     ),
     array(
-      'name'    => 'Is White BG',
-      'id'      => PREFIX . 'default_centered_text_is_white_bg',
-      'type'    => 'checkbox',
-      'description' => '',
+      'name'    => 'Default Banner Image Tablet',
+      'id'      => PREFIX . 'default_banner_image_tablet',
+      'type'    => 'file',
+      'description' => 'jpg; will resize desktop image if not found',
     ),
-    */
+    array(
+      'name'    => 'Default Banner Image Mobile',
+      'id'      => PREFIX . 'default_banner_image_mobile',
+      'type'    => 'file',
+      'description' => 'jpg; will resize desktop image if not found',
+    ),
+
   );
   return array_merge( $fields, $new_fields );
 }
