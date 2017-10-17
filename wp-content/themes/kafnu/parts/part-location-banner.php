@@ -6,6 +6,11 @@ $location_banner_image_tablet = wds_page_builder_get_this_part_data( PREFIX . "l
 $location_banner_image_mobile = wds_page_builder_get_this_part_data( PREFIX . "location_banner_image_mobile" );
 
 $selected_kafnu_events = manic_get_option( PREFIX . 'selected_kafnu_events' );
+
+    // image
+  $location_banner_image_id = wds_page_builder_get_this_part_data( PREFIX . 'location_banner_image_id' );
+  $location_banner_image_tablet = get_manic_tablet_image($location_banner_image_id, $location_banner_image_tablet);  
+  $location_banner_image_mobile = get_manic_mobile_image($location_banner_image_id, $location_banner_image_mobile);
 ?>
 <!--
          ____    _    _   _ _   _ _____ ____
