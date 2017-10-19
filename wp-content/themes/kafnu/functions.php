@@ -417,6 +417,7 @@ function cmb2_sanitize_title_hover_callback( $override_value, $value ) {
 require_once( 'custom_fields/_field-social-media-item.php' );
 require_once( 'custom_fields/_field-kafnu-event.php' );
 require_once( 'custom_fields/_field-booking-item.php' );
+require_once( 'custom_fields/_field-community-manager.php' );
 
 
 
@@ -444,9 +445,9 @@ require_once( 'custom_fields/field-location-contacts.php' );
 // require_once( 'custom_fields/field-contact-map-and-postit.php' );
 
 
-require_once( 'custom_fields/field-default-logo-and-copy-section.php' );
-require_once( 'custom_fields/field-community-slider-section.php' );
-require_once( 'custom_fields/field-community-events-section.php' );
+require_once( 'custom_fields/field-default-logo-and-copy.php' );
+require_once( 'custom_fields/field-community-slider.php' );
+require_once( 'custom_fields/field-community-events.php' );
 
 
 

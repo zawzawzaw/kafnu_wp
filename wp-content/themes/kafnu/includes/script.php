@@ -38,7 +38,7 @@
     <script type="text/javascript" src="<?php echo THEMEROOT; ?>/kafnu_assets/libs/jquery-validate/jquery.validate.min.js"></script>
 
     <!-- Google Map -->    
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQvuQ_GJxtg5QhhRnzerBTnDJrKKQz_S4&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQvuQ_GJxtg5QhhRnzerBTnDJrKKQz_S4"
     async defer></script>
 
     <!-- Isotope Grid -->
