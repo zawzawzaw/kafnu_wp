@@ -119,6 +119,7 @@ register_nav_menus(
   array(
     'desktop-header-menu' => 'Desktop Header Menu',
     'mobile-header-menu' => 'Mobile Header Menu',
+    'login-links' => 'Login Links',
     'footer-links' => 'Footer Links',
   )
 );

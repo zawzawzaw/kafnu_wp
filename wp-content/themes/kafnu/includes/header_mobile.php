@@ -42,16 +42,17 @@
   </div>
   <div id="header-mobile-nav-container">
     <nav>
-      <ul>
-        <li><a href="live.html">Live</a></li>
-        <li><a href="work.html">Work</a></li>
-        <li><a href="play.html">Play</a></li>
-        <li><a href="learn.html">Learn</a></li>
-        <li><a href="rest.html">Rest</a></li>
-        <li><a href="community.html">Our Community</a></li>
-        <li><a href="index.html#location">Our Locations</a></li>
-        <li><a href="contact.html">Contact</a></li>        
-      </ul>
+      <?php
+        $defaults = array(
+          'echo' => true,
+          'container' => false,
+          'theme_location'  => 'mobile-header-menu',
+          'menu_class'      => 'mobile-header-menu'
+        );
+
+
+        wp_nav_menu($defaults);
+      ?>              
     </nav>
   </div>
 </div> <!-- header-mobile-expand -->

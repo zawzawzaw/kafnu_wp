@@ -28,10 +28,22 @@
                 <p id="footer-copyright-container"><?php echo $footer_copyright; ?></p>
               </div>
               <div class="col-lg-5 col-md-7">
-                <ul id="footer-links-container">
+                <?php
+                  $defaults = array(
+                    'echo' => true,
+                    'container' => false,
+                    'items_wrap'      => '<ul id="footer-links-container">%3$s</ul>',
+                    'theme_location'  => 'footer-links',
+                    'menu_class'      => 'footer-links'
+                  );
+
+
+                  wp_nav_menu($defaults);
+                ?>  
+                <!-- <ul id="footer-links-container">
                   <li><a href="https://hongkong.kafnu.com/en/page/termsandconditions">Terms & Conditions</a></li>
                   <li><a href="https://hongkong.kafnu.com/en/page/privacy-policy">Privacy Policy</a></li>
-                </ul>
+                </ul> -->
               </div>
             </div>
           </div>

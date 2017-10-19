@@ -45,10 +45,14 @@ $selected_location_booking_items = wds_page_builder_get_this_part_data( PREFIX .
                 $booking_item_image_mobile   = get_post_meta( $selected_booking_item_post_id, PREFIX . "booking_item_image_mobile", true );   
                 $booking_item_title     = get_post_meta( $selected_booking_item_post_id, PREFIX . "booking_item_title", true );                            
                 $booking_item_copy   = get_post_meta( $selected_booking_item_post_id, PREFIX . "booking_item_copy", true );
-                $booking_item_URLs = get_post_meta( $selected_booking_item_post_id, PREFIX."booking_item_URLs", true );                       
+                $booking_item_URLs = get_post_meta( $selected_booking_item_post_id, PREFIX."booking_item_URLs", true );        
+
+                $post_title = strtolower(get_the_title($selected_booking_item_post_id));
+
+
         ?>
 
-        <div class="col-md-3 no-padding page-default-booking-item">                   
+        <div class="col-md-3 no-padding page-default-booking-item <?php if(strpos($post_title, 'tp') !== false) echo 'tp-version'; else echo $post_title; ?>">                   
             <div class="manic-image-container">
               <img src="" data-image-desktop="<?php echo $booking_item_image; ?>"
               data-image-tablet="<?php echo $booking_item_image_tablet; ?>"
@@ -57,7 +61,7 @@ $selected_location_booking_items = wds_page_builder_get_this_part_data( PREFIX .
             <div class="page-default-booking-item-text">
               <h5><?php echo $booking_item_title; ?></h5>
               <p><?php echo $booking_item_copy; ?></p>
-              <span id="price-changes" class="price"><?php echo $booking_item_URLs[0]['_kafnu_booking_item_price']; ?></span>                
+              <span id="price-changes" class="price"><?php echo isset($booking_item_URLs[0]['_kafnu_booking_item_price']) ? $booking_item_URLs[0]['_kafnu_booking_item_price'] : ""; ?></span>                
             </div>
             <?php if(count($booking_item_URLs) > 1): ?>
               <div class="page-default-booking-item-cta-container dropdown-version">
@@ -69,9 +73,11 @@ $selected_location_booking_items = wds_page_builder_get_this_part_data( PREFIX .
                   </ul>                            
               </div>
             <?php else: ?>
-              <div class="page-default-booking-item-cta-container">
-                <a href="<?php echo $booking_item_URLs[0]['_kafnu_booking_item_url']; ?>" target="_blank" class="square-cta border-version">Book Now</a>            
-              </div>
+              <?php if(isset($booking_item_URLs[0]['_kafnu_booking_item_url'])): ?>
+                <div class="page-default-booking-item-cta-container">
+                  <a href="<?php echo $booking_item_URLs[0]['_kafnu_booking_item_url']; ?>" target="_blank" class="square-cta border-version">Book Now</a>            
+                </div>
+              <?php endif; ?>  
             <?php endif; ?>
         </div>
 
@@ -167,7 +173,9 @@ $selected_location_booking_items = wds_page_builder_get_this_part_data( PREFIX .
                   <h5><?php echo $booking_item_title; ?></h5>
                   <p><?php echo $booking_item_copy; ?></p>                        
                   <?php if(count($booking_item_URLs) < 2): ?>
-                    <span class="price"><?php echo $booking_item_URLs[0]['_kafnu_booking_item_price']; ?></span>                
+                    <?php if(isset($booking_item_URLs[0]['_kafnu_booking_item_price'])): ?>
+                      <span class="price"><?php echo $booking_item_URLs[0]['_kafnu_booking_item_price']; ?></span>                
+                    <?php endif; ?>
                   <?php endif; ?>
                 </div>                
 

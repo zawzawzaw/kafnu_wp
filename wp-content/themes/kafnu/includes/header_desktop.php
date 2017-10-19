@@ -29,13 +29,17 @@
 
     <div id="header-desktop-menu">
       <nav>
-        <ul>
-          <li><a href="live.html" data-page="page-live">Live</a></li>
-          <li><a href="work.html" data-page="page-work">Work</a></li>
-          <li><a href="play.html" data-page="page-play">Play</a></li>
-          <li><a href="learn.html" data-page="page-learn">Learn</a></li>
-          <li><a href="rest.html" data-page="page-rest">Rest</a></li>
-        </ul>
+        <?php
+            $defaults = array(
+              'echo' => true,
+              'container' => false,
+              'theme_location'  => 'desktop-header-menu',
+              'menu_class'      => 'desktop-header-menu'
+            );
+
+
+            wp_nav_menu($defaults);
+          ?>        
       </nav>
     </div> <!-- header-desktop-menu -->
 
@@ -49,16 +53,23 @@
      -->
 
     <div id="header-desktop-contact-login-container">
-      <ul>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="https://hongkong.kafnu.com/Login" target="_blank">Login</a></li>        
-      </ul>
+      <?php
+        $defaults = array(
+          'echo' => true,
+          'container' => false,
+          'theme_location'  => 'login-links',
+          'menu_class'      => 'login-links'
+        );
+
+
+        wp_nav_menu($defaults);
+      ?>         
     </div> <!-- header-desktop-contact-login-container -->
 
     <div id="header-desktop-language-container">
       <ul>
         <li><a href="<?php echo get_home_url(); ?>" class="selected">EN</a></li>
-        <li><a href="tc/index.html">中文</a></li>
+        <li><a href="<?php echo get_home_url(); ?>/tc">中文</a></li>
       </ul>
     </div> <!-- header-desktop-contact-login-container -->
   </div>

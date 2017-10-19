@@ -16,7 +16,7 @@ $location_contacts_image_mobile = get_manic_mobile_image($location_contacts_imag
 
 <article id="page-country-extra-content-section">
   <div class="container-fluid reduce-padding">
-    <div class="page-country-extra-content-item">
+    <div class="page-country-extra-content-item <?php if(count($location_contacts_list) > 6) echo 'taipei-version'; ?>">
       <div class="row">
         <div class="col-md-6 no-padding v-align-col">
           <div class="manic-image-container">
@@ -31,9 +31,11 @@ $location_contacts_image_mobile = get_manic_mobile_image($location_contacts_imag
             <!-- <h4>justin lorem</h4> -->
             <p><?php echo $location_contacts_copy; ?></p>
             <ul>
+            <?php $col_break = 3; if(count($location_contacts_list) > 6) $col_break = 5; ?>
+
             <?php $counter = 1; foreach ($location_contacts_list as $key => $list): ?>              
               <li><span><?php echo $list; ?></span></li>
-              <?php if($counter%3==0) echo '</ul><ul>'; ?>
+              <?php if($counter%$col_break==0) echo '</ul><ul>'; ?>
             <?php $counter++; endforeach; ?>                            
             </ul>
           </div> <!-- page-country-main-content-item-text -->
