@@ -25,6 +25,7 @@ function wds_add_field_default_centered_text( $fields ) {
       'id'      => PREFIX . 'default_centered_text_copy',
       'type'    => 'textarea',
       'description' => '',
+      'sanitization_cb' => false,
     ),
     array(
       'name'    => 'Is White BG',

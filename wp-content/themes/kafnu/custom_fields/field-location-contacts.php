@@ -13,21 +13,18 @@ function wds_add_field_location_contacts( $fields ) {
       'id'      => PREFIX . 'location_contacts_image',
       'type'    => 'file',
       'description' => '',
-      'sanitization_cb' => false
     ),
     array(
       'name'    => 'Image Tablet',
       'id'      => PREFIX . 'location_contacts_image_tablet',
       'type'    => 'file',
       'description' => '',
-      'sanitization_cb' => false
     ),
     array(
       'name'    => 'Image Mobile',
       'id'      => PREFIX . 'location_contacts_image_mobile',
       'type'    => 'file',
       'description' => '',
-      'sanitization_cb' => false
     ),
     array(
       'name'    => 'Title',
@@ -41,13 +38,13 @@ function wds_add_field_location_contacts( $fields ) {
       'id'      => PREFIX . 'location_contacts_copy',
       'type'    => 'textarea',
       'description' => '',
+      'sanitization_cb' => false,
     ),
     array(
       'name'    => 'List',
       'id'      => PREFIX . 'location_contacts_list',
       'type'    => 'text',
       'description' => '',
-      'sanitization_cb' => false,
       'repeatable' => true
     ),
     array(
@@ -55,14 +52,12 @@ function wds_add_field_location_contacts( $fields ) {
       'id'      => PREFIX . 'location_contacts_cta_text',
       'type'    => 'text',
       'description' => '',
-      'sanitization_cb' => false,
     ),
     array(
       'name'    => 'URL',
       'id'      => PREFIX . 'location_contacts_cta_url',
       'type'    => 'text_url',
       'description' => '',
-      'sanitization_cb' => false,
     ),
     
   );
