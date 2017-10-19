@@ -45,7 +45,7 @@
     <script type="text/javascript" src="<?php echo THEMEROOT; ?>/kafnu_assets/libs/isotope/isotope.pkgd.min.js"></script>
 
     <!-- Wow Animation -->
-    <script type="text/javascript" src="<?php echo THEMEROOT; ?>/<?php echo THEMEROOT; ?>/kafnu_assets/libs/wow/wow.min.js"></script>
+    <script type="text/javascript" src="<?php echo THEMEROOT; ?>/kafnu_assets/libs/wow/wow.min.js"></script>
     
     <!-- Google Closure -->
     <script type="text/javascript" src="<?php echo THEMEROOT; ?>/kafnu_assets/libs/google-closure/closure-library/closure/goog/base.js"></script>
