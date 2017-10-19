@@ -444,6 +444,12 @@ require_once( 'custom_fields/field-location-contacts.php' );
 // require_once( 'custom_fields/field-contact-map-and-postit.php' );
 
 
+require_once( 'custom_fields/field-default-logo-and-copy-section.php' );
+require_once( 'custom_fields/field-community-slider-section.php' );
+require_once( 'custom_fields/field-community-events-section.php' );
+
+
+
 
 
 
