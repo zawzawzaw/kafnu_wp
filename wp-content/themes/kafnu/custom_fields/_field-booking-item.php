@@ -34,14 +34,14 @@
     ) );
 
     $field_2b = $cmb->add_field( array(
-        'name'    => 'Booking Item Image',
+        'name'    => 'Booking Item Image Tablet',
         'id'      => PREFIX . 'booking_item_image_tablet',
         'type'    => 'file',
         'description' => 'jpg',
     ) );
 
     $field_2c = $cmb->add_field( array(
-        'name'    => 'Booking Item Image',
+        'name'    => 'Booking Item Image Mobile',
         'id'      => PREFIX . 'booking_item_image_mobile',
         'type'    => 'file',
         'description' => 'jpg',

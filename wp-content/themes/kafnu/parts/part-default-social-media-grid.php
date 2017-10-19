@@ -16,6 +16,7 @@
 -->
 
 <div class="has-wow-element"></div>
+<div class="has-grid-element"></div>
 
 <article id="page-default-social-media-masonry-section">
   <div class="container-fluid reduce-padding">
