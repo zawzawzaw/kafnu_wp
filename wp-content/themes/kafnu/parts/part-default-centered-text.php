@@ -14,6 +14,7 @@ if (isset($default_centered_text_is_white_bg) && $default_centered_text_is_white
 
 ?>
 
+<div class="has-wow-element"></div>
 
 <article id="page-default-connect-with-world-section" class="<?php echo $extra_class; ?>">
   <div class="container-fluid">

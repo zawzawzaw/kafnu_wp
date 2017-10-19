@@ -13,7 +13,8 @@ function wds_add_field_contact_banner( $fields ) {
       'name'    => 'Title',
       'id'      => PREFIX . 'contact_banner_title',
       'type'    => 'text',
-      'description' => ''
+      'description' => '',
+      'sanitization_cb' => false,
     ),
     array(
       'name'    => 'Contact Banner Image',
@@ -33,14 +34,6 @@ function wds_add_field_contact_banner( $fields ) {
       'type'    => 'file',
       'description' => 'jpg; will resize desktop image if not found',
     ),
-    array(
-      'name'    => 'Contact Banner Form Submit URL',
-      'id'      => PREFIX . 'contact_banner_form_submit_url',
-      'type'    => 'text_url',
-      'description' => 'jpg; will resize desktop image if not found',
-    ),
-    
-    
   );
   return array_merge( $fields, $new_fields );
 }

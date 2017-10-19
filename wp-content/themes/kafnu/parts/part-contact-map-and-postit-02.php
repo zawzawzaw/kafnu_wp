@@ -1,11 +1,14 @@
 <?php 
-  $contact_map_02_title = wds_page_builder_get_this_part_data( PREFIX . "contact_map_02_title" );
-  $contact_map_02_country = wds_page_builder_get_this_part_data( PREFIX . "contact_map_02_country" );
+  $contact_map_02_id = wds_page_builder_get_this_part_data( PREFIX . "contact_map_02_id" );
   $contact_map_02_latitude = wds_page_builder_get_this_part_data( PREFIX . "contact_map_02_latitude" );
   $contact_map_02_longitude = wds_page_builder_get_this_part_data( PREFIX . "contact_map_02_longitude" );
+
+  $contact_map_02_country = wds_page_builder_get_this_part_data( PREFIX . "contact_map_02_country" );
   $contact_map_02_address = wds_page_builder_get_this_part_data( PREFIX . "contact_map_02_address" );
   $contact_map_02_email = wds_page_builder_get_this_part_data( PREFIX . "contact_map_02_email" );
 ?>
+
+<div class="has-map-element"></div>
 
 <article id="page-contact-find-us-section">
   <div class="container-fluid">
@@ -26,7 +29,14 @@
           </div>
         </div>
         <div class="col-md-8 map-col col-md-offset-4">
-          <div id="taipei-map"></div>
+
+          <div id="<?php echo $contact_map_02_id; ?>"
+            class="kafnu-google-map"
+            data-pin="<?php echo THEMEROOT; ?>/kafnu_assets/images/icons/map-pin.svg"
+            data-lat="<?php echo $contact_map_02_latitude; ?>"
+            data-lng="<?php echo $contact_map_02_longitude; ?>"> 
+          </div>
+
         </div>        
       </div>
     </div>
@@ -43,7 +53,14 @@
           <div class="container-fluid reduce-padding">
             <div class="row">              
               <div class="col-md-8 map-col">
-                <div id="taipei-map-mobile"></div>
+
+                <div id="<?php echo $contact_map_02_id; ?>-mobile"
+                  class="kafnu-google-map mobile-version"
+                  data-pin="<?php echo THEMEROOT; ?>/kafnu_assets/images/icons/map-pin.svg"
+                  data-lat="<?php echo $contact_map_02_latitude; ?>"
+                  data-lng="<?php echo $contact_map_02_longitude; ?>"> 
+                </div>
+
               </div>
               <div class="col-md-4 text-col">
                 <div class="page-contact-find-us-text-box-container">

@@ -5,6 +5,8 @@
 
 ?>
 
+<div class="has-community-hash-element"></div>
+
 <article id="page-community-slider-section" class="community-page-1">
   <div class="container-fluid">
     <div class="row">

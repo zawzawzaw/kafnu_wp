@@ -680,6 +680,75 @@ kafnu.page.Default.prototype.create_google_map = function() {
 
 
 
+  var arr = $('.kafnu-google-map');
+  var item = null;
+  var is_mobile = false;
+  var item_position = null;
+
+  var item_map = null;
+  var item_map_marker = null;
+
+  for (var i = 0, l=arr.length; i < l; i++) {
+    item = $(arr[i]);
+
+    var item_id = item.attr('id');
+    var item_lat = item.attr('data-lat');
+    var item_lng = item.attr('data-lng');
+    var item_icon = item.attr('data-pin');
+
+    item_lat = parseFloat(item_lat);
+    item_lng = parseFloat(item_lng);
+
+    is_mobile = false;
+    if (item.hasClass('mobile-version')) {
+      is_mobile = true;
+    }
+
+    item_position = {lat: item_lat, lng: item_lng};
+
+    var map_icon = {
+        url: item_icon, // url
+        scaledSize: new google.maps.Size(46, 46), // scaled size
+        origin: new google.maps.Point(0,0), // origin
+        anchor: new google.maps.Point(0, 0) // anchor
+    };
+
+
+    if (is_mobile == false) {
+      item_map = new google.maps.Map(document.getElementById(item_id), {
+        center: item_position,
+        zoom: 18,
+        styles: this.map_style,
+        disableDefaultUI: true    
+      });
+      item_map_marker = new google.maps.Marker({
+        map: item_map,
+        position: item_position,
+        icon: map_icon
+      });
+    } else {
+
+      item_map = new google.maps.Map(document.getElementById(item_id), {
+        center: item_position,
+        zoom: 18,
+        styles: this.map_style,
+        disableDefaultUI: true    
+      });
+
+      this.hong_kong_marker_mobile = new google.maps.Marker({
+        map: item_map,
+        position: item_position,
+        icon: map_icon
+      });
+
+    }
+
+
+  } // end for
+
+
+
+
 
 };
 

@@ -28,6 +28,7 @@ function wds_add_field_default_banner( $fields ) {
       'id'      => PREFIX . 'default_banner_subtitle',
       'type'    => 'text',
       'description' => '',
+      'sanitization_cb' => false,
     ),
     
     array(

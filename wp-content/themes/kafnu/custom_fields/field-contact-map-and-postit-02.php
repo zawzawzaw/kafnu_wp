@@ -8,7 +8,13 @@
  */
 function wds_add_field_contact_map_and_postit_02( $fields ) {
   $new_fields = array(
-    
+      
+    array(
+      'name'    => 'Map ID',
+      'id'      => PREFIX . 'contact_map_02_id',
+      'type'    => 'text',
+      'description' => 'unique ID of the map'
+    ),
     array(
       'name'    => 'Latitude',
       'id'      => PREFIX . 'contact_map_02_latitude',
@@ -21,6 +27,8 @@ function wds_add_field_contact_map_and_postit_02( $fields ) {
       'type'    => 'text',
       'description' => ''
     ),
+
+    
     array(
       'name'    => 'Country',
       'id'      => PREFIX . 'contact_map_02_country',

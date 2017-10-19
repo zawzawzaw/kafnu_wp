@@ -13,7 +13,13 @@ function wds_add_field_contact_map_and_postit( $fields ) {
       'name'    => 'Title',
       'id'      => PREFIX . 'contact_map_title',
       'type'    => 'text',
-      'description' => ''
+      'description' => '(optional)'
+    ),
+    array(
+      'name'    => 'Map ID',
+      'id'      => PREFIX . 'contact_map_id',
+      'type'    => 'text',
+      'description' => 'unique ID of the map'
     ),
     array(
       'name'    => 'Latitude',
@@ -27,6 +33,9 @@ function wds_add_field_contact_map_and_postit( $fields ) {
       'type'    => 'text',
       'description' => ''
     ),
+
+
+
     array(
       'name'    => 'Country',
       'id'      => PREFIX . 'contact_map_country',

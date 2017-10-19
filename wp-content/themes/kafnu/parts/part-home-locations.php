@@ -31,6 +31,8 @@ $home_locations_upcoming_06 = wds_page_builder_get_this_part_data( PREFIX . 'hom
 
 -->
 
+<div class="has-wow-element"></div>
+
 <article id="page-home-boxes-section">
   <div class="container-fluid reduce-padding">
     

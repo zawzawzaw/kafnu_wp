@@ -31,6 +31,7 @@ function wds_add_field_home_banner( $fields ) {
       'id'      => PREFIX . 'home_banner_subtitle',
       'type'    => 'text',
       'description' => '',
+      'sanitization_cb' => false,
     ),
     array(
       'name'    => 'Home Banner Link Copy',

@@ -35,6 +35,8 @@
 
 -->
 
+<div class="has-wow-element"></div>
+
 <article id="page-home-boxes-section">
 
   <div class="container-fluid reduce-padding">

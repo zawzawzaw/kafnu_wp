@@ -3,7 +3,11 @@
   $contact_banner_image = wds_page_builder_get_this_part_data( PREFIX . "contact_banner_image" );
   $contact_banner_image_tablet = wds_page_builder_get_this_part_data( PREFIX . "contact_banner_image_tablet" );
   $contact_banner_image_mobile = wds_page_builder_get_this_part_data( PREFIX . "contact_banner_image_mobile" );
-  $contact_banner_form_submit_url = wds_page_builder_get_this_part_data( PREFIX . "contact_banner_form_submit_url" );
+
+  // image
+  $contact_banner_image_id = wds_page_builder_get_this_part_data( PREFIX . 'contact_banner_image_id' );
+  $contact_banner_image_tablet = get_manic_tablet_image($contact_banner_image_id, $contact_banner_image_tablet);
+  $contact_banner_image_mobile = get_manic_mobile_image($contact_banner_image_id, $contact_banner_image_mobile);
 ?>
 <article id="page-default-banner-section">
   <div id="page-default-banner-image" class="visible-lg visible-md">
@@ -26,7 +30,7 @@
           <div id="page-default-banner-copy">
             <h1><?php echo $contact_banner_title; ?></h1>
             
-            <form name="contact-form" id="contact-form" action="<?php echo THEMEROOT . $contact_banner_form_submit_url; ?>" class="default-form">
+            <form name="contact-form" id="contact-form" action="<?php echo THEMEROOT; ?>/php/contact.php" class="default-form">
               <div class="message">
                 
               </div>
