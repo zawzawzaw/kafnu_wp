@@ -8,6 +8,9 @@ goog.require('manic.page.Page');
 goog.require('manic.ui.BoxItem');
 goog.require('manic.ui.Dropdown');
 
+goog.require('manic.ui.HoverItem');
+goog.require('manic.ui.AnimatedSVG');
+
 
 
 
@@ -80,6 +83,9 @@ kafnu.page.Default = function(options, element) {
     this.is_page_min_height_mobile = true;
   }
 
+
+  // this will be a bit slow
+  /*
   $(window).on('scroll', function (event) {
       var scroll = $(window).scrollTop();
       // Do something
@@ -92,10 +98,25 @@ kafnu.page.Default = function(options, element) {
         $("#header-mobile").removeClass("bg")
       }
   });
+  */
+  
+
+  this.header_desktop_element = $("#header-desktop");
+  this.header_mobile_element = $("#header-mobile");
+
+  this.window.on('scroll', function (event) {
+      if(this.window.scrollTop() > 0) {
+        this.header_desktop_element.addClass("bg")
+        this.header_mobile_element.addClass("bg")
+      } else {
+        this.header_desktop_element.removeClass("bg")
+        this.header_mobile_element.removeClass("bg")
+      }
+  }.bind(this));
+
 
   $(document).on('touchmove',function(e){
       touchEvent = e.originalEvent.touches[0]; //this is your usual jQuery event, with its properties such as pageX and pageY properties
-
       // console.log(touchEvent)
   });
 
@@ -129,49 +150,720 @@ kafnu.page.Default.prototype.init = function() {
   this.create_header_mobile();
 
   this.expandable_text();
-  // 
-  // 
+  
+
+  this.create_home_elements();
+  this.create_play_elements();
+  this.create_community_elements();
+  this.create_contact_elements();
+  this.create_country_elements();
+
+  console.log('kafnu.page.Default: init');
+};
 
 
-  /*
-  if ($('#desktop-header').length != 0) {
-    this.desktop_header = new rippledot.component.DesktopHeader({}, $('#desktop-header'));
-  }
-  if ($('#desktop-sidebar').length != 0) {
-    this.desktop_sidebar = new rippledot.component.DesktopSidebar({}, $('#desktop-sidebar'));
-  }
+//    _   _  ___  __  __ _____
+//   | | | |/ _ \|  \/  | ____|
+//   | |_| | | | | |\/| |  _|
+//   |  _  | |_| | |  | | |___
+//   |_| |_|\___/|_|  |_|_____|
+//
 
-  if ($('#desktop-aside').length != 0) {
-    this.desktop_aside = new rippledot.component.DesktopAside({}, $('#desktop-aside'));
-  }
+kafnu.page.Default.prototype.create_home_elements = function(){
 
+  if ($(".home-box-item:not('.no-link-version')").length != 0) {
 
-  if ($('#mobile-header').length != 0 && $('#mobile-header-expand-container').length != 0){
-    this.mobile_header = new rippledot.component.MobileHeader({}, $('#mobile-header'));
-
-    this.mobile_header.update_layout();
-
-    goog.events.listen(this.mobile_header, rippledot.component.MobileHeader.ON_CLOSE_MENU, function(event){
-
-      this.update_page_layout();
-      
+    this.home_box_item = $(".home-box-item:not('.no-link-version')");
+    this.home_box_item.click(function(event){
+      event.preventDefault();
+      window.location.href = $(event.currentTarget).find(".plus-icon").attr("href");
     }.bind(this));
 
-    
+  }
 
-    
-    
+  if ($('.has-wow-element').length != 0) {
+    if( manic.IS_MOBILE == false){
+      var wow = new WOW();
+      wow.init();
+    }
+  }
 
+
+
+  this.create_home_box_slider();
+  this.create_social_media_masonry();
+
+
+
+
+
+  if ($('#home-box-items-container-mobile').length != 0) {
+
+    this.is_home_box_items_container_mobile_open = true;
+    this.home_box_items_container_mobile_toggle = $('#home-box-items-container-mobile-toggle');
+    this.home_box_items_container_mobile = $('#home-box-items-container-mobile');
+
+    this.home_box_items_container_mobile_toggle.click(function(e){
+
+      // create_dropdown_toggle_mobile (refactored)
+      
+      if(this.is_home_box_items_container_mobile_open == false) {
+        this.is_home_box_items_container_mobile_open = true;
+        this.home_box_items_container_mobile.slideDown(300, function(){
+          this.update_manic_image_containers();      
+        }.bind(this));
+        $(e.currentTarget).find(".dropdown-arrow-icon").removeClass("down-icon").addClass("up-icon");
+      } else {    
+        this.is_home_box_items_container_mobile_open = false;
+        this.home_box_items_container_mobile.slideUp(300);
+        // console.log('close');
+        $(e.currentTarget).find(".dropdown-arrow-icon").removeClass("up-icon").addClass("down-icon");
+      }
+    }.bind(this));
+  }
+
+
+
+
+
+  
+};
+
+kafnu.page.Default.prototype.create_home_box_slider = function() {
+
+
+
+  if ($('#home-box-slider').length != 0) {
+    $("#home-box-slider").slick({
+      'speed': 350,
+      'dots': false,
+      'arrows': true,
+      'infinite': false,
+      'slidesToShow': 1,
+      'slidesToScroll': 1,
+      'pauseOnHover': false,
+      'autoplay': false,
+      'autoplaySpeed': 4000
+    });
+  }
+
+  if ($('#home-box-slider-02').length != 0) {
+
+    $("#home-box-slider-02").slick({
+      'speed': 350,
+      'dots': false,
+      'arrows': true,
+      'infinite': false,
+      'slidesToShow': 1,
+      'slidesToScroll': 1,
+      'pauseOnHover': false,
+      'autoplay': false,
+      'autoplaySpeed': 4000
+    });
+    
+  }
+};
+kafnu.page.Default.prototype.create_social_media_masonry = function() {
+
+  if ($('#page-default-social-media-masonry-section').length != 0) {
+    $('.grid').isotope({
+      itemSelector: '.grid-item',
+      percentPosition: true,
+      masonry: {
+        columnWidth: '.grid-sizer'
+      }
+    });
+  }
+
+};
+
+
+//    ____  _        _ __   __
+//   |  _ \| |      / \\ \ / /
+//   | |_) | |     / _ \\ V /
+//   |  __/| |___ / ___ \| |
+//   |_|   |_____/_/   \_\_|
+//
+
+
+kafnu.page.Default.prototype.create_play_elements = function(){
+
+  if ($('#page-play-extra-icons-container').length != 0) {
+
+    this.tab_icons = $('#page-play-extra-icons-container ul li a');
+
+    this.tab_icons.hover(this.on_tab_icons_click.bind(this));
+    this.tab_icons.click(this.on_tab_icons_click.bind(this));
+  }
+
+
+  if ($("#page-play-slider").length != 0) {
+    $("#page-play-slider").slick({
+      'speed': 350,
+      'dots': false,
+      'arrows': true,
+      'infinite': false,
+      'slidesToShow': 1,
+      'slidesToScroll': 1,
+      'pauseOnHover': false,
+      'autoplay': false,
+      'autoplaySpeed': 4000
+    });
+  }
+
+
+
+};
+
+/**
+ * @param {object} event
+ */
+kafnu.page.Default.prototype.on_tab_icons_click = function(event) {
+  event.preventDefault();
+  var icon = $(event.currentTarget);
+
+  $('.active-icon').removeClass("active-icon");
+  icon.addClass("active-icon");  
+
+  var current_tab = icon.attr("href");
+  current_tab = current_tab.substring(1);
+
+  // console.log(current_tab)
+
+  $('.active-tab').removeClass('active-tab');
+  $('.'+current_tab+'-tab').addClass('active-tab');
+
+  this.update_manic_image_containers();      
+
+};
+
+
+
+
+//     ____ ___  __  __ __  __ _   _ _   _ ___ _______   __
+//    / ___/ _ \|  \/  |  \/  | | | | \ | |_ _|_   _\ \ / /
+//   | |  | | | | |\/| | |\/| | | | |  \| || |  | |  \ V /
+//   | |__| |_| | |  | | |  | | |_| | |\  || |  | |   | |
+//    \____\___/|_|  |_|_|  |_|\___/|_| \_|___| |_|   |_|
+//
+
+kafnu.page.Default.prototype.create_community_elements = function(){
+
+  this.has_community_hash_element = false;
+
+  if ($('.has-community-hash-element').length != 0) {
+    this.has_community_hash_element = true;
+  }
+
+  this.create_community_slider();
+  this.create_community_slider_mobile();
+  this.create_community_member_slider();
+
+
+  $('.see-more-managers').click(this.on_see_more_manager_click.bind(this));
+
+
+  if ($("#page-2-community-managers-mobile").length != 0) {
+    $('.community-manager').click(this.on_community_manager_click.bind(this));
   }
   
 
-  this.create_box_item();
-  */
-
-
-  // console.log('kafnu.page.Default: init');
+  
 
 };
+
+kafnu.page.Default.prototype.create_community_slider = function() {
+
+  if ($("#page-community-slider").length != 0) {
+    $("#page-community-slider").slick({
+      'speed': 350,
+      'dots': false,
+      'arrows': true,
+      'infinite': true,
+      'slidesToShow': 1,
+      'slidesToScroll': 1,
+      'pauseOnHover': false,
+      'autoplay': true,
+      'autoplaySpeed': 4000,
+      "asNavFor": '#page-community-thumbnail-slider'
+    });
+  }
+
+  if ($("#page-community-thumbnail-slider").length != 0) {
+    $("#page-community-thumbnail-slider").slick({
+      "slidesToShow": 4,
+      "slidesToScroll": 1,
+      "asNavFor": '#page-community-slider',
+      "dots": false,
+      "focusOnSelect": true,
+      "arrows": false,
+      "infinite": true,
+      "centerMode": true
+    });
+  }
+};
+kafnu.page.Default.prototype.create_community_slider_mobile = function() {
+
+  if ($("#page-community-member-slider-mobile").length != 0) {
+    $("#page-community-member-slider-mobile").slick({
+      'speed': 350,
+      'dots': true,
+      'arrows': true,
+      'infinite': false,
+      'slidesToShow': 1,
+      'slidesToScroll': 1,
+      'pauseOnHover': false
+    });
+
+  }
+
+  if ($("#page-default-booking-item-mobile").length != 0) {
+    $("#page-default-booking-item-mobile").slick({
+      'speed': 350,
+      'dots': true,
+      'arrows': false,
+      'infinite': true,
+      'slidesToShow': 1,
+      'slidesToScroll': 1,
+      'pauseOnHover': false,
+      'autoplay': false,
+      'autoplaySpeed': 4000
+    });
+  }
+};
+kafnu.page.Default.prototype.create_community_member_slider = function() {
+
+  if ($("#page-community-member-slider").length != 0) {
+    $("#page-community-member-slider").slick({
+      "slidesToShow": 1,
+      "slidesToScroll": 1,
+      "dots": false,
+      "focusOnSelect": true,
+      "arrows": true,
+      "infinite": false,
+      "speed": 500,
+      "fade": true,
+      "cssEase": 'linear'
+    });
+  }
+
+};
+
+
+kafnu.page.Default.prototype.on_see_more_manager_click = function(event) {
+  window.scrollTo(0, 0);
+
+  $("#header-mobile").addClass("permanent-bg");
+  $(".header-mobile-spacer").show();
+  
+  $(".community-page-1").hide();
+  $(".community-page-2").fadeIn();
+  this.update_manic_image_containers();  
+};
+kafnu.page.Default.prototype.on_community_manager_click = function(event) {
+
+  var name = $(event.currentTarget).data("name");
+  var country = $(event.currentTarget).data("country");
+  var description = $(event.currentTarget).data("description");
+  var image = $(event.currentTarget).data("image");
+
+  $("#page-2-community-managers-mobile").find(".image").attr('src', image);
+
+  this.update_manic_image_containers();
+
+  $("#page-2-community-managers-mobile").find(".name").text(name);
+  $("#page-2-community-managers-mobile").find(".country").text(country);
+  $("#page-2-community-managers-mobile").find(".description").text(description);
+
+  $("html, body").animate({ scrollTop: 0 }, 500);
+};
+
+
+
+
+
+//     ____ ___  _   _ _____  _    ____ _____
+//    / ___/ _ \| \ | |_   _|/ \  / ___|_   _|
+//   | |  | | | |  \| | | | / _ \| |     | |
+//   | |__| |_| | |\  | | |/ ___ \ |___  | |
+//    \____\___/|_| \_| |_/_/   \_\____| |_|
+//
+
+
+kafnu.page.Default.prototype.create_contact_elements = function(){
+
+  if ($('.has-map-element').length != 0) {
+
+    this.create_google_map();
+
+  } // end if
+
+  this.create_contact_form();
+  
+
+};
+
+kafnu.page.Default.prototype.create_google_map = function() {
+  this.map_style = [
+      {
+          "featureType": "water",
+          "elementType": "geometry",
+          "stylers": [
+              {
+                  "color": "#e9e9e9"
+              },
+              {
+                  "lightness": 17
+              }
+          ]
+      },
+      {
+          "featureType": "landscape",
+          "elementType": "geometry",
+          "stylers": [
+              {
+                  "color": "#f5f5f5"
+              },
+              {
+                  "lightness": 20
+              }
+          ]
+      },
+      {
+          "featureType": "road.highway",
+          "elementType": "geometry.fill",
+          "stylers": [
+              {
+                  "color": "#ffffff"
+              },
+              {
+                  "lightness": 17
+              }
+          ]
+      },
+      {
+          "featureType": "road.highway",
+          "elementType": "geometry.stroke",
+          "stylers": [
+              {
+                  "color": "#ffffff"
+              },
+              {
+                  "lightness": 29
+              },
+              {
+                  "weight": 0.2
+              }
+          ]
+      },
+      {
+          "featureType": "road.arterial",
+          "elementType": "geometry",
+          "stylers": [
+              {
+                  "color": "#ffffff"
+              },
+              {
+                  "lightness": 18
+              }
+          ]
+      },
+      {
+          "featureType": "road.local",
+          "elementType": "geometry",
+          "stylers": [
+              {
+                  "color": "#ffffff"
+              },
+              {
+                  "lightness": 16
+              }
+          ]
+      },
+      {
+          "featureType": "poi",
+          "elementType": "geometry",
+          "stylers": [
+              {
+                  "color": "#f5f5f5"
+              },
+              {
+                  "lightness": 21
+              }
+          ]
+      },
+      {
+          "featureType": "poi.park",
+          "elementType": "geometry",
+          "stylers": [
+              {
+                  "color": "#dedede"
+              },
+              {
+                  "lightness": 21
+              }
+          ]
+      },
+      {
+          "elementType": "labels.text.stroke",
+          "stylers": [
+              {
+                  "visibility": "on"
+              },
+              {
+                  "color": "#ffffff"
+              },
+              {
+                  "lightness": 16
+              }
+          ]
+      },
+      {
+          "elementType": "labels.text.fill",
+          "stylers": [
+              {
+                  "saturation": 36
+              },
+              {
+                  "color": "#333333"
+              },
+              {
+                  "lightness": 40
+              }
+          ]
+      },
+      {
+          "elementType": "labels.icon",
+          "stylers": [
+              {
+                  "visibility": "off"
+              }
+          ]
+      },
+      {
+          "featureType": "transit",
+          "elementType": "geometry",
+          "stylers": [
+              {
+                  "color": "#f2f2f2"
+              },
+              {
+                  "lightness": 19
+              }
+          ]
+      },
+      {
+          "featureType": "administrative",
+          "elementType": "geometry.fill",
+          "stylers": [
+              {
+                  "color": "#fefefe"
+              },
+              {
+                  "lightness": 20
+              }
+          ]
+      },
+      {
+          "featureType": "administrative",
+          "elementType": "geometry.stroke",
+          "stylers": [
+              {
+                  "color": "#fefefe"
+              },
+              {
+                  "lightness": 17
+              },
+              {
+                  "weight": 1.2
+              }
+          ]
+      }
+  ];
+
+
+
+
+
+};
+
+kafnu.page.Default.prototype.create_contact_form = function() {
+
+  if ($("#contact-form").length != 0) {
+    $("#contact-form").validate({
+      rules : {
+        first_name : "required",
+        last_name : "required",
+        email : {
+          required: true,
+          email: true
+        },
+        message : "required"
+      },
+      submitHandler: function(form) {
+        $.ajax({
+          type: "POST",
+          url: "/php/contact.php",
+          data: $(form).serialize(),
+          timeout: 3000,
+          success: function() {
+            // console.log('here');
+            $('#contact-form').find(".message").html("<h5>Your message has been sent successfully.</h5>")
+          },
+          error: function() {
+            // console.log('failed');
+          }
+        });
+        return false;
+      }
+    });
+  }
+};
+
+
+//     ____ ___  _   _ _   _ _____ ______   __
+//    / ___/ _ \| | | | \ | |_   _|  _ \ \ / /
+//   | |  | | | | | | |  \| | | | | |_) \ V /
+//   | |__| |_| | |_| | |\  | | | |  _ < | |
+//    \____\___/ \___/|_| \_| |_| |_| \_\|_|
+//
+
+kafnu.page.Default.prototype.create_country_elements = function(){
+
+  this.has_adjust_height_main_content_item = false;
+
+  if ($('.page-country-main-content-item').length != 0) {
+    this.has_adjust_height_main_content_item = true;
+  }
+
+
+  if ($("#banner-sidebar-container").length != 0) {
+    $("#banner-sidebar-container").slick({
+      'speed': 350,
+      'dots': true,
+      'arrows': false,
+      'infinite': true,
+      'slidesToShow': 1,
+      'slidesToScroll': 1,
+      'pauseOnHover': false,
+      'autoplay': true,
+      'autoplaySpeed': 4000,
+      'responsive': [
+        {
+          breakpoint: 991,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+    });
+  }
+
+
+  if ($("#banner-sidebar-container-mobile").length != 0) {
+    $("#banner-sidebar-container-mobile").slick({
+      'speed': 350,
+      'dots': true,
+      'arrows': false,
+      'infinite': true,
+      'slidesToShow': 1,
+      'slidesToScroll': 1,
+      'pauseOnHover': false,
+      'autoplay': false,
+      'autoplaySpeed': 4000
+    });
+  }
+
+
+
+  if ($("#page-country-main-content-item-container-mobile").length != 0) {
+    $("#page-country-main-content-item-container-mobile").slick({
+      'speed': 350,
+      'dots': true,
+      'arrows': true,
+      'infinite': false,
+      'slidesToShow': 1,
+      'slidesToScroll': 1,
+      'pauseOnHover': false,
+      'autoplay': false,
+      'autoplaySpeed': 4000
+    });
+
+    $("#page-country-main-content-item-container-mobile").on("afterChange", function (slick, currentSlide, nextSlide){
+      $("#page-country-main-content-item-container-mobile").css('height', $(slick.currentTarget).find('.slick-active').height()+100);
+    });
+  }
+
+  if ($(".booknow-slider").length != 0) {
+    $(".booknow-slider").slick({
+      'speed': 350,
+      'dots': true,
+      'arrows': true,
+      'infinite': true,
+      'slidesToShow': 1,
+      'slidesToScroll': 1,
+      'pauseOnHover': false,
+      'autoplay': false,
+      'autoplaySpeed': 4000
+    });
+  }
+
+
+  if( $('#book-now-dropdown').length != 0) {
+    $("#book-now-dropdown li a").hover(function(e){
+      e.preventDefault();
+      
+      var price = $(this).data("price");
+
+      $(this).closest('#price-changes').html(price);
+      // $("#price-changes").html(price);
+      
+    });
+  }
+
+
+
+};
+
+
+kafnu.page.Default.prototype.adjust_height_main_content_item = function(event) {  
+
+  if (this.has_adjust_height_main_content_item == true){
+
+  }
+  var arr = $('.page-country-main-content-item');
+  var item = null;
+  var step_item = null;
+
+  for (var i = 0; i < arr.length; i++) {
+    var item = $(arr[i]);
+    
+    // console.log(item.outerHeight());
+    // console.log();
+    if(item.find(".page-country-main-content-item-text").outerHeight() > item.find(".manic-image-container").outerHeight()) {
+      item.height(item.find(".page-country-main-content-item-text").outerHeight());
+      item.find(".manic-image-container").height(item.find(".page-country-main-content-item-text").outerHeight());
+      this.update_manic_image_containers();      
+    }
+
+  }
+
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //     ____ ____  _____    _  _____ _____
@@ -350,54 +1042,10 @@ kafnu.page.Default.prototype.update_page_layout = function(){
   }
 
   
-  /*
-  if (manic.IS_MOBILE_HEADER == false) {
-
-  } else {
-
+  if (this.has_adjust_height_main_content_item == true) {
+    this.adjust_height_main_content_item();
   }
-  */
- 
-
   
-
-
-  /*
-
-  // update mobile header min height
-  // if (manic.IS_MOBILE && goog.isDefAndNotNull(this.mobile_header)) {
-  if (manic.IS_ACTUAL_MOBILE && goog.isDefAndNotNull(this.mobile_header)) {
-    this.mobile_header.update_layout();
-  }
-
-
-
-
-
-  // update min height
-  if (this.is_page_min_height == true && manic.IS_MOBILE == false) {
-
-   var target_height = this.window_height - this.desktop_footer_element.outerHeight();
-
-    this.min_height_target.css({
-      'min-height': target_height + 'px'
-    });
-  }
-
-  if (this.is_page_min_height_mobile == true && manic.IS_MOBILE == true) {
-
-    // var target_height = this.window_height - this.mobile_header_element.outerHeight();
-    var target_height = this.window_height;
-
-    this.min_height_target_mobile.css({
-      'min-height': target_height + 'px'
-    });
-  }
-
-
-
-  */
-
 
 
 
@@ -422,6 +1070,9 @@ kafnu.page.Default.prototype.scroll_to_target = function(str_param, str_param_2,
   kafnu.page.Default.superClass_.scroll_to_target.call(this, str_param, str_param_2, str_param_3);
   
 
+  if (this.has_community_hash_element == true) {
+
+  }
   
 }
 
@@ -432,6 +1083,16 @@ kafnu.page.Default.prototype.scroll_to_target = function(str_param, str_param_2,
 kafnu.page.Default.prototype.on_scroll_to_no_target = function() {
   kafnu.page.Default.superClass_.on_scroll_to_no_target.call(this);
 
+
+  // i'm not sure what this is for...
+  
+  if (this.has_community_hash_element == true) {
+    $("#header-mobile").removeClass("permanent-bg");
+    $(".header-mobile-spacer").hide();
+    $(".community-page-1").fadeIn();
+    $(".community-page-2").hide();
+    this.update_manic_image_containers();
+  }
   
 }
 

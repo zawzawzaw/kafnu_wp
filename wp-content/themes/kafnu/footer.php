@@ -6,7 +6,7 @@
 
 
   <!-- dependent on (?) -->
-  <?php include "includes/script_home.php" ?>
+  <?php include "includes/script.php" ?>
 
   <!-- wp-footer -->
   <?php wp_footer(); ?>
