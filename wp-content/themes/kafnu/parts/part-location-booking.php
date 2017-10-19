@@ -2,7 +2,7 @@
 $selected_location_booking_items = wds_page_builder_get_this_part_data( PREFIX . "location_booking_items" );
 ?>
 
-<article id="page-default-booking-section">
+<article id="page-default-booking-section" class="country-version">
   <div class="container-fluid reduce-padding">
 
     <div id="page-default-booking-item-desktop" class="hidden-sm hidden-xs">
@@ -41,6 +41,8 @@ $selected_location_booking_items = wds_page_builder_get_this_part_data( PREFIX .
                 // CMB2 custom fields
                                         
                 $booking_item_image   = get_post_meta( $selected_booking_item_post_id, PREFIX . "booking_item_image", true );   
+                $booking_item_image_tablet   = get_post_meta( $selected_booking_item_post_id, PREFIX . "booking_item_image_tablet", true );   
+                $booking_item_image_mobile   = get_post_meta( $selected_booking_item_post_id, PREFIX . "booking_item_image_mobile", true );   
                 $booking_item_title     = get_post_meta( $selected_booking_item_post_id, PREFIX . "booking_item_title", true );                            
                 $booking_item_copy   = get_post_meta( $selected_booking_item_post_id, PREFIX . "booking_item_copy", true );
                 $booking_item_URLs = get_post_meta( $selected_booking_item_post_id, PREFIX."booking_item_URLs", true );                       
@@ -104,138 +106,114 @@ $selected_location_booking_items = wds_page_builder_get_this_part_data( PREFIX .
     <div id="page-default-booking-item-mobile" class="visible-sm visible-xs">
           
       <div class="row">
+        <?php
+
+          //    ____ _____  _    ____ _____
+          //   / ___|_   _|/ \  |  _ \_   _|
+          //   \___ \ | | / _ \ | |_) || |
+          //    ___) || |/ ___ \|  _ < | |
+          //   |____/ |_/_/   \_\_| \_\|_|
+          //
+
+          global $post;
+
+          $selected_location_booking_items_post_array = $selected_location_booking_items;                  // IMPORTANT
+
+          if ($selected_location_booking_items_post_array != ''):
+
+
+            // init
+            $wow_offset = 45;
+
+
+            for ($i=0; $i < count($selected_location_booking_items_post_array) ; $i++):
+
+            $selected_booking_item_post_index = $i + 1;
+            $selected_booking_item_post_id = $selected_location_booking_items_post_array[$i%count($selected_location_booking_items_post_array)];
+            $post = get_post( $selected_booking_item_post_id );
+            setup_postdata( $post );
+
+            $selected_booking_item_post_status = get_post_status();
+
+              if ($selected_booking_item_post_status == 'publish'):
+
+                // CMB2 custom fields
+                                        
+                $booking_item_image   = get_post_meta( $selected_booking_item_post_id, PREFIX . "booking_item_image", true );                   
+                $booking_item_title     = get_post_meta( $selected_booking_item_post_id, PREFIX . "booking_item_title", true );                            
+                $booking_item_copy   = get_post_meta( $selected_booking_item_post_id, PREFIX . "booking_item_copy", true );
+                $booking_item_URLs = get_post_meta( $selected_booking_item_post_id, PREFIX."booking_item_URLs", true );         
+
+                // image
+                $booking_item_image_id = wds_page_builder_get_this_part_data( PREFIX . 'booking_item_image_id' );
+                $booking_item_image_tablet = get_manic_tablet_image($booking_item_image_id, $booking_item_image_tablet);  
+                $booking_item_image_mobile = get_manic_mobile_image($booking_item_image_id, $booking_item_image_mobile);              
+        ?>
+
         <div class="col-sm-12 no-padding page-default-booking-item">
           <div class="manic-expand-container mobile-open-version">
               <div class="scroll-target" data-value="hot-desk"></div>
               <div class="manic-expand-container-title">
-                  <h5>Hot Desk</h5> 
+                  <h5><?php echo $booking_item_title; ?></h5> 
               </div>
               <div class="manic-expand-container-btn"></div>
               <div class="manic-expand-container-content">
                 <div class="manic-image-container">
-                  <img src="" data-image-desktop="images_cms/country/booking-space-01.jpg"
-                  data-image-tablet="images_cms/country/booking-space-01.jpg"
-                  data-image-mobile="images_cms/country/booking-space-01-mobile.jpg" alt="">
+                  <img src="" data-image-desktop="<?php echo $booking_item_image; ?>"
+                  data-image-tablet="<?php echo $booking_item_image; ?>"
+                  data-image-mobile="<?php echo $booking_item_image; ?>" alt="">
                 </div>
                 <div class="page-default-booking-item-text">
-                  <h5>Hot Desk</h5>
-                  <p>Choose your favorite seat and book by hour, day or month.</p>                        
-                  <!-- <span class="price">From HK$70/Hour</span>                 -->
-                </div>
-                <div class="booknow-slider kafnu-slick-slider">
-                  <div class="booknow-slider-item">
-                    <span class="time">Hourly</span>
-                    <span class="price">From HK$70/Hour</span>                
-                    <div class="page-default-booking-item-cta-container">
-                      <a href="https://hongkong.kafnu.com/en/bookings/search?type=435361936" target="_blank" class="square-cta border-version">Book Now</a>
-                    </div>
-                  </div>
-                  <div class="booknow-slider-item">
-                    <span class="time">Daily</span>
-                    <span class="price">HK$550/Day</span>                
-                    <div class="page-default-booking-item-cta-container">
-                      <a href="https://hongkong.kafnu.com/en/signup?returnUrl=/en/store/signupproducts?productid=435575149" target="_blank" class="square-cta border-version">Book Now</a>
-                    </div>
-                  </div>
-                  <div class="booknow-slider-item">
-                    <span class="time">5-Day Pass</span>
-                    <span class="price">HK$2,500/Month</span>                
-                    <div class="page-default-booking-item-cta-container">
-                      <a href="https://hongkong.kafnu.com/en/signup/priceplan/60da246c-9686-4342-8cef-6ea4fd12604f?startdate=" target="_blank" class="square-cta border-version">Book Now</a>
-                    </div>
-                  </div>
-                  <div class="booknow-slider-item">
-                    <span class="time">Monthly</span>
-                    <!-- <span class="price">From HK$70/Hour</span>                 -->
-                    <div class="page-default-booking-item-cta-container">
-                      <a href="https://hongkong.kafnu.com/en/tour" target="_blank" class="square-cta border-version">Book Now</a>
-                    </div>
-                  </div>
-                </div>    
-                <!-- <div class="page-default-booking-item-cta-container">                        
-                  <a href="javascript:void(0);" class="open-soon"><span>Open 3 October</span></a>
-                </div> -->                  
-              </div>
-          </div>                  
-        </div>
-
-        <div class="col-sm-12 no-padding page-default-booking-item">
-          <div class="manic-expand-container">
-              <div class="scroll-target" data-value="4-person"></div>
-              <div class="manic-expand-container-title">
-                  <h5>4 Person Meeting Room</h5> 
-              </div>
-              <div class="manic-expand-container-btn"></div>
-              <div class="manic-expand-container-content">
-                <div class="manic-image-container">
-                  <img src="" data-image-desktop="images_cms/country/booking-space-02.jpg" 
-                  data-image-tablet="images_cms/country/booking-space-02.jpg"
-                  data-image-mobile="images_cms/country/booking-space-02.jpg" alt="">
-                </div>
-                <div class="page-default-booking-item-text">
-                  <h5>4 Person Meeting Room</h5>
-                  <p>Comfortable seating, colorful artwork, high-quality screens.</p>
-                  <span class="price">From HK$600/Hour</span>                
-                </div>
-                <div class="page-default-booking-item-cta-container">
-                  <a href="https://hongkong.kafnu.com/en/bookings/search?type=435361933" target="_blank" class="square-cta border-version">Book Now</a>
-                  <!-- <a href="javascript:void(0);" class="open-soon"><span>Open 3 October</span></a> -->
-                </div>                   
-              </div>
-          </div>                  
-        </div>
-
-        <div class="col-sm-12 no-padding page-default-booking-item">
-          <div class="manic-expand-container">
-              <div class="scroll-target" data-value="6-person"></div>
-              <div class="manic-expand-container-title">
-                  <h5>6 Person Meeting Room</h5> 
-              </div>
-              <div class="manic-expand-container-btn"></div>
-              <div class="manic-expand-container-content">
-                <div class="manic-image-container">
-                  <img src="" data-image-desktop="images_cms/country/booking-space-03.jpg" 
-                  data-image-tablet="images_cms/country/booking-space-03.jpg"
-                  data-image-mobile="images_cms/country/booking-space-03.jpg" alt="">
-                </div>
-                <div class="page-default-booking-item-text">
-                  <h5>6 Person Meeting Room</h5>
-                  <p>Digital light cubes or panels, industrial walls, wireless projection.</p>
-                  <span class="price">From HK$750/Hour</span>                
-                </div>
-                <div class="page-default-booking-item-cta-container">
-                  <a href="https://hongkong.kafnu.com/en/bookings/search?type=435361934" target="_blank" class="square-cta border-version">Book Now</a>
-                  <!-- <a href="javascript:void(0);" class="open-soon"><span>Open 3 October</span></a> -->
-                </div>                  
-              </div>
-          </div>                  
-        </div>
-
-        <div class="col-sm-12 no-padding page-default-booking-item">
-          <div class="manic-expand-container">
-              <div class="scroll-target" data-value="8-person"></div>
-              <div class="manic-expand-container-title">
-                  <h5>8 Person Meeting Room</h5> 
-              </div>
-              <div class="manic-expand-container-btn"></div>
-              <div class="manic-expand-container-content">
-                <div class="manic-image-container">
-                  <img src="" data-image-desktop="images_cms/country/booking-space-04.jpg" 
-                  data-image-tablet="images_cms/country/booking-space-04.jpg"
-                  data-image-mobile="images_cms/country/booking-space-04.jpg" alt="">
-                </div>
-                <div class="page-default-booking-item-text">
-                  <h5>8 Person Meeting Room</h5>
-                  <p>80-inch screen, integrated aqua scape (coming soon).</p>
-                  <span class="price">From HK$900/Hour</span>                
-                </div>
-                <div class="page-default-booking-item-cta-container">
-                  <a href="https://hongkong.kafnu.com/en/bookings/search?type=435361935" target="_blank" class="square-cta border-version">Book Now</a>
-                  <!-- <a href="javascript:void(0);" class="open-soon"><span>Open 3 October</span></a> -->
+                  <h5><?php echo $booking_item_title; ?></h5>
+                  <p><?php echo $booking_item_copy; ?></p>                        
+                  <?php if(count($booking_item_URLs) < 2): ?>
+                    <span class="price"><?php echo $booking_item_URLs[0]['_kafnu_booking_item_price']; ?></span>                
+                  <?php endif; ?>
                 </div>                
+
+                  <?php if(count($booking_item_URLs) > 1): ?>
+                    
+                    <div class="booknow-slider kafnu-slick-slider">
+
+                      <?php foreach ( (array) $booking_item_URLs as $key => $url ): ?>
+                        <div class="booknow-slider-item">
+                          <span class="time"><?php echo $url['_kafnu_booking_item_type'] ?></span>
+                          <span class="price"><?php echo isset($url['_kafnu_booking_item_price']) ? $url['_kafnu_booking_item_price'] : ""; ?></span>                
+                          <div class="page-default-booking-item-cta-container">
+                            <a href="<?php echo $url['_kafnu_booking_item_url'] ?>" target="_blank" class="square-cta border-version">Book Now</a>
+                          </div>
+                        </div>
+                      <?php endforeach; ?>                  
+
+                    </div>  
+
+                <?php else: ?>
+                  <div class="page-default-booking-item-cta-container">
+                    <a href="https://hongkong.kafnu.com/en/bookings/search?type=435361933" target="_blank" class="square-cta border-version">Book Now</a>
+                    <!-- <a href="javascript:void(0);" class="open-soon"><span>Open 3 October</span></a> -->
+                  </div>     
+
+                <?php endif; ?>
+
               </div>
           </div>                  
         </div>
+
+        <?php 
+            endif;
+          endfor;
+        endif;
+
+        wp_reset_postdata();
+
+        //    _____ _   _ ____
+        //   | ____| \ | |  _ \
+        //   |  _| |  \| | | | |
+        //   | |___| |\  | |_| |
+        //   |_____|_| \_|____/
+        //            
+        ?>
+        
       </div>
     </div>  
       

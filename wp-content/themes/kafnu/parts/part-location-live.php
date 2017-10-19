@@ -33,10 +33,10 @@
               <h6><?php echo $location_live_subtitle; ?></h6>
               <ul>
                 <?php foreach ($location_live_icons as $key => $location_live_icon): ?>
-                  <li class="<?php echo $location_live_icon ?>">
+                  <li class="<?php echo $location_live_icon; ?>">
                     <p class="title"><?php echo $location_live_lists[$key]; ?></p>
-                  </li>  
-                <?php endforeach; ?>                              
+                  </li>
+                <?php endforeach; ?>
               </ul>
             </div> <!-- page-country-main-content-item-text -->
           </div>

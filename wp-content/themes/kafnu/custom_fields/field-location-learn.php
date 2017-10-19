@@ -8,27 +8,56 @@
  */
 function wds_add_field_location_learn( $fields ) {
   $new_fields = array(
-    /*
+    array(
+      'name'    => 'Image',
+      'id'      => PREFIX . 'location_learn_image',
+      'type'    => 'file',
+      'description' => '',
+      'sanitization_cb' => false
+    ),
+    array(
+      'name'    => 'Image Tablet',
+      'id'      => PREFIX . 'location_learn_image_tablet',
+      'type'    => 'file',
+      'description' => '',
+      'sanitization_cb' => false
+    ),
+    array(
+      'name'    => 'Image Mobile',
+      'id'      => PREFIX . 'location_learn_image_mobile',
+      'type'    => 'file',
+      'description' => '',
+      'sanitization_cb' => false
+    ),
     array(
       'name'    => 'Title',
-      'id'      => PREFIX . 'default_centered_text_title',
+      'id'      => PREFIX . 'location_learn_title',
+      'type'    => 'text',
+      'description' => '',
+      'sanitization_cb' => false
+    ),
+    array(
+      'name'    => 'Subtitle',
+      'id'      => PREFIX . 'location_learn_subtitle',
+      'type'    => 'text',
+      'description' => '',
+    ),
+    array(
+      'name'    => 'Icon',
+      'id'      => PREFIX . 'location_learn_icons',
       'type'    => 'text',
       'description' => '',
       'sanitization_cb' => false,
+      'repeatable' => true
     ),
     array(
-      'name'    => 'Copy',
-      'id'      => PREFIX . 'default_centered_text_copy',
-      'type'    => 'textarea',
+      'name'    => 'List',
+      'id'      => PREFIX . 'location_learn_list',
+      'type'    => 'text',
       'description' => '',
-    ),
-    array(
-      'name'    => 'Is White BG',
-      'id'      => PREFIX . 'default_centered_text_is_white_bg',
-      'type'    => 'checkbox',
-      'description' => '',
-    ),
-    */
+      'sanitization_cb' => false,
+      'repeatable' => true
+    )
   );
   return array_merge( $fields, $new_fields );
 }

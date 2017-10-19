@@ -8,27 +8,63 @@
  */
 function wds_add_field_location_contacts( $fields ) {
   $new_fields = array(
-    /*
+    array(
+      'name'    => 'Image',
+      'id'      => PREFIX . 'location_contacts_image',
+      'type'    => 'file',
+      'description' => '',
+      'sanitization_cb' => false
+    ),
+    array(
+      'name'    => 'Image Tablet',
+      'id'      => PREFIX . 'location_contacts_image_tablet',
+      'type'    => 'file',
+      'description' => '',
+      'sanitization_cb' => false
+    ),
+    array(
+      'name'    => 'Image Mobile',
+      'id'      => PREFIX . 'location_contacts_image_mobile',
+      'type'    => 'file',
+      'description' => '',
+      'sanitization_cb' => false
+    ),
     array(
       'name'    => 'Title',
-      'id'      => PREFIX . 'default_centered_text_title',
+      'id'      => PREFIX . 'location_contacts_title',
       'type'    => 'text',
       'description' => '',
       'sanitization_cb' => false,
     ),
     array(
       'name'    => 'Copy',
-      'id'      => PREFIX . 'default_centered_text_copy',
+      'id'      => PREFIX . 'location_contacts_copy',
       'type'    => 'textarea',
       'description' => '',
     ),
     array(
-      'name'    => 'Is White BG',
-      'id'      => PREFIX . 'default_centered_text_is_white_bg',
-      'type'    => 'checkbox',
+      'name'    => 'List',
+      'id'      => PREFIX . 'location_contacts_list',
+      'type'    => 'text',
       'description' => '',
+      'sanitization_cb' => false,
+      'repeatable' => true
     ),
-    */
+    array(
+      'name'    => 'Link Text',
+      'id'      => PREFIX . 'location_contacts_cta_text',
+      'type'    => 'text',
+      'description' => '',
+      'sanitization_cb' => false,
+    ),
+    array(
+      'name'    => 'URL',
+      'id'      => PREFIX . 'location_contacts_cta_url',
+      'type'    => 'text_url',
+      'description' => '',
+      'sanitization_cb' => false,
+    ),
+    
   );
   return array_merge( $fields, $new_fields );
 }
