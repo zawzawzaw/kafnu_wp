@@ -13,49 +13,42 @@ function wds_add_field_location_play( $fields ) {
       'id'      => PREFIX . 'location_play_image',
       'type'    => 'file',
       'description' => '',
-      'sanitization_cb' => false
     ),
     array(
       'name'    => 'Image Tablet',
       'id'      => PREFIX . 'location_play_image_tablet',
       'type'    => 'file',
       'description' => '',
-      'sanitization_cb' => false
     ),
     array(
       'name'    => 'Image Mobile',
       'id'      => PREFIX . 'location_play_image_mobile',
       'type'    => 'file',
       'description' => '',
-      'sanitization_cb' => false
     ),
     array(
       'name'    => 'Image 02',
       'id'      => PREFIX . 'location_play_image_02',
       'type'    => 'file',
       'description' => '',
-      'sanitization_cb' => false
     ),
     array(
       'name'    => 'Image 02 Tablet',
       'id'      => PREFIX . 'location_play_image_02_tablet',
       'type'    => 'file',
       'description' => '',
-      'sanitization_cb' => false
     ),
     array(
       'name'    => 'Image 02 Mobile',
       'id'      => PREFIX . 'location_play_image_02_mobile',
       'type'    => 'file',
       'description' => '',
-      'sanitization_cb' => false
     ),
     array(
       'name'    => 'Title',
       'id'      => PREFIX . 'location_play_title',
       'type'    => 'text',
       'description' => '',
-      'sanitization_cb' => false
     ),
     array(
       'name'    => 'Subtitle',
@@ -68,7 +61,6 @@ function wds_add_field_location_play( $fields ) {
       'id'      => PREFIX . 'location_play_icons',
       'type'    => 'text',
       'description' => '',
-      'sanitization_cb' => false,
       'repeatable' => true
     ),
     array(
@@ -76,7 +68,6 @@ function wds_add_field_location_play( $fields ) {
       'id'      => PREFIX . 'location_play_list',
       'type'    => 'text',
       'description' => '',
-      'sanitization_cb' => false,
       'repeatable' => true
     )
   );

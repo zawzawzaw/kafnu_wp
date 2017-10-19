@@ -17,9 +17,7 @@
         <div id="page-community-slider-container" class="hidden-xs hidden-sm">
 
           <div id="page-community-slider" class="kafnu-slick-slider">
-
             
-
             <?php
 
               $first_selected_post_id = 0;

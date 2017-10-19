@@ -14,21 +14,18 @@ function wds_add_field_location_live( $fields ) {
       'id'      => PREFIX . 'location_live_image',
       'type'    => 'file',
       'description' => '',
-      'sanitization_cb' => false
     ),
     array(
       'name'    => 'Image Tablet',
       'id'      => PREFIX . 'location_live_image_tablet',
       'type'    => 'file',
       'description' => '',
-      'sanitization_cb' => false
     ),
     array(
       'name'    => 'Image Mobile',
       'id'      => PREFIX . 'location_live_image_mobile',
       'type'    => 'file',
       'description' => '',
-      'sanitization_cb' => false
     ),
     array(
       'name'    => 'Title',
@@ -42,13 +39,13 @@ function wds_add_field_location_live( $fields ) {
       'id'      => PREFIX . 'location_live_subtitle',
       'type'    => 'text',
       'description' => '',
+      'sanitization_cb' => false
     ),
     array(
       'name'    => 'Icon',
       'id'      => PREFIX . 'location_live_icons',
       'type'    => 'text',
       'description' => '',
-      'sanitization_cb' => false,
       'repeatable' => true
     ),
     array(
@@ -56,7 +53,6 @@ function wds_add_field_location_live( $fields ) {
       'id'      => PREFIX . 'location_live_list',
       'type'    => 'text',
       'description' => '',
-      'sanitization_cb' => false,
       'repeatable' => true
     )
     

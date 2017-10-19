@@ -13,21 +13,18 @@ function wds_add_field_location_learn( $fields ) {
       'id'      => PREFIX . 'location_learn_image',
       'type'    => 'file',
       'description' => '',
-      'sanitization_cb' => false
     ),
     array(
       'name'    => 'Image Tablet',
       'id'      => PREFIX . 'location_learn_image_tablet',
       'type'    => 'file',
       'description' => '',
-      'sanitization_cb' => false
     ),
     array(
       'name'    => 'Image Mobile',
       'id'      => PREFIX . 'location_learn_image_mobile',
       'type'    => 'file',
       'description' => '',
-      'sanitization_cb' => false
     ),
     array(
       'name'    => 'Title',
@@ -41,13 +38,13 @@ function wds_add_field_location_learn( $fields ) {
       'id'      => PREFIX . 'location_learn_subtitle',
       'type'    => 'text',
       'description' => '',
+      'sanitization_cb' => false
     ),
     array(
       'name'    => 'Icon',
       'id'      => PREFIX . 'location_learn_icons',
       'type'    => 'text',
       'description' => '',
-      'sanitization_cb' => false,
       'repeatable' => true
     ),
     array(
@@ -55,7 +52,6 @@ function wds_add_field_location_learn( $fields ) {
       'id'      => PREFIX . 'location_learn_list',
       'type'    => 'text',
       'description' => '',
-      'sanitization_cb' => false,
       'repeatable' => true
     )
   );

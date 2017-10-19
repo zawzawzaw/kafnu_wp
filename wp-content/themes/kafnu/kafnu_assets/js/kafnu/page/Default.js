@@ -11,10 +11,6 @@ goog.require('manic.ui.Dropdown');
 goog.require('manic.ui.HoverItem');
 goog.require('manic.ui.AnimatedSVG');
 
-
-
-
-
 goog.require('kafnu.component.HeaderDesktop');
 goog.require('kafnu.component.HeaderMobile');
 
