@@ -20,7 +20,7 @@ subprocess.Popen([
   '--root_with_prefix=../../js/manic/ui ../../../../../js/manic/ui/',
   '--root_with_prefix=../../js/manic/util ../../../../../js/manic/util/',
   '--root_with_prefix=../../js/manic/video ../../../../../js/manic/video/',
-  '--root_with_prefix=../../js/transmedic/page ../../../../../js/transmedic/page/',
-  '--root_with_prefix=../../js/transmedic/component ../../../../../js/transmedic/component/',
+  '--root_with_prefix=../../js/kafnu/page ../../../../../js/kafnu/page/',
+  '--root_with_prefix=../../js/kafnu/component ../../../../../js/kafnu/component/',
   '--output_file=../../js/google-closure-dependency-list.js'
   ], shell=True);

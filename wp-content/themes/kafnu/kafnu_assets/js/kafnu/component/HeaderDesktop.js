@@ -20,29 +20,11 @@ kafnu.component.HeaderDesktop = function(options, element) {
     
   this.search_container = $('#header-desktop-search-container');
 
-
-
-  // if class has parent
-  //goog.events.EventTarget.call(this, options, element);
-  //this.options = $.extend(this.options, kafnu.component.HeaderDesktop.DEFAULT, options);
-  
-
-  // makes more sense to put it in the aside
-  // this.menu_btn = this.element.find('#desktop-header-menu-btn');
-
-
-  /*
-  this.element.click(function(event){
-    event.preventDefault();
-    $('body').
-  });
-  */
-
-  this.current_page = $('body').attr("class").split(' ')[0];
+  // this.current_page = $('body').attr("class").split(' ')[0];
 
   this.create_search();
 
-  this.menu_highlight();
+  // this.menu_highlight();
   
 
 
@@ -86,11 +68,13 @@ kafnu.component.HeaderDesktop.prototype.create_search = function(){
   
 };
 
+/*
 kafnu.component.HeaderDesktop.prototype.menu_highlight = function(){
 
   $("#header-desktop-menu ul li a[data-page='"+this.current_page+"']").addClass("selected");
   
 };
+*/
 
 
 
