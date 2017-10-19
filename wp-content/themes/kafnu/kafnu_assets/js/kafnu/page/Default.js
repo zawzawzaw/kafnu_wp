@@ -690,7 +690,9 @@ kafnu.page.Default.prototype.create_google_map = function() {
 kafnu.page.Default.prototype.create_contact_form = function() {
 
   if ($("#contact-form").length != 0) {
-    $("#contact-form").validate({
+    $("#contact-form").submit(function(e) {
+      e.preventDefault();
+    }).validate({
       rules : {
         first_name : "required",
         last_name : "required",
@@ -703,9 +705,12 @@ kafnu.page.Default.prototype.create_contact_form = function() {
       submitHandler: function(form) {
         $.ajax({
           type: "POST",
-          url: "/php/contact.php",
+          url: $("#contact-form").attr("action"),
           data: $(form).serialize(),
           timeout: 3000,
+          complete: function() {
+            $('#contact-form').find(".message").html("<h5>Your message has been sent successfully.</h5>")
+          },
           success: function() {
             // console.log('here');
             $('#contact-form').find(".message").html("<h5>Your message has been sent successfully.</h5>")
@@ -734,6 +739,7 @@ kafnu.page.Default.prototype.create_country_elements = function(){
 
   if ($('.page-country-main-content-item').length != 0) {
     this.has_adjust_height_main_content_item = true;
+    this.update_page_layout();
   }
 
 
@@ -816,8 +822,8 @@ kafnu.page.Default.prototype.create_country_elements = function(){
       
       var price = $(this).data("price");
 
-      $(this).closest('#price-changes').html(price);
-      // $("#price-changes").html(price);
+      // $(this).closest('#price-changes').html(price);
+      $("#price-changes").html(price);
       
     });
   }

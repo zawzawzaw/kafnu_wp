@@ -8,27 +8,39 @@
  */
 function wds_add_field_contact_banner( $fields ) {
   $new_fields = array(
-    /*
+    
     array(
       'name'    => 'Title',
-      'id'      => PREFIX . 'default_centered_text_title',
+      'id'      => PREFIX . 'contact_banner_title',
       'type'    => 'text',
-      'description' => '',
-      'sanitization_cb' => false,
+      'description' => ''
     ),
     array(
-      'name'    => 'Copy',
-      'id'      => PREFIX . 'default_centered_text_copy',
-      'type'    => 'textarea',
-      'description' => '',
+      'name'    => 'Contact Banner Image',
+      'id'      => PREFIX . 'contact_banner_image',
+      'type'    => 'file',
+      'description' => 'jpg',
     ),
     array(
-      'name'    => 'Is White BG',
-      'id'      => PREFIX . 'default_centered_text_is_white_bg',
-      'type'    => 'checkbox',
-      'description' => '',
+      'name'    => 'Contact Banner Image Tablet',
+      'id'      => PREFIX . 'contact_banner_image_tablet',
+      'type'    => 'file',
+      'description' => 'jpg; will resize desktop image if not found',
     ),
-    */
+    array(
+      'name'    => 'Contact Banner Image Mobile',
+      'id'      => PREFIX . 'contact_banner_image_mobile',
+      'type'    => 'file',
+      'description' => 'jpg; will resize desktop image if not found',
+    ),
+    array(
+      'name'    => 'Contact Banner Form Submit URL',
+      'id'      => PREFIX . 'contact_banner_form_submit_url',
+      'type'    => 'text_url',
+      'description' => 'jpg; will resize desktop image if not found',
+    ),
+    
+    
   );
   return array_merge( $fields, $new_fields );
 }

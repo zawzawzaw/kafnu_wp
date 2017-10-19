@@ -440,8 +440,9 @@ require_once( 'custom_fields/field-location-play.php' );
 require_once( 'custom_fields/field-location-learn.php' );
 require_once( 'custom_fields/field-location-rest.php' );
 require_once( 'custom_fields/field-location-contacts.php' );
-// require_once( 'custom_fields/field-contact-banner.php' );
-// require_once( 'custom_fields/field-contact-map-and-postit.php' );
+require_once( 'custom_fields/field-contact-banner.php' );
+require_once( 'custom_fields/field-contact-map-and-postit.php' );
+require_once( 'custom_fields/field-contact-map-and-postit-02.php' );
 
 
 require_once( 'custom_fields/field-default-logo-and-copy-section.php' );

@@ -40,7 +40,7 @@ $location_contacts_image_mobile = get_manic_mobile_image($location_contacts_imag
             </ul>
           </div> <!-- page-country-main-content-item-text -->
           <div class="page-country-main-content-item-cta-container">
-            <a href="<?php echo $location_contacts_cta_url; ?>" class="square-cta border-white-version"><?php echo $location_contacts_cta_text; ?></a>
+            <a href="<?php echo home_url().$location_contacts_cta_url; ?>" class="square-cta border-white-version"><?php echo $location_contacts_cta_text; ?></a>
           </div>
         </div>
       </div> <!-- row -->
