@@ -14,7 +14,7 @@
 
 -->
 
-<article id="page-default-booking-section" class="community-page-1 community-version">
+<article id="page-default-booking-section" class="community-version">
   <div class="container-fluid">
     <div class="scroll-target" data-value="events"></div>
 

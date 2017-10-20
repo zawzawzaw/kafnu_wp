@@ -227,6 +227,7 @@
 
 
 <article class="community-page-2">
+  <div class="header-mobile-spacer"></div>
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
@@ -328,8 +329,7 @@
     ?>
 
       <div class="community-manager manic-image-container" 
-        data-image-tablet="<?php echo $community_manager_banner_image_tablet; ?>" 
-        data-image-mobile="<?php echo $community_manager_banner_image_mobile; ?>" 
+        data-image="<?php echo $community_manager_banner_image_mobile; ?>" 
         data-name="<?php echo $community_manager_name; ?>" 
         data-country="<?php echo $community_manager_location; ?>" 
         data-description="<?php echo $community_manager_copy; ?>">

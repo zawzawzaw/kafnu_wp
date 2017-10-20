@@ -49,6 +49,8 @@ $home_locations_upcoming_title_mobile = wds_page_builder_get_this_part_data( PRE
 
               $location_image = $value;
               // $location_image_tablet = get_manic_tablet_image($location_image_id, $location_image_tablet);   // tablet same size as the desktop
+              
+              $location_image_mobile = null;
               $location_image_mobile = get_manic_mobile_image($location_image_id, $location_image_mobile);
           ?>
 
@@ -93,6 +95,8 @@ $home_locations_upcoming_title_mobile = wds_page_builder_get_this_part_data( PRE
 
               $location_image = $value;
               // $location_image_tablet = get_manic_tablet_image($location_image_id, $location_image_tablet);   // tablet same size as the desktop
+              
+              $location_image_mobile = null;
               $location_image_mobile = get_manic_mobile_image($location_image_id, $location_image_mobile);
           ?>
 

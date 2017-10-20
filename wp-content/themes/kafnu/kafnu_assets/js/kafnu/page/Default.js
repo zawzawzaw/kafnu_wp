@@ -378,7 +378,7 @@ kafnu.page.Default.prototype.create_community_elements = function(){
   $('.see-more-managers').click(this.on_see_more_manager_click.bind(this));
 
 
-  if ($("#page-2-community-managers-mobile").length != 0) {
+  if ($("#page-community-managers-mobile").length != 0) {
     $('.community-manager').click(this.on_community_manager_click.bind(this));
   }
   
@@ -469,10 +469,14 @@ kafnu.page.Default.prototype.on_see_more_manager_click = function(event) {
   window.scrollTo(0, 0);
 
   $("#header-mobile").addClass("permanent-bg");
-  $(".header-mobile-spacer").show();
+  // $(".header-mobile-spacer").show();
   
   $(".community-page-1").hide();
   $(".community-page-2").fadeIn();
+  
+  $('.page-builder-section').not('.community-slider').hide();
+  // $('.page-builder-section.community-slider').fadeIn();
+
   this.update_manic_image_containers();  
 };
 kafnu.page.Default.prototype.on_community_manager_click = function(event) {
@@ -1188,9 +1192,14 @@ kafnu.page.Default.prototype.on_scroll_to_no_target = function() {
   
   if (this.has_community_hash_element == true) {
     $("#header-mobile").removeClass("permanent-bg");
-    $(".header-mobile-spacer").hide();
+    // $(".header-mobile-spacer").hide();
+
     $(".community-page-1").fadeIn();
     $(".community-page-2").hide();
+
+    $('.page-builder-section').not('.community-slider').fadeIn();
+    // $('.page-builder-section.community-slider').hide();
+    
     this.update_manic_image_containers();
   }
   

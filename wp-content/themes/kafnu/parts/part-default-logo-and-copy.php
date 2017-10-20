@@ -11,7 +11,7 @@
   $default_logo_and_copy_copy = wds_page_builder_get_this_part_data( PREFIX . 'default_logo_and_copy_copy');
 ?>
 
-<article id="page-community-slider-section" class="community-page-1">
+<article id="page-community-slider-section" class="">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
