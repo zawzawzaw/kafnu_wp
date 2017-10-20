@@ -100,14 +100,12 @@ $selected_location_booking_items = wds_page_builder_get_this_part_data( PREFIX .
       </div> <!-- row -->
     </div>    
     
-    <!-- 
-        __  _______  ____  ______    ______
-       /  |/  / __ \/ __ )/  _/ /   / ____/
-      / /|_/ / / / / __  |/ // /   / __/
-     / /  / / /_/ / /_/ // // /___/ /___
-    /_/  /_/\____/_____/___/_____/_____/
+    
 
-    -->
+
+
+
+    
 
     <div id="page-default-booking-item-mobile" class="visible-sm visible-xs">
           

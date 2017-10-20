@@ -14,14 +14,6 @@
   $default_copy_and_image_image_mobile = get_manic_mobile_image($default_copy_and_image_image_id, $default_copy_and_image_image_mobile);
 ?>
 
-<!--
-    ____ ___  ______   __     _    _   _ ____    ___ __  __    _    ____ _____
-   / ___/ _ \|  _ \ \ / /    / \  | \ | |  _ \  |_ _|  \/  |  / \  / ___| ____|
-  | |  | | | | |_) \ V /    / _ \ |  \| | | | |  | || |\/| | / _ \| |  _|  _|
-  | |__| |_| |  __/ | |    / ___ \| |\  | |_| |  | || |  | |/ ___ \ |_| | |___
-   \____\___/|_|    |_|   /_/   \_\_| \_|____/  |___|_|  |_/_/   \_\____|_____|
-
--->
 
 <article id="page-play-location-section">
   <div class="container-fluid">

@@ -17,14 +17,7 @@ $selected_kafnu_events = manic_get_option( PREFIX . 'selected_kafnu_events' );
   // var_dump($location_banner_image_tablet);
   $location_banner_image_mobile = get_manic_mobile_image($location_banner_image_id, $location_banner_image_mobile);
 ?>
-<!--
-         ____    _    _   _ _   _ _____ ____
-        | __ )  / \  | \ | | \ | | ____|  _ \
-        |  _ \ / _ \ |  \| |  \| |  _| | |_) |
-        | |_) / ___ \| |\  | |\  | |___|  _ <
-        |____/_/   \_\_| \_|_| \_|_____|_| \_\
-
-      -->
+      
 
       <article id="page-default-banner-section" class="country-version">
         <div id="page-default-banner-image" class="visible-lg visible-md">
