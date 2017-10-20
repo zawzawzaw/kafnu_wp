@@ -44,7 +44,7 @@ function wds_add_field_location_learn( $fields ) {
       'name'    => 'Icon',
       'id'      => PREFIX . 'location_learn_icons',
       'type'    => 'text',
-      'description' => '',
+      'description' => 'Possible values are hk-learn-01, hk-learn-02, hk-learn-03, tp-learn-01, tp-learn-02, tp-learn-03, tp-learn-04, tp-learn-05',
       'repeatable' => true
     ),
     array(

@@ -60,7 +60,7 @@ function wds_add_field_location_play( $fields ) {
       'name'    => 'Icon',
       'id'      => PREFIX . 'location_play_icons',
       'type'    => 'text',
-      'description' => '',
+      'description' => 'Possible values are hk-play-01, hk-play-02, hk-play-03, tp-play-01, tp-play-02, tp-play-03, tp-play-04, tp-play-05, tp-play-06',
       'repeatable' => true
     ),
     array(

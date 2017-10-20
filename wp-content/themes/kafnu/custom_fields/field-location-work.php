@@ -44,7 +44,7 @@ function wds_add_field_location_work( $fields ) {
       'name'    => 'Icon',
       'id'      => PREFIX . 'location_work_icons',
       'type'    => 'text',
-      'description' => '',
+      'description' => 'Possible values are hk-work-01, hk-work-02, hk-work-03, hk-work-04, hk-work-05, hk-work-06, tp-work-01, tp-work-02, tp-work-03, tp-work-04, tp-work-05, tp-work-06, tp-work-07, tp-work-08, tp-work-09',
       'repeatable' => true
     ),
     array(

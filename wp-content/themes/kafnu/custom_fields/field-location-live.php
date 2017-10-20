@@ -45,7 +45,7 @@ function wds_add_field_location_live( $fields ) {
       'name'    => 'Icon',
       'id'      => PREFIX . 'location_live_icons',
       'type'    => 'text',
-      'description' => '',
+      'description' => 'Possible values are hk-live-01, hk-live-02, hk-live-03, hk-live-04, tp-live-01, tp-live-02',
       'repeatable' => true
     ),
     array(

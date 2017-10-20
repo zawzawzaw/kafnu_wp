@@ -44,7 +44,7 @@ function wds_add_field_location_rest( $fields ) {
       'name'    => 'Icon',
       'id'      => PREFIX . 'location_rest_icons',
       'type'    => 'text',
-      'description' => '',
+      'description' => 'Possible values are hk-rest-01, hk-rest-02, hk-rest-03, tp-rest-01, tp-rest-02',
       'repeatable' => true
     ),
     array(

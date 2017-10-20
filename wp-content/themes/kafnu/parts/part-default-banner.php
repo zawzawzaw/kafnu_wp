@@ -38,7 +38,7 @@
     </div>
   </div>
 
-  <div id="page-default-banner-copy-container" class="center-version medium-text-version">
+  <div id="page-default-banner-copy-container" class="center-version long-text-version">
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">
