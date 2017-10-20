@@ -445,11 +445,14 @@ require_once( 'custom_fields/field-contact-banner.php' );
 require_once( 'custom_fields/field-contact-map-and-postit.php' );
 require_once( 'custom_fields/field-contact-map-and-postit-02.php' );
 
-
 require_once( 'custom_fields/field-default-logo-and-copy.php' );
 require_once( 'custom_fields/field-community-slider.php' );
 require_once( 'custom_fields/field-community-events.php' );
 
+
+require_once( 'custom_fields/field-location-content-mobile-slider.php' );
+require_once( 'custom_fields/field-location-events-mobile.php' );
+require_once( 'custom_fields/field-plain-html.php' );
 
 
 

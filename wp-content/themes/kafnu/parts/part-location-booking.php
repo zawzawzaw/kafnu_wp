@@ -157,7 +157,14 @@ $selected_location_booking_items = wds_page_builder_get_this_part_data( PREFIX .
         ?>
 
         <div class="col-sm-12 no-padding page-default-booking-item">
+
+          <?php if ($selected_booking_item_post_index == 1): ?>
           <div class="manic-expand-container mobile-open-version">
+          <?php else: ?>
+          <div class="manic-expand-container">
+          <?php endif; ?>
+
+          
               <div class="scroll-target" data-value="hot-desk"></div>
               <div class="manic-expand-container-title">
                   <h5><?php echo $booking_item_title; ?></h5> 

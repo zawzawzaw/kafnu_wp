@@ -59,3 +59,30 @@
     </div>
   </div>
 </article>
+
+<div class="page-country-hidden-mobile-slider-part" style="display:none">
+  <div class="page-country-main-content-item">
+    <div class="row no-margin">
+      <div class="col-sm-12 no-padding">
+        <div class="manic-image-container">
+          <img src=""
+            data-image-tablet="<?php echo $location_play_image_tablet; ?>"
+            data-image-mobile="<?php echo $location_play_image_mobile; ?>" alt="">
+        </div>
+      </div>
+      <div class="col-sm-12 no-padding">
+        <div class="page-country-main-content-item-text">
+          <h5><?php echo $location_play_title; ?></h5>
+          <ul>
+            <?php foreach ($location_play_icons as $key => $location_play_icon): ?>
+              <li>
+                <i class="<?php echo $location_play_icon; ?>"></i>
+                <p class="title"><?php echo $location_play_lists[$key]; ?></p>
+              </li>
+            <?php endforeach; ?>
+          </ul>
+        </div> <!-- page-country-main-content-item-text -->
+      </div>
+    </div> <!-- row -->
+  </div> <!-- page-country-main-content-item -->
+</div> <!-- page-country-hidden-mobile-slider-part -->

@@ -185,43 +185,153 @@
         </div> <!-- home-masonry-grid-container -->
         
         <div id="default-grid-container-mobile" class="visible-xs visible-sm">
-          <div class="grid-item">
-            <a href="http://www.youtube.com" target="_blank" class="social-media-source-tag youtube" target="_blank">
-              <div class="manic-image-container video-version">
-                <img src="" data-image-desktop="images_cms/home/fb-video-thumb-01.jpg"
-                            data-image-tablet="images_cms/home/fb-video-thumb-01.jpg"
-                            data-image-mobile="images_cms/home/fb-video-thumb-01.jpg" alt="">
-              </div>                      
-            </a>
-          </div>
-          <div class="grid-item">
-            <a href="https://www.facebook.com/kafnuhk/" target="_blank" class="social-media-source-tag facebook color-version">
-              <div class="grid-item-text-container">
-                <h5>Bill - Company of Dreamers</h5>
-                <p>Bill Black, ex-hotelier and Director at Next Story Group...</p>                      
-              </div>
-            </a>
-          </div>
-          <div class="grid-item">
-            <a href="https://www.facebook.com/kafnuhk/" target="_blank" class="social-media-source-tag facebook">
-              <div class="manic-image-container">
-                <img src="" data-image-desktop="images_cms/home/in-image-thumb-02.jpg"
-                            data-image-tablet="images_cms/home/in-image-thumb-02.jpg"
-                            data-image-mobile="images_cms/home/in-image-thumb-02.jpg" alt="">
-              </div>
-            </a>
-          </div>
-          <div class="grid-item">
-            <a href="https://www.facebook.com/kafnuhk/" target="_blank" class="social-media-source-tag facebook">
-              <div class="manic-image-container">
-                <img src="" data-image-desktop="images_cms/home/in-image-thumb-03.jpg"
-                            data-image-tablet="images_cms/home/in-image-thumb-03.jpg"
-                            data-image-mobile="images_cms/home/in-image-thumb-03.jpg"
-                 alt="">
-              </div>
-            </a>
-          </div>
-        </div>
+          <?php
+
+              //    ____ _____  _    ____ _____
+              //   / ___|_   _|/ \  |  _ \_   _|
+              //   \___ \ | | / _ \ | |_) || |
+              //    ___) || |/ ___ \|  _ < | |
+              //   |____/ |_/_/   \_\_| \_\|_|
+              //
+
+              global $post;
+
+              $selected_item_post_array = $social_media_grid_items;                  // IMPORTANT
+
+              if ($selected_item_post_array != ''):
+
+                $max_l = count($selected_item_post_array);
+                $max_l = $max_l >= 4 ? 4 : $max_l;
+
+                for ($i=0; $i < $max_l ; $i++):
+
+                $selected_item_post_index = $i + 1;
+                $selected_item_post_id = $selected_item_post_array[$i%count($selected_item_post_array)];
+                $post = get_post( $selected_item_post_id );
+                setup_postdata( $post );
+
+                $selected_item_post_status = get_post_status();
+
+                  if ($selected_item_post_status == 'publish'):
+
+                    // CMB2 custom fields
+                    
+                    $social_media_type    = get_post_meta( $selected_item_post_id, PREFIX . "social_media_type", true );
+                    $social_media_image   = get_post_meta( $selected_item_post_id, PREFIX . "social_media_image", true );
+                    $social_media_url     = get_post_meta( $selected_item_post_id, PREFIX . "social_media_url", true );
+                    $social_media_title   = get_post_meta( $selected_item_post_id, PREFIX . "social_media_title", true );
+                    $social_media_copy    = get_post_meta( $selected_item_post_id, PREFIX . "social_media_copy", true );
+            ?>
+
+            
+
+
+              <?php if ($social_media_type == 'image_facebook_video'): ?>
+
+                <div class="grid-item">
+                  <a href="<?php echo $social_media_url; ?>" target="_blank" class="social-media-source-tag" target="_blank">
+                    <div class="manic-image-container video-version">
+                      <img src="" data-image-tablet="<?php echo $social_media_image; ?>" data-image-mobile="<?php echo $social_media_image; ?>" alt="">
+                    </div>                      
+                  </a>
+                </div>
+
+              <?php elseif($social_media_type == 'image_facebook'): ?>
+
+                <div class="grid-item">
+                  <a href="<?php echo $social_media_url; ?>" target="_blank" class="social-media-source-tag facebook">
+                    <div class="manic-image-container">
+                      <img src="" data-image-tablet="<?php echo $social_media_image; ?>" data-image-mobile="<?php echo $social_media_image; ?>" alt="">
+                    </div>
+                  </a>
+                </div>
+
+              <?php elseif($social_media_type == 'image_youtube'): ?>
+
+                <div class="grid-item">
+                  <a href="<?php echo $social_media_url; ?>" target="_blank" class="social-media-source-tag youtube" target="_blank">
+                    <div class="manic-image-container">
+                      <img src="" data-image-tablet="<?php echo $social_media_image; ?>" data-image-mobile="<?php echo $social_media_image; ?>" alt="">
+                    </div>
+                  </a>
+                </div>
+
+              <?php elseif($social_media_type == 'text_facebook'): ?>
+                                  
+                <div class="grid-item">
+                  <a href="<?php echo $social_media_url; ?>" target="_blank" class="social-media-source-tag facebook color-version">
+                    <div class="grid-item-text-container">
+                      <?php if($social_media_title != ''): ?>
+                        <h5><?php echo $social_media_title; ?></h5>
+                      <?php endif; ?>
+                      <?php if($social_media_title != ''): ?>
+                        <p class="minimize-text" data-length="-1" data-tablet-length="35" data-mobile-length="60"><?php echo $social_media_copy; ?></p>
+                      <?php endif; ?>
+                    </div>
+                  </a>
+                </div>
+
+              <?php elseif($social_media_type == 'text_facebook_wide'): ?>
+
+                <div class="grid-item grid-item--width2">
+                  <a href="<?php echo $social_media_url; ?>" target="_blank" class="social-media-source-tag facebook color-version">
+                    <div class="grid-item-text-container">
+                      <?php if($social_media_title != ''): ?>
+                        <h5 class="minimize-text" data-length="-1" data-tablet-length="50" data-tablet-length="10"><?php echo $social_media_title; ?></h5>
+                      <?php endif; ?>
+                      <?php if($social_media_title != ''): ?>
+                        <p class="minimize-text" data-length="-1" data-tablet-length="80" data-tablet-length="10"><?php echo $social_media_copy; ?></p>
+                      <?php endif; ?>
+                    </div>
+                  </a>
+                </div>
+
+              <?php elseif($social_media_type == 'text_article'): ?>
+                
+                <div class="grid-item grid-item--width2 grid-item--height2">
+                  <a href="<?php echo $social_media_url; ?>" target="_blank" class="social-media-source-tag news color-version">
+                    <div class="grid-item-text-container">
+                      <h5 class="minimize-text" data-length="-1" data-tablet-length="50" data-tablet-length="10"><?php echo $social_media_title; ?></h5>
+                      <p class="minimize-text" data-length="-1" data-tablet-length="80" data-tablet-length="10"><?php echo $social_media_copy; ?></p>
+                    </div>
+                  </a>
+                </div>
+
+              <?php else: ?>
+
+                <!-- default = image_facebook -->
+                <div class="grid-item">
+                  <a href="<?php echo $social_media_url; ?>" target="_blank" class="social-media-source-tag facebook">
+                    <div class="manic-image-container">
+                      <img src="" data-image-tablet="<?php echo $social_media_image; ?>" data-image-mobile="<?php echo $social_media_image; ?>" alt="">
+                    </div>
+                  </a>
+                </div>
+
+              <?php endif; ?>
+
+
+
+
+
+          
+          <?php 
+                endif;
+              endfor;
+            endif;
+
+            wp_reset_postdata();
+
+            //    _____ _   _ ____
+            //   | ____| \ | |  _ \
+            //   |  _| |  \| | | | |
+            //   | |___| |\  | |_| |
+            //   |_____|_| \_|____/
+            //
+          
+          ?>
+          
+        </div> <!-- default-grid-container-mobile -->
 
 
       </div>
