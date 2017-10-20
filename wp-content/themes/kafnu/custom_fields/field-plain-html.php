@@ -15,7 +15,8 @@
         'options' => array(
           'textarea_rows' => get_option('default_post_edit_rows', 15)
         ),
-        'description' => ''
+        'description' => '',
+        'sanitization_cb' => false,
       ),
 
     );

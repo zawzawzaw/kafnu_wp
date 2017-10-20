@@ -116,6 +116,25 @@ kafnu.page.Default = function(options, element) {
       // console.log(touchEvent)
   });
 
+
+
+  //    _____ ___  ____    __  __  ___  ____ ___ _     _____
+  //   |  ___/ _ \|  _ \  |  \/  |/ _ \| __ )_ _| |   | ____|
+  //   | |_ | | | | |_) | | |\/| | | | |  _ \| || |   |  _|
+  //   |  _|| |_| |  _ <  | |  | | |_| | |_) | || |___| |___
+  //   |_|   \___/|_| \_\ |_|  |_|\___/|____/___|_____|_____|
+  //
+
+  if ($("#page-country-main-content-item-container-mobile").length != 0) {
+    var fragment = $(document.createDocumentFragment());
+    var arr = $('.page-country-hidden-mobile-slider-part');
+    for (var i = 0, l=arr.length; i < l; i++) {
+      item = $(arr[i]);
+      fragment.append(item.html());
+    }
+    $("#page-country-main-content-item-container-mobile").append(fragment);
+  }
+
   // console.log('kafnu.page.Default: init');
 };
 goog.inherits(kafnu.page.Default, manic.page.Page);
@@ -847,8 +866,13 @@ kafnu.page.Default.prototype.create_country_elements = function(){
   }
 
 
+  
 
   if ($("#page-country-main-content-item-container-mobile").length != 0) {
+
+    // grab all the mobile parts first() // not in init
+
+
     $("#page-country-main-content-item-container-mobile").slick({
       'speed': 350,
       'dots': true,
