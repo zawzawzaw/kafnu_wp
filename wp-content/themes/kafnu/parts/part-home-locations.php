@@ -50,7 +50,7 @@ $home_locations_upcoming_06 = wds_page_builder_get_this_part_data( PREFIX . 'hom
               $location_image_mobile = get_manic_mobile_image($location_image_id, $location_image_mobile);
           ?>
 
-            <div class="home-box-slider-item">
+            <div class="home-box-slider-item <?php echo $location_image_id; ?>">
               <div class="manic-image-container">
                 <img src="" 
                   data-image-desktop="<?php echo $location_image; ?>"

@@ -40,7 +40,7 @@
                     isset($default_copy_and_image_link_url) && 
                     $default_copy_and_image_link_url != ''): ?>
             <div class="cta-container hidden-xs hidden-sm">
-              <a href="<?php echo $default_copy_and_image_link_url; ?>" class="plus-cta"><?php echo $default_copy_and_image_link_copy; ?></a>
+              <a href="<?php echo home_url().$default_copy_and_image_link_url; ?>" class="plus-cta"><?php echo $default_copy_and_image_link_copy; ?></a>
             </div>
           <?php endif; ?>
 
@@ -60,7 +60,7 @@
                     isset($default_copy_and_image_link_url) && 
                     $default_copy_and_image_link_url != ''): ?>
           <div class="cta-container visible-sm visible-xs">
-            <a href="<?php echo $default_copy_and_image_link_url; ?>" class="plus-cta"><?php echo $default_copy_and_image_link_copy; ?></a>
+            <a href="<?php echo home_url().$default_copy_and_image_link_url; ?>" class="plus-cta"><?php echo $default_copy_and_image_link_copy; ?></a>
           </div>
         <?php endif; ?>
       </div>

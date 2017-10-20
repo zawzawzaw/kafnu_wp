@@ -37,7 +37,11 @@
       </ul>
     </div>
     <div id="header-mobile-login-cta-container">
-      <a href="https://hongkong.kafnu.com/Login" target="_blank">Login</a>
+      <?php if(is_main_site()): ?>
+        <a href="https://hongkong.kafnu.com/Login" target="_blank">Login</a>
+      <?php else: ?>
+        <a href="https://hongkong.kafnu.com/Login" target="_blank">登入</a>
+      <?php endif; ?>
     </div>
   </div>
   <div id="header-mobile-nav-container">

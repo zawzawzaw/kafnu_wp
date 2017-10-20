@@ -951,6 +951,11 @@ kafnu.page.Default.prototype.create_header_desktop = function(){
   if ($('#header-desktop').length != 0) {
     this.header_desktop = new kafnu.component.HeaderDesktop({}, $('#header-desktop'));
   }
+
+  if ($('#page-country-main-content-section').length != 0) {
+    $('body').addClass("page-country");
+    $('.header-desktop-spacer').addClass("active");
+  }
   
 
 };

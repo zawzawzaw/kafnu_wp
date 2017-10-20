@@ -59,3 +59,4 @@
     <div id="page-wrapper-content">
       
       <div id="page-home-nav-trigger"></div>
+      <div class="header-desktop-spacer hidden-xs hidden-sm"></div>

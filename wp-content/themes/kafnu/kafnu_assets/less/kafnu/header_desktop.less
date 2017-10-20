@@ -33,6 +33,11 @@ body.page-country {
   background: @white;
   height: @header-desktop-height;
   .transition-in(0.7s, cubic-bezier(0.645, 0.045, 0.355, 1), 0.0s);
+  display: none;
+
+  &.active {
+    display: block;
+  }
 
   @media all and (max-width: 1024px) {
     height: @header-tablet-height;

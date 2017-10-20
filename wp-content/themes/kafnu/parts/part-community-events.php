@@ -56,7 +56,7 @@
             if ($selected_kafnu_event_post_status == 'publish'):
 
               // CMB2 custom fields
-              $kafnu_event_title     = get_post_meta( $selected_kafnu_event_post_id, PREFIX . "kafnu_event_title", true );
+              $kafnu_event_title     = get_the_title();
               $kafnu_event_image   = get_post_meta( $selected_kafnu_event_post_id, PREFIX . "kafnu_event_image", true );
               $kafnu_event_time    = get_post_meta( $selected_kafnu_event_post_id, PREFIX . "kafnu_event_time", true );
               $kafnu_event_location    = get_post_meta( $selected_kafnu_event_post_id, PREFIX . "kafnu_event_location", true );
@@ -80,7 +80,7 @@
             <li class="calendar icon"><?php echo $kafnu_event_time; ?></li>
 
             <?php if( isset($kafnu_event_location) && $kafnu_event_location != '' ): ?>
-              <li class="map-pin icon">$kafnu_event_location</li>
+              <li class="map-pin icon"><?php echo $kafnu_event_location; ?></li>
             <?php endif; ?>
           </ul>
           <p><?php echo $kafnu_event_copy; ?></p>
@@ -153,18 +153,18 @@
         <h6>upcoming events</h6>
         <div class="page-default-booking-item-image">
           <div class="manic-image-container">
-            <img src="" data-image-desktop="images_cms/community/event-01.jpg"
-            data-image-tablet="images_cms/community/event-01.jpg"
-            data-image-mobile="images_cms/community/event-01.jpg" alt="">
+            <img src="" data-image-desktop="<?php echo $kafnu_event_image; ?>"
+            data-image-tablet="<?php echo $kafnu_event_image; ?>"
+            data-image-mobile="<?php echo $kafnu_event_image; ?>" alt="">
           </div>                
         </div>
         <div class="page-default-booking-item-text">
-          <h5><?php echo $kafnu_event_title; ?></h5>
+          <h5><?php echo get_the_title(); ?></h5>
           <ul>
             <li class="calendar icon"><?php echo $kafnu_event_time; ?></li>
 
             <?php if( isset($kafnu_event_location) && $kafnu_event_location != '' ): ?>
-              <li class="map-pin icon">$kafnu_event_location</li>
+              <li class="map-pin icon"><?php echo $kafnu_event_location; ?></li>
             <?php endif; ?>
           </ul>
           <p><?php echo $kafnu_event_copy; ?></p>

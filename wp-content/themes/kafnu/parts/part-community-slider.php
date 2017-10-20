@@ -161,20 +161,20 @@
 
         <?php 
 
-          global $post;
+          global $post;          
 
           if ($first_selected_post_id != 0):
             $post = get_post( $first_selected_post_id );
             setup_postdata( $post );
 
-            $community_manager_banner_image = get_post_meta( $selected_post_id, PREFIX . "community_manager_banner_image", true );
-            $community_manager_banner_image_tablet = get_post_meta( $selected_post_id, PREFIX . "community_manager_banner_image_tablet", true );
-            $community_manager_banner_image_mobile = get_post_meta( $selected_post_id, PREFIX . "community_manager_banner_image_mobile", true );
+            $community_manager_banner_image = get_post_meta( $first_selected_post_id, PREFIX . "community_manager_banner_image", true );
+            $community_manager_banner_image_tablet = get_post_meta( $first_selected_post_id, PREFIX . "community_manager_banner_image_tablet", true );
+            $community_manager_banner_image_mobile = get_post_meta( $first_selected_post_id, PREFIX . "community_manager_banner_image_mobile", true );
 
-            $community_manager_thumbnail_black = get_post_meta( $selected_post_id, PREFIX . "community_manager_thumbnail_black", true );
-            $community_manager_name = get_post_meta( $selected_post_id, PREFIX . "community_manager_name", true );
-            $community_manager_location = get_post_meta( $selected_post_id, PREFIX . "community_manager_location", true );
-            $community_manager_copy = get_post_meta( $selected_post_id, PREFIX . "community_manager_copy", true );
+            $community_manager_thumbnail_black = get_post_meta( $first_selected_post_id, PREFIX . "community_manager_thumbnail_black", true );
+            $community_manager_name = get_post_meta( $first_selected_post_id, PREFIX . "community_manager_name", true );
+            $community_manager_location = get_post_meta( $first_selected_post_id, PREFIX . "community_manager_location", true );
+            $community_manager_copy = get_post_meta( $first_selected_post_id, PREFIX . "community_manager_copy", true );
 
             // image
             $community_manager_banner_image_id = wds_page_builder_get_this_part_data( PREFIX . 'community_manager_banner_image_id' );
@@ -183,7 +183,7 @@
 
         ?>
 
-          <div id="page-community-managers-mobile" class="visible-xs visible-sm">
+          <div id="page-community-managers-mobile" class="visible-xs visible-sm <?php echo $first_selected_post_id; ?>">
             <div class="page-community-managers-item-mobile">
               <div class="manic-image-container has-full-width">
                 <img src="" data-image-tablet="<?php echo $community_manager_banner_image_tablet; ?>" 
