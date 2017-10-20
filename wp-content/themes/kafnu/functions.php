@@ -13,8 +13,8 @@ update_option( 'home', 'http://visionbodyasia.com' );
 */
 
 define('THEMEROOT', get_stylesheet_directory_uri());
-define('DEBUG', true);
-// define('DEBUG', false);
+// define('DEBUG', true);
+define('DEBUG', false);
 
 define('PREFIX', '_kafnu_');
 
@@ -69,7 +69,12 @@ remove_action( 'wp_print_styles', 'print_emoji_styles' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
 
-
+// clean up footer
+// https://wordpress.stackexchange.com/questions/211701/what-does-wp-embed-min-js-do-in-wordpress-4-4
+function my_deregister_scripts(){
+  wp_deregister_script( 'wp-embed' );
+}
+add_action( 'wp_footer', 'my_deregister_scripts' );
 
 
 

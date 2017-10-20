@@ -1,10 +1,10 @@
 java -jar "compiler.jar" ^
   --js=..\..\js\manic\**.js ^
-  --js=..\..\js\rippledot\**.js ^
+  --js=..\..\js\kafnu\**.js ^
   --js=closure-library\**.js ^
   --only_closure_dependencies ^
-  --compilation_level ADVANCED_OPTIMIZATIONS ^
-  --closure_entry_point=rippledot.page.Default ^
+  --compilation_level WHITESPACE_ONLY ^
+  --closure_entry_point=kafnu.page.Default ^
   --externs=closure-externs\jquery-1.9.js ^
   --externs=closure-externs\html5.js ^
   --externs=closure-externs\window.js ^

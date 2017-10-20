@@ -2,14 +2,7 @@
   $footer_copyright = manic_get_option( PREFIX . 'footer_copyright' );
 ?>
 
-  <!--
-     _____ ___   ___ _____ _____ ____
-    |  ___/ _ \ / _ \_   _| ____|  _ \
-    | |_ | | | | | | || | |  _| | |_) |
-    |  _|| |_| | |_| || | | |___|  _ <
-    |_|   \___/ \___/ |_| |_____|_| \_\
-
-  -->
+  
 
   <footer id="footer-desktop">
     <div class="container-fluid">

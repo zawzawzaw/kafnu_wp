@@ -20,15 +20,7 @@
 
 ?>
 
-      <!--
-         ____    _    _   _ _   _ _____ ____
-        | __ )  / \  | \ | | \ | | ____|  _ \
-        |  _ \ / _ \ |  \| |  \| |  _| | |_) |
-        | |_) / ___ \| |\  | |\  | |___|  _ <
-        |____/_/   \_\_| \_|_| \_|_____|_| \_\
-
-      -->
-
+      
       
       <article id="page-default-banner-section" class="">
         <div id="page-default-banner-image" class="visible-lg visible-md">
@@ -42,12 +34,7 @@
                         data-image-mobile="<?php echo $home_banner_image_mobile; ?>">
           </div>
         </div>
-        <!-- <div id="page-default-banner-video"> -->
-          <!-- <video playsinline autoplay muted loop poster="images_cms/home/home-banner.jpg" id="page-default-banner-bgvid">
-            <source src="videos_cms/home/home-banner-bg-vid.mp4" type="video/mp4">
-          </video> -->
-        <!-- </div> -->
-
+        
         <div id="page-default-banner-copy-container" class="left-version">
           <div class="container-fluid">
             <div class="row">
