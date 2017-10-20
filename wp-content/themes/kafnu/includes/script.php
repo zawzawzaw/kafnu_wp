@@ -62,8 +62,17 @@
   <?php else: ?>
 
     
+    <?php 
+      /*
+      the old way
+      <script type="text/javascript" src="<?php echo THEMEROOT; ?>/kafnu_assets/js/minified/head.load.min.js"></script>
+       */
+    ?>
 
-    <script type="text/javascript" src="<?php echo THEMEROOT; ?>/kafnu_assets/js/minified/head.load.min.js"></script>
+    <script type="text/javascript">
+      <?php require_once( __DIR__ . '/../kafnu_assets/js/minified/head.load.min.js'); ?>
+    </script>
+
     <script type="text/javascript">
 
       var PAGE_LIBRARY        = "<?php echo THEMEROOT; ?>/kafnu_assets/js/minified/libraries-default.min.js";

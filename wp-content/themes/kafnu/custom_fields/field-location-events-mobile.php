@@ -22,4 +22,3 @@
 
   add_filter( 'wds_page_builder_fields_location-events-mobile', 'wds_add_field_location_events_mobile' );
 ?>
-
