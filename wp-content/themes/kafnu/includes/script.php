@@ -76,6 +76,7 @@
     <script type="text/javascript">
 
       var PAGE_LIBRARY        = "<?php echo THEMEROOT; ?>/kafnu_assets/js/minified/libraries-default.min.js";
+      var MAP_LIBRARY        = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDQvuQ_GJxtg5QhhRnzerBTnDJrKKQz_S4";
       var PAGE_JS             = "<?php echo THEMEROOT; ?>/kafnu_assets/js/minified/page-default.min.js";
       var PAGE_CSS            = "<?php echo THEMEROOT; ?>/kafnu_assets/css/style.css";
       
@@ -83,9 +84,20 @@
       
       window.head_js.load(PAGE_CSS);
       window.head_js.load(PAGE_LIBRARY, function() {
-        window.head_js.load(PAGE_JS, function() {
-          window.page = new kafnu.page.Default({});
-        });
+
+        if(jQuery('.has-map-element').length != 0) {
+          window.head_js.load(MAP_LIBRARY, function() {
+            window.head_js.load(PAGE_JS, function() {
+              window.page = new kafnu.page.Default({});
+            });
+          });
+          
+        } else {
+          window.head_js.load(PAGE_JS, function() {
+            window.page = new kafnu.page.Default({});
+          });
+        }
+        
       });
     </script>
 
