@@ -12,6 +12,8 @@ $home_locations_upcoming_03 = wds_page_builder_get_this_part_data( PREFIX . 'hom
 $home_locations_upcoming_04 = wds_page_builder_get_this_part_data( PREFIX . 'home_locations_upcoming_04');
 $home_locations_upcoming_05 = wds_page_builder_get_this_part_data( PREFIX . 'home_locations_upcoming_05');
 $home_locations_upcoming_06 = wds_page_builder_get_this_part_data( PREFIX . 'home_locations_upcoming_06');
+
+$home_locations_upcoming_title_mobile = wds_page_builder_get_this_part_data( PREFIX . 'home_locations_upcoming_title_mobile');
 ?>
 
 
@@ -285,7 +287,7 @@ $home_locations_upcoming_06 = wds_page_builder_get_this_part_data( PREFIX . 'hom
       <div id="home-box-items-container-mobile-toggle">
         <div class="row">
           <div class="col-sm-12 no-padding">
-            <h4>Opening <br class="visible-xs">in 2018</h4>
+            <h4><?php echo $home_locations_upcoming_title_mobile; ?></h4>
             <div class="cta-container">
               <a href="#" class="dropdown-arrow-icon up-icon"></a>
             </div>

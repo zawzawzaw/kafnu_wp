@@ -88,7 +88,13 @@ function wds_add_field_home_locations( $fields ) {
       'type'    => 'title_hover',
       'description' => '',
     ),
-
+    array(
+      'name'    => 'Home Locations Upcoming Title Mobile',
+      'id'      => PREFIX . 'home_locations_upcoming_title_mobile',
+      'type'    => 'text',
+      'description' => '',
+      'sanitization_cb' => false
+    )
 
   );
   return array_merge( $fields, $new_fields );
