@@ -39,7 +39,7 @@ class Manic_Admin {
    */
   private function __construct() {
     // Set our title
-    $this->title = 'Site Options';
+    $this->title = 'Kafnu Site Options';
   }
   /**
    * Returns the running object
