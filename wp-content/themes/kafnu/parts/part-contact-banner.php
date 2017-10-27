@@ -31,28 +31,47 @@
             <h1><?php echo $contact_banner_title; ?></h1>
             
             <form name="contact-form" id="contact-form" action="<?php echo THEMEROOT; ?>/php/contact.php" class="default-form">
-              <div class="message">
-                
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="input-container">
-                    <input type="text" name="first_name" placeholder="First Name*" class="required">
-                  </div>
-                  <div class="input-container">
-                    <input type="text" name="last_name" placeholder="Last Name*" required>
-                  </div>
-                  <div class="input-container">
-                    <input type="text" name="email" placeholder="Email Address*" required>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <textarea name="message" id="" cols="30" rows="10" placeholder="Ask us here"></textarea>
-                  <button type="submit" id="contact-form-send" class="square-cta border-white-version">Send</button>
-                </div>
-              </div>                    
+                    <div class="message">
+                      
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="input-container">
+                          <input type="text" name="first_name" placeholder="First Name*" maxlength="50" class="required">
+                        </div>
+                        <div class="input-container">
+                          <input type="text" name="last_name" placeholder="Last Name*" maxlength="50" required>
+                        </div>
+                        <div class="input-container">
+                          <input type="text" name="email" placeholder="Email Address*" maxlength="100" required>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="input-container">
+                        <textarea name="message" id="" cols="30" rows="10" placeholder="Ask us here"></textarea>
+            </div>
+            <div class="input-container">
+            <div class="g-recaptcha" data-sitekey="6LemIjYUAAAAAOa6OICHE3219c5JETVi3p3MsP8L" style="transform:scale(0.90);-webkit-transform:scale(0.90);transform-origin:0 0;-webkit-transform-origin:0 0;"></div>
+            <label id="captcha_error" class="error"></label>
+                        </div>
+                        <button type="submit" id="contact-form-send" class="square-cta border-white-version" onclick="return validateCaptcha()">Send</button>
+                      </div>
+                    </div>                    
 
-            </form>
+                  </form>
+                  <!--js-->
+          <script src='https://www.google.com/recaptcha/api.js'></script>
+          <script type="text/javascript">
+          function validateCaptcha()
+          {
+                if(grecaptcha.getResponse() == "")
+                {
+                        $("#captcha_error").text("Please complete the Captcha!");
+                        return false;
+                }
+                return true;
+          }
+          </script>
             
           </div> <!-- page-default-banner-copy -->
 
