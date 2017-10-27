@@ -800,6 +800,8 @@ kafnu.page.Default.prototype.create_contact_form = function() {
             $('#contact-form').find(".message").html("<h5>Your message has been sent successfully.</h5>")
           },
           success: function() {
+            $('#contact-form')[0].reset();
+            grecaptcha.reset();
             // console.log('here');
             $('#contact-form').find(".message").html("<h5>Your message has been sent successfully.</h5>")
           },
