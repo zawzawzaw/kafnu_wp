@@ -1,6 +1,7 @@
+<?php 
+  $site_language = manic_get_option( PREFIX . 'site_language' );
 
-
-
+?>
 
 <header id="header-desktop" class="visible-lg hidden-md hidden-sm hidden-xs">
   <div class="white-bg"></div>
@@ -61,8 +62,17 @@
 
     <div id="header-desktop-language-container">
       <ul>
-        <li><a href="<?php echo get_home_url(); ?>" class="selected">EN</a></li>
-        <li><a href="<?php echo get_home_url(); ?>/tc">中文</a></li>
+
+        <?php if($site_language == 'english'): ?>
+          <li><a href="<?php echo network_site_url('/'); ?>" class="selected">EN</a></li>
+          <li><a href="<?php echo network_site_url('/tc/'); ?>">中文</a></li>
+        <?php else: ?>
+          <li><a href="<?php echo network_site_url('/'); ?>">EN</a></li>
+          <li><a href="<?php echo network_site_url('/tc/'); ?>" class="selected">中文</a></li>
+        <?php endif; ?>
+        
+        
+
       </ul>
     </div> <!-- header-desktop-contact-login-container -->
   </div>
