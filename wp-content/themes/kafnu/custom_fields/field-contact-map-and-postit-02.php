@@ -49,7 +49,26 @@ function wds_add_field_contact_map_and_postit_02( $fields ) {
       'id'      => PREFIX . 'contact_map_02_email',
       'type'    => 'text',
       'description' => ''
-    ),    
+    ),
+
+    array(
+      'name'    => 'Facebook',
+      'id'      => PREFIX . 'contact_map_02_facebook',
+      'type'    => 'text',
+      'description' => ''
+    ),
+    array(
+      'name'    => 'Youtube',
+      'id'      => PREFIX . 'contact_map_02_youtube',
+      'type'    => 'text',
+      'description' => ''
+    ),
+    array(
+      'name'    => 'Google Map',
+      'id'      => PREFIX . 'contact_map_02_google_map',
+      'type'    => 'text',
+      'description' => ''
+    ),
     
   );
   return array_merge( $fields, $new_fields );

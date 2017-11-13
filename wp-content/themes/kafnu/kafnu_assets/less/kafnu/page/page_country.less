@@ -648,15 +648,21 @@ div.page-country-main-content-item.slick-slide.slick-current.slick-active {
   ul {
     margin-top: 10px;
     margin-bottom: 10px;
-    display: inline-block;
-    vertical-align: top;
+    // display: inline-block;
+    // vertical-align: top;
     // width: 49%;
     font-size: 0;
     line-height: 20px;
 
     li {
+      display: inline-block;
+      vertical-align: top;
       width: 33%;
       margin-bottom: 20px;
+      // MOBILE
+      @media only screen and (max-width: 767px) {
+        width: 49%;
+      }
 
       span {
         .fira-sans-medium;
@@ -671,7 +677,7 @@ div.page-country-main-content-item.slick-slide.slick-current.slick-active {
       height: 600px;
     }
     ul {
-      width: 32.33%;
+      // width: 32.33%;
     }
   }
   p {

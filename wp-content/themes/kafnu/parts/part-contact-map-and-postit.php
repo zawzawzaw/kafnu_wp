@@ -8,7 +8,21 @@
   $contact_map_country = wds_page_builder_get_this_part_data( PREFIX . "contact_map_country" );
   $contact_map_address = wds_page_builder_get_this_part_data( PREFIX . "contact_map_address" );
   $contact_map_email = wds_page_builder_get_this_part_data( PREFIX . "contact_map_email" );
+
+  $contact_map_facebook = wds_page_builder_get_this_part_data( PREFIX . "contact_map_facebook" );
+  $contact_map_youtube = wds_page_builder_get_this_part_data( PREFIX . "contact_map_youtube" );
+  $contact_map_google_map = wds_page_builder_get_this_part_data( PREFIX . "contact_map_google_map" );
+
+  $site_language = manic_get_option( PREFIX . 'site_language' );
+  $address_copy = 'Address';
+  $email_copy = 'Email';
+  if ($site_language != 'english') {
+    $address_copy = '地址';
+    $email_copy = '電子郵件';
+  }
 ?>
+
+
 
 <div class="has-map-element"></div>
 
@@ -35,14 +49,29 @@
           <div class="page-contact-find-us-text-box-container">
             <h2><?php echo $contact_map_country; ?></h2>
             <div class="address">
-              <h6>Address</h6>
+              <h6><?php echo $address_copy; ?></h6>
               <?php echo $contact_map_address; ?>                
             </div>
             
             <div class="email">
-              <h6>Email</h6>
+              <h6><?php echo $email_copy; ?></h6>
               <a href="mailto:<?php echo $contact_map_email; ?>"><?php echo $contact_map_email; ?></a>
             </div>
+
+            <div class="social">
+              <?php if (isset($contact_map_facebook) && $contact_map_facebook != ''): ?>
+                <a target="_blank" href="<?php echo $contact_map_facebook; ?>" class="fa fa-facebook"></a>
+              <?php endif; ?>
+
+              <?php if (isset($contact_map_youtube) && $contact_map_youtube != ''): ?>
+                <a target="_blank" href="<?php echo $contact_map_youtube; ?>" class="fa fa-youtube"></a>
+              <?php endif; ?>
+
+              <?php if (isset($contact_map_google_map) && $contact_map_google_map != ''): ?>
+                <a target="_blank" href="<?php echo $contact_map_google_map; ?>" class="fa fa-google"></a>
+              <?php endif; ?>
+            </div>
+
           </div>
         </div>
       </div>
@@ -73,14 +102,29 @@
               <div class="page-contact-find-us-text-box-container">
                 <h2><?php echo $contact_map_country; ?></h2>
                 <div class="address">
-                  <h6>Address</h6>
+                  <h6><?php echo $address_copy; ?></h6>
                   <?php echo $contact_map_address; ?>
                 </div>
                 
                 <div class="email">
-                  <h6>Email</h6>
+                  <h6><?php echo $email_copy; ?></h6>
                   <a href="mailto:<?php echo $contact_map_email; ?>"><?php echo $contact_map_email; ?></a>
                 </div>
+
+                <div class="social">
+                  <?php if (isset($contact_map_facebook) && $contact_map_facebook != ''): ?>
+                    <a target="_blank" href="<?php echo $contact_map_facebook; ?>" class="fa fa-facebook"></a>
+                  <?php endif; ?>
+                  
+                  <?php if (isset($contact_map_youtube) && $contact_map_youtube != ''): ?>
+                    <a target="_blank" href="<?php echo $contact_map_youtube; ?>" class="fa fa-youtube"></a>
+                  <?php endif; ?>
+
+                  <?php if (isset($contact_map_google_map) && $contact_map_google_map != ''): ?>
+                    <a target="_blank" href="<?php echo $contact_map_google_map; ?>" class="fa fa-google"></a>
+                  <?php endif; ?>
+                </div>
+
               </div>
             </div>
           </div>

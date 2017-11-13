@@ -184,4 +184,8 @@
     </div>
   </article>
 
+<?php else: ?>
+  
+  <div class="space50"></div>
+
 <?php endif; ?>
