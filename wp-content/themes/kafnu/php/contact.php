@@ -1,5 +1,35 @@
 <?php
+
 header('Access-Control-Allow-Origin: *');
+
+// require_once('path/to/wp-config.php');
+
+function FindWPConfig($dirrectory){
+global $confroot;
+foreach(glob($dirrectory."/*") as $f){
+    if (basename($f) == 'wp-config.php' ){
+        $confroot = str_replace("\\", "/", dirname($f));
+        return true;
+    }
+    if (is_dir($f)){
+        $newdir = dirname(dirname($f));
+    }
+}
+if (isset($newdir) && $newdir != $dirrectory){
+    if (FindWPConfig($newdir)){
+        return false;
+    }
+}
+return false; 
+}
+
+
+
+
+global $confroot;
+FindWPConfig(dirname(dirname(__FILE__)));
+
+require_once( $confroot . '/wp-config.php');
 
 session_start();
 
@@ -91,9 +121,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		// Create connection
 
 		$db_user = "wp_kafnu";
-
 		$db_hostname = "127.0.0.1";
 		$db_password = "K4fFnu_jdfdif!A!";
+
+		$db_user = DB_USER;
+		$db_hostname = DB_HOST;
+		$db_password = DB_PASSWORD;
+
+
 
 		// Local testing
 		// $db_hostname = "localhost";

@@ -6,6 +6,7 @@ $location_banner_image_tablet = wds_page_builder_get_this_part_data( PREFIX . "l
 $location_banner_image_mobile = wds_page_builder_get_this_part_data( PREFIX . "location_banner_image_mobile" );
 
 $selected_kafnu_events = manic_get_option( PREFIX . 'selected_kafnu_events' );
+$has_selected_kafnu_events = isset($selected_kafnu_events) && $selected_kafnu_events != '';
 
     // image
   $location_banner_image_id = wds_page_builder_get_this_part_data( PREFIX . 'location_banner_image_id' );
@@ -23,92 +24,110 @@ $selected_kafnu_events = manic_get_option( PREFIX . 'selected_kafnu_events' );
         <div id="page-default-banner-image" class="visible-lg visible-md">
           <div class="container-fluid reduce-padding">
             <div class="row">
-              <div class="col-lg-9 col-md-8 no-padding">
-                <div class="manic-image-container">
-                  <img src="" data-image-desktop="<?php echo $location_banner_image; ?>">
+
+              <?php if ($has_selected_kafnu_events): ?>
+
+
+                <div class="col-lg-9 col-md-8 no-padding">
+                  <div class="manic-image-container">
+                    <img src="" data-image-desktop="<?php echo $location_banner_image; ?>">
+                  </div>
                 </div>
-              </div>
-              <div class="col-lg-3 col-md-4 no-padding">
-                <div id="banner-sidebar-container" class="kafnu-slick-slider">
+                <div class="col-lg-3 col-md-4 no-padding">
+                  <div id="banner-sidebar-container" class="kafnu-slick-slider">
 
-                  <?php
+                    <?php
 
-                  //    ____ _____  _    ____ _____
-                  //   / ___|_   _|/ \  |  _ \_   _|
-                  //   \___ \ | | / _ \ | |_) || |
-                  //    ___) || |/ ___ \|  _ < | |
-                  //   |____/ |_/_/   \_\_| \_\|_|
-                  //
+                      //    ____ _____  _    ____ _____
+                      //   / ___|_   _|/ \  |  _ \_   _|
+                      //   \___ \ | | / _ \ | |_) || |
+                      //    ___) || |/ ___ \|  _ < | |
+                      //   |____/ |_/_/   \_\_| \_\|_|
+                      //
 
-                  global $post;
+                      global $post;
 
-                  $selected_kafnu_events_post_array = $selected_kafnu_events;                  // IMPORTANT
+                      $selected_kafnu_events_post_array = $selected_kafnu_events;                  // IMPORTANT
 
-                  if ($selected_kafnu_events_post_array != ''):
-
-
-                    // init
-                    $wow_offset = 45;
+                      if ($selected_kafnu_events_post_array != ''):
 
 
-                    for ($i=0; $i < count($selected_kafnu_events_post_array) ; $i++):
+                        // init
+                        $wow_offset = 45;
 
-                    $selected_kafnu_event_post_index = $i + 1;
-                    $selected_kafnu_event_post_id = $selected_kafnu_events_post_array[$i%count($selected_kafnu_events_post_array)];
-                    $post = get_post( $selected_kafnu_event_post_id );
-                    setup_postdata( $post );
 
-                    $selected_kafnu_event_post_status = get_post_status();
+                        for ($i=0; $i < count($selected_kafnu_events_post_array) ; $i++):
 
-                      if ($selected_kafnu_event_post_status == 'publish'):
+                        $selected_kafnu_event_post_index = $i + 1;
+                        $selected_kafnu_event_post_id = $selected_kafnu_events_post_array[$i%count($selected_kafnu_events_post_array)];
+                        $post = get_post( $selected_kafnu_event_post_id );
+                        setup_postdata( $post );
 
-                        // CMB2 custom fields
-                                                
-                        $kafnu_event_title     = get_post_meta( $selected_kafnu_event_post_id, PREFIX . "kafnu_event_title", true );
-                        $kafnu_event_image   = get_post_meta( $selected_kafnu_event_post_id, PREFIX . "kafnu_event_image", true );
-                        $kafnu_event_time    = get_post_meta( $selected_kafnu_event_post_id, PREFIX . "kafnu_event_time", true );
-                        $kafnu_event_copy   = get_post_meta( $selected_kafnu_event_post_id, PREFIX . "kafnu_event_copy", true );
-                        
+                        $selected_kafnu_event_post_status = get_post_status();
 
-                        $wow_offset = $wow_offset + 5;
-                ?>
+                          if ($selected_kafnu_event_post_status == 'publish'):
 
-                  <div class="banner-sidebar-item">
-                    <div class="banner-sidebar-item-title">
-                      <h6>upcoming events</h6>                  
-                    </div>
-                    <div class="banner-sidebar-item-image">
-                      <div class="manic-image-container">
-                        <img src="" data-image-desktop="<?php echo $kafnu_event_image; ?>"
-                        data-image-tablet="<?php echo $kafnu_event_image; ?>"
-                        data-image-mobile="<?php echo $kafnu_event_image; ?>" alt="">
-                      </div>
-                    </div>
-                    <div class="banner-sidebar-item-text">
-                      <h5><?php echo get_the_title(); ?></h5>
-                      <p><?php echo $kafnu_event_time; ?></p>
-                      <p><?php echo $kafnu_event_copy; ?></p>
-                    </div>
-                  </div><!-- banner-sidebar-item -->
+                            // CMB2 custom fields
+                                                    
+                            $kafnu_event_title     = get_post_meta( $selected_kafnu_event_post_id, PREFIX . "kafnu_event_title", true );
+                            $kafnu_event_image   = get_post_meta( $selected_kafnu_event_post_id, PREFIX . "kafnu_event_image", true );
+                            $kafnu_event_time    = get_post_meta( $selected_kafnu_event_post_id, PREFIX . "kafnu_event_time", true );
+                            $kafnu_event_copy   = get_post_meta( $selected_kafnu_event_post_id, PREFIX . "kafnu_event_copy", true );
+                            
 
-                <?php 
-                  endif;
-                endfor;
-              endif;
+                            $wow_offset = $wow_offset + 5;
+                    ?>
 
-              wp_reset_postdata();
+                      <div class="banner-sidebar-item">
+                        <div class="banner-sidebar-item-title">
+                          <h6>upcoming events</h6>                  
+                        </div>
+                        <div class="banner-sidebar-item-image">
+                          <div class="manic-image-container">
+                            <img src="" data-image-desktop="<?php echo $kafnu_event_image; ?>"
+                            data-image-tablet="<?php echo $kafnu_event_image; ?>"
+                            data-image-mobile="<?php echo $kafnu_event_image; ?>" alt="">
+                          </div>
+                        </div>
+                        <div class="banner-sidebar-item-text">
+                          <h5><?php echo get_the_title(); ?></h5>
+                          <p><?php echo $kafnu_event_time; ?></p>
+                          <p><?php echo $kafnu_event_copy; ?></p>
+                        </div>
+                      </div><!-- banner-sidebar-item -->
 
-              //    _____ _   _ ____
-              //   | ____| \ | |  _ \
-              //   |  _| |  \| | | | |
-              //   | |___| |\  | |_| |
-              //   |_____|_| \_|____/
-              //            
-              ?>                       
+                    <?php 
+                          endif;
+                        endfor;
+                      endif;
 
-                </div> <!-- banner-sidebar-container -->
-              </div>
+                      wp_reset_postdata();
+
+                      //    _____ _   _ ____
+                      //   | ____| \ | |  _ \
+                      //   |  _| |  \| | | | |
+                      //   | |___| |\  | |_| |
+                      //   |_____|_| \_|____/
+                      //            
+                    ?>
+
+                  </div> <!-- banner-sidebar-container -->
+                </div>
+
+
+              <?php else: ?>
+                <div class="col-md-12 no-padding">
+                  <div class="manic-image-container">
+                    <img src="" data-image-desktop="<?php echo $location_banner_image; ?>">
+                  </div>
+                </div>
+              <?php endif; ?>
+              
+              
             </div> <!-- row -->
+
+
+
           </div>
         </div> <!-- page-default-banner-image -->  
         <div id="page-default-banner-image-mobile" class="visible-sm visible-xs">

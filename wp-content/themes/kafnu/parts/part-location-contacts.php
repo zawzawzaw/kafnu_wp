@@ -30,14 +30,28 @@ $location_contacts_image_mobile = get_manic_mobile_image($location_contacts_imag
             <h4><?php echo $location_contacts_title; ?></h4>
             <!-- <h4>justin lorem</h4> -->
             <p><?php echo $location_contacts_copy; ?></p>
-            <ul>
-            <?php $col_break = 3; if(count($location_contacts_list) > 6) $col_break = 5; ?>
 
-            <?php $counter = 1; foreach ($location_contacts_list as $key => $list): ?>              
-              <li><span><?php echo $list; ?></span></li>
-              <?php if($counter%$col_break==0) echo '</ul><ul>'; ?>
-            <?php $counter++; endforeach; ?>                            
+            <ul>
+              <?php foreach ($location_contacts_list as $key => $list): ?>
+                <li><span><?php echo $list; ?></span></li>
+              <?php endforeach; ?>
             </ul>
+
+            <?php 
+              /*
+              
+              <ul>
+              <?php $col_break = 3; if(count($location_contacts_list) > 6) $col_break = 5; ?>
+
+              <?php $counter = 1; foreach ($location_contacts_list as $key => $list): ?>              
+                <li><span><?php echo $list; ?></span></li>
+                <?php if($counter%$col_break==0) echo '</ul><ul>'; ?>
+              <?php $counter++; endforeach; ?>                            
+              </ul>
+              
+               */
+            ?>
+            
           </div> <!-- page-country-main-content-item-text -->
           <div class="page-country-main-content-item-cta-container">
             <a href="<?php echo home_url().$location_contacts_cta_url; ?>" class="square-cta border-white-version"><?php echo $location_contacts_cta_text; ?></a>

@@ -389,6 +389,10 @@ kafnu.page.Default.prototype.create_community_elements = function(){
 
 kafnu.page.Default.prototype.create_community_slider = function() {
 
+
+  
+  
+
   if ($("#page-community-slider").length != 0) {
     $("#page-community-slider").slick({
       'speed': 350,
@@ -405,8 +409,15 @@ kafnu.page.Default.prototype.create_community_slider = function() {
   }
 
   if ($("#page-community-thumbnail-slider").length != 0) {
+
+    var number_of_entries = $("#page-community-thumbnail-slider .page-community-thumbnail-slider-item").length;
+    var slides_to_show = 4;
+    if (number_of_entries < 5) {
+      slides_to_show = 3;
+    }
+
     $("#page-community-thumbnail-slider").slick({
-      "slidesToShow": 4,
+      "slidesToShow": slides_to_show,
       "slidesToScroll": 1,
       "asNavFor": '#page-community-slider',
       "dots": false,

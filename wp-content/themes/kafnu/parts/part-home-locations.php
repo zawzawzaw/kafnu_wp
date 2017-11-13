@@ -127,6 +127,18 @@ $home_locations_upcoming_title_mobile = wds_page_builder_get_this_part_data( PRE
       </div>            
     </div> <!-- row -->
 
+
+    <?php 
+      $site_language = manic_get_option( PREFIX . 'site_language' );
+
+      $coming_soon_text = 'Coming <br class="visible-xs">soon';
+      if ($site_language != 'english') {
+        $coming_soon_text = '即將來臨';
+      }
+      
+
+    ?>
+
     <div id="home-box-items-container" class="hidden-xs hidden-sm">
 
       <div class="row">
@@ -147,7 +159,7 @@ $home_locations_upcoming_title_mobile = wds_page_builder_get_this_part_data( PRE
 
             <?php else: ?>
               <div class="home-box-item text-version-02 no-link-version coming-soon"><div class="overlay-bg"></div><div class="text-container">
-                <h4>Coming <br class="visible-xs">soon</h4>
+                <h4><?php echo $coming_soon_text; ?></h4>
               </div></div>
 
             <?php endif; ?>
@@ -170,7 +182,7 @@ $home_locations_upcoming_title_mobile = wds_page_builder_get_this_part_data( PRE
 
             <?php else: ?>
               <div class="home-box-item text-version-02 no-link-version coming-soon"><div class="overlay-bg"></div><div class="text-container">
-                <h4>Coming <br class="visible-xs">soon</h4>
+                <h4><?php echo $coming_soon_text; ?></h4>
               </div></div>
 
             <?php endif; ?>
@@ -193,7 +205,7 @@ $home_locations_upcoming_title_mobile = wds_page_builder_get_this_part_data( PRE
 
             <?php else: ?>
               <div class="home-box-item text-version-02 no-link-version coming-soon"><div class="overlay-bg"></div><div class="text-container">
-                <h4>Coming <br class="visible-xs">soon</h4>
+                <h4><?php echo $coming_soon_text; ?></h4>
               </div></div>
 
             <?php endif; ?>
@@ -218,7 +230,7 @@ $home_locations_upcoming_title_mobile = wds_page_builder_get_this_part_data( PRE
 
             <?php else: ?>
               <div class="home-box-item text-version-02 no-link-version coming-soon"><div class="overlay-bg"></div><div class="text-container">
-                <h4>Coming <br class="visible-xs">soon</h4>
+                <h4><?php echo $coming_soon_text; ?></h4>
               </div></div>
 
             <?php endif; ?>
@@ -241,7 +253,7 @@ $home_locations_upcoming_title_mobile = wds_page_builder_get_this_part_data( PRE
 
             <?php else: ?>
               <div class="home-box-item text-version-02 no-link-version coming-soon"><div class="overlay-bg"></div><div class="text-container">
-                <h4>Coming <br class="visible-xs">soon</h4>
+                <h4><?php echo $coming_soon_text; ?></h4>
               </div></div>
 
             <?php endif; ?>
@@ -265,7 +277,7 @@ $home_locations_upcoming_title_mobile = wds_page_builder_get_this_part_data( PRE
 
             <?php else: ?>
               <div class="home-box-item text-version-02 no-link-version coming-soon"><div class="overlay-bg"></div><div class="text-container">
-                <h4>Coming <br class="visible-xs">soon</h4>
+                <h4><?php echo $coming_soon_text; ?></h4>
               </div></div>
 
             <?php endif; ?>

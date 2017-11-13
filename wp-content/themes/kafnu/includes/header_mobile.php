@@ -1,4 +1,7 @@
+<?php 
+  $site_language = manic_get_option( PREFIX . 'site_language' );
 
+?>
 
 
 <header id="header-mobile" class="visible-md visible-sm visible-xs">
@@ -24,8 +27,10 @@
   <div id="header-mobile-language-login-container">
     <div id="header-mobile-language-cta-container">
       <ul>
-        <li><a href="<?php echo get_home_url(); ?>">EN</a></li>
-        <li><a href="/tc/index.html">中文</a></li>
+
+        <li><a href="<?php echo network_site_url('/'); ?>" >EN</a></li>
+        <li><a href="<?php echo network_site_url('/tc/'); ?>">中文</a></li>
+        
       </ul>
     </div>
     <div id="header-mobile-login-cta-container">

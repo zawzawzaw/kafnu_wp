@@ -71,6 +71,9 @@
 #footer-copyright-container {
   text-align: center;
   // text-align: right;
+  &.chinese-version{
+    text-align: right;
+  }
 
   @media all and (max-width: 1024px) {
     min-width: 220px;
@@ -79,7 +82,7 @@
 
   @media all and (max-width: 991px) {
     padding-top: 20px;
-    text-align: center;
+    text-align: center !important;
     margin-left: 0px;
     // &:after {
     //   content: "";

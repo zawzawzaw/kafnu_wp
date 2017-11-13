@@ -1,5 +1,6 @@
 <?php 
   $footer_copyright = manic_get_option( PREFIX . 'footer_copyright' );
+  $site_language = manic_get_option( PREFIX . 'site_language' );
 ?>
 
   
@@ -17,27 +18,33 @@
 
           <div id="footer-copyright-and-links-container">
             <div class="row">
-              <div class="col-lg-7 col-md-5">
-                <p id="footer-copyright-container"><?php echo $footer_copyright; ?></p>
-              </div>
-              <div class="col-lg-5 col-md-7">
-                <?php
-                  $defaults = array(
-                    'echo' => true,
-                    'container' => false,
-                    'items_wrap'      => '<ul id="footer-links-container">%3$s</ul>',
-                    'theme_location'  => 'footer-links',
-                    'menu_class'      => 'footer-links'
-                  );
+
+              <?php if ($site_language == 'english'): ?>
+                <div class="col-lg-7 col-md-5">
+                  <p id="footer-copyright-container"><?php echo $footer_copyright; ?></p>
+                </div>
+                <div class="col-lg-5 col-md-7">
+                  <?php
+                    $defaults = array(
+                      'echo' => true,
+                      'container' => false,
+                      'items_wrap'      => '<ul id="footer-links-container">%3$s</ul>',
+                      'theme_location'  => 'footer-links',
+                      'menu_class'      => 'footer-links'
+                    );
 
 
-                  wp_nav_menu($defaults);
-                ?>  
-                <!-- <ul id="footer-links-container">
-                  <li><a href="https://hongkong.kafnu.com/en/page/termsandconditions">Terms & Conditions</a></li>
-                  <li><a href="https://hongkong.kafnu.com/en/page/privacy-policy">Privacy Policy</a></li>
-                </ul> -->
-              </div>
+                    wp_nav_menu($defaults);
+                  ?>  
+                </div>
+              <?php else: ?>
+
+                <div class="col-lg-12">
+                  <p id="footer-copyright-container" class="chinese-version"><?php echo $footer_copyright; ?></p>
+                </div>
+
+              <?php endif; ?>
+              
             </div>
           </div>
           
