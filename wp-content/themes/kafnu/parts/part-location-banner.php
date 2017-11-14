@@ -4,8 +4,10 @@ $location_banner_subtitle = wds_page_builder_get_this_part_data( PREFIX . "locat
 $location_banner_image = wds_page_builder_get_this_part_data( PREFIX . "location_banner_image" );
 $location_banner_image_tablet = wds_page_builder_get_this_part_data( PREFIX . "location_banner_image_tablet" );
 $location_banner_image_mobile = wds_page_builder_get_this_part_data( PREFIX . "location_banner_image_mobile" );
+$location_banner_selected_kafnu_events = wds_page_builder_get_this_part_data( PREFIX . "location_banner_selected_kafnu_events" );
 
-$selected_kafnu_events = manic_get_option( PREFIX . 'selected_kafnu_events' );
+// $selected_kafnu_events = manic_get_option( PREFIX . 'selected_kafnu_events' );
+$selected_kafnu_events = $location_banner_selected_kafnu_events;
 $has_selected_kafnu_events = isset($selected_kafnu_events) && $selected_kafnu_events != '';
 
     // image

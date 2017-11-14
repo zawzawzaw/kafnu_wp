@@ -1,5 +1,8 @@
 <?php 
-  $selected_kafnu_events = manic_get_option( PREFIX . 'selected_kafnu_events' );
+  $location_events_mobile_selected_kafnu_events = wds_page_builder_get_this_part_data( PREFIX . "location_events_mobile_selected_kafnu_events" );
+  
+  // $selected_kafnu_events = manic_get_option( PREFIX . 'selected_kafnu_events' );
+  $selected_kafnu_events = $location_events_mobile_selected_kafnu_events;
   $has_selected_kafnu_events = isset($selected_kafnu_events) && $selected_kafnu_events != '';
 
 ?>

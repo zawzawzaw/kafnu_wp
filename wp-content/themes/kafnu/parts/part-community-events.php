@@ -1,10 +1,9 @@
 <?php 
   $community_events_title = wds_page_builder_get_this_part_data( PREFIX . "community_events_title" );
+  $community_events_selected_kafnu_events = wds_page_builder_get_this_part_data( PREFIX . "community_events_selected_kafnu_events" );
 
-  $selected_kafnu_events = manic_get_option( PREFIX . 'selected_kafnu_events' );
-
-
-
+  // $selected_kafnu_events = manic_get_option( PREFIX . 'selected_kafnu_events' );
+  $selected_kafnu_events = $community_events_selected_kafnu_events;
   $has_selected_kafnu_events = isset($selected_kafnu_events) && $selected_kafnu_events != '';
 
 ?>

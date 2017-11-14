@@ -40,6 +40,21 @@ function wds_add_field_location_banner( $fields ) {
       'type'    => 'file',
       'description' => 'jpg; will resize desktop image if not found',
     ),
+    
+    array(
+      'name'    => 'Kafnu Events',
+      'desc' => 'Drag posts from the left column to the right column to attach them to this page.<br />You may rearrange the order of the posts in the right column by dragging and dropping.',
+      'id'      => PREFIX . 'location_banner_selected_kafnu_events',
+      'type'    => 'custom_attached_posts',
+      'options' => array(
+        'show_thumbnails' => true, // Show thumbnails on the left
+        'filter_boxes'    => true, // Show a text box for filtering the results
+        'query_args'      => array( 
+          'posts_per_page' => -1,
+          'post_type' => 'kafnu-event',
+        ), // override the get_posts args
+      )
+    ),
   );
 
   return array_merge( $fields, $new_fields );

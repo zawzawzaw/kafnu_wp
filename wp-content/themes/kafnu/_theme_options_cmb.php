@@ -188,6 +188,7 @@ class Manic_Admin {
         )
     ) );
 
+    /*
     $cmb->add_field( array(
       'name' => 'Kafnu Event',
       'desc' => 'items found in the kafnu event',
@@ -209,6 +210,7 @@ class Manic_Admin {
           ), // override the get_posts args
         )
     ) );
+    */
     
 
 
