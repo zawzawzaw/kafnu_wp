@@ -13,19 +13,19 @@ function wds_add_field_location_live( $fields ) {
       'name'    => 'Image',
       'id'      => PREFIX . 'location_live_image',
       'type'    => 'file',
-      'description' => 'jpg, 680 x 550, 90kb',
+      'description' => '',
     ),
     array(
       'name'    => 'Image Tablet',
       'id'      => PREFIX . 'location_live_image_tablet',
       'type'    => 'file',
-      'description' => 'jpg, 680 x 550, 90kb',
+      'description' => '',
     ),
     array(
       'name'    => 'Image Mobile',
       'id'      => PREFIX . 'location_live_image_mobile',
       'type'    => 'file',
-      'description' => 'jpg, 640 x 520, 60kb',
+      'description' => '',
     ),
     array(
       'name'    => 'Title',

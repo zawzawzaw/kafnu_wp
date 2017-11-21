@@ -12,19 +12,19 @@ function wds_add_field_location_work( $fields ) {
       'name'    => 'Image',
       'id'      => PREFIX . 'location_work_image',
       'type'    => 'file',
-      'description' => 'jpg, 910 x 600, 100kb',
+      'description' => '',
     ),
     array(
       'name'    => 'Image Tablet',
       'id'      => PREFIX . 'location_work_image_tablet',
       'type'    => 'file',
-      'description' => 'jpg, 910 x 600, 100kb',
+      'description' => '',
     ),
     array(
       'name'    => 'Image Mobile',
       'id'      => PREFIX . 'location_work_image_mobile',
       'type'    => 'file',
-      'description' => 'jpg, 640 x 420, 50kb',
+      'description' => '',
     ),
     array(
       'name'    => 'Title',

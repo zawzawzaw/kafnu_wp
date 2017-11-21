@@ -5,280 +5,198 @@
 ?>
 <?php get_header(); ?>      
       
-  <article id="page-default-banner-section" class="">
-    <div id="page-default-banner-image" class="press-version visible-lg visible-md">
-      <div class="container-fluid reduce-padding">
-        <div class="row">
-          <div class="col-lg-8 col-md-8 no-padding">
-            <div class="manic-image-container">
-              <img src="" data-image-desktop="<?php echo THEMEROOT; ?>/images_cms/press/press-landing-banner.jpg">
-            </div>
-
-            <div id="page-default-banner-copy-container" class="left-version press-version">
-              <div class="container-fluid">
-                <div class="row">
-                  <div class="col-md-6">
-
-                    <div id="page-default-banner-copy">
-                      <h5>Featured Story</h5>
-                      <h2>Lorem ipsum dolor sitamet, cons ectetur adipiscring elit.</h2>
-                      <p>Lorem ipsum dolor sit amet, cons ectetur adipiscing elit. Maecenas mollis lorem in enim finibus, quis ultrices dui accumsan. Nulla facilisi. Fusce at aliquam magna, quis condimentum lacus. Curabitur in interdum sem praesent quis eros afsapien.</p>
-                      
-                      <a href="<?php echo $home_banner_link_url; ?>" class="plus-cta">Read More</a>
-
-                    </div> <!-- page-default-banner-copy -->
-
-                  </div>
-                </div>
-              </div>
-            </div> <!-- page-default-banner-copy-container -->
-          </div>
-          <div class="col-lg-4 col-md-4 no-padding">
-            <div id="banner-sidebar-container-02">
-
-              <div id="banner-sidebar-content">
-
-                <div class="banner-sidebar-title">
-                  <h5>Press Releases</h5>                  
-                </div>              
-
-                <div class="banner-sidebar-item">              
-                  <div class="banner-sidebar-item-text">                
-                    <p>20 October 2017, Kafnu Taipei</p>
-                    <h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5>                
-                  </div>
-                </div><!-- banner-sidebar-item -->                              
-
-                <div class="banner-sidebar-item">              
-                  <div class="banner-sidebar-item-text">                
-                    <p>20 October 2017, Kafnu Taipei</p>
-                    <h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5>                
-                  </div>
-                </div><!-- banner-sidebar-item -->                              
-
-                <div class="banner-sidebar-item">              
-                  <div class="banner-sidebar-item-text">                
-                    <p>20 October 2017, Kafnu Taipei</p>
-                    <h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5>                
-                  </div>
-                </div><!-- banner-sidebar-item -->                              
-
-                <div class="banner-sidebar-item">              
-                  <div class="banner-sidebar-item-text">                
-                    <p>20 October 2017, Kafnu Taipei</p>
-                    <h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5>                
-                  </div>
-                </div><!-- banner-sidebar-item -->                              
-
-                <div class="banner-sidebar-cta">              
-                  <a href="#" class="square-cta border-version">See More Press Releases</a>
-                </div><!-- banner-sidebar-item -->                   
-
-              </div>           
-
-            </div> <!-- banner-sidebar-container -->
-          </div>
-        </div> <!-- row -->
+  <article id="page-default-banner-section" c>
+    <div id="page-default-banner-image" class="press-version-02 visible-lg visible-md">
+      <div class="manic-image-container">
+        <img src="" data-image-desktop="<?php echo THEMEROOT; ?>/images_cms/press/press-banner.jpg">
       </div>
-    </div> <!-- page-default-banner-image -->
-    
+    </div>
     <div id="page-default-banner-image-mobile" class="visible-sm visible-xs">
       <div class="manic-image-container has-window-height">
-        <img src="" data-image-tablet="<?php echo $home_banner_image_tablet; ?>"
-                    data-image-mobile="<?php echo $home_banner_image_mobile; ?>">
+        <img src="" data-image-tablet="<?php echo THEMEROOT; ?>/images_cms/press/press-banner.jpg"
+                    data-image-mobile="<?php echo THEMEROOT; ?>/images_cms/press/press-banner.jpg">
       </div>
     </div>
+
+    <div id="page-default-banner-copy-container" class="center-version medium-text-version">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+
+            <div id="page-default-banner-copy">
+              <h1>Kafnu Press Releases</h1>
+              <h3>The latest updates from our community, learn more about our journey.</h3>
+            </div> <!-- page-default-banner-copy -->
+
+          </div>
+        </div>
+      </div>
+    </div> <!-- page-default-banner-copy-container -->
 
   </article> <!-- page-default-banner-section -->
-
-
-  <article id="page-press-main-content-section">
+  
+  <article id="page-press-filtered-section">
+    <div id="filter-sticky-trigger-mobile"></div>
     <div class="container-fluid reduce-padding">
       
-      <div id="page-press-fact-sheets">
-        <div class="row">
-
-          <div class="col-md-8 no-padding">
-            <div class="manic-image-container">
-              <img src="" data-image-desktop="<?php echo THEMEROOT; ?>/images_cms/press/property-fact-sheets.jpg" alt="">
-            </div>
-            <div class="image-caption">
-              <div class="container-fluid">
-                <div class="row">
-                  <div class="col-md-7">
-                    
-                      <div class="text-container">
-                        <h5>kafnu PROPERTY FACT SHEETS</h5>
-                        <p>Download and learn more about who we are, our motivations and the service offerings we provide. </p>
-                      </div>
-                      <div class="cta-container">
-                        <a href="#" class="download-cta">kafnu hong kong</a>
-                        <a href="#" class="download-cta">kafnu taipei</a>
-                      </div>
-                    
-                  </div>
-                </div>
-              </div>
-            </div> <!-- end image-caption -->      
-            
-          </div>
-
-          <div class="col-md-4 no-padding">
-            <div id="page-press-contact">
-              <div class="text-container">
-                <div class="text-content">
-                  <h6>Media Contact</h6>
-                  <h5>Petrie PR</h5>
-                  <a href="mailto:kafnu@petriepr.com">kafnu@petriepr.com</a>
-                </div>
-                <div class="text-content">
-                  <h6>For General Information</h6>
-                  <a href="mailto:hello@kafnu.com">hello@kafnu.com</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div> <!-- end row -->
-      </div>  <!-- end page-press-fact-sheets -->
-
-    </div>
-  </article>
-
-  <article id="page-default-connect-with-world-section" class="press-version">
-    <div class="container-fluid">
       <div class="row">
-        <div class="col-md-12">
-            <h4>Kafnu Gallery</h4>
-            <p>Browse our media assets below, we provide videos and photographs for you to download for both digital and print.</p>
+        <div class="col-md-4">
+          <div id="page-press-filter-options-container">
+            <div class="bg"></div>
+            <div class="press-links">
+              <ul>
+                <li><a href="#">press releases</a></li>
+                <li><a href="#">media contacts</a></li>
+                <li><a href="#">gallery</a></li>
+              </ul>
+            </div>            
+            <div class="press-filters-title"><a href="#"><h5>filter by location</h5></a></div>
+            <div class="press-filters-content">
+              <ul class="filters">
+                <li>                  
+                  <label>
+                    <input type="checkbox" name="article_filter" class="article-filter" value="hong kong" checked>
+                    <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
+                    <span class="text">Hong Kong</span>
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <input type="checkbox" name="article_filter" class="article-filter" value="taipei" checked>
+                    <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
+                    <span class="text">Taipei</span>
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <input type="checkbox" name="article_filter" class="article-filter" value="bangalore">
+                    <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
+                    <span class="text">Bangalore</span>
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <input type="checkbox" name="article_filter" class="article-filter" value="colombo" checked>
+                    <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
+                    <span class="text">Colombo</span>
+                  </label>                
+                </li>
+                <li>
+                  <label>
+                    <input type="checkbox" name="article_filter" class="article-filter" value="ho chi minh">
+                    <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
+                    <span class="text">Ho Chi Minh City</span>
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <input type="checkbox" name="article_filter" class="article-filter" value="melbourne">
+                    <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
+                    <span class="text">Ringwood (Melbourne)</span>
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <input type="checkbox" name="article_filter" class="article-filter" value="sydney">
+                    <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
+                    <span class="text">Sydney</span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>  
+        </div>              
+        <div class="col-md-6 col-md-offset-1">
+          <div id="page-press-articles-container">
+            <div class="press-article" data-country="hong kong">
+              <div class="text-container">
+                <h6>20 october 2017, Kafnu hong kong</h6>
+                <h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5>
 
-            <a href="#" class="square-cta border-version">view all photos & downloads</a>
+                <p>Lorem ipsum dolor sit amet, cons ectetur adipiscing elit. Maecenas mollis lorem in enim finibus, quis ultrices dui accumsan. Nulla facilisi. Fusce at aliquam magna, quis condimentum lacus. Curabitur in interdum sem praesent quis eros afsapien.</p>
+              </div>
+              <div class="cta-container">
+                <a href="#" class="plus-cta">Read More</a>
+                <a href="#" class="download-cta color-version">Download Article</a>
+              </div>
+            </div>
+            <div class="press-article" data-country="taipei">
+              <div class="text-container">
+                <h6>20 october 2017, Kafnu Taipei</h6>
+                <h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5>
+
+                <p>Lorem ipsum dolor sit amet, cons ectetur adipiscing elit. Maecenas mollis lorem in enim finibus, quis ultrices dui accumsan. Nulla facilisi. Fusce at aliquam magna, quis condimentum lacus. Curabitur in interdum sem praesent quis eros afsapien.</p>
+              </div>
+              <div class="cta-container">
+                <a href="#" class="plus-cta">Read More</a>
+                <a href="#" class="download-cta color-version">Download Article</a>
+              </div>
+            </div>
+            <div class="press-article" data-country="bangalore">
+              <div class="text-container">
+                <h6>20 october 2017, Kafnu Bangalore</h6>
+                <h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5>
+
+                <p>Lorem ipsum dolor sit amet, cons ectetur adipiscing elit. Maecenas mollis lorem in enim finibus, quis ultrices dui accumsan. Nulla facilisi. Fusce at aliquam magna, quis condimentum lacus. Curabitur in interdum sem praesent quis eros afsapien.</p>
+              </div>
+              <div class="cta-container">
+                <a href="#" class="plus-cta">Read More</a>
+                <a href="#" class="download-cta color-version">Download Article</a>
+              </div>
+            </div>
+            <div class="press-article" data-country="colombo">
+              <div class="text-container">
+                <h6>20 october 2017, Kafnu Colombo</h6>
+                <h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5>
+
+                <p>Lorem ipsum dolor sit amet, cons ectetur adipiscing elit. Maecenas mollis lorem in enim finibus, quis ultrices dui accumsan. Nulla facilisi. Fusce at aliquam magna, quis condimentum lacus. Curabitur in interdum sem praesent quis eros afsapien.</p>
+              </div>
+              <div class="cta-container">
+                <a href="#" class="plus-cta">Read More</a>
+                <a href="#" class="download-cta color-version">Download Article</a>
+              </div>
+            </div>
+            <div class="press-article" data-country="ho chi minh">
+              <div class="text-container">
+                <h6>20 october 2017, Kafnu Ho Chi Minh City</h6>
+                <h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5>
+
+                <p>Lorem ipsum dolor sit amet, cons ectetur adipiscing elit. Maecenas mollis lorem in enim finibus, quis ultrices dui accumsan. Nulla facilisi. Fusce at aliquam magna, quis condimentum lacus. Curabitur in interdum sem praesent quis eros afsapien.</p>
+              </div>
+              <div class="cta-container">
+                <a href="#" class="plus-cta">Read More</a>
+                <a href="#" class="download-cta color-version">Download Article</a>
+              </div>
+            </div>
+            <div class="press-article" data-country="melbourne">
+              <div class="text-container">
+                <h6>20 october 2017, Kafnu Ringwood (Melbourne)</h6>
+                <h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5>
+
+                <p>Lorem ipsum dolor sit amet, cons ectetur adipiscing elit. Maecenas mollis lorem in enim finibus, quis ultrices dui accumsan. Nulla facilisi. Fusce at aliquam magna, quis condimentum lacus. Curabitur in interdum sem praesent quis eros afsapien.</p>
+              </div>
+              <div class="cta-container">
+                <a href="#" class="plus-cta">Read More</a>
+                <a href="#" class="download-cta color-version">Download Article</a>
+              </div>
+            </div>
+            <div class="press-article last-article" data-country="sydney">
+              <div class="text-container">
+                <h6>20 october 2017, Kafnu Sydney</h6>
+                <h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5>
+
+                <p>Lorem ipsum dolor sit amet, cons ectetur adipiscing elit. Maecenas mollis lorem in enim finibus, quis ultrices dui accumsan. Nulla facilisi. Fusce at aliquam magna, quis condimentum lacus. Curabitur in interdum sem praesent quis eros afsapien.</p>
+              </div>
+              <div class="cta-container">
+                <a href="#" class="plus-cta">Read More</a>
+                <a href="#" class="download-cta color-version">Download Article</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </article>
 
-  <article id="page-press-main-content-section-02">
-    <div id="page-press-slider" class="kafnu-slick-slider">
-      <div class="page-press-slider-item">
-        <div class="manic-image-container">
-          <img src="" 
-            data-image-desktop="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-01.jpg"
-            data-image-tablet="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-01.jpg"
-            data-image-mobile="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-01.jpg" alt="">
-        </div>
-        <div class="page-press-slider-item-caption">
-        	<div class="text-container">
-	          <h5>Kafnu Hong Kong</h5>
-	          <p>Lorem ipsum dolor sit amet</p>
-          </div>
-          <div class="cta-container">
-          	<a href="#" class="download-cta">download for digital</a>
-          	<a href="#" class="download-cta">download for print</a>
-
-          	<span>All photography is owned or licensed by Kafnu Group Pte Ltd. Misrepresentation of these photographs is prohibited. For usage information, please contact press@kafnu.com.</span>
-          </div>
-        </div>
-      </div>
-      <div class="page-press-slider-item">
-        <div class="manic-image-container">
-          <img src="" 
-            data-image-desktop="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-01.jpg"
-            data-image-tablet="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-01.jpg"
-            data-image-mobile="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-01.jpg" alt="">
-        </div>
-        <div class="page-press-slider-item-caption">
-        	<div class="text-container">
-	          <h5>Kafnu Hong Kong</h5>
-	          <p>Lorem ipsum dolor sit amet</p>
-          </div>
-          <div class="cta-container">
-          	<a href="#" class="download-cta">download for digital</a>
-          	<a href="#" class="download-cta">download for print</a>
-
-          	<span>All photography is owned or licensed by Kafnu Group Pte Ltd. Misrepresentation of these photographs is prohibited. For usage information, please contact press@kafnu.com.</span>
-          </div>
-        </div>
-      </div>                  
-      <div class="page-press-slider-item">
-        <div class="manic-image-container">
-          <img src="" 
-            data-image-desktop="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-01.jpg"
-            data-image-tablet="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-01.jpg"
-            data-image-mobile="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-01.jpg" alt="">
-        </div>
-        <div class="page-press-slider-item-caption">
-        	<div class="text-container">
-	          <h5>Kafnu Hong Kong</h5>
-	          <p>Lorem ipsum dolor sit amet</p>
-          </div>
-          <div class="cta-container">
-          	<a href="#" class="download-cta">download for digital</a>
-          	<a href="#" class="download-cta">download for print</a>
-
-          	<span>All photography is owned or licensed by Kafnu Group Pte Ltd. Misrepresentation of these photographs is prohibited. For usage information, please contact press@kafnu.com.</span>
-          </div>
-        </div>
-      </div>
-      <div class="page-press-slider-item">
-        <div class="manic-image-container">
-          <img src="" 
-            data-image-desktop="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-01.jpg"
-            data-image-tablet="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-01.jpg"
-            data-image-mobile="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-01.jpg" alt="">
-        </div>
-        <div class="page-press-slider-item-caption">
-        	<div class="text-container">
-	          <h5>Kafnu Hong Kong</h5>
-	          <p>Lorem ipsum dolor sit amet</p>
-          </div>
-          <div class="cta-container">
-          	<a href="#" class="download-cta">download for digital</a>
-          	<a href="#" class="download-cta">download for print</a>
-
-          	<span>All photography is owned or licensed by Kafnu Group Pte Ltd. Misrepresentation of these photographs is prohibited. For usage information, please contact press@kafnu.com.</span>
-          </div>
-        </div>
-      </div>
-      <div class="page-press-slider-item">
-        <div class="manic-image-container">
-          <img src="" 
-            data-image-desktop="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-01.jpg"
-            data-image-tablet="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-01.jpg"
-            data-image-mobile="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-01.jpg" alt="">
-        </div>
-        <div class="page-press-slider-item-caption">
-        	<div class="text-container">
-	          <h5>Kafnu Hong Kong</h5>
-	          <p>Lorem ipsum dolor sit amet</p>
-          </div>
-          <div class="cta-container">
-          	<a href="#" class="download-cta">download for digital</a>
-          	<a href="#" class="download-cta">download for print</a>
-
-          	<span>All photography is owned or licensed by Kafnu Group Pte Ltd. Misrepresentation of these photographs is prohibited. For usage information, please contact press@kafnu.com.</span>
-          </div>
-        </div>
-      </div>      
-    </div>   
-
-    <div id="page-press-thumbnail-slider" class="kafnu-slick-slider">                  
-      <div class="page-press-thumbnail-slider-item">
-        <img src="<?php echo THEMEROOT; ?>images_cms/press/slider-thumbnail-01.jpg" class="img-responsive" alt="">                    
-      </div>
-      <div class="page-press-thumbnail-slider-item">
-        <img src="<?php echo THEMEROOT; ?>images_cms/press/slider-thumbnail-02.jpg" class="img-responsive" alt="">                    
-      </div>
-      <div class="page-press-thumbnail-slider-item">
-        <img src="<?php echo THEMEROOT; ?>images_cms/press/slider-thumbnail-03.jpg" class="img-responsive" alt="">                    
-      </div>
-      <div class="page-press-thumbnail-slider-item">
-        <img src="<?php echo THEMEROOT; ?>images_cms/press/slider-thumbnail-04.jpg" class="img-responsive" alt="">                    
-      </div>
-      <div class="page-press-thumbnail-slider-item">
-        <img src="<?php echo THEMEROOT; ?>images_cms/press/slider-thumbnail-05.jpg" class="img-responsive" alt="">                    
-      </div> 
-    </div>
-  </article>
 
 <?php get_footer(); ?>

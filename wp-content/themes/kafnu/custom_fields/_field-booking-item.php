@@ -30,21 +30,21 @@
         'name'    => 'Booking Item Image',
         'id'      => PREFIX . 'booking_item_image',
         'type'    => 'file',
-        'description' => 'jpg, 342 x 370, 40kb',
+        'description' => 'jpg',
     ) );
 
     $field_2b = $cmb->add_field( array(
         'name'    => 'Booking Item Image Tablet',
         'id'      => PREFIX . 'booking_item_image_tablet',
         'type'    => 'file',
-        'description' => 'jpg, 342 x 370, 40kb',
+        'description' => 'jpg',
     ) );
 
     $field_2c = $cmb->add_field( array(
         'name'    => 'Booking Item Image Mobile',
         'id'      => PREFIX . 'booking_item_image_mobile',
         'type'    => 'file',
-        'description' => 'jpg, 342 x 370, 40kb',
+        'description' => 'jpg',
     ) );
 
     $field_3 = $cmb->add_field( array(

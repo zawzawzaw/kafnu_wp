@@ -33,19 +33,19 @@ function wds_add_field_default_copy_and_image( $fields ) {
       'name'    => 'Image',
       'id'      => PREFIX . 'default_copy_and_image_image',
       'type'    => 'file',
-      'description' => 'jpg, 790 x 500, 80kb',
+      'description' => 'jpg',
     ),
     array(
       'name'    => 'Image Tablet',
       'id'      => PREFIX . 'default_copy_and_image_image_tablet',
       'type'    => 'file',
-      'description' => 'jpg, 790 x 500, 80kb',
+      'description' => 'jpg; will resize desktop image if not found',
     ),
     array(
       'name'    => 'Image Mobile',
       'id'      => PREFIX . 'default_copy_and_image_image_mobile',
       'type'    => 'file',
-      'description' => 'jpg, 640 x 410, 40kb',
+      'description' => 'jpg; will resize desktop image if not found',
     ),
   );
   return array_merge( $fields, $new_fields );

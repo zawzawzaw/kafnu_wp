@@ -413,21 +413,97 @@
 }
 
 .download-cta {
+  .fira-sans-medium;
   font-size: 15px;
   line-height: 20px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: @white;
+  position: relative;
+  padding-left: 37px;
+  padding-right: 37px;
+
+  &.color-version {
+    &:before {
+      .download-icon-gold;
+    }
+  }
 
   &:before {
     content: "";
+    .download-icon;
     display: inline-block;
-    padding-right: 10px;
     width: 21px;
     height: 21px;
+
+    position: absolute;
+    left: 0;
+    top: 0;
   }
 
   &:hover {
-    color: @grey;
+    color: @grey!important;
   }
+}
+
+
+/* Core */
+
+.filters input {
+  display: none;
+}
+
+.filters .icon {
+  text-align: center;
+  display: inline-block;
+}
+
+.filters .icon .fa-check-square {
+  visibility: hidden;
+}
+
+.filters input:checked + .icon .fa-square-o {
+  visibility: hidden;
+}
+
+.filters input:checked + .icon .fa-check-square {
+  visibility: visible;
+  color: @gold-4;
+}
+
+.filters input:checked + .icon + .text {
+  color: @gold-4;
+}
+
+
+/* IE8 and lower disabling hack because it does not support the :checked selector */
+
+.filters input {
+  display: inline\9;
+}
+
+.filters .icon {
+  display: none\9;
+}
+
+
+/* Optional */
+
+.filters {
+  /* prevent accidental selection when clicking */
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+.filters label {
+  cursor: pointer;
+}
+
+
+/* Checkbox styling */
+
+.filters input {
+    margin: 0 .1em; /* Use something similar to .icon */
 }

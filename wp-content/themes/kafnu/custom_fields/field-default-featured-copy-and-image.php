@@ -20,19 +20,19 @@ function wds_add_field_default_featured_copy_and_image( $fields ) {
       'name'    => 'Featured Image',
       'id'      => PREFIX . 'default_featured_copy_and_image_image',
       'type'    => 'file',
-      'description' => 'jpg, 1080 x 600, 134kb',
+      'description' => 'jpg',
     ),
     array(
       'name'    => 'Featured Image Tablet',
       'id'      => PREFIX . 'default_featured_copy_and_image_image_tablet',
       'type'    => 'file',
-      'description' => 'jpg, 1080 x 600, 134kb',
+      'description' => 'jpg; will resize desktop image if not found',
     ),
     array(
       'name'    => 'Featured Image Mobile',
       'id'      => PREFIX . 'default_featured_copy_and_image_image_mobile',
       'type'    => 'file',
-      'description' => 'jpg, 640 x 360, 50kb',
+      'description' => 'jpg; will resize desktop image if not found',
     ),
   );
   return array_merge( $fields, $new_fields );

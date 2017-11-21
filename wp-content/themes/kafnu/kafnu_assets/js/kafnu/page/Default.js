@@ -54,6 +54,8 @@ kafnu.page.Default = function(options, element) {
    */
   this.dropdown_dictionary = [];
 
+  this.article_filters = [];
+
 
   /**
    * @type {kafnu.component.HeaderDesktop}
@@ -388,12 +390,113 @@ kafnu.page.Default.prototype.create_community_elements = function(){
 
 };
 
-kafnu.page.Default.prototype.create_press_elements = function() {
+kafnu.page.Default.prototype.create_press_elements = function() {    
   this.create_press_slider();
+  this.create_article_filters();
+  setTimeout(function(){ 
+    this.update_press_layout(); 
+  }.bind(this), 800);
+  this.create_article_filters_mobile();
+}
+
+kafnu.page.Default.prototype.update_press_layout = function() {
+  if($("#page-press-articles-container").length != 0) {
+    
+    if(manic.IS_MOBILE == false && manic.IS_TABLET_PORTRAIT == false) {
+        var article_col = $("#page-press-articles-container");
+        var filter_col = $("#page-press-filter-options-container .bg");
+
+        console.log("filter_col:"+filter_col.outerHeight())
+        console.log("article_col:"+article_col.outerHeight())
+
+        if(article_col.outerHeight() > filter_col.outerHeight()) {
+          filter_col.css("height", article_col.outerHeight());
+        } 
+
+        if(article_col.outerHeight() < filter_col.outerHeight()) {
+          filter_col.css("height", article_col.outerHeight());
+          // article_col.css("min-height", filter_col.outerHeight());
+        }
+    }
+
+  }
+}
+
+kafnu.page.Default.prototype.create_article_filters = function() {  
+
+  this.filter_article();
+
+  $(".article-filter").on("change", function(){
+    this.filter_article();
+    setTimeout(function(){ 
+      this.update_press_layout(); 
+    }.bind(this), 800);    
+  }.bind(this));
+
+}
+
+kafnu.page.Default.prototype.create_article_filters_mobile = function() {  
+  if(manic.IS_MOBILE == true || manic.IS_TABLET_PORTRAIT == true) {
+    this.press_filters_mobile_open = false;
+    
+    $(".press-filters-title a").on("click", function(e){
+
+      e.preventDefault();      
+      
+
+      if(this.press_filters_mobile_open == false) {                      
+
+        $("#page-press-articles-container").hide();
+        $(".press-filters-content").slideDown();  
+        this.press_filters_mobile_open = true;
+      } else {        
+        $(".press-filters-content").slideUp();  
+        $("#page-press-articles-container").show();
+        this.press_filters_mobile_open = false;
+      }      
+
+      setTimeout(function(){ 
+        var y = $(".press-filters-title").offset().top - 64;
+
+        TweenLite.to(window, .4, {
+            scrollTo: {y: y}
+        });
+      }, 500);
+      
+    }.bind(this));
+
+    var scene = new ScrollMagic.Scene({
+      triggerElement: "#filter-sticky-trigger-mobile", 
+      triggerHook: 0.0 })
+      .setClassToggle(".press-filters-title", "sticky-version")
+      // .addIndicators({name: "stick"}) // add indicators (requires plugin)
+      .addTo(this.controller);
+
+  }
+}
+
+kafnu.page.Default.prototype.filter_article = function() {  
+  $('.article-filter').each(function(i, obj) {
+    var filter_val = $(obj).val();
+    this.article_filters[filter_val] = false;
+    
+    if ($(obj).is(':checked')) {
+      this.article_filters[filter_val] = true;  
+    }
+  }.bind(this));
+
+  for(var key in this.article_filters) {
+    if(this.article_filters[key]) {
+      $(".press-article[data-country='"+key+"']").fadeIn(500);
+    } else {
+      $(".press-article[data-country='"+key+"']").fadeOut(500);
+    }
+  }
 }
 
 kafnu.page.Default.prototype.create_press_slider = function() {  
-  if ($("#page-press-slider").length != 0) {
+  if ($("#page-press-slider").length != 0) {    
+
     $("#page-press-slider").slick({
       'speed': 350,
       'dots': false,
@@ -402,10 +505,25 @@ kafnu.page.Default.prototype.create_press_slider = function() {
       'slidesToShow': 1,
       'slidesToScroll': 1,
       'pauseOnHover': false,
-      'autoplay': true,
+      'autoplay': false,
       'autoplaySpeed': 4000,
-      "asNavFor": '#page-press-thumbnail-slider'
+      "asNavFor": '#page-press-thumbnail-slider',
+      onBeforeChange: function(slider,index){
+        beforeChangeFunc(index)
+      },
+      onAfterChange: function(slider,index){
+        afterChangeFunc(index)
+      } 
     });
+
+    $('#page-press-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+      $('#page-press-slider-caption').hide();
+    });
+
+    $('#page-press-slider').on('afterChange', function(event, slick, currentSlide, nextSlide){
+      $('#page-press-slider-caption').fadeIn();
+    });
+    
   }
 
   if ($("#page-press-thumbnail-slider").length != 0) {
@@ -1032,12 +1150,12 @@ kafnu.page.Default.prototype.create_header_desktop = function(){
     $('.header-desktop-spacer').addClass("active");
   }
 
-  if ($('#page-press-main-content-section').length != 0) {
+  if ($('#page-press-main-content-section').length != 0 || $("#page-press-filtered-section").length != 0) {
+    console.log('add class page-press')
     $('body').addClass("page-press");
     $('.header-desktop-spacer').addClass("active");
   }
   
-
 };
 
 kafnu.page.Default.prototype.create_header_mobile = function(){
@@ -1201,10 +1319,6 @@ kafnu.page.Default.prototype.update_page_layout = function(){
   if (this.has_adjust_height_main_content_item == true) {
     this.adjust_height_main_content_item();
   }
-  
-
-
-
 };
 
 
