@@ -27,21 +27,21 @@
         'name'    => 'Slider Image',
         'id'      => PREFIX . 'community_manager_banner_image',
         'type'    => 'file',
-        'description' => 'jpg',
+        'description' => 'jpg, 1370 x 500, 90kb',
     ) );
 
     $cmb->add_field( array(
         'name'    => 'Slider Image Tablet',
         'id'      => PREFIX . 'community_manager_banner_image_tablet',
         'type'    => 'file',
-        'description' => 'jpg',
+        'description' => 'jpg, 1150 x 420, 60kb',
     ) );
 
     $cmb->add_field( array(
         'name'    => 'Slider Image Mobile',
         'id'      => PREFIX . 'community_manager_banner_image_mobile',
         'type'    => 'file',
-        'description' => 'jpg',
+        'description' => 'jpg, 640 x 500, 150kb',
     ) );
 
 
@@ -49,7 +49,7 @@
         'name'    => 'Thumbnail Black',
         'id'      => PREFIX . 'community_manager_thumbnail_black',
         'type'    => 'file',
-        'description' => 'jpg',
+        'description' => 'jpg, 250 x 150, 20kb',
     ) );
 
 

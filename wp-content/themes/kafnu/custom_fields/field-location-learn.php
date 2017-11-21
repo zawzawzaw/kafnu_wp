@@ -12,19 +12,19 @@ function wds_add_field_location_learn( $fields ) {
       'name'    => 'Image',
       'id'      => PREFIX . 'location_learn_image',
       'type'    => 'file',
-      'description' => '',
+      'description' => 'jpg, 680 x 550, 300kb',
     ),
     array(
       'name'    => 'Image Tablet',
       'id'      => PREFIX . 'location_learn_image_tablet',
       'type'    => 'file',
-      'description' => '',
+      'description' => 'jpg, 680 x 550, 300kb',
     ),
     array(
       'name'    => 'Image Mobile',
       'id'      => PREFIX . 'location_learn_image_mobile',
       'type'    => 'file',
-      'description' => '',
+      'description' => 'jpg, 640 x 520, 60kb',
     ),
     array(
       'name'    => 'Title',

@@ -20,19 +20,19 @@ function wds_add_field_contact_banner( $fields ) {
       'name'    => 'Contact Banner Image',
       'id'      => PREFIX . 'contact_banner_image',
       'type'    => 'file',
-      'description' => 'jpg',
+      'description' => 'jpg, 1360 x 770, 250kb',
     ),
     array(
       'name'    => 'Contact Banner Image Tablet',
       'id'      => PREFIX . 'contact_banner_image_tablet',
       'type'    => 'file',
-      'description' => 'jpg; will resize desktop image if not found',
+      'description' => 'jpg, 1150 x 650, 100kb',
     ),
     array(
       'name'    => 'Contact Banner Image Mobile',
       'id'      => PREFIX . 'contact_banner_image_mobile',
       'type'    => 'file',
-      'description' => 'jpg; will resize desktop image if not found',
+      'description' => 'jpg, 640 x 360, 50kb',
     ),
   );
   return array_merge( $fields, $new_fields );

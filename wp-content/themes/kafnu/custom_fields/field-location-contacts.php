@@ -12,19 +12,19 @@ function wds_add_field_location_contacts( $fields ) {
       'name'    => 'Image',
       'id'      => PREFIX . 'location_contacts_image',
       'type'    => 'file',
-      'description' => '',
+      'description' => 'jpg, 680 x 500, 100kb',
     ),
     array(
       'name'    => 'Image Tablet',
       'id'      => PREFIX . 'location_contacts_image_tablet',
       'type'    => 'file',
-      'description' => '',
+      'description' => 'jpg, 680 x 500, 100kb',
     ),
     array(
       'name'    => 'Image Mobile',
       'id'      => PREFIX . 'location_contacts_image_mobile',
       'type'    => 'file',
-      'description' => '',
+      'description' => 'jpg, 640 x 470, 60kb',
     ),
     array(
       'name'    => 'Title',
