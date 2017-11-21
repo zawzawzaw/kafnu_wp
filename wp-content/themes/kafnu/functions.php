@@ -411,6 +411,67 @@ function cmb2_sanitize_title_hover_callback( $override_value, $value ) {
 
 
 
+// MANIC CTA
+
+
+add_action( 'cmb2_render_manic_cta', 'custom_cmb2_render_manic_cta', 10, 5 );
+function custom_cmb2_render_manic_cta( $field_args, $value, $object_id, $object_type, $field_type_object ) {
+  $value = wp_parse_args( $value, array(
+      'copy'      => '',
+      'link'      => '',
+  ) );
+
+  // start of html (gspa description)
+  ?>
+
+    <div class="row">
+      <div class="col-md-6">
+
+        <div class="custom-metabox-item">
+          <label style="display:block;">Copy</label>
+          <?php echo $field_type_object->input( 
+            array( 
+              'name'  => $field_type_object->_name( '[copy]' ),
+              'id'    => $field_type_object->_id( '_copy' ),
+              'desc'  => '',
+              'value' => $value['copy'],
+              'sanitization_cb' => false,
+            ));
+          ?>
+        </div>
+
+      </div>
+      <div class="col-md-6">
+        
+        <div class="custom-metabox-item">
+          <label style="display:block;">Link</label>
+          <?php echo $field_type_object->input( 
+            array( 
+              'name'  => $field_type_object->_name( '[link]' ),
+              'id'    => $field_type_object->_id( '_link' ),
+              'desc'  => '',
+              'value' => $value['link'],
+              'sanitization_cb' => false,
+            ));
+          ?>
+        </div>
+
+      </div>
+    </div>
+
+
+  <?php
+  // end of html (gspa description)
+
+} // custom_cmb2_render_manic_cta
+
+
+add_filter( 'cmb2_sanitize_manic_cta', 'cmb2_sanitize_manic_cta_callback', 10, 2 );
+function cmb2_sanitize_manic_cta_callback( $override_value, $value ) {
+  return $value;
+}
+
+
 
 
 
@@ -423,6 +484,10 @@ require_once( 'custom_fields/_field-social-media-item.php' );
 require_once( 'custom_fields/_field-kafnu-event.php' );
 require_once( 'custom_fields/_field-booking-item.php' );
 require_once( 'custom_fields/_field-community-manager.php' );
+
+require_once( 'custom_fields/_field-press-release.php' );
+require_once( 'custom_fields/_field-media-contact.php' );
+require_once( 'custom_fields/_field-gallery-download.php' );
 
 
 
@@ -458,6 +523,16 @@ require_once( 'custom_fields/field-community-events.php' );
 require_once( 'custom_fields/field-location-content-mobile-slider.php' );
 require_once( 'custom_fields/field-location-events-mobile.php' );
 require_once( 'custom_fields/field-plain-html.php' );
+
+
+// new press release pages
+require_once( 'custom_fields/field-default-banner-short.php' );
+require_once( 'custom_fields/field-press-release-banner.php' );
+require_once( 'custom_fields/field-press-release-fact-sheet-and-media-contact.php' );
+require_once( 'custom_fields/field-press-release-gallery-download-masonry.php' );
+require_once( 'custom_fields/field-press-release-gallery-download-slider.php' );
+require_once( 'custom_fields/field-press-release-media-contacts.php' );
+require_once( 'custom_fields/field-press-release-list.php' );
 
 
 
