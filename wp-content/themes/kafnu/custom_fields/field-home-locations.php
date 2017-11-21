@@ -38,7 +38,7 @@ function wds_add_field_home_locations( $fields ) {
       'name'    => 'Home Locations Item 01 Image Slider',
       'id'      => PREFIX . 'home_locations_item_01_image',
       'type'    => 'file_list',
-      'description' => 'jpg',
+      'description' => 'jpg, 920 x 500, 130kb',
     ),
     array(
       'name'    => 'Home Locations Item 02',
@@ -50,7 +50,7 @@ function wds_add_field_home_locations( $fields ) {
       'name'    => 'Home Locations Item 02 Image Slider',
       'id'      => PREFIX . 'home_locations_item_02_image',
       'type'    => 'file_list',
-      'description' => 'jpg',
+      'description' => 'jpg, 920 x 500, 130kb',
     ),
     array(
       'name'    => 'Home Locations Upcoming 01',

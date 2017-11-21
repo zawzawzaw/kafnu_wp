@@ -26,19 +26,19 @@ function wds_add_field_location_banner( $fields ) {
       'name'    => 'Location Banner Image',
       'id'      => PREFIX . 'location_banner_image',
       'type'    => 'file',
-      'description' => 'jpg',
+      'description' => 'jpg, 1030 x 670, 250kb',
     ),
     array(
       'name'    => 'Location Banner Image Tablet',
       'id'      => PREFIX . 'location_banner_image_tablet',
       'type'    => 'file',
-      'description' => 'jpg; will resize desktop image if not found',
+      'description' => 'jpg, 1030 x 670, 250kb',
     ),
     array(
       'name'    => 'Location Banner Image Mobile',
       'id'      => PREFIX . 'location_banner_image_mobile',
       'type'    => 'file',
-      'description' => 'jpg; will resize desktop image if not found',
+      'description' => 'jpg, 640 x 420, 80kb',
     ),
     
     array(

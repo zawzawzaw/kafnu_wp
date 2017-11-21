@@ -14,7 +14,7 @@
         'name'    => 'Event Image',
         'id'      => PREFIX . 'kafnu_event_image',
         'type'    => 'file',
-        'description' => 'jpg',
+        'description' => 'jpg, 340 x 370, 40kb',
     ) );
 
     $field_4 = $cmb->add_field( array(

@@ -49,19 +49,19 @@ function wds_add_field_home_banner( $fields ) {
       'name'    => 'Home Banner Image',
       'id'      => PREFIX . 'home_banner_image',
       'type'    => 'file',
-      'description' => 'jpg',
+      'description' => 'jpg, 1360 x 770, 250kb',
     ),
     array(
       'name'    => 'Home Banner Image Tablet',
       'id'      => PREFIX . 'home_banner_image_tablet',
       'type'    => 'file',
-      'description' => 'jpg; will resize desktop image if not found',
+      'description' => 'jpg, 1150 x 650, 100kb',
     ),
     array(
       'name'    => 'Home Banner Image Mobile',
       'id'      => PREFIX . 'home_banner_image_mobile',
       'type'    => 'file',
-      'description' => 'jpg; will resize desktop image if not found',
+      'description' => 'jpg, 640 x 360, 50kb',
     ),
 
   );

@@ -35,19 +35,19 @@ function wds_add_field_default_banner( $fields ) {
       'name'    => 'Default Banner Image',
       'id'      => PREFIX . 'default_banner_image',
       'type'    => 'file',
-      'description' => 'jpg',
+      'description' => 'jpg, 1360 x 770, 300kb',
     ),
     array(
       'name'    => 'Default Banner Image Tablet',
       'id'      => PREFIX . 'default_banner_image_tablet',
       'type'    => 'file',
-      'description' => 'jpg; will resize desktop image if not found',
+      'description' => 'jpg, 1150 x 650, 150kb',
     ),
     array(
       'name'    => 'Default Banner Image Mobile',
       'id'      => PREFIX . 'default_banner_image_mobile',
       'type'    => 'file',
-      'description' => 'jpg; will resize desktop image if not found',
+      'description' => 'jpg, 640 x 1140, 140kb',
     ),
 
   );

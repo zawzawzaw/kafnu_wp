@@ -32,20 +32,19 @@ function wds_add_field_home_image_links( $fields ) {
       'name'    => 'Home Image Link 01 Image',
       'id'      => PREFIX . 'home_image_links_01_image',
       'type'    => 'file',
-      'description' => 'jpg',
-      'render_class' => 'test-class',
+      'description' => 'jpg, 640 x 640, 90kb',
     ),
     array(
       'name'    => 'Home Image Link 01 Image Grey',
       'id'      => PREFIX . 'home_image_links_01_image_grey',
       'type'    => 'file',
-      'description' => 'jpg',
+      'description' => 'jpg, 640 x 640, 60kb',
     ),
     array(
       'name'    => 'Home Image Link 01 Image Mobile',
       'id'      => PREFIX . 'home_image_links_01_image_mobile',
       'type'    => 'file',
-      'description' => 'jpg; will resize desktop image if not found',
+      'description' => 'jpg, 640 x 240, 40kb',
     ),
     
 
@@ -59,19 +58,19 @@ function wds_add_field_home_image_links( $fields ) {
       'name'    => 'Home Image Link 02 Image',
       'id'      => PREFIX . 'home_image_links_02_image',
       'type'    => 'file',
-      'description' => 'jpg',
+      'description' => 'jpg, 640 x 640, 90kb',
     ),
     array(
       'name'    => 'Home Image Link 02 Image Grey',
       'id'      => PREFIX . 'home_image_links_02_image_grey',
       'type'    => 'file',
-      'description' => 'jpg',
+      'description' => 'jpg, 640 x 640, 60kb',
     ),
     array(
       'name'    => 'Home Image Link 02 Image Mobile',
       'id'      => PREFIX . 'home_image_links_02_image_mobile',
       'type'    => 'file',
-      'description' => 'jpg',
+      'description' => 'jpg, 640 x 240, 40kb',
     ),
 
     array(
@@ -84,19 +83,19 @@ function wds_add_field_home_image_links( $fields ) {
       'name'    => 'Home Image Link 03 Image',
       'id'      => PREFIX . 'home_image_links_03_image',
       'type'    => 'file',
-      'description' => 'jpg',
+      'description' => 'jpg, 640 x 640, 90kb',
     ),
     array(
       'name'    => 'Home Image Link 03 Image Grey',
       'id'      => PREFIX . 'home_image_links_03_image_grey',
       'type'    => 'file',
-      'description' => 'jpg',
+      'description' => 'jpg, 640 x 640, 60kb',
     ),
     array(
       'name'    => 'Home Image Link 03 Image Mobile',
       'id'      => PREFIX . 'home_image_links_03_image_mobile',
       'type'    => 'file',
-      'description' => 'jpg',
+      'description' => 'jpg, 640 x 240, 40kb',
     ),
 
     array(
@@ -109,19 +108,19 @@ function wds_add_field_home_image_links( $fields ) {
       'name'    => 'Home Image Link 04 Image',
       'id'      => PREFIX . 'home_image_links_04_image',
       'type'    => 'file',
-      'description' => 'jpg',
+      'description' => 'jpg, 640 x 640, 90kb',
     ),
     array(
       'name'    => 'Home Image Link 04 Image Grey',
       'id'      => PREFIX . 'home_image_links_04_image_grey',
       'type'    => 'file',
-      'description' => 'jpg',
+      'description' => 'jpg, 640 x 640, 60kb',
     ),
     array(
       'name'    => 'Home Image Link 04 Image Mobile',
       'id'      => PREFIX . 'home_image_links_04_image_mobile',
       'type'    => 'file',
-      'description' => 'jpg',
+      'description' => 'jpg, 640 x 240, 40kb',
     ),
 
     array(
@@ -134,19 +133,19 @@ function wds_add_field_home_image_links( $fields ) {
       'name'    => 'Home Image Link 05 Image',
       'id'      => PREFIX . 'home_image_links_05_image',
       'type'    => 'file',
-      'description' => 'jpg',
+      'description' => 'jpg, 640 x 640, 90kb',
     ),
     array(
       'name'    => 'Home Image Link 05 Image Grey',
       'id'      => PREFIX . 'home_image_links_05_image_grey',
       'type'    => 'file',
-      'description' => 'jpg',
+      'description' => 'jpg, 640 x 640, 60kb',
     ),
     array(
       'name'    => 'Home Image Link 05 Image Mobile',
       'id'      => PREFIX . 'home_image_links_05_image_mobile',
       'type'    => 'file',
-      'description' => 'jpg',
+      'description' => 'jpg, 640 x 240, 40kb',
     ),
 
     array(
@@ -159,19 +158,19 @@ function wds_add_field_home_image_links( $fields ) {
       'name'    => 'Home Image Link 06 Image',
       'id'      => PREFIX . 'home_image_links_06_image',
       'type'    => 'file',
-      'description' => 'jpg',
+      'description' => 'jpg, 640 x 640, 90kb',
     ),
     array(
       'name'    => 'Home Image Link 06 Image Grey',
       'id'      => PREFIX . 'home_image_links_06_image_grey',
       'type'    => 'file',
-      'description' => 'jpg',
+      'description' => 'jpg, 640 x 640, 60kb',
     ),
     array(
       'name'    => 'Home Image Link 06 Image Mobile',
       'id'      => PREFIX . 'home_image_links_06_image_mobile',
       'type'    => 'file',
-      'description' => 'jpg',
+      'description' => 'jpg, 640 x 240, 40kb',
     ),
   );
   return array_merge( $fields, $new_fields );

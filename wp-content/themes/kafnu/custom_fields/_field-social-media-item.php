@@ -47,7 +47,7 @@
         'name'    => 'Image',
         'id'      => PREFIX . 'social_media_image',
         'type'    => 'file',
-        'description' => 'jpg',
+        'description' => 'jpg, 230 x 230, 20kb',
     ) );
 
     $field_3 = $cmb->add_field( array(

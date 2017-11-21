@@ -26,19 +26,19 @@ function wds_add_field_default_image_and_note( $fields ) {
       'name'    => 'Note Image',
       'id'      => PREFIX . 'default_image_and_note_image',
       'type'    => 'file',
-      'description' => 'jpg',
+      'description' => 'jpg, 870 x 500, 140kb',
     ),
     array(
       'name'    => 'Note Image Tablet',
       'id'      => PREFIX . 'default_image_and_note_image_tablet',
       'type'    => 'file',
-      'description' => 'jpg; will resize desktop image if not found',
+      'description' => 'jpg, 870 x 500, 140kb',
     ),
     array(
       'name'    => 'Note Image Mobile',
       'id'      => PREFIX . 'default_image_and_note_image_mobile',
       'type'    => 'file',
-      'description' => 'jpg; will resize desktop image if not found',
+      'description' => 'jpg, 640 x 370, 60kb',
     ),
   );
   return array_merge( $fields, $new_fields );
