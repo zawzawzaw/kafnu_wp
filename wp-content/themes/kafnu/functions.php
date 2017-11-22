@@ -14,7 +14,7 @@ update_option( 'home', 'http://visionbodyasia.com' );
 
 define('THEMEROOT', get_stylesheet_directory_uri());
 // define('DEBUG', true);
-define('DEBUG', true);
+define('DEBUG', false);
 
 define('PREFIX', '_kafnu_');
 
@@ -126,6 +126,7 @@ register_nav_menus(
     'mobile-header-menu' => 'Mobile Header Menu',
     'login-links' => 'Login Links',
     'footer-links' => 'Footer Links',
+    'press-release-menu' => 'Press Release Menu',
   )
 );
 
@@ -279,6 +280,67 @@ require_once( '_theme_post_types.php' );
 
 
 
+//    ____  _   _  ___  ____ _____    ____ ___  ____  _____ ____
+//   / ___|| | | |/ _ \|  _ \_   _|  / ___/ _ \|  _ \| ____/ ___|
+//   \___ \| |_| | | | | |_) || |   | |  | | | | | | |  _| \___ \
+//    ___) |  _  | |_| |  _ < | |   | |__| |_| | |_| | |___ ___) |
+//   |____/|_| |_|\___/|_| \_\|_|    \____\___/|____/|_____|____/
+//
+
+
+
+// kafnu_press_quote
+
+function kafnu_press_quote_shortcode( $atts, $content = null ) {
+  return '<div class="press-release-content-quote">'. $content .'</a></div>';
+}
+add_shortcode('kafnu_press_quote', 'kafnu_press_quote_shortcode');
+
+
+
+
+// kafnu_media_contact
+
+function kafnu_media_contact_shortcode( $atts, $content = null ) {
+
+  // defaults
+  extract( shortcode_atts( array(
+    'subtitle' => '',
+    'name' => 'Media Contact Name',
+    'position' => 'Media Contact Position',
+    'phone' => '',
+    'email' => '',
+  ), $atts ) );
+
+  $return_str = '';
+  $return_str .= '<div class="press-release-content-media-contact">';
+  $return_str .=   '<div class="press-release-content-media-contact-name">';
+
+  if ($subtitle != '') {
+    $return_str .=     '<h5>' . $subtitle . '</h5>';
+  }
+
+  $return_str .=     '<h3>' . $name . '</h3>';
+  $return_str .=     '<p>' .  $position . '</p>';
+  $return_str .=   '</div>';
+  $return_str .=   '<div class="press-release-content-media-contact-details">';
+
+  if ($phone != '') {
+    $return_str .=   '<a href="tel:' . $phone . '">' . $phone . '</a>';
+  }
+  if ($email != '') {
+    $return_str .=   '<a href="mailto:' . $email . '">' . $email . '</a>';
+  }
+  $return_str .=   '</div>';
+  $return_str .= '</div>';
+
+  return $return_str;
+}
+add_shortcode('kafnu_media_contact', 'kafnu_media_contact_shortcode');
+
+
+
+
 
 //     ____ _   _ ____ _____ ___  __  __   _____ ___ _____ _     ____  ____
 //    / ___| | | / ___|_   _/ _ \|  \/  | |  ___|_ _| ____| |   |  _ \/ ___|
@@ -411,6 +473,67 @@ function cmb2_sanitize_title_hover_callback( $override_value, $value ) {
 
 
 
+// MANIC CTA
+
+
+add_action( 'cmb2_render_manic_cta', 'custom_cmb2_render_manic_cta', 10, 5 );
+function custom_cmb2_render_manic_cta( $field_args, $value, $object_id, $object_type, $field_type_object ) {
+  $value = wp_parse_args( $value, array(
+      'copy'      => '',
+      'link'      => '',
+  ) );
+
+  // start of html (gspa description)
+  ?>
+
+    <div class="row">
+      <div class="col-md-6">
+
+        <div class="custom-metabox-item">
+          <label style="display:block;">Copy</label>
+          <?php echo $field_type_object->input( 
+            array( 
+              'name'  => $field_type_object->_name( '[copy]' ),
+              'id'    => $field_type_object->_id( '_copy' ),
+              'desc'  => '',
+              'value' => $value['copy'],
+              'sanitization_cb' => false,
+            ));
+          ?>
+        </div>
+
+      </div>
+      <div class="col-md-6">
+        
+        <div class="custom-metabox-item">
+          <label style="display:block;">Link</label>
+          <?php echo $field_type_object->input( 
+            array( 
+              'name'  => $field_type_object->_name( '[link]' ),
+              'id'    => $field_type_object->_id( '_link' ),
+              'desc'  => '',
+              'value' => $value['link'],
+              'sanitization_cb' => false,
+            ));
+          ?>
+        </div>
+
+      </div>
+    </div>
+
+
+  <?php
+  // end of html (gspa description)
+
+} // custom_cmb2_render_manic_cta
+
+
+add_filter( 'cmb2_sanitize_manic_cta', 'cmb2_sanitize_manic_cta_callback', 10, 2 );
+function cmb2_sanitize_manic_cta_callback( $override_value, $value ) {
+  return $value;
+}
+
+
 
 
 
@@ -423,6 +546,10 @@ require_once( 'custom_fields/_field-social-media-item.php' );
 require_once( 'custom_fields/_field-kafnu-event.php' );
 require_once( 'custom_fields/_field-booking-item.php' );
 require_once( 'custom_fields/_field-community-manager.php' );
+
+require_once( 'custom_fields/_field-press-release.php' );
+require_once( 'custom_fields/_field-media-contact.php' );
+require_once( 'custom_fields/_field-gallery-download.php' );
 
 
 
@@ -458,6 +585,16 @@ require_once( 'custom_fields/field-community-events.php' );
 require_once( 'custom_fields/field-location-content-mobile-slider.php' );
 require_once( 'custom_fields/field-location-events-mobile.php' );
 require_once( 'custom_fields/field-plain-html.php' );
+
+
+// new press release pages
+require_once( 'custom_fields/field-default-banner-short.php' );
+require_once( 'custom_fields/field-press-release-banner.php' );
+require_once( 'custom_fields/field-press-release-fact-sheet-and-media-contact.php' );
+require_once( 'custom_fields/field-press-release-gallery-download-masonry.php' );
+require_once( 'custom_fields/field-press-release-gallery-download-slider.php' );
+require_once( 'custom_fields/field-press-release-media-contacts.php' );
+require_once( 'custom_fields/field-press-release-list.php' );
 
 
 
@@ -633,7 +770,7 @@ function post_type_tags( $post_type = '' ) {
     ", $post_type ) );
 }
 
-
+// shows posts with a valid category
 // modified by jairus
 function post_type_categories( $post_type = '' ) {
     global $wpdb;
@@ -664,14 +801,7 @@ function post_type_categories( $post_type = '' ) {
 
 
 
-// hide admin bar from front end
-function hide_admin_bar_from_front_end(){
-  if (is_blog_admin()) {
-    return true;
-  }
-  return false;
-}
-add_filter( 'show_admin_bar', 'hide_admin_bar_from_front_end' );
+
 
 
 ?>
