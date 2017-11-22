@@ -126,6 +126,7 @@ register_nav_menus(
     'mobile-header-menu' => 'Mobile Header Menu',
     'login-links' => 'Login Links',
     'footer-links' => 'Footer Links',
+    'press-release-menu' => 'Press Release Menu',
   )
 );
 
@@ -275,6 +276,67 @@ add_action( 'login_enqueue_scripts', 'my_login_logo' );
 
 
 require_once( '_theme_post_types.php' );
+
+
+
+
+//    ____  _   _  ___  ____ _____    ____ ___  ____  _____ ____
+//   / ___|| | | |/ _ \|  _ \_   _|  / ___/ _ \|  _ \| ____/ ___|
+//   \___ \| |_| | | | | |_) || |   | |  | | | | | | |  _| \___ \
+//    ___) |  _  | |_| |  _ < | |   | |__| |_| | |_| | |___ ___) |
+//   |____/|_| |_|\___/|_| \_\|_|    \____\___/|____/|_____|____/
+//
+
+
+
+// kafnu_press_quote
+
+function kafnu_press_quote_shortcode( $atts, $content = null ) {
+  return '<div class="press-release-content-quote">'. $content .'</a></div>';
+}
+add_shortcode('kafnu_press_quote', 'kafnu_press_quote_shortcode');
+
+
+
+
+// kafnu_media_contact
+
+function kafnu_media_contact_shortcode( $atts, $content = null ) {
+
+  // defaults
+  extract( shortcode_atts( array(
+    'subtitle' => '',
+    'name' => 'Media Contact Name',
+    'position' => 'Media Contact Position',
+    'phone' => '',
+    'email' => '',
+  ), $atts ) );
+
+  $return_str = '';
+  $return_str .= '<div class="press-release-content-media-contact">';
+  $return_str .=   '<div class="press-release-content-media-contact-name">';
+
+  if ($subtitle != '') {
+    $return_str .=     '<h5>' . $subtitle . '</h5>';
+  }
+
+  $return_str .=     '<h3>' . $name . '</h3>';
+  $return_str .=     '<p>' .  $position . '</p>';
+  $return_str .=   '</div>';
+  $return_str .=   '<div class="press-release-content-media-contact-details">';
+
+  if ($phone != '') {
+    $return_str .=   '<a href="tel:' . $phone . '">' . $phone . '</a>';
+  }
+  if ($email != '') {
+    $return_str .=   '<a href="mailto:' . $email . '">' . $email . '</a>';
+  }
+  $return_str .=   '</div>';
+  $return_str .= '</div>';
+
+  return $return_str;
+}
+add_shortcode('kafnu_media_contact', 'kafnu_media_contact_shortcode');
 
 
 
@@ -708,7 +770,7 @@ function post_type_tags( $post_type = '' ) {
     ", $post_type ) );
 }
 
-
+// shows posts with a valid category
 // modified by jairus
 function post_type_categories( $post_type = '' ) {
     global $wpdb;

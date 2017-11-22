@@ -8,6 +8,7 @@
   $press_release_fsmc_contact_cta = wds_page_builder_get_this_part_data( PREFIX . "press_release_fsmc_contact_cta" );
   $press_release_fsmc_contact_general_title = wds_page_builder_get_this_part_data( PREFIX . "press_release_fsmc_contact_general_title" );
   $press_release_fsmc_contact_general_email = wds_page_builder_get_this_part_data( PREFIX . "press_release_fsmc_contact_general_email" );
+  
   $press_release_fsmc_contact_list = wds_page_builder_get_this_part_data( PREFIX . "press_release_fsmc_contact_list" );
 ?>
 

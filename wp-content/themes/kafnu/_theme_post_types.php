@@ -271,12 +271,12 @@
         'has_archive' => 'media-contact',
         'capability_type' => 'post',
         'hierarchical' => false,
-        'taxonomies' => array('post_tag'),
-        'supports' => array( 'title', 'editor', 'revisions', 'thumbnail')
+        // 'taxonomies' => array('post_tag'),
+        'supports' => array( 'title', 'revisions', 'thumbnail')
       ) /* end of options */
     ); /* end of register post type */
     
-    register_taxonomy_for_object_type('post_tag', 'media-contact');
+    // register_taxonomy_for_object_type('post_tag', 'media-contact');
     register_taxonomy_for_object_type( 'category', 'media-contact' );
 
 
@@ -316,12 +316,12 @@
         'has_archive' => 'gallery-download',
         'capability_type' => 'post',
         'hierarchical' => false,
-        'taxonomies' => array('post_tag'),
-        'supports' => array( 'title', 'editor', 'revisions', 'thumbnail')
+        // 'taxonomies' => array('post_tag'),
+        'supports' => array( 'title', 'revisions', 'thumbnail')
       ) /* end of options */
     ); /* end of register post type */
     
-    register_taxonomy_for_object_type('post_tag', 'gallery-download');
+    // register_taxonomy_for_object_type('post_tag', 'gallery-download');
     register_taxonomy_for_object_type( 'category', 'gallery-download' );
 
     
