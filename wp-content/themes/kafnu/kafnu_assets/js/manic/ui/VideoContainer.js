@@ -73,7 +73,7 @@ manic.ui.VideoContainer = function(options, element) {
 
   this.element.click(this.on_element_click.bind(this));
   // this.element.on('tap', this.on_element_click.bind(this));
-  this.element.tap(this.on_element_click.bind(this));
+  // this.element.tap(this.on_element_click.bind(this));
   
 
 

@@ -33,6 +33,14 @@
     <script type="text/javascript" src="<?php echo THEMEROOT; ?>/kafnu_assets/libs/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
     <script type="text/javascript" src="<?php echo THEMEROOT; ?>/kafnu_assets/libs/scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js"></script>
     <script type="text/javascript" src="<?php echo THEMEROOT; ?>/kafnu_assets/libs/slick-carousel/slick/slick.min.js"></script>
+    <script type="text/javascript" src="<?php echo THEMEROOT; ?>/kafnu_assets/libs/slick-carousel/slick/slick.min.js"></script>
+
+    <!-- videojs -->
+    <script type="text/javascript" src="<?php echo THEMEROOT; ?>/kafnu_assets/libs/videojs_new/ie8/videojs-ie8.min.js"></script>
+    <script type="text/javascript" src="<?php echo THEMEROOT; ?>/kafnu_assets/libs/videojs_new/video.min.js"></script>
+    <script>
+      videojs.options.flash.swf = "<?php echo THEMEROOT; ?>/kafnu_assets/libs/videojs_new/video-js.swf";
+    </script>
 
     <!-- validate -->
     <script type="text/javascript" src="<?php echo THEMEROOT; ?>/kafnu_assets/libs/jquery-validate/jquery.validate.min.js"></script>

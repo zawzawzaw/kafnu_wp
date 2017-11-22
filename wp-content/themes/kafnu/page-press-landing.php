@@ -84,8 +84,8 @@
     
     <div id="page-default-banner-image-mobile" class="visible-sm visible-xs">
       <div class="manic-image-container has-window-height">
-        <img src="" data-image-tablet="<?php echo THEMEROOT; ?>/images_cms/press/press-landing-banner.jpg""
-                    data-image-mobile="<?php echo THEMEROOT; ?>/images_cms/press/press-landing-banner.jpg"">
+        <img src="" data-image-tablet="<?php echo THEMEROOT; ?>/images_cms/press/press-landing-banner-tablet.jpg""
+                    data-image-mobile="<?php echo THEMEROOT; ?>/images_cms/press/press-landing-banner-mobile.jpg"">
       </div>
       <div id="banner-sidebar-container-02">
 
@@ -263,13 +263,13 @@
       <div id="page-press-slider-caption">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
               <div class="text-container">
                 <h5>Kafnu Hong Kong</h5>
                 <p>Lorem ipsum dolor sit amet</p>
               </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-8">
               <div class="cta-container">
                 <a href="#" class="download-cta">download for digital</a>
                 <a href="#" class="download-cta">download for print</a>

@@ -67,6 +67,21 @@ video#page-default-banner-bgvid {
     }
   }
 
+  &.center-version-02 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    bottom: auto;
+    width: auto;
+    height: auto;
+    margin: auto!important;
+    transform: translate(-50%,-50%);
+
+    #page-default-banner-copy {
+      padding-left: 0px;
+    }
+  }
+
   &.long-text-version {
     width: 570px;
     margin-top: -92px;
@@ -122,6 +137,17 @@ video#page-default-banner-bgvid {
       width: 100%;
       margin-top: auto;
       margin-left: auto;
+    }
+
+    &.center-version-02 {
+      top: auto;
+      // bottom: 100px;
+      bottom: 10%;
+      left: 0;
+      width: 100%;
+      margin-top: auto;
+      margin-left: auto;
+      transform: none;
     }
 
     &.form-version {

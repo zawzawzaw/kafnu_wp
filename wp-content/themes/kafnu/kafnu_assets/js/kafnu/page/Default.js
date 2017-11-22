@@ -55,6 +55,7 @@ kafnu.page.Default = function(options, element) {
   this.dropdown_dictionary = [];
 
   this.article_filters = [];
+  this.media_filters = [];
 
 
   /**
@@ -176,7 +177,7 @@ kafnu.page.Default.prototype.init = function() {
   this.create_contact_elements();
   this.create_country_elements();
 
-  console.log('kafnu.page.Default: init');
+  // console.log('kafnu.page.Default: init');
 };
 
 
@@ -397,29 +398,109 @@ kafnu.page.Default.prototype.create_press_elements = function() {
     this.update_press_layout(); 
   }.bind(this), 800);
   this.create_article_filters_mobile();
+
+
+  this.create_media_gallery();
+  this.create_media_filters();
 }
 
 kafnu.page.Default.prototype.update_press_layout = function() {
-  if($("#page-press-articles-container").length != 0) {
+  if($(".page-press-content-container").length != 0) {
     
     if(manic.IS_MOBILE == false && manic.IS_TABLET_PORTRAIT == false) {
-        var article_col = $("#page-press-articles-container");
+        var content_col = $(".page-press-content-container");
         var filter_col = $("#page-press-filter-options-container .bg");
 
         console.log("filter_col:"+filter_col.outerHeight())
-        console.log("article_col:"+article_col.outerHeight())
+        console.log("article_col:"+content_col.outerHeight())
 
-        if(article_col.outerHeight() > filter_col.outerHeight()) {
-          filter_col.css("height", article_col.outerHeight());
+        if(content_col.outerHeight() > filter_col.outerHeight()) {
+          filter_col.css("height", content_col.outerHeight());
         } 
 
-        if(article_col.outerHeight() < filter_col.outerHeight()) {
-          filter_col.css("height", article_col.outerHeight());
-          // article_col.css("min-height", filter_col.outerHeight());
+        if(content_col.outerHeight() < filter_col.outerHeight()) {
+          filter_col.css("height", content_col.outerHeight());
+          // content_col.css("min-height", filter_col.outerHeight());
         }
     }
 
   }
+}
+
+kafnu.page.Default.prototype.create_media_gallery = function() {  
+
+  $(".media-gallery-item").click(function(e){
+    e.preventDefault();    
+
+    $('.current-item').removeClass("current-item");
+    $(e.currentTarget).addClass("current-item");
+    
+    var title = $(e.currentTarget).data("title");
+    var desc = $(e.currentTarget).data("desc");
+    var img = $(e.currentTarget).data("img");
+    var digital_download = $(e.currentTarget).data("digital-download");
+    var print_download = $(e.currentTarget).data("print-download");    
+    var video = $(e.currentTarget).data("video");    
+
+    // opening container
+    var media_gallery_item_large_container = $(".media-gallery-item-large-container");
+
+
+    // current item index of visible media-gallery-item
+    var current_item_index = $('.current-item').index('.visible-gallery-item') + 1;
+
+    // determine which place/row large container should appear
+    var item_no = Math.ceil(current_item_index/3) * 3;
+
+    // console.log(current_item_index);
+    // console.log(row_no);
+
+    console.log($('.visible-gallery-item:eq('+item_no+')'))
+
+    // if opening container doesn't have current
+    if(!media_gallery_item_large_container.hasClass("current")) {
+      $(".media-gallery-item-large-container").animate({ opacity: 0 },{ queue: false, duration: 'slow' }).hide().removeClass('current');
+    }
+
+    if(video) {
+      media_gallery_item_large_container.addClass("video-version");
+    } else {
+      media_gallery_item_large_container.removeClass("video-version");
+    }
+
+    // change stuff
+    media_gallery_item_large_container.addClass("current");
+    media_gallery_item_large_container.find("h5").text(title)
+    media_gallery_item_large_container.find("p").text(desc)
+    media_gallery_item_large_container.find("img").attr('src', img);
+    media_gallery_item_large_container.find("a.digital-download").attr('href', digital_download)
+    media_gallery_item_large_container.find("a.print-download").attr('href', print_download)
+
+    media_gallery_item_large_container.css('opacity', 0).slideDown(300).animate({ opacity: 1 },{ queue: false, duration: 'slow' });
+
+
+    // scroll to
+    setTimeout(function(){ 
+      var y = $(e.currentTarget).offset().top - 100;
+      TweenLite.to(window, .4, {
+        scrollTo: {y: y}
+      });
+
+      this.update_press_layout(); 
+    }.bind(this), 310);
+
+  }.bind(this));
+
+  $(".close-btn").click(function(e){
+    $(e.currentTarget).parent().parent().parent().animate({ opacity: 0 },{ queue: false, duration: 'slow' }).slideUp(300);
+
+    setTimeout(function(){
+      // console.log('here');
+      this.update_press_layout(); 
+    }.bind(this), 310);
+
+  }.bind(this));
+
 }
 
 kafnu.page.Default.prototype.create_article_filters = function() {  
@@ -436,7 +517,7 @@ kafnu.page.Default.prototype.create_article_filters = function() {
 }
 
 kafnu.page.Default.prototype.create_article_filters_mobile = function() {  
-  if(manic.IS_MOBILE == true || manic.IS_TABLET_PORTRAIT == true) {
+  if((manic.IS_MOBILE == true || manic.IS_TABLET_PORTRAIT == true) && manic.IS_TABLET_LANDSCAPE == false) {
     this.press_filters_mobile_open = false;
     
     $(".press-filters-title a").on("click", function(e){
@@ -447,12 +528,25 @@ kafnu.page.Default.prototype.create_article_filters_mobile = function() {
       if(this.press_filters_mobile_open == false) {                      
 
         $("#page-press-articles-container").hide();
+        $("#page-default-banner-section").hide();
+        $("#footer-desktop").hide();
+
         $(".press-filters-content").slideDown();  
         this.press_filters_mobile_open = true;
-      } else {        
-        $(".press-filters-content").slideUp();  
+
+        $('#header-mobile').addClass('permanent-bg');
+
+      } else {                
+        
         $("#page-press-articles-container").show();
+        $("#page-default-banner-section").show();
+        $("#footer-desktop").show();
+
+        $(".press-filters-content").slideUp();  
         this.press_filters_mobile_open = false;
+
+        $("#header-mobile").removeClass("permanent-bg");
+
       }      
 
       setTimeout(function(){ 
@@ -465,10 +559,30 @@ kafnu.page.Default.prototype.create_article_filters_mobile = function() {
       
     }.bind(this));
 
+    $("#filter-apply-btn-mobile").click(function(e){
+      e.preventDefault();
+      $("#page-press-articles-container").show();
+      $("#page-default-banner-section").show();
+      $("#footer-desktop").show();
+
+      $(".press-filters-content").slideUp();  
+      this.press_filters_mobile_open = false;
+
+      $("#header-mobile").removeClass("permanent-bg");
+
+      setTimeout(function(){ 
+        var y = $(".press-filters-title").offset().top - 64;
+
+        TweenLite.to(window, .4, {
+            scrollTo: {y: y}
+        });
+      }, 500);
+    });
+
     var scene = new ScrollMagic.Scene({
       triggerElement: "#filter-sticky-trigger-mobile", 
       triggerHook: 0.0 })
-      .setClassToggle(".press-filters-title", "sticky-version")
+      .setClassToggle("#page-press-filter-options-container", "sticky-version")
       // .addIndicators({name: "stick"}) // add indicators (requires plugin)
       .addTo(this.controller);
 
@@ -492,6 +606,58 @@ kafnu.page.Default.prototype.filter_article = function() {
       $(".press-article[data-country='"+key+"']").fadeOut(500);
     }
   }
+}
+
+
+kafnu.page.Default.prototype.create_media_filters = function() {  
+
+  this.filter_media();
+
+  $(".media-filter").on("change", function(){
+    this.filter_media();
+
+    setTimeout(function(){ 
+      this.update_press_layout(); 
+    }.bind(this), 800);    
+  }.bind(this));
+
+}
+
+kafnu.page.Default.prototype.filter_media = function() {  
+
+  $(".media-gallery-item-large-container").animate({ opacity: 0 },{ queue: false, duration: 'slow' }).hide().removeClass('current');
+
+  $('.media-filter').each(function(i, obj) {
+    var filter_val = $(obj).val();
+    this.media_filters[filter_val] = false;
+    
+    if ($(obj).is(':checked')) {
+      this.media_filters[filter_val] = true;  
+    }
+  }.bind(this));
+
+  // console.log(this.media_filters);
+
+  $(".media-gallery-item").each(function(i, obj){
+
+    var filters = $(obj).data("filters");
+
+    var filters_arr = filters.split(",");
+
+    var country_filter = filters_arr[0].trim();
+    var type_filter = filters_arr[1].trim();
+
+    // console.log(type_filter);
+    // console.log(this.media_filters[type_filter]);
+    // console.log(this.media_filters[country_filter]);
+
+    if(this.media_filters[country_filter] == true && this.media_filters[type_filter] == true) {
+      $(obj).fadeIn(500).addClass("visible-gallery-item");
+    } else {
+      $(obj).fadeOut(500).removeClass("visible-gallery-item");
+    }
+
+  }.bind(this));
 }
 
 kafnu.page.Default.prototype.create_press_slider = function() {  
@@ -1151,7 +1317,7 @@ kafnu.page.Default.prototype.create_header_desktop = function(){
   }
 
   if ($('#page-press-main-content-section').length != 0 || $("#page-press-filtered-section").length != 0) {
-    console.log('add class page-press')
+    // console.log('add class page-press')
     $('body').addClass("page-press");
     $('.header-desktop-spacer').addClass("active");
   }

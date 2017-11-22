@@ -13,12 +13,12 @@
     </div>
     <div id="page-default-banner-image-mobile" class="visible-sm visible-xs">
       <div class="manic-image-container has-window-height">
-        <img src="" data-image-tablet="<?php echo THEMEROOT; ?>/images_cms/press/press-banner.jpg"
-                    data-image-mobile="<?php echo THEMEROOT; ?>/images_cms/press/press-banner.jpg">
+        <img src="" data-image-tablet="<?php echo THEMEROOT; ?>/images_cms/press/press-banner-tablet.jpg"
+                    data-image-mobile="<?php echo THEMEROOT; ?>/images_cms/press/press-banner-mobile.jpg">
       </div>
     </div>
 
-    <div id="page-default-banner-copy-container" class="center-version medium-text-version">
+    <div id="page-default-banner-copy-container" class="center-version-02 medium-text-version">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
@@ -50,7 +50,12 @@
                 <li><a href="#">gallery</a></li>
               </ul>
             </div>            
-            <div class="press-filters-title"><a href="#"><h5>filter by location</h5></a></div>
+            <div class="press-filters-title">
+              <a href="#">
+                <h5 class="hidden-xs hidden-sm">filter by location</h5>
+                <h5 class="visible-xs visible-sm">filter by</h5>
+              </a>
+            </div>
             <div class="press-filters-content">
               <ul class="filters">
                 <li>                  
@@ -103,11 +108,14 @@
                   </label>
                 </li>
               </ul>
+              <div class="cta-container visible-xs visible-sm">
+                <a href="#" id="filter-apply-btn-mobile" class="square-cta">Apply</a>
+              </div>
             </div>
           </div>  
         </div>              
         <div class="col-md-6 col-md-offset-1">
-          <div id="page-press-articles-container">
+          <div id="page-press-articles-container" class="page-press-content-container">
             <div class="press-article" data-country="hong kong">
               <div class="text-container">
                 <h6>20 october 2017, Kafnu hong kong</h6>
