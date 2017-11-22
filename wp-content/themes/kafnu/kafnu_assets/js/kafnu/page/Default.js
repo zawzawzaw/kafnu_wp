@@ -453,7 +453,7 @@ kafnu.page.Default.prototype.create_media_gallery = function() {
     var item_no = Math.ceil(current_item_index/3) * 3;
 
     // console.log(current_item_index);
-    // console.log(row_no);
+    console.log(item_no);
 
     console.log($('.visible-gallery-item:eq('+item_no+')'))
 
