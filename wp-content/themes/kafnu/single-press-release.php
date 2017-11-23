@@ -57,7 +57,7 @@
             </div> <!-- press-sidebar-social-container -->
 
             <div class="press-sidebar-cta-container">
-              <a href="<?php echo home_url('wordpress-press-release'); ?>" id="press-sidebar-back-cta"  class="download-cta color-version">Back to list</a>
+              <a href="<?php echo home_url('press-releases'); ?>" id="press-sidebar-back-cta"  class="download-cta color-version">Back to list</a>
 
               <?php if (isset($download_article_file) && $download_article_file != ''): ?>
                 <div class="press-sidebar-cta-seperator"></div>
