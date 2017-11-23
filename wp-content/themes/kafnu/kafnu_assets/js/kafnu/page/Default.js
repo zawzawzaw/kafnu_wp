@@ -407,13 +407,25 @@ kafnu.page.Default.prototype.create_press_elements = function() {
   this.create_media_gallery();
   this.create_media_filters();
 
+  this.create_sticky_sidebar();
+
 }
 
-kafnu.page.Default.prototype.create_sticky_side_bar = function() {
+kafnu.page.Default.prototype.create_sticky_sidebar = function() {
 
   if(manic.IS_MOBILE == false && manic.IS_TABLET_PORTRAIT == false) {
-
+      var scene = new ScrollMagic.Scene({
+      triggerElement: "#filter-sticky-trigger-mobile", 
+      triggerHook: "onLeave" })
+      .setClassToggle("#page-press-filter-options-container", "sticky-version-desktop")
+      .addIndicators({name: "stick"}) // add indicators (requires plugin)
+      .addTo(this.controller);
   }
+
+  // var scene = new ScrollMagic.Scene({triggerElement: "#float-start-trigger", triggerHook: 'onEnter', duration: offset.top })
+  //               .setClassToggle("#floating-img", "stick")
+  //               .addIndicators({name: "1 (duration: 300)"}) // add indicators (requires plugin)
+  //               .addTo(controller);
 
 }
 
@@ -555,6 +567,8 @@ kafnu.page.Default.prototype.create_media_gallery = function() {
 
     $("#page-press-media-container").on("click", ".close-btn", function(e){
       $(e.currentTarget).parent().parent().parent().animate({ opacity: 0 },{ queue: false, duration: 'slow' }).slideUp(300);
+
+      $('video').trigger('pause');
 
       setTimeout(function(){
         // console.log('here');

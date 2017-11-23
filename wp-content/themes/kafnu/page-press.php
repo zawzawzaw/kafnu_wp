@@ -43,73 +43,75 @@
         <div class="col-md-4">
           <div id="page-press-filter-options-container">
             <div class="bg"></div>
-            <div class="press-links">
-              <ul>
-                <li><a href="#">press releases</a></li>
-                <li><a href="#">media contacts</a></li>
-                <li><a href="#">gallery</a></li>
-              </ul>
-            </div>            
-            <div class="press-filters-title">
-              <a href="#">
-                <h5 class="hidden-xs hidden-sm">filter by location</h5>
-                <h5 class="visible-xs visible-sm">filter by</h5>
-              </a>
-            </div>
-            <div class="press-filters-content">
-              <ul class="filters">
-                <li>                  
-                  <label>
-                    <input type="checkbox" name="article_filter" class="article-filter" value="hong kong" checked>
-                    <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
-                    <span class="text">Hong Kong</span>
-                  </label>
-                </li>
-                <li>
-                  <label>
-                    <input type="checkbox" name="article_filter" class="article-filter" value="taipei" checked>
-                    <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
-                    <span class="text">Taipei</span>
-                  </label>
-                </li>
-                <li>
-                  <label>
-                    <input type="checkbox" name="article_filter" class="article-filter" value="bangalore" checked>
-                    <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
-                    <span class="text">Bangalore</span>
-                  </label>
-                </li>
-                <li>
-                  <label>
-                    <input type="checkbox" name="article_filter" class="article-filter" value="colombo" checked>
-                    <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
-                    <span class="text">Colombo</span>
-                  </label>                
-                </li>
-                <li>
-                  <label>
-                    <input type="checkbox" name="article_filter" class="article-filter" value="ho chi minh" checked>
-                    <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
-                    <span class="text">Ho Chi Minh City</span>
-                  </label>
-                </li>
-                <li>
-                  <label>
-                    <input type="checkbox" name="article_filter" class="article-filter" value="melbourne" checked>
-                    <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
-                    <span class="text">Ringwood (Melbourne)</span>
-                  </label>
-                </li>
-                <li>
-                  <label>
-                    <input type="checkbox" name="article_filter" class="article-filter" value="sydney" checked>
-                    <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
-                    <span class="text">Sydney</span>
-                  </label>
-                </li>
-              </ul>
-              <div class="cta-container visible-xs visible-sm">
-                <a href="#" id="filter-apply-btn-mobile" class="square-cta">Apply</a>
+            <div id="press-filters-wrapper">
+              <div class="press-links">
+                <ul>
+                  <li><a href="#">press releases</a></li>
+                  <li><a href="#">media contacts</a></li>
+                  <li><a href="#">gallery</a></li>
+                </ul>
+              </div>            
+              <div class="press-filters-title">
+                <a href="#">
+                  <h5 class="hidden-xs hidden-sm">filter by location</h5>
+                  <h5 class="visible-xs visible-sm">filter by</h5>
+                </a>
+              </div>
+              <div class="press-filters-content">
+                <ul class="filters">
+                  <li>                  
+                    <label>
+                      <input type="checkbox" name="article_filter" class="article-filter" value="hong kong" checked>
+                      <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
+                      <span class="text">Hong Kong</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input type="checkbox" name="article_filter" class="article-filter" value="taipei" checked>
+                      <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
+                      <span class="text">Taipei</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input type="checkbox" name="article_filter" class="article-filter" value="bangalore" checked>
+                      <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
+                      <span class="text">Bangalore</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input type="checkbox" name="article_filter" class="article-filter" value="colombo" checked>
+                      <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
+                      <span class="text">Colombo</span>
+                    </label>                
+                  </li>
+                  <li>
+                    <label>
+                      <input type="checkbox" name="article_filter" class="article-filter" value="ho chi minh" checked>
+                      <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
+                      <span class="text">Ho Chi Minh City</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input type="checkbox" name="article_filter" class="article-filter" value="melbourne" checked>
+                      <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
+                      <span class="text">Ringwood (Melbourne)</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input type="checkbox" name="article_filter" class="article-filter" value="sydney" checked>
+                      <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
+                      <span class="text">Sydney</span>
+                    </label>
+                  </li>
+                </ul>
+                <div class="cta-container visible-xs visible-sm">
+                  <a href="#" id="filter-apply-btn-mobile" class="square-cta">Apply</a>
+                </div>
               </div>
             </div>
           </div>  

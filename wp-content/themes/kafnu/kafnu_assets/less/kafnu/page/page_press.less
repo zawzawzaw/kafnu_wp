@@ -390,6 +390,14 @@
 }
 
 #page-press-filter-options-container {    
+
+  &.sticky-version-desktop {
+    #press-filters-wrapper {
+      position: fixed;
+      top: 65px;
+    }
+  }
+
   &.sticky-version {
     .press-filters-title {
       padding-left: 20px;
@@ -869,15 +877,16 @@
 
       .media-gallery-item-large {
         .overlay-content {
-          background: @off-white;
+          background: @grey-2;
+
           .cta-container {
             a {
-              color: @grey!important;
+              color: @white!important;
               &:hover {
-                color: @white!important;
+                color: @grey!important;
               }
               &:before {
-                .download-icon-gold;
+                .download-icon;
               }
             }
           }
