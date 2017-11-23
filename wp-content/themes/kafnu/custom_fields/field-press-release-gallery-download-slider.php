@@ -11,15 +11,6 @@ function wds_add_field_press_release_gallery_download_slider( $fields ) {
 
   $new_fields = array(
 
-
-    array(
-      'name'    => 'Title',
-      'id'      => PREFIX . 'press_release_gallery_download_slider_title',
-      'type'    => 'text',
-      'description' => '',
-      'sanitization_cb' => false
-    ),
-
     array(
       'name'    => 'Press Release Gallery Download Slider Selected List',
       'id'      => PREFIX . 'press_release_gallery_download_slider_selected_list',
@@ -34,6 +25,14 @@ function wds_add_field_press_release_gallery_download_slider( $fields ) {
           'post_type' => 'gallery-download',
         ), // override the get_posts args
       )
+    ),
+
+    array(
+      'name'    => 'Copyright',
+      'id'      => PREFIX . 'press_release_gallery_download_slider_copyright',
+      'type'    => 'text',
+      'description' => '',
+      'sanitization_cb' => false
     ),
     
   );
