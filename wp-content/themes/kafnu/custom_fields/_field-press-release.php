@@ -7,12 +7,12 @@
     ) ); 
 
 
-    $field_1 = $cmb->add_field( array(
-        'name'    => 'Title',
-        'id'      => PREFIX . 'title',
-        'type'    => 'text',
-        'description' => '',
-    ) );
+    // $field_1 = $cmb->add_field( array(
+    //     'name'    => 'Title',
+    //     'id'      => PREFIX . 'title',
+    //     'type'    => 'text',
+    //     'description' => '',
+    // ) );
 
     $field_2 = $cmb->add_field( array(
         'name'    => 'Subtitle',
@@ -45,12 +45,13 @@
     // SECTION_NAME_01
     
     $row = $cmb2Grid->addRow();
-    $row->addColumns(array($field_1, $field_2));
-    
-    $row = $cmb2Grid->addRow();
-    $row->addColumns(array(
-        array($field_0, 'class' => 'col-md-6 col-md-push-6'),
-    ));
+    $row->addColumns(array($field_2, $field_0));
+        
+
+    // $row = $cmb2Grid->addRow();
+    // $row->addColumns(array(
+    //     array($field_0, 'class' => 'col-md-6 col-md-push-6'),
+    // ));
 
 
     // SECTION_NAME_02

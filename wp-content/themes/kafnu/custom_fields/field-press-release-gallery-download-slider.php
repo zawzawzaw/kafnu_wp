@@ -11,6 +11,15 @@ function wds_add_field_press_release_gallery_download_slider( $fields ) {
 
   $new_fields = array(
 
+
+    array(
+      'name'    => 'Title',
+      'id'      => PREFIX . 'press_release_gallery_download_slider_title',
+      'type'    => 'text',
+      'description' => '',
+      'sanitization_cb' => false
+    ),
+
     array(
       'name'    => 'Press Release Gallery Download Slider Selected List',
       'id'      => PREFIX . 'press_release_gallery_download_slider_selected_list',
