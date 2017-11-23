@@ -1145,13 +1145,23 @@
     display: block;
     height: 22px;
   }
+
+
 } // .press-sidebar-cta-container
 
-#press-sidebar-back-cta{
 
+
+#press-sidebar-back-cta{
+  color: @grey !important;
+  &:hover{
+    color: @gold-4 !important;
+  }
 }
 #press-sidebar-download-cta{
-
+  color: @grey !important;
+  &:hover{
+    color: @gold-4 !important;
+  }
 }
 
 
@@ -1169,6 +1179,16 @@
 #press-release-content-copy{
   padding-top: 77px;
   padding-bottom: 90px;
+
+  // TABLET PORTRAIT
+  @media only screen and (max-width: 991px) {
+
+    padding-top: 80px;
+    padding-bottom: 50px;
+
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 
   .default-copy{
 
@@ -1260,7 +1280,22 @@
   h4 + h1{
     padding-top: 13px;
   }
-}
+
+  // TABLET PORTRAIT
+  @media only screen and (max-width: 991px) {
+
+    h1{
+      font-size: 25px;
+      line-height: 33px;
+    }
+    h4 + h1{
+      padding-top: 5px;
+    }
+
+    
+  }
+
+} // .press-release-content-title
 
 .press-release-content-quote{
 
@@ -1298,6 +1333,9 @@
     left: 2px;
   }
 }
+
+
+
 
 
 
