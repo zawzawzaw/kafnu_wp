@@ -2,7 +2,12 @@
 // Please do not edit.
 goog.addDependency('../../../../../js/kafnu/component/HeaderDesktop.js', ['kafnu.component.HeaderDesktop'], ['goog.events.Event', 'goog.events.EventTarget']);
 goog.addDependency('../../../../../js/kafnu/component/HeaderMobile.js', ['kafnu.component.HeaderMobile'], ['goog.events.Event', 'goog.events.EventTarget']);
+goog.addDependency('../../../../../js/kafnu/page/Community.js', ['kafnu.page.Community'], ['goog.events.Event', 'goog.events.EventTarget', 'kafnu.page.Default', 'manic.ui.AnimatedSVG', 'manic.ui.HoverItem']);
+goog.addDependency('../../../../../js/kafnu/page/Contact.js', ['kafnu.page.Contact'], ['goog.events.Event', 'goog.events.EventTarget', 'kafnu.page.Default', 'manic.ui.AnimatedSVG', 'manic.ui.FormCheck', 'manic.ui.HoverItem']);
+goog.addDependency('../../../../../js/kafnu/page/Country.js', ['kafnu.page.Country'], ['goog.events.Event', 'goog.events.EventTarget', 'kafnu.page.Default', 'manic.ui.AnimatedSVG', 'manic.ui.HoverItem']);
 goog.addDependency('../../../../../js/kafnu/page/Default.js', ['kafnu.page.Default'], ['goog.events.Event', 'goog.events.EventTarget', 'kafnu.component.HeaderDesktop', 'kafnu.component.HeaderMobile', 'manic.page.Page', 'manic.ui.AnimatedSVG', 'manic.ui.BoxItem', 'manic.ui.Dropdown', 'manic.ui.HoverItem']);
+goog.addDependency('../../../../../js/kafnu/page/Home.js', ['kafnu.page.Home'], ['goog.events.Event', 'goog.events.EventTarget', 'kafnu.page.Default', 'manic.ui.AnimatedSVG', 'manic.ui.HoverItem']);
+goog.addDependency('../../../../../js/kafnu/page/Play.js', ['kafnu.page.Play'], ['goog.events.Event', 'goog.events.EventTarget', 'kafnu.page.Default', 'manic.ui.AnimatedSVG', 'manic.ui.HoverItem']);
 goog.addDependency('../../../../../js/manic/Manic.js', ['manic'], []);
 goog.addDependency('../../../../../js/manic/canvas/ImageSequenceCanvas.js', ['manic.canvas.ImageSequenceCanvas'], ['goog.events.Event', 'goog.events.EventTarget', 'goog.string', 'goog.userAgent', 'manic.canvas.PixiCanvas', 'manic.util.ArrayImagePreloader', 'manic.util.StringUtil']);
 goog.addDependency('../../../../../js/manic/canvas/PixiCanvas.js', ['manic.canvas.PixiCanvas'], ['goog.events.Event', 'goog.events.EventTarget']);

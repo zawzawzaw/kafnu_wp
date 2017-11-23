@@ -149,6 +149,8 @@
                     $print_download_file = get_post_meta( $selected_item_id, PREFIX . "print_download_file", true );
                     $digital_download_file = get_post_meta( $selected_item_id, PREFIX . "digital_download_file", true );
 
+                    $vertical = get_post_meta( $selected_item_id, PREFIX . "vertical", true );
+
                     $category = '';
                     $categories = get_the_category();
                     if ( ! empty( $categories ) ) {
@@ -171,6 +173,12 @@
                 data-img="<?php echo $banner; ?>"
                 data-img-tablet="<?php echo $banner_tablet; ?>"
                 data-img-mobile="<?php echo $banner_mobile; ?>"
+
+                <?php if ($vertical == 'on'): ?>
+                  data-vertical="true"
+                <?php else: ?>
+                  
+                <?php endif; ?>
 
                 data-digital-download="<?php echo $digital_download_file; ?>" 
                 data-print-download="<?php echo $print_download_file; ?>">
