@@ -13,8 +13,8 @@ update_option( 'home', 'http://visionbodyasia.com' );
 */
 
 define('THEMEROOT', get_stylesheet_directory_uri());
-// define('DEBUG', true);
-define('DEBUG', false);
+define('DEBUG', true);
+// define('DEBUG', false);
 
 define('PREFIX', '_kafnu_');
 

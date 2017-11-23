@@ -847,7 +847,7 @@ manic.page.Page.prototype.scroll_to_after_the_fold = function(){
  */
 manic.page.Page.prototype.on_window_hash_change = function(event) {
 
-  console.log('manic.page.Page: on_window_hash_change');
+  // console.log('manic.page.Page: on_window_hash_change');
 
   this.window_hash = window.location.hash.replace('#', '');
   var str_array = [];
@@ -901,7 +901,7 @@ manic.page.Page.prototype.on_window_hash_change = function(event) {
 
 
 manic.page.Page.prototype.on_scroll_to_no_target = function(){
-  console.log('on_scroll_to_no_target');
+  // console.log('on_scroll_to_no_target');
   // this.scroll_to(0);
 };
 

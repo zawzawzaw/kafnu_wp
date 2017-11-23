@@ -17,7 +17,7 @@
             <div id="page-default-banner-copy-container" class="left-version press-version">
               <div class="container-fluid">
                 <div class="row">
-                  <div class="col-md-6">
+                  <div class="col-lg-6 col-md-12">
 
                     <div id="page-default-banner-copy">
                       <h5>Featured Story</h5>
@@ -82,55 +82,72 @@
       </div>
     </div> <!-- page-default-banner-image -->
     
-    <div id="page-default-banner-image-mobile" class="visible-sm visible-xs">
+    <div id="page-default-banner-image-mobile" class="press-version visible-sm visible-xs">
       <div class="manic-image-container has-window-height">
         <img src="" data-image-tablet="<?php echo THEMEROOT; ?>/images_cms/press/press-landing-banner-tablet.jpg""
                     data-image-mobile="<?php echo THEMEROOT; ?>/images_cms/press/press-landing-banner-mobile.jpg"">
       </div>
-      <div id="banner-sidebar-container-02">
+      <div id="page-default-banner-copy-container" class="left-version press-version">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-6 col-md-12">
 
-        <div id="banner-sidebar-content">
+              <div id="page-default-banner-copy">
+                <h5>Featured Story</h5>
+                <h2>Lorem ipsum dolor sitamet, cons ectetur adipiscring elit.</h2>
+                
+                <a href="#" class="plus-cta">Read More</a>
 
-          <div class="banner-sidebar-title">
-            <h5>Press Releases</h5>                  
-          </div>              
+              </div> <!-- page-default-banner-copy -->
 
-          <div class="banner-sidebar-item">              
-            <div class="banner-sidebar-item-text">                
-              <p>20 October 2017, Kafnu Taipei</p>
-              <a href=""><h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5></a>
             </div>
-          </div><!-- banner-sidebar-item -->                              
-
-          <div class="banner-sidebar-item">              
-            <div class="banner-sidebar-item-text">                
-              <p>20 October 2017, Kafnu Taipei</p>
-              <a href=""><h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5></a>
-            </div>
-          </div><!-- banner-sidebar-item -->                              
-
-          <div class="banner-sidebar-item">              
-            <div class="banner-sidebar-item-text">                
-              <p>20 October 2017, Kafnu Taipei</p>
-              <a href=""><h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5></a>
-            </div>
-          </div><!-- banner-sidebar-item -->                              
-
-          <div class="banner-sidebar-item">              
-            <div class="banner-sidebar-item-text">                
-              <p>20 October 2017, Kafnu Taipei</p>
-              <a href=""><h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5></a>
-            </div>
-          </div><!-- banner-sidebar-item -->                              
-
-          <div class="banner-sidebar-cta">              
-            <a href="<?php echo get_the_permalink('press'); ?>" class="square-cta border-version">See More Press Releases</a>
-          </div><!-- banner-sidebar-item -->                   
-
-        </div>           
-
-      </div> <!-- banner-sidebar-container -->      
+          </div>
+        </div>
+      </div> <!-- page-default-banner-copy-container -->      
     </div>
+    <div id="banner-sidebar-container-02" class="visible-sm visible-xs">
+
+      <div id="banner-sidebar-content">
+
+        <div class="banner-sidebar-title">
+          <h5>Press Releases</h5>                  
+        </div>              
+
+        <div class="banner-sidebar-item">              
+          <div class="banner-sidebar-item-text">                
+            <p>20 October 2017, Kafnu Taipei</p>
+            <a href=""><h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5></a>
+          </div>
+        </div><!-- banner-sidebar-item -->                              
+
+        <div class="banner-sidebar-item">              
+          <div class="banner-sidebar-item-text">                
+            <p>20 October 2017, Kafnu Taipei</p>
+            <a href=""><h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5></a>
+          </div>
+        </div><!-- banner-sidebar-item -->                              
+
+        <div class="banner-sidebar-item">              
+          <div class="banner-sidebar-item-text">                
+            <p>20 October 2017, Kafnu Taipei</p>
+            <a href=""><h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5></a>
+          </div>
+        </div><!-- banner-sidebar-item -->                              
+
+        <div class="banner-sidebar-item">              
+          <div class="banner-sidebar-item-text">                
+            <p>20 October 2017, Kafnu Taipei</p>
+            <a href=""><h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5></a>
+          </div>
+        </div><!-- banner-sidebar-item -->                              
+
+        <div class="banner-sidebar-cta">              
+          <a href="<?php echo get_the_permalink('press'); ?>" class="square-cta border-version">See More Press Releases</a>
+        </div><!-- banner-sidebar-item -->                   
+
+      </div>           
+
+    </div> <!-- banner-sidebar-container -->      
 
   </article> <!-- page-default-banner-section -->
 
@@ -218,45 +235,45 @@
         <div class="page-press-slider-item">
           <div class="manic-image-container">
             <img src="" 
-              data-image-desktop="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-01.jpg"
-              data-image-tablet="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-01.jpg"
-              data-image-mobile="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-01.jpg" alt="">
+              data-image-desktop="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-02.jpg"
+              data-image-tablet="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-02.jpg"
+              data-image-mobile="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-02.jpg" alt="">
           </div>        
         </div> <!-- end page-press-slider-item -->   
 
         <div class="page-press-slider-item">
           <div class="manic-image-container">
             <img src="" 
-              data-image-desktop="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-01.jpg"
-              data-image-tablet="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-01.jpg"
-              data-image-mobile="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-01.jpg" alt="">
+              data-image-desktop="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-03.jpg"
+              data-image-tablet="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-03.jpg"
+              data-image-mobile="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-03.jpg" alt="">
           </div>        
         </div> <!-- end page-press-slider-item -->
 
         <div class="page-press-slider-item">
           <div class="manic-image-container">
             <img src="" 
-              data-image-desktop="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-01.jpg"
-              data-image-tablet="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-01.jpg"
-              data-image-mobile="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-01.jpg" alt="">
+              data-image-desktop="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-04.jpg"
+              data-image-tablet="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-04.jpg"
+              data-image-mobile="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-04.jpg" alt="">
           </div>        
         </div> <!-- end page-press-slider-item -->
 
         <div class="page-press-slider-item">
           <div class="manic-image-container">
             <img src="" 
-              data-image-desktop="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-01.jpg"
-              data-image-tablet="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-01.jpg"
-              data-image-mobile="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-01.jpg" alt="">
+              data-image-desktop="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-05.jpg"
+              data-image-tablet="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-05.jpg"
+              data-image-mobile="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-05.jpg" alt="">
           </div>        
         </div> <!-- end page-press-slider-item -->
 
         <div class="page-press-slider-item">
           <div class="manic-image-container">
             <img src="" 
-              data-image-desktop="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-01.jpg"
-              data-image-tablet="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-01.jpg"
-              data-image-mobile="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-01.jpg" alt="">
+              data-image-desktop="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-06.jpg"
+              data-image-tablet="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-06.jpg"
+              data-image-mobile="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-06.jpg" alt="">
           </div>        
         </div> <!-- end page-press-slider-item -->  
       </div>
@@ -284,22 +301,34 @@
 
     <div id="page-press-thumbnail-slider" class="kafnu-slick-slider">                  
       <div class="page-press-thumbnail-slider-item">
-        <img src="<?php echo THEMEROOT; ?>/images_cms/press/slider-thumbnail-01.jpg" class="img-responsive" alt="">                    
+        <div class="normal-image-container">
+          <img src="<?php echo THEMEROOT; ?>/images_cms/press/slider-thumbnail-01.jpg" class="img-responsive" alt="">                    
+        </div>
       </div>
       <div class="page-press-thumbnail-slider-item">
-        <img src="<?php echo THEMEROOT; ?>/images_cms/press/slider-thumbnail-02.jpg" class="img-responsive" alt="">                    
+        <div class="normal-image-container">
+          <img src="<?php echo THEMEROOT; ?>/images_cms/press/slider-thumbnail-02.jpg" class="img-responsive" alt="">                    
+        </div>
       </div>
       <div class="page-press-thumbnail-slider-item">
-        <img src="<?php echo THEMEROOT; ?>/images_cms/press/slider-thumbnail-03.jpg" class="img-responsive" alt="">                    
+        <div class="normal-image-container">
+          <img src="<?php echo THEMEROOT; ?>/images_cms/press/slider-thumbnail-03.jpg" class="img-responsive" alt="">                    
+        </div>
       </div>
       <div class="page-press-thumbnail-slider-item">
-        <img src="<?php echo THEMEROOT; ?>/images_cms/press/slider-thumbnail-04.jpg" class="img-responsive" alt="">                    
+        <div class="normal-image-container">
+          <img src="<?php echo THEMEROOT; ?>/images_cms/press/slider-thumbnail-04.jpg" class="img-responsive" alt="">                    
+        </div>
       </div>
       <div class="page-press-thumbnail-slider-item">
-        <img src="<?php echo THEMEROOT; ?>/images_cms/press/slider-thumbnail-05.jpg" class="img-responsive" alt="">                    
+        <div class="normal-image-container">
+          <img src="<?php echo THEMEROOT; ?>/images_cms/press/slider-thumbnail-05.jpg" class="img-responsive" alt="">                    
+        </div>
       </div> 
       <div class="page-press-thumbnail-slider-item">
-        <img src="<?php echo THEMEROOT; ?>/images_cms/press/slider-thumbnail-06.jpg" class="img-responsive" alt="">                    
+        <div class="normal-image-container">
+          <img src="<?php echo THEMEROOT; ?>/images_cms/press/slider-thumbnail-06.jpg" class="img-responsive" alt="">                    
+        </div>
       </div> 
     </div>
   </article>

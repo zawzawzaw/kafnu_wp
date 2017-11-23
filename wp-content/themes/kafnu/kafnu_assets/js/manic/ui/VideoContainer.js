@@ -164,7 +164,7 @@ manic.ui.VideoContainer = function(options, element) {
   //   |___|_| \_|___| |_|
   //
 
-  console.log('init');
+  // console.log('init');
 };
 goog.inherits(manic.ui.VideoContainer, goog.events.EventTarget);
 
@@ -814,8 +814,8 @@ manic.ui.VideoContainer.prototype.on_window_resize = function(event) {
  */
 manic.ui.VideoContainer.prototype.on_loaded_metadata = function(event) {
 
-  console.log('this.video_element[0].videoWidth: ' + this.video_element[0].videoWidth);
-  console.log('this.video_element[0].videoHeight: ' + this.video_element[0].videoHeight);
+  // console.log('this.video_element[0].videoWidth: ' + this.video_element[0].videoWidth);
+  // console.log('this.video_element[0].videoHeight: ' + this.video_element[0].videoHeight);
 
   this.original_image_width = this.video_element[0].videoWidth;
   this.original_image_height = this.video_element[0].videoHeight;

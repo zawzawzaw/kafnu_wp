@@ -692,10 +692,10 @@ manic.ui.ImageContainer.prototype.use_scale_mode_best_fit = function() {
     this.target_x += this.offset_x;
     this.target_y += this.offset_y;
 
-    console.log('this.image_aspect_ratio: ' + this.image_aspect_ratio);
-    console.log(this.image);
-    console.log('this.target_x: ' + this.target_x);
-    console.log('this.target_y: ' + this.target_y);
+    // console.log('this.image_aspect_ratio: ' + this.image_aspect_ratio);
+    // console.log(this.image);
+    // console.log('this.target_x: ' + this.target_x);
+    // console.log('this.target_y: ' + this.target_y);
 
     this.target_x = Math.round(this.target_x);
     this.target_y = Math.round(this.target_y);

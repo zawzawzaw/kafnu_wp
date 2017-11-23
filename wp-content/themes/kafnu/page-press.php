@@ -39,7 +39,7 @@
     <div id="filter-sticky-trigger-mobile"></div>
     <div class="container-fluid reduce-padding">
       
-      <div class="row">
+      <div class="row row-eq-height">
         <div class="col-md-4">
           <div id="page-press-filter-options-container">
             <div class="bg"></div>
