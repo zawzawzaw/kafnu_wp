@@ -119,7 +119,7 @@
         h5 {
           font-size: 16px;
           line-height: 20px;
-          .transition-in (0.3s, cubic-bezier(0.645, 0.045, 0.355, 1), 0.1s);
+          .transition(0.3s);
         }
       }
 
@@ -139,7 +139,7 @@
     }
   }
 
-  @media all and (max-width: 1024px) {
+  @media all and (max-width: 1279px) {
     .banner-sidebar-cta {
       a {
         line-height: 21px;
@@ -627,7 +627,15 @@
     } 
   }
   .text-container {
+    a {
+      &:hover {
+        h5 {
+          .opacity(0.8);
+        }
+      }
+    }
     h5 {
+      .transition(.3s);
       .fira-sans-medium;
       font-size: 20px;
       line-height: 30px;
@@ -710,7 +718,7 @@
       top: 0;
       left: 0;
       z-index: 2;
-      .transition-in(0.5s, cubic-bezier(0.645, 0.045, 0.355, 1), 0s);      
+      .transition-in(0.5s, cubic-bezier(0.645, 0.045, 0.355, 1), 0s);            
 
       .text-container {
         position: absolute;
@@ -753,6 +761,7 @@
       .overlay-content {
         visibility: visible;
         .opacity(1);
+        background: @work;
         cursor: pointer;
       }
     }
@@ -855,12 +864,20 @@
 
     .overlay-content {      
       width: 100%;
-      height: 100%;
+      // height: 100%;
       position: absolute;
-      top: 0;
+      // top: 0;
       left: 0;
       z-index: 2;
-      .transition-in(0.5s, cubic-bezier(0.645, 0.045, 0.355, 1), 0s);      
+      .transition-in(0.5s, cubic-bezier(0.645, 0.045, 0.355, 1), 0s); 
+      height: 100px;
+      bottom: 0;     
+
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.8+100 */
+      background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#cc000000',GradientType=0 ); /* IE6-9 */
 
       .cta-container {
         position: absolute;

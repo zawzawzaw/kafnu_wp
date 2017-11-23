@@ -275,6 +275,24 @@
               data-image-tablet="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-06.jpg"
               data-image-mobile="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-06.jpg" alt="">
           </div>        
+        </div> <!-- end page-press-slider-item -->
+
+        <div class="page-press-slider-item">
+          <div class="manic-image-container">
+            <img src="" 
+              data-image-desktop="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-01.jpg"
+              data-image-tablet="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-01.jpg"
+              data-image-mobile="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-01.jpg" alt="">
+          </div>        
+        </div> <!-- end page-press-slider-item -->
+
+        <div class="page-press-slider-item">
+          <div class="manic-image-container">
+            <img src="" 
+              data-image-desktop="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-02.jpg"
+              data-image-tablet="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-02.jpg"
+              data-image-mobile="<?php echo THEMEROOT; ?>/images_cms/press/press-slider-02.jpg" alt="">
+          </div>        
         </div> <!-- end page-press-slider-item -->  
       </div>
       <div id="page-press-slider-caption">
@@ -328,6 +346,16 @@
       <div class="page-press-thumbnail-slider-item">
         <div class="normal-image-container">
           <img src="<?php echo THEMEROOT; ?>/images_cms/press/slider-thumbnail-06.jpg" class="img-responsive" alt="">                    
+        </div>
+      </div>
+      <div class="page-press-thumbnail-slider-item">
+        <div class="normal-image-container">
+          <img src="<?php echo THEMEROOT; ?>/images_cms/press/slider-thumbnail-01.jpg" class="img-responsive" alt="">                    
+        </div>
+      </div>
+      <div class="page-press-thumbnail-slider-item">
+        <div class="normal-image-container">
+          <img src="<?php echo THEMEROOT; ?>/images_cms/press/slider-thumbnail-02.jpg" class="img-responsive" alt="">                    
         </div>
       </div> 
     </div>

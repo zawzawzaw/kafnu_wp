@@ -739,6 +739,17 @@ kafnu.page.Default.prototype.create_press_slider = function() {
     });
 
     $('#page-press-slider').on('afterChange', function(event, slick, currentSlide, nextSlide){
+      
+      var title = $(slick.$slides[currentSlide]).data('title');
+      var copy = $(slick.$slides[currentSlide]).data('copy');
+      var print = $(slick.$slides[currentSlide]).data('print-download');
+      var digital = $(slick.$slides[currentSlide]).data('digital-download');
+
+      $('#page-press-slider-caption').find("h5").text(title);
+      $('#page-press-slider-caption').find("p").text(copy);
+      $('#page-press-slider-caption').find("#page-press-slider-caption-digital-cta").attr("href", digital);
+      $('#page-press-slider-caption').find("#page-press-slider-caption-print-cta").attr("href", print);
+
       $('#page-press-slider-caption').fadeIn();
     });
     
@@ -746,7 +757,7 @@ kafnu.page.Default.prototype.create_press_slider = function() {
 
   if ($("#page-press-thumbnail-slider").length != 0) {
     $("#page-press-thumbnail-slider").slick({
-      "slidesToShow": 5,
+      "slidesToShow": 7,
       "slidesToScroll": 1,
       "asNavFor": '#page-press-slider',
       "dots": false,

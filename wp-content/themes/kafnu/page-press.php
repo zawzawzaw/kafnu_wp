@@ -74,7 +74,7 @@
                 </li>
                 <li>
                   <label>
-                    <input type="checkbox" name="article_filter" class="article-filter" value="bangalore">
+                    <input type="checkbox" name="article_filter" class="article-filter" value="bangalore" checked>
                     <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
                     <span class="text">Bangalore</span>
                   </label>
@@ -88,21 +88,21 @@
                 </li>
                 <li>
                   <label>
-                    <input type="checkbox" name="article_filter" class="article-filter" value="ho chi minh">
+                    <input type="checkbox" name="article_filter" class="article-filter" value="ho chi minh" checked>
                     <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
                     <span class="text">Ho Chi Minh City</span>
                   </label>
                 </li>
                 <li>
                   <label>
-                    <input type="checkbox" name="article_filter" class="article-filter" value="melbourne">
+                    <input type="checkbox" name="article_filter" class="article-filter" value="melbourne" checked>
                     <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
                     <span class="text">Ringwood (Melbourne)</span>
                   </label>
                 </li>
                 <li>
                   <label>
-                    <input type="checkbox" name="article_filter" class="article-filter" value="sydney">
+                    <input type="checkbox" name="article_filter" class="article-filter" value="sydney" checked>
                     <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
                     <span class="text">Sydney</span>
                   </label>
@@ -119,7 +119,7 @@
             <div class="press-article" data-country="hong kong">
               <div class="text-container">
                 <h6>20 october 2017, Kafnu hong kong</h6>
-                <h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5>
+                <a href="#"><h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5></a>
 
                 <p>Lorem ipsum dolor sit amet, cons ectetur adipiscing elit. Maecenas mollis lorem in enim finibus, quis ultrices dui accumsan. Nulla facilisi. Fusce at aliquam magna, quis condimentum lacus. Curabitur in interdum sem praesent quis eros afsapien.</p>
               </div>
@@ -131,7 +131,7 @@
             <div class="press-article" data-country="taipei">
               <div class="text-container">
                 <h6>20 october 2017, Kafnu Taipei</h6>
-                <h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5>
+                <a href="#"><h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5></a>
 
                 <p>Lorem ipsum dolor sit amet, cons ectetur adipiscing elit. Maecenas mollis lorem in enim finibus, quis ultrices dui accumsan. Nulla facilisi. Fusce at aliquam magna, quis condimentum lacus. Curabitur in interdum sem praesent quis eros afsapien.</p>
               </div>
@@ -143,7 +143,7 @@
             <div class="press-article" data-country="bangalore">
               <div class="text-container">
                 <h6>20 october 2017, Kafnu Bangalore</h6>
-                <h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5>
+                <a href="#"><h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5></a>
 
                 <p>Lorem ipsum dolor sit amet, cons ectetur adipiscing elit. Maecenas mollis lorem in enim finibus, quis ultrices dui accumsan. Nulla facilisi. Fusce at aliquam magna, quis condimentum lacus. Curabitur in interdum sem praesent quis eros afsapien.</p>
               </div>
@@ -155,7 +155,7 @@
             <div class="press-article" data-country="colombo">
               <div class="text-container">
                 <h6>20 october 2017, Kafnu Colombo</h6>
-                <h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5>
+                <a href="#"><h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5></a>
 
                 <p>Lorem ipsum dolor sit amet, cons ectetur adipiscing elit. Maecenas mollis lorem in enim finibus, quis ultrices dui accumsan. Nulla facilisi. Fusce at aliquam magna, quis condimentum lacus. Curabitur in interdum sem praesent quis eros afsapien.</p>
               </div>
@@ -167,7 +167,7 @@
             <div class="press-article" data-country="ho chi minh">
               <div class="text-container">
                 <h6>20 october 2017, Kafnu Ho Chi Minh City</h6>
-                <h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5>
+                <a href="#"><h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5></a>
 
                 <p>Lorem ipsum dolor sit amet, cons ectetur adipiscing elit. Maecenas mollis lorem in enim finibus, quis ultrices dui accumsan. Nulla facilisi. Fusce at aliquam magna, quis condimentum lacus. Curabitur in interdum sem praesent quis eros afsapien.</p>
               </div>
@@ -179,7 +179,7 @@
             <div class="press-article" data-country="melbourne">
               <div class="text-container">
                 <h6>20 october 2017, Kafnu Ringwood (Melbourne)</h6>
-                <h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5>
+                <a href="#"><h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5></a>
 
                 <p>Lorem ipsum dolor sit amet, cons ectetur adipiscing elit. Maecenas mollis lorem in enim finibus, quis ultrices dui accumsan. Nulla facilisi. Fusce at aliquam magna, quis condimentum lacus. Curabitur in interdum sem praesent quis eros afsapien.</p>
               </div>
@@ -191,7 +191,7 @@
             <div class="press-article last-article" data-country="sydney">
               <div class="text-container">
                 <h6>20 october 2017, Kafnu Sydney</h6>
-                <h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5>
+                <a href="#"><h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5></a>
 
                 <p>Lorem ipsum dolor sit amet, cons ectetur adipiscing elit. Maecenas mollis lorem in enim finibus, quis ultrices dui accumsan. Nulla facilisi. Fusce at aliquam magna, quis condimentum lacus. Curabitur in interdum sem praesent quis eros afsapien.</p>
               </div>

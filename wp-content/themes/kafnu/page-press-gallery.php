@@ -74,7 +74,7 @@
                 </li>
                 <li>
                   <label>
-                    <input type="checkbox" name="media_filter" class="media-filter" value="bangalore">
+                    <input type="checkbox" name="media_filter" class="media-filter" value="bangalore" checked>
                     <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
                     <span class="text">Bangalore</span>
                   </label>
@@ -88,21 +88,21 @@
                 </li>
                 <li>
                   <label>
-                    <input type="checkbox" name="media_filter" class="media-filter" value="ho chi minh">
+                    <input type="checkbox" name="media_filter" class="media-filter" value="ho chi minh" checked>
                     <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
                     <span class="text">Ho Chi Minh City</span>
                   </label>
                 </li>
                 <li>
                   <label>
-                    <input type="checkbox" name="media_filter" class="media-filter" value="melbourne">
+                    <input type="checkbox" name="media_filter" class="media-filter" value="melbourne" checked>
                     <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
                     <span class="text">Ringwood (Melbourne)</span>
                   </label>
                 </li>
                 <li>
                   <label>
-                    <input type="checkbox" name="media_filter" class="media-filter" value="sydney">
+                    <input type="checkbox" name="media_filter" class="media-filter" value="sydney" checked>
                     <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
                     <span class="text">Sydney</span>
                   </label>
@@ -457,8 +457,8 @@
                     </div>             
                     <div class="overlay-content">
                       <div class="cta-container">
-                        <a href="#" class="digital-download download-cta">Download for digital</a>
-                        <a href="#" class="print-download download-cta">Download for print</a>
+                        <a href="#" class="digital-download download-cta">Digital Download</a>
+                        <a href="#" class="print-download download-cta">Print Download</a>
                       </div>
                       <div class="text-container">
                         <h5>Kafnu Hong Kong Harbourfront</h5>
