@@ -11,95 +11,98 @@
       <div class="col-md-4 no-padding">
         <div id="page-press-filter-options-container">
           <div class="bg"></div>
-          <div class="press-links">
-            
-            <?php 
-              $defaults = array(
-                'echo' => true,
-                'container' => false,
-                'theme_location'  => 'press-release-menu',
-              );
-              wp_nav_menu($defaults);
-            ?>
 
-          </div>            
-          <div class="press-filters-title">
-            <a href="#">
-              <h5 class="hidden-xs hidden-sm">filter by location</h5>
-              <h5 class="visible-xs visible-sm">filter by</h5>
-            </a>
-          </div>
-          <div class="press-filters-content">
-            <h5 class="visible-xs visible-sm">filter by location</h5>
+          <div id="press-filters-wrapper">
+            <div class="press-links">
+              
+              <?php 
+                $defaults = array(
+                  'echo' => true,
+                  'container' => false,
+                  'theme_location'  => 'press-release-menu',
+                );
+                wp_nav_menu($defaults);
+              ?>
 
-            <?php 
-              $current_categories = post_type_categories('gallery-download');
-            ?>
-            <?php if (count($current_categories) > 0): ?>
-              <ul class="filters">
-                <?php foreach($current_categories as $current_categories_item): ?>
-                  <li>                  
-                    <label>
-                      <input type="checkbox" name="media_filter" class="media-filter" value="<?php echo $current_categories_item->slug; ?>" checked>
-                      <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
-                      <span class="text"><?php echo $current_categories_item->name; ?></span>
-                    </label>
-                  </li>
-                <?php endforeach; ?>
-
-              </ul> <!-- filters -->
-            <?php endif; ?>
-
-            <h5 class="visible-xs visible-sm">filter by type</h5>
-            <ul class="filters visible-xs visible-sm">
-              <li>                  
-                <label>
-                  <input type="checkbox" name="media_filter" class="media-filter" value="images" checked>
-                  <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
-                  <span class="text">Images</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input type="checkbox" name="media_filter" class="media-filter" value="videos" checked>
-                  <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
-                  <span class="text">Videos</span>
-                </label>
-              </li>
-            </ul>
-            <div class="cta-container visible-xs visible-sm">
-              <a href="#" id="filter-apply-btn-mobile" class="square-cta">Apply</a>
+            </div>            
+            <div class="press-filters-title">
+              <a href="#">
+                <h5 class="hidden-xs hidden-sm">filter by location</h5>
+                <h5 class="visible-xs visible-sm">filter by</h5>
+              </a>
             </div>
-          </div>
+            <div class="press-filters-content">
+              <h5 class="visible-xs visible-sm">filter by location</h5>
 
-          <div class="press-filters-title-02 hidden-xs hidden-sm">
-            <a href="#">
-              <h5>filter by type</h5>
-            </a>
-          </div>
-          <div class="press-filters-content-02 hidden-xs hidden-sm">              
-            <ul class="filters">
-              <li>                  
-                <label>
-                  <input type="checkbox" name="media_filter" class="media-filter" value="images" checked>
-                  <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
-                  <span class="text">Images</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input type="checkbox" name="media_filter" class="media-filter" value="videos" checked>
-                  <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
-                  <span class="text">Videos</span>
-                </label>
-              </li>                
-            </ul>
+              <?php 
+                $current_categories = post_type_categories('gallery-download');
+              ?>
+              <?php if (count($current_categories) > 0): ?>
+                <ul class="filters">
+                  <?php foreach($current_categories as $current_categories_item): ?>
+                    <li>                  
+                      <label>
+                        <input type="checkbox" name="media_filter" class="media-filter" value="<?php echo $current_categories_item->slug; ?>" checked>
+                        <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
+                        <span class="text"><?php echo $current_categories_item->name; ?></span>
+                      </label>
+                    </li>
+                  <?php endforeach; ?>
+
+                </ul> <!-- filters -->
+              <?php endif; ?>
+
+              <h5 class="visible-xs visible-sm">filter by type</h5>
+              <ul class="filters visible-xs visible-sm">
+                <li>                  
+                  <label>
+                    <input type="checkbox" name="media_filter" class="media-filter" value="images" checked>
+                    <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
+                    <span class="text">Images</span>
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <input type="checkbox" name="media_filter" class="media-filter" value="videos" checked>
+                    <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
+                    <span class="text">Videos</span>
+                  </label>
+                </li>
+              </ul>
+              <div class="cta-container visible-xs visible-sm">
+                <a href="#" id="filter-apply-btn-mobile" class="square-cta">Apply</a>
+              </div>
+            </div>
+
+            <div class="press-filters-title-02 hidden-xs hidden-sm">
+              <a href="#">
+                <h5>filter by type</h5>
+              </a>
+            </div>
+            <div class="press-filters-content-02 hidden-xs hidden-sm">              
+              <ul class="filters">
+                <li>                  
+                  <label>
+                    <input type="checkbox" name="media_filter" class="media-filter" value="images" checked>
+                    <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
+                    <span class="text">Images</span>
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <input type="checkbox" name="media_filter" class="media-filter" value="videos" checked>
+                    <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
+                    <span class="text">Videos</span>
+                  </label>
+                </li>                
+              </ul>
 
 
-            <?php echo $press_release_gallery_download_masonry_copyright; ?>
+              <?php echo $press_release_gallery_download_masonry_copyright; ?>
 
 
-          </div>
+            </div>
+          </div> <!-- press-filters-wrapper -->
         </div>  
       </div>              
       <div class="col-md-8 no-padding">
