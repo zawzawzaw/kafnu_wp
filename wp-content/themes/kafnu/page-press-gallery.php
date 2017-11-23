@@ -43,7 +43,7 @@
         <div class="col-md-4 no-padding">
           <div id="page-press-filter-options-container">
             <div class="bg"></div>
-            <!-- <div id="press-filters-wrapper"> -->
+            <div id="press-filters-wrapper">
               <div class="press-links">
                 <ul>
                   <li><a href="#">press releases</a></li>
@@ -156,7 +156,7 @@
                 </ul>
                 <span class="disclaimer">All photography is owned or licensed by Kafnu Group Pte Ltd. Misrepresentation of these photographs is prohibited. For usage information, please contact <a href="mailto:press@kafnu.com"></a>press@kafnu.com.</span>
               </div>
-            <!-- </div> -->
+            </div>
           </div>  
         </div>              
         <div class="col-md-8 no-padding">
