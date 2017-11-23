@@ -108,12 +108,18 @@
         padding-bottom: 0; 
 
         a {
-        	color: @grey;
+        	color: @grey;          
+          &:hover {
+            h5 {
+              .opacity(0.8);  
+            }            
+          }
         }
 
         h5 {
           font-size: 16px;
           line-height: 20px;
+          .transition-in (0.3s, cubic-bezier(0.645, 0.045, 0.355, 1), 0.1s);
         }
       }
 
@@ -815,7 +821,10 @@
       // background: @black;
       video {
         width: 100% !important;
+        height: 100%;
         transform: none!important;
+  
+        background: black;
       }
 
       .video-js {

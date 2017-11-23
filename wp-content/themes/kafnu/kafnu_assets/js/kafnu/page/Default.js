@@ -499,7 +499,7 @@ kafnu.page.Default.prototype.create_media_gallery = function() {
 
       if(video) {
         media_gallery_item_large_container.addClass("video-version");
-        media_gallery_item_large_container.find("video").attr('src', video);
+        media_gallery_item_large_container.find("video").children('source').attr('src', video);
         media_gallery_item_large_container.find("video").attr('poster', img);
       } else {
         media_gallery_item_large_container.removeClass("video-version");

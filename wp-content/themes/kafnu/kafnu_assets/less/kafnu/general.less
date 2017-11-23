@@ -217,11 +217,13 @@ button{
 
 // https://stackoverflow.com/questions/8911247/hide-iphone-html5-video-play-button
 
-video::-webkit-media-controls {
-  display:none !important;
-}
-video::-webkit-media-controls-start-playback-button {
-  display: none !important;
+@media all and (max-width: 991px) {
+  video::-webkit-media-controls {
+    display:none !important;
+  }
+  video::-webkit-media-controls-start-playback-button {
+    display: none !important;
+  }  
 }
 
 //    _____ __    ____________ __
