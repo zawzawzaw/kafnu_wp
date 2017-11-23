@@ -107,8 +107,7 @@
                 <?php else: ?>
                   <h6><?php echo $item_date; ?></h6>
                 <?php endif; ?>
-
-                <h5><?php echo get_the_title(); ?></h5>
+                <h5><a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a></h5>
                 <p><?php echo get_the_excerpt(); ?></p>
               </div>
 

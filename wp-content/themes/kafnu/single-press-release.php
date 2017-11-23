@@ -2,11 +2,22 @@
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
+
+<?php
+  $page_id = get_the_ID();
+
+  $subtitle = get_post_meta( $page_id, PREFIX . "subtitle", true );
+  $download_article_file = get_post_meta( $page_id, PREFIX . "download_article_file", true );
+
+  $post_date = get_the_date( 'j F Y' );
+
+?>
+
 <article id="page-press-filtered-section">
   <div id="filter-sticky-trigger-mobile"></div>
   <div class="container-fluid reduce-padding">
     
-    <div class="row">
+    <div class="row row-eq-height">
       <div class="col-md-4">
         <div id="page-press-filter-options-container">
           <div class="bg"></div>
@@ -43,8 +54,14 @@
           </div> <!-- press-sidebar-social-container -->
 
           <div class="press-sidebar-cta-container">
-            <a href="<?php echo home_url('wordpress-press-release'); ?>" id="press-sidebar-back-cta">Back to list</a>
-            <a href="" id="press-sidebar-download-cta">Download article</a>
+            <a href="<?php echo home_url('wordpress-press-release'); ?>" id="press-sidebar-back-cta"  class="download-cta color-version">Back to list</a>
+
+            <?php if (isset($download_article_file) && $download_article_file != ''): ?>
+              <div class="press-sidebar-cta-seperator"></div>
+              <a href="<?php echo $download_article_file; ?>" target="_blank" id="press-sidebar-download-cta" class="download-cta color-version">Download article</a>
+            <?php endif; ?>
+            
+            
           </div> <!-- press-sidebar-cta-container -->
 
         </div>  
@@ -53,10 +70,20 @@
 
         <div id="press-release-content-copy">
           <div class="default-copy">
-            <?php the_title( ); ?>
-            <?php the_author( ); ?>
+
+
+            <div class="press-release-content-title">
+              <?php if (isset($subtitle) && $subtitle != ''): ?>
+                <h4><?php echo $post_date; ?>, <?php echo $subtitle ?></h4>
+              <?php else: ?>
+                <h4><?php echo $post_date; ?></h4>
+              <?php endif; ?>
+              
+              <h1><?php echo get_the_title(); ?></h1>
+            </div> <!-- press-release-content-title -->
 
             <?php the_content(); ?>
+
           </div> <!-- default-copy -->
         </div> <!-- press-release-content-copy -->
 
