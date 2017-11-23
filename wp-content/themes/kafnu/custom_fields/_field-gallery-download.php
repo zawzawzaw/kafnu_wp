@@ -96,6 +96,17 @@
     ) );
 
 
+    $field_m3 = $cmb->add_field( array(
+        'name'    => 'Is image vertical?',
+        'id'      => PREFIX . 'vertical',
+        'type'    => 'checkbox',
+        'description' => 'is the image a vertical image',
+    ) );
+
+
+    // data-vertical
+
+
     //       ____ ____  ___ ____   
     //      / ___|  _ \|_ _|  _ \   
     //     | |  _| |_) || || | | |   

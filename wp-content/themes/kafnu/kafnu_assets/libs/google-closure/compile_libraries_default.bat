@@ -10,7 +10,9 @@ java -jar "compiler.jar" ^
   --js=..\gsap\src\minified\plugins\ScrollToPlugin.min.js ^
   --js=..\scrollmagic\scrollmagic\minified\ScrollMagic.min.js ^
   --js=..\scrollmagic\scrollmagic\minified\plugins\animation.gsap.min.js ^
-  --js=..\scrollmagic\scrollmagic\minified\plugins\debug.addIndicators.min.js ^
   --js=..\slick-carousel\slick\slick.min.js ^
+  --js=..\jquery-validate\jquery.validate.min.js ^
+  --js=..\isotope\isotope.pkgd.min.js ^
+  --js=..\wow\wow.min.js ^
   --compilation_level WHITESPACE_ONLY ^
   --js_output_file=..\..\js\minified\libraries-default.min.js
