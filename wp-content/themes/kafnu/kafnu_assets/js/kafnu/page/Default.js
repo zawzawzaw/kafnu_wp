@@ -428,7 +428,7 @@ kafnu.page.Default.prototype.create_sticky_sidebar = function() {
       triggerElement: "#filter-sticky-trigger-mobile",
       triggerHook: "onLeave" })
       .setClassToggle("#page-press-filter-options-container", "sticky-version-desktop")
-      .addIndicators({name: "stick"}) // add indicators (requires plugin)
+      //.addIndicators({name: "stick"}) // add indicators (requires plugin)
       .addTo(this.controller);
   }
 
