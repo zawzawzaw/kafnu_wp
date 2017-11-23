@@ -414,12 +414,22 @@ kafnu.page.Default.prototype.create_press_elements = function() {
 kafnu.page.Default.prototype.create_sticky_sidebar = function() {
 
   if(manic.IS_MOBILE == false && manic.IS_TABLET_PORTRAIT == false) {
-      var scene = new ScrollMagic.Scene({
-      triggerElement: "#filter-sticky-trigger-mobile", 
-      triggerHook: "onLeave" })
-      .setClassToggle("#page-press-filter-options-container", "sticky-version-desktop")
-      .addIndicators({name: "stick"}) // add indicators (requires plugin)
-      .addTo(this.controller);
+
+      var windowHeight = $(document).height();
+
+      var pagePressFilter = $("#page-press-filter-options-container").height();
+
+      console.log(windowHeight);
+      console.log(pagePressFilter);
+
+      console.log(windowHeight-pagePressFilter);
+
+      // var scene = new ScrollMagic.Scene({
+      // triggerElement: "#filter-sticky-trigger-mobile",
+      // triggerHook: "onLeave" })
+      // .setClassToggle("#page-press-filter-options-container", "sticky-version-desktop")
+      // .addIndicators({name: "stick"}) // add indicators (requires plugin)
+      // .addTo(this.controller);
   }
 
   // var scene = new ScrollMagic.Scene({triggerElement: "#float-start-trigger", triggerHook: 'onEnter', duration: offset.top })
