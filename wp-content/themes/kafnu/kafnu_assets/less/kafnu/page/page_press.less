@@ -402,17 +402,23 @@
       z-index: 10;
       &:before {
         border: none;
-      }  
+      }        
     }
     .press-filters-content {
       position: fixed;
-      top: 149px;
+      top: 140px;
       background: #f4f3f0;
       width: 100%;
       height: 100%;
       left: 0;
       padding-left: 20px;
       padding-right: 20px;
+
+      ul {
+        li {
+          margin-bottom: 12px;
+        }
+      }
     }
   }
 
@@ -510,8 +516,15 @@
       padding-right: 20px;      
 
       h5 {
+        .fira-sans-medium;
+        font-size: 18px;
+        line-height: 30px;
+        letter-spacing: 0.2em;
+        color: @grey;
+        text-transform: uppercase;
         &:after {
           right: 0;
+          top: 5px;
         }
       }
     }
@@ -522,6 +535,18 @@
     padding-right: 80px;
     // padding-bottom: 75px;
     padding-bottom: 35px;
+
+    h5 {
+      .fira-sans-medium;
+      font-size: 15px;
+      line-height: 20px;
+      letter-spacing: 0.1em;
+      color: @blue-3;
+      text-transform: uppercase;
+      position: relative;
+      margin-top: 20px;
+      margin-bottom: 15px;
+    }
 
     ul {
       li {
@@ -724,12 +749,55 @@
         position: absolute;
         left: 30px;
         bottom: 30px;
+        .transition-in(0.5s, cubic-bezier(0.645, 0.045, 0.355, 1), 0s);         
         
         h5 {
           .fira-sans-medium;
           font-size: 16px;
           line-height: 20px;
           color: @white;
+        }
+      }
+
+      .cta-container {        
+        visibility: hidden;
+        .opacity(0);
+        .transition-in(0.5s, cubic-bezier(0.645, 0.045, 0.355, 1), 0s);            
+        position: absolute;
+        bottom: 40px;
+        right: 30px;
+
+        .plus-icon {
+          &:before, &:after {
+            border-top: 1px solid @white;
+            width: 40px;
+            height: 1px;
+          }
+        }
+      }
+
+      .cta-container-02 {
+        visibility: hidden;
+        .opacity(0);
+        .transition-in(0.5s, cubic-bezier(0.645, 0.045, 0.355, 1), 0s);            
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        a {
+          display: block;
+          color: @white!important;
+          margin-bottom: 11px;
+
+          &:before {
+            .download-icon;
+          }
+
+          &:hover {
+            color: @grey!important;
+            &:before {
+              .download-icon-gold;
+            }
+          }
         }
       }
     }
@@ -763,6 +831,20 @@
         .opacity(1);
         background: @work;
         cursor: pointer;
+
+        .text-container {
+          visibility: hidden;
+          .opacity(0);
+        }
+
+        .cta-container {
+          .opacity(1);
+          visibility: visible;
+        }
+        .cta-container-02 {
+          .opacity(1);
+          visibility: visible;
+        }
       }
     }
   }

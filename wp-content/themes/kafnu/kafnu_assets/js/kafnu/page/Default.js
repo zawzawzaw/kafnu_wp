@@ -409,6 +409,14 @@ kafnu.page.Default.prototype.create_press_elements = function() {
 
 }
 
+kafnu.page.Default.prototype.create_sticky_side_bar = function() {
+
+  if(manic.IS_MOBILE == false && manic.IS_TABLET_PORTRAIT == false) {
+
+  }
+
+}
+
 kafnu.page.Default.prototype.update_press_layout = function() {
   if($(".page-press-content-container").length != 0) {
     
@@ -448,6 +456,15 @@ kafnu.page.Default.prototype.create_filter_sidebar = function() {
 kafnu.page.Default.prototype.create_media_gallery = function() {  
 
   if(manic.IS_MOBILE == false && manic.IS_TABLET_PORTRAIT == false) {
+
+    $('.digital-download').click(function(e){
+      e.stopPropagation();
+    });
+
+    $('.print-download').click(function(e){
+      e.stopPropagation();
+    });
+
     $(".media-gallery-item").click(function(e){
       e.preventDefault();    
       

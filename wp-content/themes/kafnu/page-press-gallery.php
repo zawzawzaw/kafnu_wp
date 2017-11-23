@@ -57,6 +57,7 @@
               </a>
             </div>
             <div class="press-filters-content">
+              <h5 class="visible-xs visible-sm">filter by location</h5>
               <ul class="filters">
                 <li>                  
                   <label>
@@ -107,15 +108,17 @@
                     <span class="text">Sydney</span>
                   </label>
                 </li>
-
-                <li class="visible-xs visible-sm">                  
+              </ul>
+              <h5 class="visible-xs visible-sm">filter by type</h5>
+              <ul class="filters visible-xs visible-sm">
+                <li>                  
                   <label>
                     <input type="checkbox" name="media_filter" class="media-filter" value="images" checked>
                     <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
                     <span class="text">Images</span>
                   </label>
                 </li>
-                <li class="visible-xs visible-sm">
+                <li>
                   <label>
                     <input type="checkbox" name="media_filter" class="media-filter" value="videos" checked>
                     <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
@@ -130,10 +133,10 @@
 
             <div class="press-filters-title-02 hidden-xs hidden-sm">
               <a href="#">
-                <h5 class="hidden-xs hidden-sm">filter by type</h5>
+                <h5>filter by type</h5>
               </a>
             </div>
-            <div class="press-filters-content-02 hidden-xs hidden-sm">
+            <div class="press-filters-content-02 hidden-xs hidden-sm">              
               <ul class="filters">
                 <li>                  
                   <label>
@@ -184,7 +187,14 @@
                   <div class="overlay-content">
                     <div class="text-container">
                       <h5>Kafnu Hong Kong</h5>
-                    </div>                    
+                    </div>
+                    <div class="cta-container">
+                      <a href="#" class="plus-icon"></a>
+                    </div>
+                    <div class="cta-container-02">
+                      <a href="#" class="download-cta digital-download">Download for digital</a>
+                      <a href="#" class="download-cta print-download">Download for print</a>
+                    </div>                  
                   </div>                  
                 </div><!-- end col-md-4 -->
               </div>
@@ -214,7 +224,14 @@
                   <div class="overlay-content">
                     <div class="text-container">
                       <h5>Kafnu Hong Kong Harbourfront</h5>
-                    </div>                    
+                    </div>         
+                    <div class="cta-container">
+                      <a href="#" class="plus-icon"></a>
+                    </div>
+                    <div class="cta-container-02">
+                      <a href="#" class="download-cta digital-download">Download for digital</a>
+                      <a href="#" class="download-cta print-download">Download for print</a>
+                    </div>           
                   </div>
                 </div><!-- end col-md-4 -->
               </div>
@@ -244,7 +261,14 @@
                   <div class="overlay-content">
                     <div class="text-container">
                       <h5>Kafnu Hong Kong Harbourfront</h5>
-                    </div>                    
+                    </div>       
+                    <div class="cta-container">
+                      <a href="#" class="plus-icon"></a>
+                    </div>
+                    <div class="cta-container-02">
+                      <a href="#" class="download-cta digital-download">Download for digital</a>
+                      <a href="#" class="download-cta print-download">Download for print</a>
+                    </div>             
                   </div>
                 </div> <!-- end col-md-4 -->
               </div>              
@@ -274,7 +298,14 @@
                   <div class="overlay-content">
                     <div class="text-container">
                       <h5>Lorem ipsum dolor</h5>
-                    </div>                    
+                    </div>        
+                    <div class="cta-container">
+                      <a href="#" class="plus-icon"></a>
+                    </div>
+                    <div class="cta-container-02">
+                      <a href="#" class="download-cta digital-download">Download for digital</a>
+                      <a href="#" class="download-cta print-download">Download for print</a>
+                    </div>            
                   </div>
                 </div>
               </div>
@@ -304,7 +335,14 @@
                   <div class="overlay-content">
                     <div class="text-container">
                       <h5>Lorem ipsum dolor</h5>
-                    </div>                    
+                    </div>       
+                    <div class="cta-container">
+                      <a href="#" class="plus-icon"></a>
+                    </div>
+                    <div class="cta-container-02">
+                      <a href="#" class="download-cta digital-download">Download for digital</a>
+                      <a href="#" class="download-cta print-download">Download for print</a>
+                    </div>             
                   </div>
                 </div>
               </div>
@@ -334,7 +372,14 @@
                   <div class="overlay-content">
                     <div class="text-container">
                       <h5>Lorem ipsum dolor</h5>
-                    </div>                    
+                    </div>       
+                    <div class="cta-container">
+                      <a href="#" class="plus-icon"></a>
+                    </div>
+                    <div class="cta-container-02">
+                      <a href="#" class="download-cta digital-download">Download for digital</a>
+                      <a href="#" class="download-cta print-download">Download for print</a>
+                    </div>             
                   </div>
                 </div>
               </div>              
@@ -364,7 +409,14 @@
                   <div class="overlay-content">
                     <div class="text-container">
                       <h5>Lorem ipsum dolor</h5>
-                    </div>                    
+                    </div>           
+                    <div class="cta-container">
+                      <a href="#" class="plus-icon"></a>
+                    </div>
+                    <div class="cta-container-02">
+                      <a href="#" class="download-cta digital-download">Download for digital</a>
+                      <a href="#" class="download-cta print-download">Download for print</a>
+                    </div>         
                   </div>
                 </div>
               </div>
@@ -394,7 +446,14 @@
                   <div class="overlay-content">
                     <div class="text-container">
                       <h5>Lorem ipsum dolor</h5>
-                    </div>                    
+                    </div>         
+                    <div class="cta-container">
+                      <a href="#" class="plus-icon"></a>
+                    </div>
+                    <div class="cta-container-02">
+                      <a href="#" class="download-cta digital-download">Download for digital</a>
+                      <a href="#" class="download-cta print-download">Download for print</a>
+                    </div>           
                   </div>
                 </div>
               </div>
@@ -425,7 +484,13 @@
                   <div class="overlay-content">
                     <div class="text-container">
                       <h5>Lorem ipsum dolor</h5>
-                    </div>                    
+                    </div>         
+                    <div class="cta-container">
+                      <a href="#" class="plus-icon"></a>
+                    </div>
+                    <div class="cta-container-02">
+                      <a href="#" class="download-cta digital-download">Download for digital</a>
+                    </div>           
                   </div>
                 </div>
               </div>
