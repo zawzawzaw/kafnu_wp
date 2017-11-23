@@ -81,6 +81,21 @@
     ) );
 
 
+
+    $field_m1 = $cmb->add_field( array(
+        'name'    => 'Masonry Image',
+        'id'      => PREFIX . 'masonry',
+        'type'    => 'file',
+        'description' => 'black & white jpg, 460 x 460, 100kb',
+    ) );
+    $field_m2 = $cmb->add_field( array(
+        'name'    => 'Masonry Image (Black & White)',
+        'id'      => PREFIX . 'masonry_grey',
+        'type'    => 'file',
+        'description' => 'black & white jpg, 460 x 460, 40kb',
+    ) );
+
+
     //       ____ ____  ___ ____   
     //      / ___|  _ \|_ _|  _ \   
     //     | |  _| |_) || || | | |   
@@ -110,8 +125,20 @@
     $row = $cmb2Grid->addRow();
     $row->addColumns(array($field_6, $field_7, $field_8, $field_9));
 
+
+    
     $row = $cmb2Grid->addRow();
-    $row->addColumns(array($field_a, $field_10, $field_11));
+    $row->addColumns(array(
+        array($field_a, 'class' => 'col-md-6'),
+    ));
+
+    $row = $cmb2Grid->addRow();
+    $row->addColumns(array($field_10, $field_11));
+
+    $row = $cmb2Grid->addRow();
+    $row->addColumns(array($field_m1, $field_m2));
+
+    
 
   }
 

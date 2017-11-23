@@ -27,6 +27,16 @@ function wds_add_field_press_release_gallery_download_masonry( $fields ) {
       )
     ),
 
+    array(
+      'name'    => 'Copyright',
+      'id'      => PREFIX . 'press_release_gallery_download_masonry_copyright',
+      'type'    => 'wysiwyg',
+      'options' => array(
+        'textarea_rows' => get_option('default_post_edit_rows', 10)
+      ),
+      'description' => ''
+    ),
+
   );
   return array_merge( $fields, $new_fields );
 
