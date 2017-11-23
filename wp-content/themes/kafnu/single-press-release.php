@@ -45,8 +45,9 @@
           <div class="press-sidebar-social-container">
             <h5>Share</h5>
             <ul>
-              <li><a href="<?php echo $facebook_share_url; ?>" class="fa fa-facebook"></a></li>
-              <li><a href="<?php echo $twitter_share_url; ?>" class="fa fa-twitter"></a></li>
+
+              <li><a href="<?php echo $facebook_share_url; ?>" class="fa fa-facebook" target="_blank"></a></li>
+              <li><a href="<?php echo $twitter_share_url; ?>" class="fa fa-twitter" target="_blank"></a></li>
               <!-- 
               <li><a href="" class="fa fa-envelope"></a></li>
               -->
@@ -70,11 +71,10 @@
 
         <div id="press-release-content-copy">
           <div class="default-copy">
-
-
+            
             <div class="press-release-content-title">
               <?php if (isset($subtitle) && $subtitle != ''): ?>
-                <h4><?php echo $post_date; ?>, <?php echo $subtitle ?></h4>
+                <h4><?php echo $post_date; ?>, <br class="visible-sm visible-xs"><?php echo $subtitle ?></h4>
               <?php else: ?>
                 <h4><?php echo $post_date; ?></h4>
               <?php endif; ?>
