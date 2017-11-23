@@ -40,6 +40,29 @@ function wds_add_field_press_release_fact_sheet_and_media_contact( $fields ) {
     ),
 
     array(
+      'name'    => 'Factsheet Banner Image',
+      'id'      => PREFIX . 'press_release_fsmc_factsheet_banner_image',
+      'type'    => 'file',
+      'description' => 'jpg',
+    ),
+    array(
+      'name'    => 'Factsheet Banner Image Tablet',
+      'id'      => PREFIX . 'press_release_fsmc_factsheet_banner_image_tablet',
+      'type'    => 'file',
+      'description' => 'jpg',
+    ),
+    array(
+      'name'    => 'Factsheet Banner Image Mobile',
+      'id'      => PREFIX . 'press_release_fsmc_factsheet_banner_image_mobile',
+      'type'    => 'file',
+      'description' => 'jpg',
+    ),
+
+    
+
+
+
+    array(
       'name'    => 'Press Release FSMC Contact Title',
       'id'      => PREFIX . 'press_release_fsmc_contact_title',
       'type'    => 'text',

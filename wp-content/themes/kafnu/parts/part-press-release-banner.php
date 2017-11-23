@@ -9,49 +9,34 @@
   
 ?>
 
-
-
-<?php echo $press_release_banner_title; ?>
-
-
-
-
-<?php echo $press_release_banner_copy; ?>
-
-
-<?php if (isset($press_release_banner_cta) && $press_release_banner_cta != ''): ?>
-  <?php echo $press_release_banner_cta; ?>
-<?php endif; ?>
-
-<img src="" data-image-desktop="<?php echo $press_release_banner_image; ?>">
-<img src="" data-image-desktop="<?php echo $press_release_banner_image_tablet; ?>">
-<img src="" data-image-desktop="<?php echo $press_release_banner_image_mobile; ?>">
-
-
-
 <article id="page-default-banner-section" class="">
   <div id="page-default-banner-image" class="press-version visible-lg visible-md">
     <div class="container-fluid reduce-padding">
       <div class="row">
         <div class="col-lg-8 col-md-8 no-padding">
           <div class="manic-image-container">
-            <img src="" data-image-desktop="<?php echo THEMEROOT; ?>/images_cms/press/press-landing-banner.jpg">
+            <img src="" data-image-desktop="<?php echo $press_release_banner_image; ?>">
           </div>
 
           <div id="page-default-banner-copy-container" class="left-version press-version">
             <div class="container-fluid">
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-lg-6 col-md-12">
 
                   <div id="page-default-banner-copy">
                     <?php if (isset($press_release_banner_subtitle) && $press_release_banner_subtitle != ''): ?>
-                      <?php echo $press_release_banner_subtitle; ?>
+                      <h5><?php echo $press_release_banner_subtitle; ?></h5>
                     <?php endif; ?>
-                    <h5>Featured Story</h5>
-                    <h2>Lorem ipsum dolor sitamet, cons ectetur adipiscring elit.</h2>
-                    <p>Lorem ipsum dolor sit amet, cons ectetur adipiscing elit. Maecenas mollis lorem in enim finibus, quis ultrices dui accumsan. Nulla facilisi. Fusce at aliquam magna, quis condimentum lacus. Curabitur in interdum sem praesent quis eros afsapien.</p>
-                    
-                    <a href="#" class="plus-cta">Read More</a>
+
+                    <h2><?php echo $press_release_banner_title; ?></h2>
+
+                    <?php if (isset($press_release_banner_copy) && $press_release_banner_copy != ''): ?>
+                      <p><?php echo $press_release_banner_copy; ?></p>
+                    <?php endif; ?>
+
+                    <?php if (isset($press_release_banner_cta) && $press_release_banner_cta != ''): ?>
+                      <a href="<?php echo $press_release_banner_cta['link']; ?>" class="plus-cta"><?php echo $press_release_banner_cta['copy']; ?></a>
+                    <?php endif; ?>
 
                   </div> <!-- page-default-banner-copy -->
 
@@ -67,38 +52,68 @@
 
               <div class="banner-sidebar-title">
                 <h5>Press Releases</h5>                  
-              </div>              
+              </div>
 
-              <div class="banner-sidebar-item">              
-                <div class="banner-sidebar-item-text">                
-                  <p>20 October 2017, Kafnu Taipei</p>
-                  <a href="#"><h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5></a>
-                </div>
-              </div><!-- banner-sidebar-item -->                              
+              <?php 
 
-              <div class="banner-sidebar-item">              
-                <div class="banner-sidebar-item-text">                
-                  <p>20 October 2017, Kafnu Taipei</p>
-                  <a href="#"><h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5></a>
-                </div>
-              </div><!-- banner-sidebar-item -->                              
+                //    ____ _____  _    ____ _____
+                //   / ___|_   _|/ \  |  _ \_   _|
+                //   \___ \ | | / _ \ | |_) || |
+                //    ___) || |/ ___ \|  _ < | |
+                //   |____/ |_/_/   \_\_| \_\|_|
+                //
 
-              <div class="banner-sidebar-item">              
-                <div class="banner-sidebar-item-text">                
-                  <p>20 October 2017, Kafnu Taipei</p>
-                  <a href="#"><h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5></a>
-                </div>
-              </div><!-- banner-sidebar-item -->                              
+                global $post;
 
-              <div class="banner-sidebar-item">              
-                <div class="banner-sidebar-item-text">                
-                  <p>20 October 2017, Kafnu Taipei</p>
-                  <a href="#"><h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5></a>
-                </div>
-              </div><!-- banner-sidebar-item -->                              
+                $args=array(
+                  'post_type' => 'press-release',
+                  'post_status' => 'publish',
+                  'posts_per_page' => 4,
+                );
+                $my_query = new WP_Query($args);
 
-              <div class="banner-sidebar-cta">              
-                <a href="<?php echo get_the_permalink('press'); ?>" class="square-cta border-version">See More Press Releases</a>
+                // var_dump($my_query);
+
+                if( $my_query->have_posts() ):
+                  while( $my_query->have_posts() ):
+                    $my_query->the_post();
+
+                      $post_id = get_the_ID();
+                      $title = get_post_meta( $post_id, PREFIX . 'title', true );
+                      $subtitle = get_post_meta( $post_id, PREFIX . 'subtitle', true );
+                      $download_article_file = get_post_meta( $post_id, PREFIX . 'download_article_file', true );
+
+                      // $item_date = '20 october 2017';
+                      $item_date = get_the_date( 'j  F, Y' );
+              ?>
+
+                <div class="banner-sidebar-item">
+                  <div class="banner-sidebar-item-text">
+                    <?php if (isset($subtitle) && $subtitle != ''): ?>
+                      <p><?php echo $item_date; ?>, <?php echo $subtitle ?></p>
+                    <?php else: ?>
+                      <p><?php echo $item_date; ?></p>
+                    <?php endif; ?>
+                    <a href="<?php echo get_the_permalink(); ?>"><h5><?php echo get_the_title(); ?></h5></a>
+                  </div>
+                </div><!-- banner-sidebar-item -->
+
+              <?php 
+                  endwhile;
+                endif;
+                wp_reset_query();
+
+                //    _____ _   _ ____
+                //   | ____| \ | |  _ \
+                //   |  _| |  \| | | | |
+                //   | |___| |\  | |_| |
+                //   |_____|_| \_|____/
+                //
+              
+              ?>
+
+              <div class="banner-sidebar-cta">
+                <a href="<?php echo home_url('wordpress-press-release'); ?>" class="square-cta border-version">See More Press Releases</a>
               </div><!-- banner-sidebar-item -->                   
 
             </div>           
@@ -109,54 +124,108 @@
     </div>
   </div> <!-- page-default-banner-image -->
   
-  <div id="page-default-banner-image-mobile" class="visible-sm visible-xs">
+  <div id="page-default-banner-image-mobile" class="press-version visible-sm visible-xs">
     <div class="manic-image-container has-window-height">
-      <img src="" data-image-tablet="<?php echo THEMEROOT; ?>/images_cms/press/press-landing-banner-tablet.jpg""
-                  data-image-mobile="<?php echo THEMEROOT; ?>/images_cms/press/press-landing-banner-mobile.jpg"">
+      <img src="" data-image-tablet="<?php echo $press_release_banner_image_tablet; ?>"
+                  data-image-mobile="<?php echo $press_release_banner_image_mobile; ?>">
     </div>
-    <div id="banner-sidebar-container-02">
+    <div id="page-default-banner-copy-container" class="left-version press-version">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-6 col-md-12">
 
-      <div id="banner-sidebar-content">
+            <div id="page-default-banner-copy">
 
-        <div class="banner-sidebar-title">
-          <h5>Press Releases</h5>                  
-        </div>              
+              <?php if (isset($press_release_banner_subtitle) && $press_release_banner_subtitle != ''): ?>
+                <h5><?php echo $press_release_banner_subtitle; ?></h5>
+              <?php endif; ?>
 
-        <div class="banner-sidebar-item">              
-          <div class="banner-sidebar-item-text">                
-            <p>20 October 2017, Kafnu Taipei</p>
-            <a href=""><h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5></a>
+              <h2><?php echo $press_release_banner_title; ?></h2>
+
+              <?php if (isset($press_release_banner_cta) && $press_release_banner_cta != ''): ?>
+                <a href="<?php echo $press_release_banner_cta['link']; ?>" class="plus-cta"><?php echo $press_release_banner_cta['copy']; ?></a>
+              <?php endif; ?>
+
+            </div> <!-- page-default-banner-copy -->
+
           </div>
-        </div><!-- banner-sidebar-item -->                              
-
-        <div class="banner-sidebar-item">              
-          <div class="banner-sidebar-item-text">                
-            <p>20 October 2017, Kafnu Taipei</p>
-            <a href=""><h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5></a>
-          </div>
-        </div><!-- banner-sidebar-item -->                              
-
-        <div class="banner-sidebar-item">              
-          <div class="banner-sidebar-item-text">                
-            <p>20 October 2017, Kafnu Taipei</p>
-            <a href=""><h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5></a>
-          </div>
-        </div><!-- banner-sidebar-item -->                              
-
-        <div class="banner-sidebar-item">              
-          <div class="banner-sidebar-item-text">                
-            <p>20 October 2017, Kafnu Taipei</p>
-            <a href=""><h5>Next Story reimagines urban spaces with Kafnu, the vertical village</h5></a>
-          </div>
-        </div><!-- banner-sidebar-item -->                              
-
-        <div class="banner-sidebar-cta">              
-          <a href="<?php echo get_the_permalink('press'); ?>" class="square-cta border-version">See More Press Releases</a>
-        </div><!-- banner-sidebar-item -->                   
-
-      </div>           
-
-    </div> <!-- banner-sidebar-container -->      
+        </div>
+      </div>
+    </div> <!-- page-default-banner-copy-container -->      
   </div>
+  <div id="banner-sidebar-container-02" class="visible-sm visible-xs">
+
+    <div id="banner-sidebar-content">
+
+      <div class="banner-sidebar-title">
+        <h5>Press Releases</h5>                  
+      </div>
+
+
+      <?php 
+
+        //    ____ _____  _    ____ _____
+        //   / ___|_   _|/ \  |  _ \_   _|
+        //   \___ \ | | / _ \ | |_) || |
+        //    ___) || |/ ___ \|  _ < | |
+        //   |____/ |_/_/   \_\_| \_\|_|
+        //
+
+        global $post;
+
+        $args=array(
+          'post_type' => 'press-release',
+          'post_status' => 'publish',
+          'posts_per_page' => 4,
+        );
+        $my_query = new WP_Query($args);
+
+        // var_dump($my_query);
+
+        if( $my_query->have_posts() ):
+          while( $my_query->have_posts() ):
+            $my_query->the_post();
+
+              $post_id = get_the_ID();
+              $title = get_post_meta( $post_id, PREFIX . 'title', true );
+              $subtitle = get_post_meta( $post_id, PREFIX . 'subtitle', true );
+              $download_article_file = get_post_meta( $post_id, PREFIX . 'download_article_file', true );
+
+              // $item_date = '20 october 2017';
+              $item_date = get_the_date( 'j  F, Y' );
+      ?>
+
+        <div class="banner-sidebar-item">              
+          <div class="banner-sidebar-item-text">                
+            <?php if (isset($subtitle) && $subtitle != ''): ?>
+              <p><?php echo $item_date; ?>, <?php echo $subtitle ?></p>
+            <?php else: ?>
+              <p><?php echo $item_date; ?></p>
+            <?php endif; ?>
+            <a href="<?php echo get_the_permalink(); ?>"><h5><?php echo get_the_title(); ?></h5></a>
+          </div>
+        </div><!-- banner-sidebar-item -->
+
+      <?php 
+          endwhile;
+        endif;
+        wp_reset_query();
+
+        //    _____ _   _ ____
+        //   | ____| \ | |  _ \
+        //   |  _| |  \| | | | |
+        //   | |___| |\  | |_| |
+        //   |_____|_| \_|____/
+        //
+      
+      ?>
+
+      <div class="banner-sidebar-cta">              
+        <a href="<?php echo get_the_permalink('press'); ?>" class="square-cta border-version">See More Press Releases</a>
+      </div><!-- banner-sidebar-item -->                   
+
+    </div>           
+
+  </div> <!-- banner-sidebar-container -->      
 
 </article> <!-- page-default-banner-section -->
