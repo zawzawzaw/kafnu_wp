@@ -43,7 +43,7 @@
           </div> <!-- press-sidebar-social-container -->
 
           <div class="press-sidebar-cta-container">
-            <a href="" id="press-sidebar-back-cta">Back to list</a>
+            <a href="<?php echo home_url('wordpress-press-release'); ?>" id="press-sidebar-back-cta">Back to list</a>
             <a href="" id="press-sidebar-download-cta">Download article</a>
           </div> <!-- press-sidebar-cta-container -->
 

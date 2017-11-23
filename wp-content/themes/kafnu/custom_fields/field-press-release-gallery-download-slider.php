@@ -30,9 +30,11 @@ function wds_add_field_press_release_gallery_download_slider( $fields ) {
     array(
       'name'    => 'Copyright',
       'id'      => PREFIX . 'press_release_gallery_download_slider_copyright',
-      'type'    => 'text',
-      'description' => '',
-      'sanitization_cb' => false
+      'type'    => 'wysiwyg',
+      'options' => array(
+        'textarea_rows' => get_option('default_post_edit_rows', 10)
+      ),
+      'description' => ''
     ),
     
   );

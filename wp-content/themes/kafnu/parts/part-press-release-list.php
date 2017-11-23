@@ -7,7 +7,7 @@
   <div id="filter-sticky-trigger-mobile"></div>
   <div class="container-fluid reduce-padding">
     
-    <div class="row">
+    <div class="row row-eq-height">
       <div class="col-md-4">
         <div id="page-press-filter-options-container">
           <div class="bg"></div>
@@ -41,7 +41,7 @@
                 <?php foreach($current_categories as $current_categories_item): ?>
                   <li>
                     <label>
-                      <input type="checkbox" name="article_filter" class="article-filter" value="<?php echo $current_categories_item->slug; ?>">
+                      <input type="checkbox" name="article_filter" class="article-filter" value="<?php echo $current_categories_item->slug; ?>" checked>
                       <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
                       <span class="text"><?php echo $current_categories_item->name; ?></span>
                     </label>
@@ -91,8 +91,14 @@
                   $download_article_file = get_post_meta( $post_id, PREFIX . 'download_article_file', true );
 
                   // temp
-                  $item_date = '20 october 2017';
-                  $category = 'temp-category';
+                  // $item_date = '20 october 2017';
+                  $item_date = get_the_date( 'j  F, Y' );
+
+                  $category = '';
+                  $categories = get_the_category();
+                  if ( ! empty( $categories ) ) {
+                      $category = esc_html( $categories[0]->slug );
+                  }
           ?>
             <div class="press-article" data-country="<?php echo $category; ?>">
               <div class="text-container">
