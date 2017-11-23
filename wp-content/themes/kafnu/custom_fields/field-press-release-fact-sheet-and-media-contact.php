@@ -46,19 +46,7 @@ function wds_add_field_press_release_fact_sheet_and_media_contact( $fields ) {
       'description' => '',
     ),
 
-    array(
-      'name'    => 'Press Release FSMC Contact Copy',
-      'id'      => PREFIX . 'press_release_fsmc_contact_copy',
-      'type'    => 'textarea',
-      'description' => '',
-    ),
-
-    array(
-      'name'    => 'Press Release FSMC Contact CTA',
-      'id'      => PREFIX . 'press_release_fsmc_contact_cta',
-      'type'    => 'manic_cta',
-      'description' => '',
-    ),
+    
 
     array(
       'name'    => 'Press Release FSMC Contact General Title',
@@ -88,6 +76,29 @@ function wds_add_field_press_release_fact_sheet_and_media_contact( $fields ) {
           'post_type' => 'media-contact',
         ), // override the get_posts args
       )
+    ),
+
+
+
+    array(
+      'name'    => 'Press Release FSMC Contact (Multiple Media Contacts)',
+      'id'      => PREFIX . 'press_release_fsmc_contact_title_multiple',
+      'type'    => 'title',
+      'description' => 'these are fields are used if there are more than 1 media contact',
+    ),
+
+    array(
+      'name'    => 'Press Release FSMC Contact Copy',
+      'id'      => PREFIX . 'press_release_fsmc_contact_copy',
+      'type'    => 'textarea',
+      'description' => '',
+    ),
+
+    array(
+      'name'    => 'Press Release FSMC Contact CTA',
+      'id'      => PREFIX . 'press_release_fsmc_contact_cta',
+      'type'    => 'manic_cta',
+      'description' => '',
     ),
 
 

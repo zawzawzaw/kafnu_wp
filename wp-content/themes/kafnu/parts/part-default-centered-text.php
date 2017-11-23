@@ -4,6 +4,7 @@
 $default_centered_text_title = wds_page_builder_get_this_part_data( PREFIX . 'default_centered_text_title');
 $default_centered_text_copy = wds_page_builder_get_this_part_data( PREFIX . 'default_centered_text_copy');
 $default_centered_text_is_white_bg = wds_page_builder_get_this_part_data( PREFIX . 'default_centered_text_is_white_bg');
+$default_centered_text_cta = wds_page_builder_get_this_part_data( PREFIX . 'default_centered_text_cta');
 
 
 $extra_class = '';
@@ -13,6 +14,15 @@ if (isset($default_centered_text_is_white_bg) && $default_centered_text_is_white
   $extra_class = 'country-version';
   $country_version = true;
 }
+
+// new version
+if(isset($default_centered_text_cta) && $default_centered_text_cta != '') {
+  $extra_class .= ' press-version';
+}
+
+  
+
+
 
 ?>
 
@@ -53,6 +63,10 @@ if (isset($default_centered_text_is_white_bg) && $default_centered_text_is_white
 
           <?php if (isset($default_centered_text_copy) && $default_centered_text_copy != ''): ?>
             <p data-wow-offset="100" class="wow fadeInUp"><?php echo $default_centered_text_copy; ?></p>
+          <?php endif; ?>
+
+          <?php if(isset($default_centered_text_cta) && $default_centered_text_cta != ''): ?>
+            <a href="<?php echo $default_centered_text_cta['link']; ?>" class="square-cta border-version"><?php echo $default_centered_text_cta['copy']; ?></a>
           <?php endif; ?>
           
         </div>

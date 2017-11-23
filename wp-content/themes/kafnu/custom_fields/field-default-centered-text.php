@@ -28,6 +28,12 @@ function wds_add_field_default_centered_text( $fields ) {
       'sanitization_cb' => false,
     ),
     array(
+      'name'    => 'CTA',
+      'id'      => PREFIX . 'default_centered_text_cta',
+      'type'    => 'manic_cta',
+      'description' => '(optional)',
+    ),
+    array(
       'name'    => 'Is White BG',
       'id'      => PREFIX . 'default_centered_text_is_white_bg',
       'type'    => 'checkbox',
