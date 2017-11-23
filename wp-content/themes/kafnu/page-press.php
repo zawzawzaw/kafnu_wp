@@ -73,7 +73,7 @@
                       <span class="text">Taipei</span>
                     </label>
                   </li>
-                  <li>
+                  <!-- <li>
                     <label>
                       <input type="checkbox" name="article_filter" class="article-filter" value="bangalore" checked>
                       <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
@@ -107,7 +107,7 @@
                       <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
                       <span class="text">Sydney</span>
                     </label>
-                  </li>
+                  </li> -->
                 </ul>
                 <div class="cta-container visible-xs visible-sm">
                   <a href="#" id="filter-apply-btn-mobile" class="square-cta">Apply</a>

@@ -497,6 +497,7 @@ kafnu.page.Default.prototype.create_media_gallery = function() {
       var digital_download = $(e.currentTarget).data("digital-download");
       var print_download = $(e.currentTarget).data("print-download");    
       var video = $(e.currentTarget).data("video"); 
+      var vertical = $(e.currentTarget).data("vertical"); 
 
       // opening container
       // var media_gallery_item_large_container = $(".media-gallery-item-large-container");       
@@ -543,6 +544,10 @@ kafnu.page.Default.prototype.create_media_gallery = function() {
       } else {
         media_gallery_item_large_container.removeClass("video-version");
       }    
+
+      if(vertical) {
+        media_gallery_item_large_container.find("img").addClass('vertical-version');    
+      }
 
       // change stuff
       media_gallery_item_large_container.attr("id","cloned-media-gallery-item-large-container");

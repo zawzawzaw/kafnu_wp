@@ -48,7 +48,7 @@
                 <ul>
                   <li><a href="#">press releases</a></li>
                   <li><a href="#">media contacts</a></li>
-                  <li><a href="#">gallery</a></li>
+                  <!-- <li><a href="#">gallery</a></li> -->
                 </ul>
               </div>            
               <div class="press-filters-title">
@@ -74,7 +74,7 @@
                       <span class="text">Taipei</span>
                     </label>
                   </li>
-                  <li>
+                  <!-- <li>
                     <label>
                       <input type="checkbox" name="media_filter" class="media-filter" value="bangalore" checked>
                       <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
@@ -108,7 +108,7 @@
                       <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
                       <span class="text">Sydney</span>
                     </label>
-                  </li>
+                  </li> -->
                 </ul>
                 <h5 class="visible-xs visible-sm">filter by type</h5>
                 <ul class="filters visible-xs visible-sm">
