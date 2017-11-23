@@ -11,51 +11,54 @@
       <div class="col-md-4">
         <div id="page-press-filter-options-container">
           <div class="bg"></div>
-          <div class="press-links">
 
-            <?php 
-              $defaults = array(
-                'echo' => true,
-                'container' => false,
-                'theme_location'  => 'press-release-menu',
-              );
-              wp_nav_menu($defaults);
-            ?>
-          </div> <!-- press-links -->
-          <div class="press-filters-title">
-            <a href="#">
-              <h5 class="hidden-xs hidden-sm">filter by location</h5>
-              <h5 class="visible-xs visible-sm">filter by</h5>
-            </a>
-          </div>
-          <div class="press-filters-content">
+          <div id="press-filters-wrapper">
+            <div class="press-links">
 
-            
-            <?php 
-              $current_categories = post_type_categories('press-release');
-            ?>
-
-            <?php if (count($current_categories) > 0): ?>
-              <ul class="filters">
-
-                <?php foreach($current_categories as $current_categories_item): ?>
-                  <li>
-                    <label>
-                      <input type="checkbox" name="article_filter" class="article-filter" value="<?php echo $current_categories_item->slug; ?>" checked>
-                      <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
-                      <span class="text"><?php echo $current_categories_item->name; ?></span>
-                    </label>
-                  </li>
-                <?php endforeach; ?>
-
-              </ul> <!-- filters -->
-            <?php endif; ?>
-
-            <div class="cta-container visible-xs visible-sm">
-              <a href="#" id="filter-apply-btn-mobile" class="square-cta">Apply</a>
+              <?php 
+                $defaults = array(
+                  'echo' => true,
+                  'container' => false,
+                  'theme_location'  => 'press-release-menu',
+                );
+                wp_nav_menu($defaults);
+              ?>
+            </div> <!-- press-links -->
+            <div class="press-filters-title">
+              <a href="#">
+                <h5 class="hidden-xs hidden-sm">filter by location</h5>
+                <h5 class="visible-xs visible-sm">filter by</h5>
+              </a>
             </div>
+            <div class="press-filters-content">
 
-          </div>
+              
+              <?php 
+                $current_categories = post_type_categories('press-release');
+              ?>
+
+              <?php if (count($current_categories) > 0): ?>
+                <ul class="filters">
+
+                  <?php foreach($current_categories as $current_categories_item): ?>
+                    <li>
+                      <label>
+                        <input type="checkbox" name="article_filter" class="article-filter" value="<?php echo $current_categories_item->slug; ?>" checked>
+                        <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
+                        <span class="text"><?php echo $current_categories_item->name; ?></span>
+                      </label>
+                    </li>
+                  <?php endforeach; ?>
+
+                </ul> <!-- filters -->
+              <?php endif; ?>
+
+              <div class="cta-container visible-xs visible-sm">
+                <a href="#" id="filter-apply-btn-mobile" class="square-cta">Apply</a>
+              </div>
+
+            </div>
+          </div> <!-- press-filters-wrapper -->
         </div> <!-- page-press-filter-options-container -->
       </div>
       <div class="col-md-6 col-md-offset-1">
