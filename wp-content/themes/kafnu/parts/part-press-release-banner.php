@@ -113,7 +113,7 @@
               ?>
 
               <div class="banner-sidebar-cta">
-                <a href="<?php echo home_url('wordpress-press-release'); ?>" class="square-cta border-version">See More Press Releases</a>
+                <a href="<?php echo home_url('press-releases'); ?>" class="square-cta border-version">See More Press Releases</a>
               </div><!-- banner-sidebar-item -->                   
 
             </div>           
