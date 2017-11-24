@@ -4,6 +4,9 @@
   $press_release_fsmc_factsheet_cta_01 = wds_page_builder_get_this_part_data( PREFIX . "press_release_fsmc_factsheet_cta_01" );
   $press_release_fsmc_factsheet_cta_02 = wds_page_builder_get_this_part_data( PREFIX . "press_release_fsmc_factsheet_cta_02" );
 
+  $press_release_fsmc_factsheet_cta_01_chinese = wds_page_builder_get_this_part_data( PREFIX . "press_release_fsmc_factsheet_cta_01_chinese" );
+  $press_release_fsmc_factsheet_cta_02_chinese = wds_page_builder_get_this_part_data( PREFIX . "press_release_fsmc_factsheet_cta_02_chinese" );
+
   $press_release_fsmc_factsheet_banner_image = wds_page_builder_get_this_part_data( PREFIX . "press_release_fsmc_factsheet_banner_image" );
   $press_release_fsmc_factsheet_banner_image_tablet = wds_page_builder_get_this_part_data( PREFIX . "press_release_fsmc_factsheet_banner_image_tablet" );
   $press_release_fsmc_factsheet_banner_image_mobile = wds_page_builder_get_this_part_data( PREFIX . "press_release_fsmc_factsheet_banner_image_mobile" );
@@ -42,13 +45,35 @@
                     <?php if ((isset($press_release_fsmc_factsheet_cta_01) && $press_release_fsmc_factsheet_cta_01 != '') || 
                               (isset($press_release_fsmc_factsheet_cta_02) && $press_release_fsmc_factsheet_cta_02 != '') ): 
                     ?>
+
+                      <style type="text/css">
+                        #page-press-fact-sheets .cta-container .download-cta a{
+                          display: inline-block;
+                        }
+                      </style>
                       <div class="cta-container">
+
                         <?php if (isset($press_release_fsmc_factsheet_cta_01) && $press_release_fsmc_factsheet_cta_01 != ''): ?>
-                          <a href="<?php echo $press_release_fsmc_factsheet_cta_01['link']; ?>" class="download-cta"><?php echo $press_release_fsmc_factsheet_cta_01['copy']; ?></a>
+                          <div class="download-cta">
+
+                            <span><a href="<?php echo $press_release_fsmc_factsheet_cta_01['link']; ?>" target="_blank" download><?php echo $press_release_fsmc_factsheet_cta_01['copy']; ?></a></span>
+
+                            <?php if (isset($press_release_fsmc_factsheet_cta_01_chinese) && $press_release_fsmc_factsheet_cta_01_chinese != ''): ?>
+                              <span><a href="<?php echo $press_release_fsmc_factsheet_cta_01_chinese['link']; ?>" target="_blank" download><?php echo $press_release_fsmc_factsheet_cta_01_chinese['copy']; ?></a></span>
+                            <?php endif; ?>
+                            
+                          </div>
                         <?php endif; ?>
 
                         <?php if (isset($press_release_fsmc_factsheet_cta_02) && $press_release_fsmc_factsheet_cta_02 != ''): ?>
-                          <a href="<?php echo $press_release_fsmc_factsheet_cta_02['link']; ?>" class="download-cta"><?php echo $press_release_fsmc_factsheet_cta_02['copy']; ?></a>
+                          <div class="download-cta">
+                            <span><a href="<?php echo $press_release_fsmc_factsheet_cta_02['link']; ?>" target="_blank" download><?php echo $press_release_fsmc_factsheet_cta_02['copy']; ?></a></span>
+
+                            <?php if (isset($press_release_fsmc_factsheet_cta_02_chinese) && $press_release_fsmc_factsheet_cta_02_chinese != ''): ?>
+                              <span><a href="<?php echo $press_release_fsmc_factsheet_cta_02_chinese['link']; ?>" target="_blank" download><?php echo $press_release_fsmc_factsheet_cta_02_chinese['copy']; ?></a></span>
+                            <?php endif; ?>
+                            
+                          </div>
                         <?php endif; ?>
                       </div>
                     <?php endif; ?>

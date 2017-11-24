@@ -8,7 +8,7 @@
   <div class="container-fluid reduce-padding">
     
     <div class="row row-eq-height">
-      <div class="col-md-4">
+      <div class="col-md-4 column-eq-sidebar">
         <div id="page-press-filter-options-container">
           <div class="bg"></div>
 
@@ -117,7 +117,7 @@
               <div class="cta-container">
                 <a href="<?php echo get_the_permalink(); ?>" class="plus-cta">Read More</a>
                 <?php if (isset($download_article_file) && $download_article_file !=''): ?>
-                  <a href="<?php echo $download_article_file; ?>" target="_blank" class="download-cta color-version">Download Article</a>
+                  <a href="<?php echo $download_article_file; ?>" target="_blank" download class="download-cta color-version">Download Article</a>
                 <?php endif; ?>
               </div>
             </div>

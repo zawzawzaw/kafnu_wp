@@ -87,8 +87,8 @@
           </div>
           <div class="col-md-8">
             <div class="cta-container">
-              <a href="#" class="download-cta" id="page-press-slider-caption-digital-cta">download for digital</a>
-              <a href="#" class="download-cta" id="page-press-slider-caption-print-cta">download for print</a>
+              <a href="#" download="#" target="_blank" class="download-cta" id="page-press-slider-caption-digital-cta">download for digital</a>
+              <a href="#" download="#" target="_blank" class="download-cta" id="page-press-slider-caption-print-cta">download for print</a>
               <?php echo $press_release_gallery_download_slider_copyright; ?>
 
             </div>      

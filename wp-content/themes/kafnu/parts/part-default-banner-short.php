@@ -16,8 +16,8 @@
 
 ?>
 
-<article id="page-default-banner-section" class="press-version-02">
-  <div id="page-default-banner-image" class="visible-lg visible-md">
+<article id="page-default-banner-section">
+  <div id="page-default-banner-image" class="press-version-02 visible-lg visible-md">
     <div class="manic-image-container">
       <img src="" data-image-desktop="<?php echo $default_banner_short_image; ?>">
     </div>

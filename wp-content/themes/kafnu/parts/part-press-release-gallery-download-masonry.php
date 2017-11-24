@@ -8,7 +8,7 @@
   <div class="container-fluid reduce-padding">
     
     <div class="row row-eq-height">
-      <div class="col-md-4 no-padding">
+      <div class="col-md-4 no-padding column-eq-sidebar">
         <div id="page-press-filter-options-container">
           <div class="bg"></div>
 
@@ -198,8 +198,8 @@
                       <a href="#" class="plus-icon"></a>
                     </div>
                     <div class="cta-container-02">
-                      <a href="<?php echo $digital_download_file; ?>" target="_blank" class="download-cta digital-download">Download for digital</a>
-                      <a href="<?php echo $print_download_file; ?>" target="_blank" class="download-cta print-download">Download for print</a>
+                      <a href="<?php echo $digital_download_file; ?>" target="_blank" download class="download-cta digital-download">Download for digital</a>
+                      <a href="<?php echo $print_download_file; ?>" target="_blank" download class="download-cta print-download">Download for print</a>
                     </div>                  
                   </div>                  
                 </div><!-- end col-md-4 -->
@@ -248,8 +248,8 @@
                   </div>             
                   <div class="overlay-content">
                     <div class="cta-container">
-                      <a href="#" target="_blank" class="digital-download download-cta">Digital Download</a>
-                      <a href="#" target="_blank" class="print-download download-cta">Print Download</a>
+                      <a href="#" target="_blank" download class="digital-download download-cta">Digital Download</a>
+                      <a href="#" target="_blank" download class="print-download download-cta">Print Download</a>
                     </div>
                     <div class="text-container">
                       <h5>Kafnu Hong Kong Harbourfront</h5>
@@ -267,3 +267,6 @@
     </div>
   </div>
 </article>
+
+
+<div id="page-press-filtered-section-end"></div>

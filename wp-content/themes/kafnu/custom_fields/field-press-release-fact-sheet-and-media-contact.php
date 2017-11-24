@@ -12,29 +12,42 @@ function wds_add_field_press_release_fact_sheet_and_media_contact( $fields ) {
   $new_fields = array(
     
     array(
-      'name'    => 'Press Release FSMC FactSheet Title',
+      'name'    => 'FactSheet Title',
       'id'      => PREFIX . 'press_release_fsmc_factsheet_title',
       'type'    => 'text',
       'description' => '',
     ),
 
     array(
-      'name'    => 'Press Release FSMC FactSheet Copy',
+      'name'    => 'FactSheet Copy',
       'id'      => PREFIX . 'press_release_fsmc_factsheet_copy',
       'type'    => 'textarea',
       'description' => '',
     ),
 
     array(
-      'name'    => 'Press Release FSMC Factsheet CTA 01',
+      'name'    => 'Factsheet CTA 01',
       'id'      => PREFIX . 'press_release_fsmc_factsheet_cta_01',
+      'type'    => 'manic_cta',
+      'description' => 'upload the factsheets via media library',
+    ),
+    array(
+      'name'    => 'Factsheet CTA 01 Chinese',
+      'id'      => PREFIX . 'press_release_fsmc_factsheet_cta_01_chinese',
       'type'    => 'manic_cta',
       'description' => '',
     ),
 
     array(
-      'name'    => 'Press Release FSMC Factsheet CTA 02',
+      'name'    => 'Factsheet CTA 02',
       'id'      => PREFIX . 'press_release_fsmc_factsheet_cta_02',
+      'type'    => 'manic_cta',
+      'description' => '',
+    ),
+
+    array(
+      'name'    => 'Factsheet CTA 02 Chinese',
+      'id'      => PREFIX . 'press_release_fsmc_factsheet_cta_02_chinese',
       'type'    => 'manic_cta',
       'description' => '',
     ),
@@ -63,7 +76,7 @@ function wds_add_field_press_release_fact_sheet_and_media_contact( $fields ) {
 
 
     array(
-      'name'    => 'Press Release FSMC Contact Title',
+      'name'    => 'Contact Title',
       'id'      => PREFIX . 'press_release_fsmc_contact_title',
       'type'    => 'text',
       'description' => '',
@@ -72,21 +85,21 @@ function wds_add_field_press_release_fact_sheet_and_media_contact( $fields ) {
     
 
     array(
-      'name'    => 'Press Release FSMC Contact General Title',
+      'name'    => 'Contact General Title',
       'id'      => PREFIX . 'press_release_fsmc_contact_general_title',
       'type'    => 'text',
       'description' => '',
     ),
 
     array(
-      'name'    => 'Press Release FSMC Contact General Email',
+      'name'    => 'Contact General Email',
       'id'      => PREFIX . 'press_release_fsmc_contact_general_email',
       'type'    => 'text',
       'description' => '',
     ),
 
     array(
-      'name'    => 'Press Release FSMC Contact List',
+      'name'    => 'Contact List',
       'id'      => PREFIX . 'press_release_fsmc_contact_list',
       
       'desc' => 'Drag posts from the left column to the right column to attach them to this page.<br />You may rearrange the order of the posts in the right column by dragging and dropping.',
@@ -104,21 +117,21 @@ function wds_add_field_press_release_fact_sheet_and_media_contact( $fields ) {
 
 
     array(
-      'name'    => 'Press Release FSMC Contact (Multiple Media Contacts)',
+      'name'    => '(Multiple Media Contacts)',
       'id'      => PREFIX . 'press_release_fsmc_contact_title_multiple',
       'type'    => 'title',
       'description' => 'these are fields are used if there are more than 1 media contact',
     ),
 
     array(
-      'name'    => 'Press Release FSMC Contact Copy',
+      'name'    => 'Contact Copy',
       'id'      => PREFIX . 'press_release_fsmc_contact_copy',
       'type'    => 'textarea',
       'description' => '',
     ),
 
     array(
-      'name'    => 'Press Release FSMC Contact CTA',
+      'name'    => 'Contact CTA',
       'id'      => PREFIX . 'press_release_fsmc_contact_cta',
       'type'    => 'manic_cta',
       'description' => '',

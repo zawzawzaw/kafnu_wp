@@ -409,6 +409,51 @@ kafnu.page.Default.prototype.create_press_elements = function() {
 
   this.create_sticky_sidebar();
 
+  this.sticky_sidebar_scene = null;
+
+  this.share_url;
+  this.share_msg;
+
+  this.create_social_sharing();
+
+}
+
+kafnu.page.Default.prototype.popup_center = function(pageURL, title, w, h) {
+    var left = (screen.width/2)-(w/2);
+    var top = (screen.height/2)-(h/2);
+    var targetWin = window.open (pageURL, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
+    return targetWin;
+};
+
+kafnu.page.Default.prototype.getShortUrl = function()
+{
+   var accessToken = 'e0807e2e518506d031f19c07750909998a1c09a8';
+   var url = 'https://api-ssl.bitly.com/v3/shorten?access_token=' + accessToken + '&longUrl=' + encodeURIComponent(this.share_url);
+
+    $.getJSON(
+        url,
+        {},
+        function(response)
+        {
+            // if(callback)
+            //     callback(response.data.url);
+            this.share_url = "https://twitter.com/share?url="+encodeURI(response.data.url)+"&amp;text="+encodeURI(this.share_msg);
+            // $("#twitter-share").trigger("click");
+            window.location.href = this.share_url;
+        }.bind(this)
+    );
+}
+
+kafnu.page.Default.prototype.create_social_sharing = function() {
+  $("#twitter-share").click(function(e){
+    e.preventDefault();
+
+    this.share_url = $(e.currentTarget).attr("href");
+    this.share_msg = $(e.currentTarget).data("share-msg");
+
+    this.getShortUrl();
+
+  }.bind(this));
 }
 
 kafnu.page.Default.prototype.create_sticky_sidebar = function() {
@@ -424,12 +469,51 @@ kafnu.page.Default.prototype.create_sticky_sidebar = function() {
 
       // console.log(windowHeight-pagePressFilter);
 
-      var scene = new ScrollMagic.Scene({
-      triggerElement: "#filter-sticky-trigger-mobile",
-      triggerHook: "onLeave" })
-      .setClassToggle("#page-press-filter-options-container", "sticky-version-desktop")
-      //.addIndicators({name: "stick"}) // add indicators (requires plugin)
-      .addTo(this.controller);
+
+
+      if( $('#page-press-media-container').length != 0 ) {
+
+        var sidebar_height = $('#press-filters-wrapper').height();
+        var target_max_height = $('#page-press-media-container').height();
+        var target_duration = target_max_height - sidebar_height;
+
+        console.log('this is a test');
+
+        this.sticky_sidebar_scene = new ScrollMagic.Scene({
+        triggerElement: "#filter-sticky-trigger-mobile",
+        offset: -100,
+        duration: target_duration,
+        triggerHook: "onLeave" })
+        // .setClassToggle("#page-press-filter-options-container", "sticky-version-desktop")
+        // .addIndicators({name: "stick"}) // add indicators (requires plugin)
+        .setPin('#page-press-filter-options-container')
+        .addTo(this.controller);
+
+
+
+      } else {
+        
+        this.sticky_sidebar_scene = new ScrollMagic.Scene({
+        triggerElement: "#filter-sticky-trigger-mobile",
+        offset: -100,
+        triggerHook: "onLeave" })
+        // .setClassToggle("#page-press-filter-options-container", "sticky-version-desktop")
+        // .addIndicators({name: "stick"}) // add indicators (requires plugin)
+        .setPin('#page-press-filter-options-container')
+        .addTo(this.controller);
+
+        /*
+        this.sticky_sidebar_scene = new ScrollMagic.Scene({
+        triggerElement: "#filter-sticky-trigger-mobile",
+        triggerHook: "onLeave" })
+        .setClassToggle("#page-press-filter-options-container", "sticky-version-desktop")
+        // .addIndicators({name: "stick"}) // add indicators (requires plugin)
+        .addTo(this.controller);
+        */
+        
+      }
+
+
   }
 
   // var scene = new ScrollMagic.Scene({triggerElement: "#float-start-trigger", triggerHook: 'onEnter', duration: offset.top })
@@ -437,30 +521,35 @@ kafnu.page.Default.prototype.create_sticky_sidebar = function() {
   //               .addIndicators({name: "1 (duration: 300)"}) // add indicators (requires plugin)
   //               .addTo(controller);
 
-}
 
-kafnu.page.Default.prototype.update_press_layout = function() {
-  if($(".page-press-content-container").length != 0) {
+
+
+
+
+};
+
+// kafnu.page.Default.prototype.update_press_layout = function() {
+//   if($(".page-press-content-container").length != 0) {
     
-    if(manic.IS_MOBILE == false && manic.IS_TABLET_PORTRAIT == false) {
-        var content_col = $(".page-press-content-container");
-        var filter_col = $("#page-press-filter-options-container .bg");
+//     if(manic.IS_MOBILE == false && manic.IS_TABLET_PORTRAIT == false) {
+//         var content_col = $(".page-press-content-container");
+//         var filter_col = $("#page-press-filter-options-container .bg");
 
-        // console.log("filter_col:"+filter_col.outerHeight())
-        // console.log("article_col:"+content_col.outerHeight())
+//         // console.log("filter_col:"+filter_col.outerHeight())
+//         // console.log("article_col:"+content_col.outerHeight())
 
-        // if(content_col.outerHeight() > filter_col.outerHeight()) {
-        //   filter_col.css("height", content_col.outerHeight());
-        // } 
+//         // if(content_col.outerHeight() > filter_col.outerHeight()) {
+//         //   filter_col.css("height", content_col.outerHeight());
+//         // } 
 
-        // if(content_col.outerHeight() < filter_col.outerHeight()) {
-        //   filter_col.css("height", content_col.outerHeight());
-        //   // content_col.css("min-height", filter_col.outerHeight());
-        // }
-    }
+//         // if(content_col.outerHeight() < filter_col.outerHeight()) {
+//         //   filter_col.css("height", content_col.outerHeight());
+//         //   // content_col.css("min-height", filter_col.outerHeight());
+//         // }
+//     }
 
-  }
-}
+//   }
+// }
 
 kafnu.page.Default.prototype.create_filter_sidebar = function() {  
   if(manic.IS_MOBILE == false && manic.IS_TABLET_PORTRAIT == false) {
@@ -550,6 +639,7 @@ kafnu.page.Default.prototype.create_media_gallery = function() {
       }
 
       // change stuff
+      media_gallery_item_large_container.attr("data-current-item-index",current_item_index - 1);
       media_gallery_item_large_container.attr("id","cloned-media-gallery-item-large-container");
       media_gallery_item_large_container.addClass("media-gallery-item-large-container");
       media_gallery_item_large_container.addClass("active-large-container");
@@ -575,20 +665,32 @@ kafnu.page.Default.prototype.create_media_gallery = function() {
           scrollTo: {y: y}
         });
 
-        this.update_press_layout(); 
+        // this.update_press_layout(); 
       }.bind(this), 310);
 
     }.bind(this));
 
     $("#page-press-media-container").on("click", ".close-btn", function(e){
-      $(e.currentTarget).parent().parent().parent().animate({ opacity: 0 },{ queue: false, duration: 'slow' }).slideUp(300);
+
+      var media_gallery_item_large_container = $(e.currentTarget).parent().parent().parent();
+
+      media_gallery_item_large_container.animate({ opacity: 0 },{ queue: false, duration: 'slow' }).slideUp(300);      
 
       $('video').trigger('pause');
 
-      setTimeout(function(){
-        // console.log('here');
-        this.update_press_layout(); 
+      setTimeout(function(){ 
+        var current_item_index = media_gallery_item_large_container.attr('data-current-item-index');
+
+        var y = $('.visible-gallery-item:eq("'+current_item_index+'")').find('div.no-padding').offset().top - 100;
+
+        TweenLite.to(window, .4, {
+          scrollTo: {y: y}
+        });
+
+        // this.update_press_layout(); 
       }.bind(this), 310);
+      
+      
 
     }.bind(this));
   }
@@ -601,9 +703,9 @@ kafnu.page.Default.prototype.create_article_filters = function() {
 
   $(".article-filter").on("change", function(){
     this.filter_article();
-    setTimeout(function(){ 
-      this.update_press_layout(); 
-    }.bind(this), 800);    
+    // setTimeout(function(){ 
+    //   this.update_press_layout(); 
+    // }.bind(this), 800);    
   }.bind(this));
 
 }
@@ -713,9 +815,9 @@ kafnu.page.Default.prototype.create_media_filters = function() {
   $(".media-filter").on("change", function(){
     this.filter_media();
 
-    setTimeout(function(){ 
-      this.update_press_layout(); 
-    }.bind(this), 800);    
+    // setTimeout(function(){ 
+    //   this.update_press_layout(); 
+    // }.bind(this), 800);    
   }.bind(this));
 
 }
@@ -759,7 +861,26 @@ kafnu.page.Default.prototype.filter_media = function() {
 }
 
 kafnu.page.Default.prototype.create_press_slider = function() {  
-  if ($("#page-press-slider").length != 0) {    
+  if ($("#page-press-slider").length != 0) { 
+
+    $('#page-press-slider').on('init', function(event, slick){
+        console.log(slick)
+        console.log(event)
+
+        var currentSlide=slick.currentSlide;
+
+        var title = $(slick.$slides[currentSlide]).data('title');
+        var copy = $(slick.$slides[currentSlide]).data('copy');
+        var print = $(slick.$slides[currentSlide]).data('print-download');
+        var digital = $(slick.$slides[currentSlide]).data('digital-download');
+
+        $('#page-press-slider-caption').find("h5").text(title);
+        $('#page-press-slider-caption').find("p").text(copy);
+        $('#page-press-slider-caption').find("#page-press-slider-caption-digital-cta").attr("href", digital);
+        $('#page-press-slider-caption').find("#page-press-slider-caption-digital-cta").attr("download", "");
+        $('#page-press-slider-caption').find("#page-press-slider-caption-print-cta").attr("href", print);
+        $('#page-press-slider-caption').find("#page-press-slider-caption-print-cta").attr("download", "");
+    });   
 
     $("#page-press-slider").slick({
       'speed': 350,
@@ -771,14 +892,8 @@ kafnu.page.Default.prototype.create_press_slider = function() {
       'pauseOnHover': false,
       'autoplay': false,
       'autoplaySpeed': 4000,
-      "asNavFor": '#page-press-thumbnail-slider',
-      onBeforeChange: function(slider,index){
-        beforeChangeFunc(index)
-      },
-      onAfterChange: function(slider,index){
-        afterChangeFunc(index)
-      } 
-    });
+      "asNavFor": '#page-press-thumbnail-slider'
+    });    
 
     $('#page-press-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
       $('#page-press-slider-caption').hide();
@@ -794,7 +909,9 @@ kafnu.page.Default.prototype.create_press_slider = function() {
       $('#page-press-slider-caption').find("h5").text(title);
       $('#page-press-slider-caption').find("p").text(copy);
       $('#page-press-slider-caption').find("#page-press-slider-caption-digital-cta").attr("href", digital);
+      $('#page-press-slider-caption').find("#page-press-slider-caption-digital-cta").attr("download", "");
       $('#page-press-slider-caption').find("#page-press-slider-caption-print-cta").attr("href", print);
+      $('#page-press-slider-caption').find("#page-press-slider-caption-print-cta").attr("download", "");
 
       $('#page-press-slider-caption').fadeIn();
     });

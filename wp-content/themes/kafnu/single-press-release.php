@@ -18,7 +18,7 @@
   <div class="container-fluid reduce-padding">
     
     <div class="row row-eq-height">
-      <div class="col-md-4">
+      <div class="col-md-4 column-eq-sidebar">
         <div id="page-press-filter-options-container">
           <div class="bg"></div>
 
@@ -37,19 +37,19 @@
             </div> <!-- press-links -->
             
             <?php 
-              $share_message = 'Check this out!';
+              $share_message = get_the_title();
               $current_url = get_permalink();
 
               $facebook_share_url = 'http://www.facebook.com/sharer.php?u=' . custom_encodeURIComponent($current_url);
-              $twitter_share_url = 'https://twitter.com/share?url=' . custom_encodeURIComponent($current_url) . '&amp;text=' . custom_encodeURIComponent($share_message);
+              $twitter_share_url = $current_url;
             ?>
 
             <div class="press-sidebar-social-container">
               <h5>Share</h5>
               <ul>
 
-                <li><a href="<?php echo $facebook_share_url; ?>" class="fa fa-facebook" target="_blank"></a></li>
-                <li><a href="<?php echo $twitter_share_url; ?>" class="fa fa-twitter" target="_blank"></a></li>
+                <li><a href="<?php echo $facebook_share_url; ?>" data-share-msg="<?php echo $share_message; ?>" id="facebook-share" class="fa fa-facebook" target="_blank"></a></li>
+                <li><a href="<?php echo $twitter_share_url; ?>" data-share-msg="<?php echo $share_message; ?>" id="twitter-share" class="fa fa-twitter" target="_blank"></a></li>
                 <!-- 
                 <li><a href="" class="fa fa-envelope"></a></li>
                 -->
