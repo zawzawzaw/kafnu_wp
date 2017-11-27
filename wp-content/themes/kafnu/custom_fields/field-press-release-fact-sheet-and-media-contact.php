@@ -26,6 +26,12 @@ function wds_add_field_press_release_fact_sheet_and_media_contact( $fields ) {
     ),
 
     array(
+      'name'    => 'Factsheet CTA 01 Title',
+      'id'      => PREFIX . 'press_release_fsmc_factsheet_cta_01_title',
+      'type'    => 'text',
+      'description' => '',
+    ),
+    array(
       'name'    => 'Factsheet CTA 01',
       'id'      => PREFIX . 'press_release_fsmc_factsheet_cta_01',
       'type'    => 'manic_cta',
@@ -38,6 +44,12 @@ function wds_add_field_press_release_fact_sheet_and_media_contact( $fields ) {
       'description' => '',
     ),
 
+    array(
+      'name'    => 'Factsheet CTA 02 Title',
+      'id'      => PREFIX . 'press_release_fsmc_factsheet_cta_02_title',
+      'type'    => 'text',
+      'description' => '',
+    ),
     array(
       'name'    => 'Factsheet CTA 02',
       'id'      => PREFIX . 'press_release_fsmc_factsheet_cta_02',

@@ -150,6 +150,7 @@
                     $digital_download_file = get_post_meta( $selected_item_id, PREFIX . "digital_download_file", true );
 
                     $vertical = get_post_meta( $selected_item_id, PREFIX . "vertical", true );
+                    $video_file = get_post_meta( $selected_item_id, PREFIX . "video_file", true );
 
                     $category = '';
                     $categories = get_the_category();
@@ -165,7 +166,7 @@
                   data-filters="<?php echo $category ?>, images" 
                 <?php else: ?>
                   data-filters="<?php echo $category ?>, videos"
-                  data-video="<?php echo THEMEROOT; ?>/images_cms/press/press-media-video-01.mp4"
+                  data-video="<?php echo $video_file; ?>"
                 <?php endif; ?>
 
                 data-title="<?php echo $title; ?>" 
@@ -231,16 +232,7 @@
                     </video>
                   </div> -->
                   <div class="normal-video-container">
-                    <video controls="controls" poster="<?php echo THEMEROOT; ?>/images_cms/press/press-media-video-01.jpg" style="width:100%" title="press-media-video-01">
-                      <source src="<?php echo THEMEROOT; ?>/images_cms/press/press-media-video-01.m4v" type="video/mp4" />
-                      <source src="<?php echo THEMEROOT; ?>/images_cms/press/press-media-video-01.webm" type="video/webm" />
-                      <object type="application/x-shockwave-flash" data="<?php echo THEMEROOT; ?>/images_cms/press/flashfox.swf" width="1280" height="720" style="position:relative;">
-                      <param name="movie" value="<?php echo THEMEROOT; ?>/images_cms/press/flashfox.swf" />
-                      <param name="allowFullScreen" value="true" />
-                      <param name="flashVars" value="autoplay=true&amp;controls=true&amp;fullScreenEnabled=true&amp;posterOnEnd=true&amp;loop=false&amp;poster=<?php echo THEMEROOT; ?>/images_cms/press/press-media-video-01.jpg&amp;src=press-media-video-01.m4v" />
-                       <embed src="<?php echo THEMEROOT; ?>/images_cms/press/flashfox.swf" width="1280" height="720" style="position:relative;"  flashVars="autoplay=true&amp;controls=true&amp;fullScreenEnabled=true&amp;posterOnEnd=true&amp;loop=false&amp;poster=<?php echo THEMEROOT; ?>/images_cms/press/press-media-video-01.jpg&amp;src=press-media-video-01.m4v"  allowFullScreen="true" wmode="transparent" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer_en" />
-                      <img alt="press-media-video-01" src="<?php echo THEMEROOT; ?>/images_cms/press/press-media-video-01.jpg" style="position:absolute;left:0;" width="100%" title="Video playback is not supported by your browser" />
-                      </object>
+                    <video controls="controls" style="width:100%" title="press-media-video-01">
                     </video>
                   </div>
                   <div class="normal-image-container">

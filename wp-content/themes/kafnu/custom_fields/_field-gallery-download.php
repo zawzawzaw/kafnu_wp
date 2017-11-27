@@ -103,6 +103,13 @@
         'description' => 'is the image a vertical image',
     ) );
 
+    $field_m4 = $cmb->add_field( array(
+        'name'    => 'Video',
+        'id'      => PREFIX . 'video_file',
+        'type'    => 'file',
+        'description' => '(only if video type) mp4, 2-3 mb. Upload high-res video in Digital Download File',
+    ) );
+
 
     // data-vertical
 

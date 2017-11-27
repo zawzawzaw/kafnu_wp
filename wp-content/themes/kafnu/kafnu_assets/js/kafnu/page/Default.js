@@ -414,7 +414,7 @@ kafnu.page.Default.prototype.create_press_elements = function() {
   this.share_url;
   this.share_msg;
 
-  this.create_social_sharing();
+  // this.create_social_sharing();          // apparently bitly is bad for SEO
 
 }
 

@@ -41,7 +41,9 @@
               $current_url = get_permalink();
 
               $facebook_share_url = 'http://www.facebook.com/sharer.php?u=' . custom_encodeURIComponent($current_url);
-              $twitter_share_url = $current_url;
+              // $twitter_share_url = $current_url;
+              $twitter_share_url = 'https://twitter.com/share?url=' . custom_encodeURIComponent($current_url) . '&amp;text=' . custom_encodeURIComponent($share_message);
+              
             ?>
 
             <div class="press-sidebar-social-container">
