@@ -1,12 +1,48 @@
 <?php get_header(); ?>
 
-<h1>Index</h1>
+<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <article id="page-default-content-section">
+
+    <div class="space100"></div>
+
+
+    <div class="container-fluid has-breakpoint">
+      <div class="row">
+        <div class="col-md-12 col-md-push-0 col-sm-10 col-sm-push-1 col-xs-12 col-xs-push-0">
+
+          <div class="page-default-title">
+
+            <h1><?php echo get_the_title(); ?></h1>
+
+          </div>
+
+          <div class="default-copy">
+            <?php the_content(); ?>
+          </div>
+
+        </div>
+      </div>
+      
+    </div>
+  </article> <!-- page-default-content-section -->
+
+<?php endwhile; else : ?>
+
+  <article id="page-default-content-section">
+    <div class="container-fluid has-breakpoint">
+      <div class="row">
+        <div class="col-md-12">
+
+          <div class="default-copy">
+            <h1>Post not found.</h1>
+          </div> <!-- default-copy -->
+
+        </div>
+      </div>
+    </div>
+  </article>
+
+<?php endif; ?>
 
 <?php get_footer(); ?>

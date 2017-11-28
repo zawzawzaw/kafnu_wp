@@ -116,9 +116,12 @@
 
               <div class="cta-container">
                 <a href="<?php echo get_the_permalink(); ?>" class="plus-cta">Read More</a>
-                <?php if (isset($download_article_file) && $download_article_file !=''): ?>
+
+
+                <?php /*if (isset($download_article_file) && $download_article_file !=''): ?>
                   <a href="<?php echo $download_article_file; ?>" target="_blank" download class="download-cta color-version">Download Article</a>
-                <?php endif; ?>
+                <?php endif; */ ?>
+                
               </div>
             </div>
 

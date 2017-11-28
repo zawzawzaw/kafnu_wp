@@ -19,7 +19,8 @@
           <div id="footer-copyright-and-links-container">
             <div class="row">
 
-              <?php if ($site_language == 'english'): ?>
+              <?php if (has_nav_menu('footer-links')): ?>
+
                 <div class="col-lg-7 col-md-5">
                   <p id="footer-copyright-container"><?php echo $footer_copyright; ?></p>
                 </div>
@@ -37,6 +38,7 @@
                     wp_nav_menu($defaults);
                   ?>  
                 </div>
+
               <?php else: ?>
 
                 <div class="col-lg-12">

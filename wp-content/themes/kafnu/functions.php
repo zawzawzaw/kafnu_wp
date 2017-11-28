@@ -585,6 +585,7 @@ require_once( 'custom_fields/field-community-events.php' );
 require_once( 'custom_fields/field-location-content-mobile-slider.php' );
 require_once( 'custom_fields/field-location-events-mobile.php' );
 require_once( 'custom_fields/field-plain-html.php' );
+require_once( 'custom_fields/field-plain-text.php' );
 
 
 // new press release pages
