@@ -93,7 +93,9 @@
                 <a href="#" download="#" target="_blank" class="download-cta" id="page-press-slider-caption-digital-cta">高清下載</a>
               <?php endif; ?>
               
-              <?php echo $press_release_gallery_download_slider_copyright; ?>
+              <span class="disclaimer">
+                <?php echo $press_release_gallery_download_slider_copyright; ?>
+              </span>
 
             </div>      
           </div> <!-- end col-md-6 -->

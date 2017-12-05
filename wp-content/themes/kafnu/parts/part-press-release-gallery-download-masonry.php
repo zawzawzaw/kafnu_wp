@@ -137,8 +137,9 @@
                 </li>                
               </ul>
 
-
-              <?php echo $press_release_gallery_download_masonry_copyright; ?>
+              <span class="disclaimer">
+                <?php echo $press_release_gallery_download_masonry_copyright; ?>
+              </span>
 
 
             </div>
@@ -232,6 +233,13 @@
                   <div class="overlay-content">
                     <div class="text-container">
                       <h5><?php echo $title; ?></h5>
+                      <div class="visible-sm visible-xs cta-mobile-container">
+                        <?php if($site_language == 'english'): ?>
+                          <a href="<?php echo $digital_download_file; ?>" target="_blank" download class="download-cta digital-download">Download High Resolution</a>
+                        <?php else: ?>
+                          <a href="<?php echo $digital_download_file; ?>" target="_blank" download class="download-cta digital-download">高清下載</a>
+                        <?php endif; ?>
+                      </div>
                     </div>
                     <div class="cta-container">
                       <a href="#" class="plus-icon"></a>
