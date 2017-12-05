@@ -1,7 +1,9 @@
 <?php 
   // don't need any variables here, just call all the 'press-release' posts arranged by date
-?>
+  
+  $site_language = manic_get_option( PREFIX . 'site_language' );
 
+?>
 
 <article id="page-press-filtered-section">
   <div id="filter-sticky-trigger-mobile"></div>
@@ -26,8 +28,18 @@
             </div> <!-- press-links -->
             <div class="press-filters-title">
               <a href="#">
-                <h5 class="hidden-xs hidden-sm">filter by location</h5>
-                <h5 class="visible-xs visible-sm">filter by</h5>
+
+                <?php if($site_language == 'english'): ?>
+                  <h5 class="hidden-xs hidden-sm">filter by location</h5>
+                  <h5 class="visible-xs visible-sm">filter by</h5>
+
+                <?php else: ?>
+                  <h5 class="hidden-xs hidden-sm">依據點篩選</h5>
+                  <h5 class="visible-xs visible-sm">依據點篩選</h5>
+                <?php endif; ?>
+
+                
+
               </a>
             </div>
             <div class="press-filters-content">
@@ -54,7 +66,12 @@
               <?php endif; ?>
 
               <div class="cta-container visible-xs visible-sm">
-                <a href="#" id="filter-apply-btn-mobile" class="square-cta">Apply</a>
+                <?php if($site_language == 'english'): ?>
+                  <a href="#" id="filter-apply-btn-mobile" class="square-cta">Apply</a>
+                <?php else: ?>
+                  <a href="#" id="filter-apply-btn-mobile" class="square-cta">確定</a>
+                <?php endif; ?>
+
               </div>
 
             </div>
@@ -115,8 +132,14 @@
               </div>
 
               <div class="cta-container">
-                <a href="<?php echo get_the_permalink(); ?>" class="plus-cta">Read More</a>
 
+                <?php if($site_language == 'english'): ?>
+                  <a href="<?php echo get_the_permalink(); ?>" class="plus-cta">Read More</a>
+
+                <?php else: ?>
+                  <a href="<?php echo get_the_permalink(); ?>" class="plus-cta">繼續閱讀</a>
+                  
+                <?php endif; ?>
 
                 <?php /*if (isset($download_article_file) && $download_article_file !=''): ?>
                   <a href="<?php echo $download_article_file; ?>" target="_blank" download class="download-cta color-version">Download Article</a>

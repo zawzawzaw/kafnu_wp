@@ -1,9 +1,9 @@
 <?php 
   $press_release_gallery_download_slider_selected_list = wds_page_builder_get_this_part_data( PREFIX . "press_release_gallery_download_slider_selected_list" );
   $press_release_gallery_download_slider_copyright = wds_page_builder_get_this_part_data( PREFIX . "press_release_gallery_download_slider_copyright" );
+
+  $site_language = manic_get_option( PREFIX . 'site_language' );
 ?>
-
-
 
 <article id="page-press-main-content-section-02">
   <div id="page-press-slider-container">
@@ -40,7 +40,6 @@
 
               $title = get_post_meta( $selected_item_id, PREFIX . "title", true );
               $copy = get_post_meta( $selected_item_id, PREFIX . "copy", true );
-              $print_download_file = get_post_meta( $selected_item_id, PREFIX . "print_download_file", true );
               $digital_download_file = get_post_meta( $selected_item_id, PREFIX . "digital_download_file", true );
 
       ?>
@@ -48,7 +47,6 @@
         <div class="page-press-slider-item"
           data-title="<?php echo $title; ?>"
           data-copy="<?php echo $copy; ?>"
-          data-print-download="<?php echo $print_download_file; ?>"
           data-digital-download="<?php echo $digital_download_file; ?>">
 
           <div class="manic-image-container">
@@ -87,8 +85,14 @@
           </div>
           <div class="col-md-8">
             <div class="cta-container">
-              <a href="#" download="#" target="_blank" class="download-cta" id="page-press-slider-caption-digital-cta">download for digital</a>
-              <a href="#" download="#" target="_blank" class="download-cta" id="page-press-slider-caption-print-cta">download for print</a>
+
+
+              <?php if($site_language == 'english'): ?>
+                <a href="#" download="#" target="_blank" class="download-cta" id="page-press-slider-caption-digital-cta">Download High Resolution</a>
+              <?php else: ?>
+                <a href="#" download="#" target="_blank" class="download-cta" id="page-press-slider-caption-digital-cta">高清下載</a>
+              <?php endif; ?>
+              
               <?php echo $press_release_gallery_download_slider_copyright; ?>
 
             </div>      

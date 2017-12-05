@@ -68,19 +68,19 @@ function wds_add_field_press_release_fact_sheet_and_media_contact( $fields ) {
       'name'    => 'Factsheet Banner Image',
       'id'      => PREFIX . 'press_release_fsmc_factsheet_banner_image',
       'type'    => 'file',
-      'description' => 'jpg',
+      'description' => 'jpg, 1370 x 520, 350kb',
     ),
     array(
       'name'    => 'Factsheet Banner Image Tablet',
       'id'      => PREFIX . 'press_release_fsmc_factsheet_banner_image_tablet',
       'type'    => 'file',
-      'description' => 'jpg',
+      'description' => 'jpg, 1150 x 530, 300kb',
     ),
     array(
       'name'    => 'Factsheet Banner Image Mobile',
       'id'      => PREFIX . 'press_release_fsmc_factsheet_banner_image_mobile',
       'type'    => 'file',
-      'description' => 'jpg',
+      'description' => 'jpg, 640 x 700, 120kb',
     ),
 
     

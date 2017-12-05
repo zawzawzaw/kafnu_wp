@@ -1,6 +1,8 @@
 <?php 
   $press_release_gallery_download_masonry_selected_list = wds_page_builder_get_this_part_data( PREFIX . "press_release_gallery_download_masonry_selected_list" );
   $press_release_gallery_download_masonry_copyright = wds_page_builder_get_this_part_data( PREFIX . "press_release_gallery_download_masonry_copyright" );
+
+  $site_language = manic_get_option( PREFIX . 'site_language' );
 ?>
 
 <article id="page-press-filtered-section">
@@ -27,12 +29,28 @@
             </div>            
             <div class="press-filters-title">
               <a href="#">
-                <h5 class="hidden-xs hidden-sm">filter by location</h5>
-                <h5 class="visible-xs visible-sm">filter by</h5>
+                <?php if($site_language == 'english'): ?>
+                  <h5 class="hidden-xs hidden-sm">filter by location</h5>
+                  <h5 class="visible-xs visible-sm">filter by</h5>
+
+                <?php else: ?>
+                  <h5 class="hidden-xs hidden-sm">依據點篩選</h5>
+                  <h5 class="visible-xs visible-sm">依據點篩選</h5>
+                <?php endif; ?>
+
               </a>
             </div>
             <div class="press-filters-content">
-              <h5 class="visible-xs visible-sm">filter by location</h5>
+
+              
+              <?php if($site_language == 'english'): ?>
+                <h5 class="visible-xs visible-sm">filter by location</h5>
+
+              <?php else: ?>
+                <h5 class="visible-xs visible-sm">依據點篩選</h5>
+
+              <?php endif; ?>
+
 
               <?php 
                 $current_categories = post_type_categories('gallery-download');
@@ -52,31 +70,53 @@
                 </ul> <!-- filters -->
               <?php endif; ?>
 
-              <h5 class="visible-xs visible-sm">filter by type</h5>
+
+              <?php 
+                $filter_by_type_copy = "filter by type";
+                $filter_by_images = "Images";
+                $fitler_by_videos = "Videos";
+                
+                if($site_language == 'english'){
+                  $filter_by_type_copy = "filter by type";
+                  $filter_by_images = "Images";
+                  $fitler_by_videos = "Videos";
+                } else {
+                  $filter_by_type_copy = "依類型篩選";
+                  $filter_by_images = "圖片";
+                  $fitler_by_videos = "影片";
+                }
+              ?>
+
+              
+              <h5 class="visible-xs visible-sm"><?php echo $filter_by_type_copy; ?></h5>
               <ul class="filters visible-xs visible-sm">
                 <li>                  
                   <label>
                     <input type="checkbox" name="media_filter" class="media-filter" value="images" checked>
                     <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
-                    <span class="text">Images</span>
+                    <span class="text"><?php echo $filter_by_images; ?></span>
                   </label>
                 </li>
                 <li>
                   <label>
                     <input type="checkbox" name="media_filter" class="media-filter" value="videos" checked>
                     <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
-                    <span class="text">Videos</span>
+                    <span class="text"><?php echo $fitler_by_videos; ?></span>
                   </label>
                 </li>
               </ul>
               <div class="cta-container visible-xs visible-sm">
-                <a href="#" id="filter-apply-btn-mobile" class="square-cta">Apply</a>
+                <?php if($site_language == 'english'): ?>
+                  <a href="#" id="filter-apply-btn-mobile" class="square-cta">Apply</a>
+                <?php else: ?>
+                  <a href="#" id="filter-apply-btn-mobile" class="square-cta">確定</a>
+                <?php endif; ?>
               </div>
             </div>
 
             <div class="press-filters-title-02 hidden-xs hidden-sm">
               <a href="#">
-                <h5>filter by type</h5>
+                <h5><?php echo $filter_by_type_copy; ?></h5>
               </a>
             </div>
             <div class="press-filters-content-02 hidden-xs hidden-sm">              
@@ -85,14 +125,14 @@
                   <label>
                     <input type="checkbox" name="media_filter" class="media-filter" value="images" checked>
                     <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
-                    <span class="text">Images</span>
+                    <span class="text"><?php echo $filter_by_images; ?></span>
                   </label>
                 </li>
                 <li>
                   <label>
                     <input type="checkbox" name="media_filter" class="media-filter" value="videos" checked>
                     <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i><i class="fa fa-square-o" aria-hidden="true"></i></span>
-                    <span class="text">Videos</span>
+                    <span class="text"><?php echo $fitler_by_videos; ?></span>
                   </label>
                 </li>                
               </ul>
@@ -146,7 +186,6 @@
                     $copy = get_post_meta( $selected_item_id, PREFIX . "copy", true );
                     $asset_type = get_post_meta( $selected_item_id, PREFIX . "asset_type", true );
 
-                    $print_download_file = get_post_meta( $selected_item_id, PREFIX . "print_download_file", true );
                     $digital_download_file = get_post_meta( $selected_item_id, PREFIX . "digital_download_file", true );
 
                     $vertical = get_post_meta( $selected_item_id, PREFIX . "vertical", true );
@@ -181,8 +220,7 @@
                   
                 <?php endif; ?>
 
-                data-digital-download="<?php echo $digital_download_file; ?>" 
-                data-print-download="<?php echo $print_download_file; ?>">
+                data-digital-download="<?php echo $digital_download_file; ?>">
 
                 <div class="col-md-4 col-sm-12 no-padding">                  
                   <div class="manic-image-container color-version">
@@ -199,8 +237,13 @@
                       <a href="#" class="plus-icon"></a>
                     </div>
                     <div class="cta-container-02">
-                      <a href="<?php echo $digital_download_file; ?>" target="_blank" download class="download-cta digital-download">Download for digital</a>
-                      <a href="<?php echo $print_download_file; ?>" target="_blank" download class="download-cta print-download">Download for print</a>
+                      
+                      <?php if($site_language == 'english'): ?>
+                        <a href="<?php echo $digital_download_file; ?>" target="_blank" download class="download-cta digital-download">Download High Resolution</a>
+                      <?php else: ?>
+                        <a href="<?php echo $digital_download_file; ?>" target="_blank" download class="download-cta digital-download">高清下載</a>
+                      <?php endif; ?>
+
                     </div>                  
                   </div>                  
                 </div><!-- end col-md-4 -->
@@ -240,8 +283,13 @@
                   </div>             
                   <div class="overlay-content">
                     <div class="cta-container">
-                      <a href="#" target="_blank" download class="digital-download download-cta">Digital Download</a>
-                      <a href="#" target="_blank" download class="print-download download-cta">Print Download</a>
+
+                      <?php if($site_language == 'english'): ?>
+                        <a href="#" target="_blank" download class="digital-download download-cta">Download High Resolution</a>
+                      <?php else: ?>
+                        <a href="#" target="_blank" download class="digital-download download-cta">高清下載</a>
+                      <?php endif; ?>
+                      
                     </div>
                     <div class="text-container">
                       <h5>Kafnu Hong Kong Harbourfront</h5>

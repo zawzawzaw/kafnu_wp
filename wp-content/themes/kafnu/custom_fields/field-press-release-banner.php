@@ -42,21 +42,21 @@ function wds_add_field_press_release_banner( $fields ) {
       'name'    => 'Press Release Banner Image',
       'id'      => PREFIX . 'press_release_banner_image',
       'type'    => 'file',
-      'description' => 'jpg',
+      'description' => 'jpg, 1370 x 1020, 500kb',
     ),
 
     array(
       'name'    => 'Press Release Banner Image Tablet',
       'id'      => PREFIX . 'press_release_banner_image_tablet',
       'type'    => 'file',
-      'description' => 'jpg',
+      'description' => 'jpg, 1152 x 850, 137kb',
     ),
 
     array(
       'name'    => 'Press Release Banner Image Mobile',
       'id'      => PREFIX . 'press_release_banner_image_mobile',
       'type'    => 'file',
-      'description' => 'jpg',
+      'description' => 'jpg, 640 x 470, 60kb',
     ),
     
   );

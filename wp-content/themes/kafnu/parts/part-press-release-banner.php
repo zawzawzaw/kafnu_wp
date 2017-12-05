@@ -6,7 +6,8 @@
   $press_release_banner_image = wds_page_builder_get_this_part_data( PREFIX . "press_release_banner_image" );
   $press_release_banner_image_tablet = wds_page_builder_get_this_part_data( PREFIX . "press_release_banner_image_tablet" );
   $press_release_banner_image_mobile = wds_page_builder_get_this_part_data( PREFIX . "press_release_banner_image_mobile" );
-  
+    
+  $site_language = manic_get_option( PREFIX . 'site_language' );
 ?>
 
 <article id="page-default-banner-section" class="">
@@ -51,7 +52,13 @@
             <div id="banner-sidebar-content">
 
               <div class="banner-sidebar-title">
-                <h5>Press Releases</h5>                  
+
+                <?php if($site_language == 'english'): ?>
+                  <h5>Press Releases</h5>
+                <?php else: ?>
+                  <h5>新聞稿</h5>
+                <?php endif; ?>
+
               </div>
 
               <?php 
@@ -113,8 +120,12 @@
               ?>
 
               <div class="banner-sidebar-cta">
-                <a href="<?php echo home_url('press-releases'); ?>" class="square-cta border-version">See More Press Releases</a>
-              </div><!-- banner-sidebar-item -->                   
+                <?php if($site_language == 'english'): ?>
+                  <a href="<?php echo home_url('press-releases'); ?>" class="square-cta border-version">See More Press Releases</a>
+                <?php else: ?>
+                  <a href="<?php echo home_url('press-releases'); ?>" class="square-cta border-version">瀏覽更多新聞稿</a>
+                <?php endif; ?>
+              </div><!-- banner-sidebar-item -->
 
             </div>           
 
@@ -158,7 +169,11 @@
     <div id="banner-sidebar-content">
 
       <div class="banner-sidebar-title">
-        <h5>Press Releases</h5>                  
+        <?php if($site_language == 'english'): ?>
+          <h5>Press Releases</h5>
+        <?php else: ?>
+          <h5>新聞稿</h5>
+        <?php endif; ?>         
       </div>
 
 
@@ -220,8 +235,17 @@
       
       ?>
 
-      <div class="banner-sidebar-cta">              
-        <a href="<?php echo get_the_permalink('press'); ?>" class="square-cta border-version">See More Press Releases</a>
+      <div class="banner-sidebar-cta">
+
+        <?php if($site_language == 'english'): ?>
+          <a href="<?php echo home_url('press-releases'); ?>" class="square-cta border-version">See More Press Releases</a>
+
+        <?php else: ?>
+          <a href="<?php echo home_url('press-releases'); ?>" class="square-cta border-version">瀏覽更多新聞稿</a>
+
+        <?php endif; ?>
+
+        
       </div><!-- banner-sidebar-item -->                   
 
     </div>           

@@ -23,6 +23,8 @@
   $press_release_fsmc_contact_general_email = wds_page_builder_get_this_part_data( PREFIX . "press_release_fsmc_contact_general_email" );
   
   $press_release_fsmc_contact_list = wds_page_builder_get_this_part_data( PREFIX . "press_release_fsmc_contact_list" );
+
+  $site_language = manic_get_option( PREFIX . 'site_language' );
 ?>
 
 <article id="page-press-main-content-section">

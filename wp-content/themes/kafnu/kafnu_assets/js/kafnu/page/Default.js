@@ -572,9 +572,9 @@ kafnu.page.Default.prototype.create_media_gallery = function() {
       e.stopPropagation();
     });
 
-    $('.print-download').click(function(e){
-      e.stopPropagation();
-    });
+    // $('.print-download').click(function(e){
+    //   e.stopPropagation();
+    // });
 
     $(".media-gallery-item").click(function(e){
       e.preventDefault();    
@@ -584,7 +584,7 @@ kafnu.page.Default.prototype.create_media_gallery = function() {
       var desc = $(e.currentTarget).data("desc");
       var img = $(e.currentTarget).data("img");
       var digital_download = $(e.currentTarget).data("digital-download");
-      var print_download = $(e.currentTarget).data("print-download");    
+      // var print_download = $(e.currentTarget).data("print-download");    
       var video = $(e.currentTarget).data("video"); 
       var vertical = $(e.currentTarget).data("vertical"); 
 
@@ -647,7 +647,7 @@ kafnu.page.Default.prototype.create_media_gallery = function() {
       media_gallery_item_large_container.find("p").text(desc)
       media_gallery_item_large_container.find("img").attr('src', img);      
       media_gallery_item_large_container.find("a.digital-download").attr('href', digital_download)
-      media_gallery_item_large_container.find("a.print-download").attr('href', print_download)
+      // media_gallery_item_large_container.find("a.print-download").attr('href', print_download)
 
       // console.log(media_gallery_item_large_container.html());
 
@@ -871,15 +871,15 @@ kafnu.page.Default.prototype.create_press_slider = function() {
 
         var title = $(slick.$slides[currentSlide]).data('title');
         var copy = $(slick.$slides[currentSlide]).data('copy');
-        var print = $(slick.$slides[currentSlide]).data('print-download');
+        // var print = $(slick.$slides[currentSlide]).data('print-download');
         var digital = $(slick.$slides[currentSlide]).data('digital-download');
 
         $('#page-press-slider-caption').find("h5").text(title);
         $('#page-press-slider-caption').find("p").text(copy);
         $('#page-press-slider-caption').find("#page-press-slider-caption-digital-cta").attr("href", digital);
         $('#page-press-slider-caption').find("#page-press-slider-caption-digital-cta").attr("download", "");
-        $('#page-press-slider-caption').find("#page-press-slider-caption-print-cta").attr("href", print);
-        $('#page-press-slider-caption').find("#page-press-slider-caption-print-cta").attr("download", "");
+        // $('#page-press-slider-caption').find("#page-press-slider-caption-print-cta").attr("href", print);
+        // $('#page-press-slider-caption').find("#page-press-slider-caption-print-cta").attr("download", "");
     });   
 
     $("#page-press-slider").slick({
@@ -903,15 +903,15 @@ kafnu.page.Default.prototype.create_press_slider = function() {
       
       var title = $(slick.$slides[currentSlide]).data('title');
       var copy = $(slick.$slides[currentSlide]).data('copy');
-      var print = $(slick.$slides[currentSlide]).data('print-download');
+      // var print = $(slick.$slides[currentSlide]).data('print-download');
       var digital = $(slick.$slides[currentSlide]).data('digital-download');
 
       $('#page-press-slider-caption').find("h5").text(title);
       $('#page-press-slider-caption').find("p").text(copy);
       $('#page-press-slider-caption').find("#page-press-slider-caption-digital-cta").attr("href", digital);
       $('#page-press-slider-caption').find("#page-press-slider-caption-digital-cta").attr("download", "");
-      $('#page-press-slider-caption').find("#page-press-slider-caption-print-cta").attr("href", print);
-      $('#page-press-slider-caption').find("#page-press-slider-caption-print-cta").attr("download", "");
+      // $('#page-press-slider-caption').find("#page-press-slider-caption-print-cta").attr("href", print);
+      // $('#page-press-slider-caption').find("#page-press-slider-caption-print-cta").attr("download", "");
 
       $('#page-press-slider-caption').fadeIn();
     });

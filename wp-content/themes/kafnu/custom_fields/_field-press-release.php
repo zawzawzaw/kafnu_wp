@@ -21,12 +21,12 @@
         'description' => 'location used as a subtitle, we are using category as the filter',
     ) );
 
-    $field_0 = $cmb->add_field( array(
-        'name'    => 'Download Article File',
-        'id'      => PREFIX . 'download_article_file',
-        'type'    => 'file',
-        'description' => 'pdf, 1mb',
-    ) );
+    // $field_0 = $cmb->add_field( array(
+    //     'name'    => 'Download Article File',
+    //     'id'      => PREFIX . 'download_article_file',
+    //     'type'    => 'file',
+    //     'description' => 'pdf, 1mb',
+    // ) );
 
     //       ____ ____  ___ ____   
     //      / ___|  _ \|_ _|  _ \   
@@ -45,7 +45,12 @@
     // SECTION_NAME_01
     
     $row = $cmb2Grid->addRow();
-    $row->addColumns(array($field_2, $field_0));
+    $row->addColumns(array(
+        array($field_2, 'class' => 'col-md-6'),
+    ));
+    
+    // $row = $cmb2Grid->addRow();
+    // $row->addColumns(array($field_2, $field_0));
         
 
     // $row = $cmb2Grid->addRow();
