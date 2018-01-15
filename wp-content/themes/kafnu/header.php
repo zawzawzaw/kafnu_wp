@@ -1,10 +1,30 @@
+<?php 
+  $site_language = manic_get_option( PREFIX . 'site_language' ); 
+  $html_lang_tag = '';
+
+  if($site_language == 'english') {
+    $html_lang_tag = 'en';
+    
+  } else {
+    $html_lang_tag = 'zh';
+  }
+
+
+  
+  $site_url = home_url( '/' );
+  $relative_url = str_replace($site_url, '', get_permalink());
+
+  $english_url = 'http://www.kafnu.com/' . $relative_url;
+  $chinese_url = 'http://www.kafnu.com/tc/' . $relative_url;
+  
+?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="<?php echo $html_lang_tag; ?>"><!--<![endif]-->
 <head>
-
+  
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
@@ -34,6 +54,20 @@
 
   <?php // wordpress head functions ?>
   <?php wp_head(); ?>
+  
+  <?php if($site_language == 'english'): ?>
+
+    <link rel="alternate" hreflang="zh" href="<?php echo $chinese_url; ?>" />
+    <link rel="alternate" hreflang="x-default" href="<?php echo $english_url; ?>" />
+
+  <?php else: ?>
+    <link rel="alternate" hreflang="x-default" href="<?php echo $english_url; ?>" />
+    <link rel="alternate" hreflang="zh" href="<?php echo $chinese_url; ?>" />
+
+  <?php endif; ?>
+  
+  
+
 
   <!-- Google Tag Manager -->
   <!-- 

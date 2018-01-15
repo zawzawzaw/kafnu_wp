@@ -33,15 +33,7 @@
     <script type="text/javascript" src="<?php echo THEMEROOT; ?>/kafnu_assets/libs/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
     <script type="text/javascript" src="<?php echo THEMEROOT; ?>/kafnu_assets/libs/scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js"></script>
     <script type="text/javascript" src="<?php echo THEMEROOT; ?>/kafnu_assets/libs/slick-carousel/slick/slick.min.js"></script>
-    <script type="text/javascript" src="<?php echo THEMEROOT; ?>/kafnu_assets/libs/slick-carousel/slick/slick.min.js"></script>
-
-    <!-- videojs -->
-    <script type="text/javascript" src="<?php echo THEMEROOT; ?>/kafnu_assets/libs/videojs_new/ie8/videojs-ie8.min.js"></script>
-    <script type="text/javascript" src="<?php echo THEMEROOT; ?>/kafnu_assets/libs/videojs_new/video.min.js"></script>
-    <script>
-      videojs.options.flash.swf = "<?php echo THEMEROOT; ?>/kafnu_assets/libs/videojs_new/video-js.swf";
-    </script>
-
+    
     <!-- validate -->
     <script type="text/javascript" src="<?php echo THEMEROOT; ?>/kafnu_assets/libs/jquery-validate/jquery.validate.min.js"></script>
 
@@ -83,10 +75,18 @@
 
     <script type="text/javascript">
 
-      var PAGE_LIBRARY        = "<?php echo THEMEROOT; ?>/kafnu_assets/js/minified/libraries-default.min.js";
-      var MAP_LIBRARY        = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDQvuQ_GJxtg5QhhRnzerBTnDJrKKQz_S4";
-      var PAGE_JS             = "<?php echo THEMEROOT; ?>/kafnu_assets/js/minified/page-default.min.js";
-      var PAGE_CSS            = "<?php echo THEMEROOT; ?>/kafnu_assets/css/style.css";
+      
+
+      // var PAGE_LIBRARY        = "<?php echo THEMEROOT; ?>/kafnu_assets/js/minified/libraries-default.min.js";
+      // var MAP_LIBRARY        = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDQvuQ_GJxtg5QhhRnzerBTnDJrKKQz_S4";
+      // var PAGE_JS             = "<?php echo THEMEROOT; ?>/kafnu_assets/js/minified/page-default.min.js";
+      // var PAGE_CSS            = "<?php echo THEMEROOT; ?>/kafnu_assets/css/style.css";
+      
+      var random              = Math.floor( Math.random() * 10000 );
+      var PAGE_LIBRARY        = "<?php echo THEMEROOT; ?>/kafnu_assets/js/minified/libraries-default.min.js?random=" + random;
+      var MAP_LIBRARY         = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDQvuQ_GJxtg5QhhRnzerBTnDJrKKQz_S4";
+      var PAGE_JS             = "<?php echo THEMEROOT; ?>/kafnu_assets/js/minified/page-default.min.js?random=" + random;
+      var PAGE_CSS            = "<?php echo THEMEROOT; ?>/kafnu_assets/css/style.css?random=" + random;
       
       window.head_js = head;
       

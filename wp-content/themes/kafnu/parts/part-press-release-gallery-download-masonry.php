@@ -235,9 +235,9 @@
                       <h5><?php echo $title; ?></h5>
                       <div class="visible-sm visible-xs cta-mobile-container">
                         <?php if($site_language == 'english'): ?>
-                          <a href="<?php echo $digital_download_file; ?>" target="_blank" download class="download-cta digital-download">Download High Resolution</a>
+                          <a href="<?php echo $digital_download_file; ?>" target="_blank" download class="download-cta digital-download"></a>
                         <?php else: ?>
-                          <a href="<?php echo $digital_download_file; ?>" target="_blank" download class="download-cta digital-download">高清下載</a>
+                          <a href="<?php echo $digital_download_file; ?>" target="_blank" download class="download-cta digital-download"></a>
                         <?php endif; ?>
                       </div>
                     </div>

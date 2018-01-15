@@ -362,7 +362,14 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#cc000000',GradientType=0 ); /* IE6-9 */
 
     .text-container {
-      text-align: left;        
+      text-align: left;
+      position: relative;
+      top: 20px;
+
+      // MOBILE
+      @media only screen and (max-width: 767px) {
+        top: 0px;
+      }
     }
     .cta-container {
       text-align: right;                
@@ -824,6 +831,25 @@
       z-index: 2;
       .transition-in(0.5s, cubic-bezier(0.645, 0.045, 0.355, 1), 0s);            
 
+      &:before{
+        content: '';
+        display: block;
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+
+        .opacity(0.5);
+
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.8+100 */
+        background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#cc000000',GradientType=0 ); /* IE6-9 */
+      }
+
       .text-container {
         position: absolute;
         left: 30px;
@@ -900,9 +926,19 @@
     @media only screen and (max-width: 991px) {
 
       .cta-mobile-container{
-        padding-top: 20px;
+        // padding-top: 20px;
+        position: absolute;
+        bottom: -17px;
+        right: 0;
+        width: 30px;
+
         .download-cta{
           color: @white;
+          display: block;
+          width: 40px;
+          height: 40px;
+          padding-left: 10px;
+          padding-right: 10px;
         }
       }
       .overlay-content {
@@ -921,10 +957,18 @@
           background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
           filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#cc000000',GradientType=0 ); /* IE6-9 */
 
+          .opacity(0.5);
+
         }
         .text-container{
-          left: 30px;
-          right: 30px;
+          left: 20px;
+          right: 20px;
+          bottom: 35px;
+
+          h5{
+            width: 70%;
+          }
+
         }
       }
     }

@@ -16,8 +16,14 @@ if (isset($default_centered_text_is_white_bg) && $default_centered_text_is_white
 }
 
 // new version
-if(isset($default_centered_text_cta) && $default_centered_text_cta != '') {
-  $extra_class .= ' press-version';
+if (isset($default_centered_text_cta) && $default_centered_text_cta != '') {
+
+  if (isset($default_centered_text_cta['copy']) && $default_centered_text_cta['copy'] != '' &&
+      isset($default_centered_text_cta['link']) && $default_centered_text_cta['link'] != '') {
+
+    $extra_class .= ' press-version';
+  }
+  
 }
 
   
@@ -66,7 +72,12 @@ if(isset($default_centered_text_cta) && $default_centered_text_cta != '') {
           <?php endif; ?>
 
           <?php if(isset($default_centered_text_cta) && $default_centered_text_cta != ''): ?>
-            <a href="<?php echo $default_centered_text_cta['link']; ?>" class="square-cta border-version"><?php echo $default_centered_text_cta['copy']; ?></a>
+            <?php if (isset($default_centered_text_cta['copy']) && $default_centered_text_cta['copy'] != '' &&
+                      isset($default_centered_text_cta['link']) && $default_centered_text_cta['link'] != ''): ?>
+                    
+              <a href="<?php echo $default_centered_text_cta['link']; ?>" class="square-cta border-version"><?php echo $default_centered_text_cta['copy']; ?></a>
+
+            <?php endif; ?>
           <?php endif; ?>
           
         </div>

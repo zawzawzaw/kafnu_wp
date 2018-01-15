@@ -23,7 +23,8 @@ body.page-press {
     left: 0;
     width: 100%;    
     height: @header-mobile-height;
-    .box-shadow (0, 30px, 250px, @black);
+    // .box-shadow (0, 30px, 250px, @black);
+    .box-shadow (0, 30px, 250px, fade(@black, 50%));
 
     .transition-in(0.7s, cubic-bezier(0.645, 0.045, 0.355, 1), 0.0s);
   }
@@ -224,6 +225,15 @@ body.mobile-menu-open-version {
     text-align: center;
     li {
       margin-bottom: 30px;
+
+      // MOBILE
+      @media only screen and (max-width: 767px) {
+        margin-bottom: 20px;
+      }
+      @media only screen and (max-width: 400px) {
+        margin-bottom: 15px;
+      }
+
       &:last-child {
         margin-bottom: 0px;
       }
@@ -232,6 +242,11 @@ body.mobile-menu-open-version {
         text-transform: uppercase;
         .h2-style-mobile;
         letter-spacing: 0.15em;
+
+        @media only screen and (max-width: 400px) {
+          font-size: 20px;
+          line-height: 24px;
+        }
 
       }
     }

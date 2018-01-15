@@ -38,7 +38,7 @@
         <div id="page-default-banner-copy-container" class="left-version">
           <div class="container-fluid">
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-6 col-tablet-landscape-8 col-sm-12 col-xs-12">
 
                 <div id="page-default-banner-copy">
                   <h1><?php echo $home_banner_title; ?></h1>

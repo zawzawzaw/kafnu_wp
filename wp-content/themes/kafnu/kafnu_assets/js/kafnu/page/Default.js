@@ -71,6 +71,11 @@ kafnu.page.Default = function(options, element) {
   this.page_wrapper = $('#page-wrapper');
   this.page_wrapper_content = $('#page-wrapper-content');
 
+
+
+  this.has_header_spacer = false;
+
+
   // min height variables
   this.is_page_min_height = false;
   if( this.body.hasClass('min-height-version') == true ){
@@ -176,6 +181,9 @@ kafnu.page.Default.prototype.init = function() {
   this.create_press_elements();
   this.create_contact_elements();
   this.create_country_elements();
+
+
+  this.create_live_chat();
 
   // console.log('kafnu.page.Default: init');
 };
@@ -1352,6 +1360,8 @@ kafnu.page.Default.prototype.create_contact_form = function() {
           data: $(form).serialize(),
           timeout: 3000,
           complete: function() {
+            $('#contact-form')[0].reset();     // added from ratikanta
+            grecaptcha.reset();
             $('#contact-form').find(".message").html("<h5>Your message has been sent successfully.</h5>")
           },
           success: function() {
@@ -1537,15 +1547,34 @@ kafnu.page.Default.prototype.create_header_desktop = function(){
     this.header_desktop = new kafnu.component.HeaderDesktop({}, $('#header-desktop'));
   }
 
+
+
   if ($('#page-country-main-content-section').length != 0) {
     $('body').addClass("page-country");
+
+    this.has_header_spacer = true;
     $('.header-desktop-spacer').addClass("active");
+    this.update_header_desktop();
   }
 
   if ($('#page-press-main-content-section').length != 0 || $("#page-press-filtered-section").length != 0) {
-    // console.log('add class page-press')
     $('body').addClass("page-press");
+
+    this.has_header_spacer = true;
     $('.header-desktop-spacer').addClass("active");
+
+    this.update_header_desktop();
+  }
+};
+
+kafnu.page.Default.prototype.update_header_desktop = function(){
+
+  if (this.has_header_spacer == true) {
+    if (this.window_width > 1199){
+      $('.header-desktop-spacer').addClass("active");
+    } else {
+      $('.header-desktop-spacer').removeClass("active");
+    }
   }
   
 };
@@ -1611,6 +1640,46 @@ kafnu.page.Default.prototype.create_dropdown = function() {
 
     this.dropdown_dictionary[item_id] = dropdown;
   }
+};
+
+kafnu.page.Default.prototype.create_live_chat = function(){
+
+  if ($('.open-chat-container').length != 0) {
+
+    $("#open-chat").on("click", function(e){
+      e.stopPropagation();   
+      console.log('open-chat');
+
+      $('*[data-test-id="ChatWidgetWindow"]').show();  
+      $zopim(function() {
+        $zopim.livechat.window.show();
+      });             
+    });      
+
+    var specifiedElement = $('*[data-test-id="ChatWidgetWindow"]')[0];
+    // console.log(specifiedElement);
+    document.addEventListener('click', function(event) {
+        var isClickInside = specifiedElement.contains(event.target);
+        if (isClickInside) {
+          // console.log('You clicked inside');
+        }
+        else {
+          $('*[data-test-id="ChatWidgetWindow"]').hide();    
+          $zopim(function() {
+            $zopim.livechat.window.hide();
+          });
+
+        }
+    });
+
+    $('iframe').load( function() {
+      $('iframe').contents().find("head").append($("<style type='text/css'>  .meshim_widget_widgets_titleBar_MinimizeButton{display:none;}  </style>"));
+    });
+    
+  }
+  
+
+
 };
 
 kafnu.page.Default.prototype.expandable_text = function() {
@@ -1711,6 +1780,9 @@ kafnu.page.Default.prototype.update_page_layout = function(){
   if (this.has_adjust_height_main_content_item == true) {
     this.adjust_height_main_content_item();
   }
+
+  this.update_header_desktop();
+
 };
 
 
