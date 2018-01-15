@@ -31,8 +31,7 @@
   <link rel="shortcut icon" href="<?php echo THEMEROOT; ?>/favicon.ico" type="image/x-icon" />
 
   <title><?php echo wp_title(''); ?></title>
-  <meta name="description" content="Kafnu is a community of creators and innovators, a place for collaboration and productivity.">
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, minimal-ui"/>
 
   <!-- Critical Css -->
